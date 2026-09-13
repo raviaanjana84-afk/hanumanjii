@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>मंगलवार व्रत — पूर्ण जानकारी | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी का मंगलवार व्रत — कथा, विधि, नियम, मंत्र, भोग और लाभ। संपूर्ण जानकारी हिंदी में।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.mangal-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(220,20,60,.45), transparent 65%),
+    linear-gradient(135deg, rgba(178,34,34,.28), rgba(255,107,53,.18));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.mangal-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(220,20,60,.18), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.mangal-hero .mangal-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 30px rgba(220,20,60,.9));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.mangal-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .mangal-hero h2 { color: var(--gold-light); }
+.mangal-hero .mangal-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.mangal-hero .mangal-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.mangal-hero .mangal-meta span { display: flex; align-items: center; gap: 5px; }
+.mangal-hero .mangal-meta i { color: var(--gold); }
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(220,20,60,.08);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #DC143C;
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+.katha-block .mantra {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.05));
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,.3);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .katha-block .mantra { color: var(--gold-light); }
+
+/* Steps */
+.vidhi-step {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.vidhi-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+.vidhi-content { flex: 1; }
+.vidhi-content strong {
+  display: block;
+  font-size: 14px;
+  color: var(--maroon);
+  margin-bottom: 3px;
+}
+body.dark .vidhi-content strong { color: var(--gold-light); }
+.vidhi-content p {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Niyam List */
+.niyam-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.niyam-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.niyam-list li i {
+  color: var(--gold);
+  font-size: 14px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.niyam-list li.yes i { color: #2E7D32; }
+.niyam-list li.no i { color: #C62828; }
+
+/* Benefits */
+.mangal-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.mangal-benefit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, rgba(212,175,55,.12), rgba(212,175,55,.05));
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 20px;
+  font-size: 12.5px;
+  color: var(--maroon);
+  transition: all .25s ease;
+}
+.mangal-benefit:hover {
+  background: rgba(212,175,55,.2);
+  transform: translateY(-2px);
+}
+body.dark .mangal-benefit { color: var(--gold-light); }
+.mangal-benefit i { color: var(--gold); font-size: 11px; }
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .mangal-hero .mangal-emoji { font-size: 70px; }
+  .mangal-hero h2 { font-size: 23px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="60-festivals.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🎉 हनुमान त्योहार</span>
+    <h1>मंगलवार व्रत</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="mangal-hero">
+  <span class="mangal-emoji">🔴</span>
+  <h2>मंगलवार व्रत</h2>
+  <div class="mangal-sub">Mangalvar Vrat • Weekly Fast</div>
+  <div class="mangal-meta">
+    <span><i class="fa-solid fa-calendar"></i> प्रत्येक मंगलवार</span>
+    <span><i class="fa-solid fa-clock"></i> 8 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> पूर्ण जानकारी</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> व्रत का महत्व</h2>
+  <p>हनुमान जी का मंगलवार व्रत हिंदू धर्म में अत्यंत महत्वपूर्ण माना जाता है। यह व्रत बल, साहस, संकट निवारण और मंगल दोष शांति के लिए किया जाता है। मान्यता है कि मंगलवार को हनुमान जी की पूजा करने से विशेष फल प्राप्त होता है।</p>
+  <p>इस व्रत को करने वाले भक्त प्रातः स्नान करके व्रत का संकल्प लेते हैं, हनुमान जी की विधिपूर्वक पूजा करते हैं, हनुमान चालीसा का पाठ करते हैं और सायंकाल आरती के बाद प्रसाद ग्रहण करते हैं।</p>
+  <p>यह व्रत विशेष रूप से उन भक्तों के लिए है जो संकटों से मुक्ति, शत्रु नाश, संतान प्राप्ति और आर्थिक समृद्धि चाहते हैं।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">दिन</div><div class="val">मंगलवार</div></div>
+    <div class="info-item"><div class="lbl">व्रत</div><div class="val">फलाहार</div></div>
+    <div class="info-item"><div class="lbl">पूजा</div><div class="val">हनुमान जी</div></div>
+    <div class="info-item"><div class="lbl">अवधि</div><div class="val">21 या 1 वर्ष</div></div>
+    <div class="info-item"><div class="lbl">मंत्र</div><div class="val">108 बार जप</div></div>
+    <div class="info-item"><div class="lbl">लाभ</div><div class="val">मनोकामना पूर्ण</div></div>
+  </div>
+</div>
+
+<!-- ========== कथा ========== -->
+<div class="katha-block">
+  <h3>📜 व्रत कथा</h3>
+  <p>प्राचीन काल की बात है, चित्रकूट नगर में एक ब्राह्मण रहता था। उसकी पत्नी अत्यंत सुंदर और पतिव्रता थी। किंतु ब्राह्मण को कोई संतान न थी। वह प्रतिदिन भगवान की आराधना करता था।</p>
+  <p>एक दिन ब्राह्मण की पत्नी ने मंगलवार का व्रत करने का निश्चय किया। उसने विधिपूर्वक हनुमान जी की पूजा की और फलाहार करके रात्रि व्यतीत की। इसी व्रत के प्रभाव से उसे एक सुंदर पुत्र की प्राप्ति हुई।</p>
+  <p class="highlight">जब बालक बड़ा हुआ, तो वह पढ़ाई-लिखाई में अत्यंत कुशल हो गया। किंतु एक दिन ब्राह्मण की पत्नी ने बिना विधि पूरी किए व्रत का पारण कर लिया। इससे हनुमान जी रुष्ट हो गए और बालक मूर्छित हो गया।</p>
+  <p>ब्राह्मण दंपति ने पुनः मंगलवार का व्रत विधिपूर्वक किया और हनुमान जी से क्षमा मांगी। हनुमान जी प्रसन्न हुए और बालक को जीवनदान दिया। तभी से मंगलवार व्रत का महत्व बढ़ गया।</p>
+  <p class="mantra">ॐ श्री हनुमते नमः<br><small>व्रत के दौरान इस मंत्र का जप करें</small></p>
+</div>
+
+<!-- ========== व्रत विधि ========== -->
+<div class="katha-block">
+  <h3>🪔 व्रत विधि</h3>
+  <div class="vidhi-step">
+    <div class="vidhi-num">1</div>
+    <div class="vidhi-content">
+      <strong>प्रातः स्नान</strong>
+      <p>मंगलवार को प्रातः स्नान करके लाल वस्त्र धारण करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">2</div>
+    <div class="vidhi-content">
+      <strong>संकल्प</strong>
+      <p>हनुमान जी के सामने व्रत का संकल्प लें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">3</div>
+    <div class="vidhi-content">
+      <strong>पूजा</strong>
+      <p>हनुमान जी की विधिपूर्वक पूजा करें। सिंदूर, तेल, फूल और भोग अर्पित करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">4</div>
+    <div class="vidhi-content">
+      <strong>कथा श्रवण</strong>
+      <p>मंगलवार व्रत कथा का श्रवण करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">5</div>
+    <div class="vidhi-content">
+      <strong>चालीसा पाठ</strong>
+      <p>हनुमान चालीसा का पाठ करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">6</div>
+    <div class="vidhi-content">
+      <strong>मंत्र जप</strong>
+      <p>"ॐ हं हनुमते रुद्रात्मकाय हुं फट्" का 108 बार जप करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">7</div>
+    <div class="vidhi-content">
+      <strong>फलाहार</strong>
+      <p>दिन में केवल फलाहार करें। रात्रि में सात्विक भोजन करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">8</div>
+    <div class="vidhi-content">
+      <strong>आरती</strong>
+      <p>संध्या को आरती करें और प्रसाद वितरित करें।</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== व्रत के नियम ========== -->
+<div class="katha-block">
+  <h3>📋 व्रत के नियम</h3>
+  <ul class="niyam-list">
+    <li class="yes"><i class="fa-solid fa-check-circle"></i> प्रातः स्नान करके पूजा करें</li>
+    <li class="yes"><i class="fa-solid fa-check-circle"></i> लाल वस्त्र धारण करें</li>
+    <li class="yes"><i class="fa-solid fa-check-circle"></i> दिन में केवल फलाहार करें</li>
+    <li class="yes"><i class="fa-solid fa-check-circle"></i> हनुमान चालीसा का पाठ करें</li>
+    <li class="yes"><i class="fa-solid fa-check-circle"></i> सत्य बोलें, क्रोध न करें</li>
+    <li class="yes"><i class="fa-solid fa-check-circle"></i> गरीबों को दान करें</li>
+    <li class="no"><i class="fa-solid fa-times-circle"></i> तुलसी दल न चढ़ाएं</li>
+    <li class="no"><i class="fa-solid fa-times-circle"></i> मांस-मदिरा का सेवन न करें</li>
+    <li class="no"><i class="fa-solid fa-times-circle"></i> झूठ न बोलें</li>
+    <li class="no"><i class="fa-solid fa-times-circle"></i> किसी का अपमान न करें</li>
+    <li class="no"><i class="fa-solid fa-times-circle"></i> ब्रह्मचर्य का पालन करें</li>
+  </ul>
+</div>
+
+<!-- ========== लाभ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> व्रत के लाभ</h2>
+  <div class="mangal-benefits">
+    <span class="mangal-benefit"><i class="fa-solid fa-check"></i> संकटों से मुक्ति</span>
+    <span class="mangal-benefit"><i class="fa-solid fa-check"></i> संतान प्राप्ति</span>
+    <span class="mangal-benefit"><i class="fa-solid fa-check"></i> रोग निवारण</span>
+    <span class="mangal-benefit"><i class="fa-solid fa-check"></i> शत्रु नाश</span>
+    <span class="mangal-benefit"><i class="fa-solid fa-check"></i> आर्थिक समृद्धि</span>
+    <span class="mangal-benefit"><i class="fa-solid fa-check"></i> मंगल दोष शांति</span>
+    <span class="mangal-benefit"><i class="fa-solid fa-check"></i> बल-बुद्धि वृद्धि</span>
+    <span class="mangal-benefit"><i class="fa-solid fa-check"></i> पारिवारिक सुख</span>
+    <span class="mangal-benefit"><i class="fa-solid fa-check"></i> मानसिक शांति</span>
+    <span class="mangal-benefit"><i class="fa-solid fa-check"></i> आत्मविश्वास</span>
+    <span class="mangal-benefit"><i class="fa-solid fa-check"></i> भय से मुक्ति</span>
+    <span class="mangal-benefit"><i class="fa-solid fa-check"></i> मनोकामना पूर्ण</span>
+  </div>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>मंगलवार व्रत क्यों किया जाता है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">मंगलवार व्रत <strong>बल, साहस, संकट निवारण और मंगल दोष शांति</strong> के लिए किया जाता है। मान्यता है कि मंगलवार को हनुमान जी की पूजा करने से विशेष फल प्राप्त होता है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>मंगलवार व्रत में क्या खा सकते हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">व्रत में <strong>फल, दूध, दही, साबूदाना, सिंघाड़ा, मूंगफली, आलू और कुट्टू का आटा</strong> खा सकते हैं। अन्न, प्याज, लहसुन और मांस-मदिरा का सेवन न करें।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>मंगलवार व्रत कितने समय तक करना चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">कम से कम <strong>21 मंगलवार</strong> का व्रत करें। यदि संभव हो तो <strong>1 वर्ष</strong> तक करें। कुछ भक्त जीवनपर्यंत यह व्रत करते हैं।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या महिलाएं मंगलवार व्रत कर सकती हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हाँ, महिलाएं पूरी श्रद्धा के साथ मंगलवार व्रत कर सकती हैं। हनुमान जी भक्तों में भेद नहीं करते। केवल शुद्धता और श्रद्धा आवश्यक है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>व्रत की पारण कब करें?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">व्रत की पारण <strong>संध्या को आरती और प्रसाद के बाद</strong> करें। यदि एक समय भोजन कर रहे हैं तो दोपहर के बाद करें। कुछ भक्त अगले दिन सूर्योदय के बाद पारण करते हैं।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>मंगलवार व्रत में कौन सा मंत्र जपें?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner"><strong>"ॐ हं हनुमते रुद्रात्मकाय हुं फट्"</strong> बीज मंत्र का 108 बार जप करें। इसके अलावा <strong>"ॐ श्री हनुमते नमः"</strong> और हनुमान चालीसा का पाठ भी करें।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="60-festivals.html" class="cat-chip"><i class="fa-solid fa-calendar"></i> सभी त्योहार</a>
+    <a href="60a-hanuman-jayanti.html" class="cat-chip"><i class="fa-solid fa-arrow-left"></i> हनुमान जयंती</a>
+    <a href="60c-shanivar-vrat.html" class="cat-chip"><i class="fa-solid fa-arrow-right"></i> शनिवार व्रत</a>
+    <a href="42-vrat-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> व्रत कथा</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-om"></i> पूजा विधि</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
