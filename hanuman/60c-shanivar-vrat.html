@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>शनिवार व्रत — पूर्ण जानकारी | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी का शनिवार व्रत — कथा, विधि, नियम, शनि दोष निवारण, मंत्र और लाभ। संपूर्ण जानकारी हिंदी में।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.shanivar-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(40,40,80,.5), transparent 65%),
+    linear-gradient(135deg, rgba(30,30,70,.35), rgba(122,46,46,.2));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.shanivar-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(80,80,140,.2), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.shanivar-hero .shanivar-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 30px rgba(80,80,160,.9));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.shanivar-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .shanivar-hero h2 { color: var(--gold-light); }
+.shanivar-hero .shanivar-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.shanivar-hero .shanivar-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.shanivar-hero .shanivar-meta span { display: flex; align-items: center; gap: 5px; }
+.shanivar-hero .shanivar-meta i { color: var(--gold); }
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(80,80,140,.1);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #4A4A6A;
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+.katha-block .mantra {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.05));
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,.3);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .katha-block .mantra { color: var(--gold-light); }
+
+/* Steps */
+.vidhi-step {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.vidhi-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+.vidhi-content { flex: 1; }
+.vidhi-content strong {
+  display: block;
+  font-size: 14px;
+  color: var(--maroon);
+  margin-bottom: 3px;
+}
+body.dark .vidhi-content strong { color: var(--gold-light); }
+.vidhi-content p {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Niyam List */
+.niyam-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.niyam-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.niyam-list li i {
+  color: var(--gold);
+  font-size: 14px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.niyam-list li.yes i { color: #2E7D32; }
+.niyam-list li.no i { color: #C62828; }
+.niyam-list li.star i { color: var(--gold); }
+
+/* Benefits */
+.shanivar-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.shanivar-benefit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, rgba(212,175,55,.12), rgba(212,175,55,.05));
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 20px;
+  font-size: 12.5px;
+  color: var(--maroon);
+  transition: all .25s ease;
+}
+.shanivar-benefit:hover {
+  background: rgba(212,175,55,.2);
+  transform: translateY(-2px);
+}
+body.dark .shanivar-benefit { color: var(--gold-light); }
+.shanivar-benefit i { color: var(--gold); font-size: 11px; }
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .shanivar-hero .shanivar-emoji { font-size: 70px; }
+  .shanivar-hero h2 { font-size: 23px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="60-festivals.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🎉 हनुमान त्योहार</span>
+    <h1>शनिवार व्रत</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="shanivar-hero">
+  <span class="shanivar-emoji">🔵</span>
+  <h2>शनिवार व्रत</h2>
+  <div class="shanivar-sub">Shanivar Vrat • Shani Dosh</div>
+  <div class="shanivar-meta">
+    <span><i class="fa-solid fa-calendar"></i> प्रत्येक शनिवार</span>
+    <span><i class="fa-solid fa-clock"></i> 8 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> पूर्ण जानकारी</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> व्रत का महत्व</h2>
+  <p>हनुमान जी का शनिवार व्रत हिंदू धर्म में अत्यंत महत्वपूर्ण माना जाता है। यह व्रत शनि दोष निवारण, कार्य सिद्धि, ग्रह शांति और संकट निवारण के लिए किया जाता है।</p>
+  <p>मान्यता है कि शनिवार को हनुमान जी की पूजा करने से शनि देव प्रसन्न होते हैं। हनुमान जी ने शनि देव को पराजित किया था, इसलिए शनिवार को हनुमान जी की पूजा का विशेष महत्व है।</p>
+  <p>यह व्रत विशेष रूप से उन भक्तों के लिए है जो शनि दोष, मंगल दोष, राहु-केतु दोष और कालसर्प दोष से पीड़ित हैं।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">दिन</div><div class="val">शनिवार</div></div>
+    <div class="info-item"><div class="lbl">व्रत</div><div class="val">फलाहार</div></div>
+    <div class="info-item"><div class="lbl">पूजा</div><div class="val">हनुमान + शनि</div></div>
+    <div class="info-item"><div class="lbl">अवधि</div><div class="val">21 या 1 वर्ष</div></div>
+    <div class="info-item"><div class="lbl">वस्त्र</div><div class="val">काला/लाल</div></div>
+    <div class="info-item"><div class="lbl">लाभ</div><div class="val">शनि दोष शांति</div></div>
+  </div>
+</div>
+
+<!-- ========== कथा ========== -->
+<div class="katha-block">
+  <h3>📜 व्रत कथा</h3>
+  <p>एक बार की बात है, शनि देव ने हनुमान जी से युद्ध किया। शनि देव अपने अहंकार में यह मानते थे कि उनसे बड़ा कोई नहीं। उन्होंने हनुमान जी को कष्ट देने का प्रयास किया।</p>
+  <p>लेकिन हनुमान जी ने अपनी पूंछ से शनि देव को लपेट लिया और उन्हें बंदी बना लिया। तब शनि देव ने हनुमान जी से क्षमा मांगी और वचन दिया — "हे हनुमान, आज से मैं आपके भक्तों को कभी कष्ट नहीं दूँगा।"</p>
+  <p class="highlight">तभी से शनिवार का व्रत करने वाले भक्तों पर शनि देव की कृपा बनी रहती है। हनुमान जी की कृपा से शनि दोष, मंगल दोष और राहु-केतु के प्रभाव शांत होते हैं।</p>
+  <p>एक और कथा के अनुसार, राजा दशरथ के पुत्र श्रीराम ने हनुमान जी को शनिवार का व्रत करने का आदेश दिया था। हनुमान जी ने स्वयं इस व्रत का पालन किया और शनि देव से रक्षा की।</p>
+  <p class="mantra">ॐ शं शनैश्चराय नमः<br><small>शनिवार व्रत में इस मंत्र का जप करें</small></p>
+</div>
+
+<!-- ========== व्रत विधि ========== -->
+<div class="katha-block">
+  <h3>🪔 व्रत विधि</h3>
+  <div class="vidhi-step">
+    <div class="vidhi-num">1</div>
+    <div class="vidhi-content">
+      <strong>प्रातः स्नान</strong>
+      <p>शनिवार को प्रातः स्नान करके स्वच्छ वस्त्र धारण करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">2</div>
+    <div class="vidhi-content">
+      <strong>संकल्प</strong>
+      <p>हनुमान जी और शनि देव के सामने व्रत का संकल्प लें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">3</div>
+    <div class="vidhi-content">
+      <strong>पूजा</strong>
+      <p>हनुमान जी की पूजा करें। शनि देव को काला तिल, लोहा और काला वस्त्र अर्पित करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">4</div>
+    <div class="vidhi-content">
+      <strong>कथा श्रवण</strong>
+      <p>शनिवार व्रत कथा का श्रवण करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">5</div>
+    <div class="vidhi-content">
+      <strong>चालीसा पाठ</strong>
+      <p>हनुमान चालीसा का 7 बार पाठ करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">6</div>
+    <div class="vidhi-content">
+      <strong>मंत्र जप</strong>
+      <p>"ॐ हं हनुमते रुद्रात्मकाय हुं फट्" और "ॐ शं शनैश्चराय नमः" का जप करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">7</div>
+    <div class="vidhi-content">
+      <strong>फलाहार</strong>
+      <p>दिन में फलाहार करें। संध्या को सात्विक भोजन करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">8</div>
+    <div class="vidhi-content">
+      <strong>आरती</strong>
+      <p>संध्या को आरती करें और प्रसाद बांटें।</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== व्रत के नियम ========== -->
+<div class="katha-block">
+  <h3>📋 व्रत के नियम</h3>
+  <ul class="niyam-list">
+    <li class="yes"><i class="fa-solid fa-check-circle"></i> प्रातः स्नान करके पूजा करें</li>
+    <li class="yes"><i class="fa-solid fa-check-circle"></i> काले वस्त्र पहनें (शनि देव को प्रिय)</li>
+    <li class="yes"><i class="fa-solid fa-check-circle"></i> दिन में फलाहार करें</li>
+    <li class="yes"><i class="fa-solid fa-check-circle"></i> हनुमान चालीसा और शनि मंत्र जपें</li>
+    <li class="yes"><i class="fa-solid fa-check-circle"></i> गरीबों को दान करें</li>
+    <li class="yes"><i class="fa-solid fa-check-circle"></i> काली चींटी को आटा-गुड़ खिलाएं</li>
+    <li class="no"><i class="fa-solid fa-times-circle"></i> तुलसी दल न चढ़ाएं</li>
+    <li class="no"><i class="fa-solid fa-times-circle"></i> मांस-मदिरा का सेवन न करें</li>
+    <li class="no"><i class="fa-solid fa-times-circle"></i> क्रोध न करें</li>
+    <li class="no"><i class="fa-solid fa-times-circle"></i> झूठ न बोलें</li>
+    <li class="no"><i class="fa-solid fa-times-circle"></i> ब्रह्मचर्य का पालन करें</li>
+  </ul>
+</div>
+
+<!-- ========== शनि दोष निवारण ========== -->
+<div class="katha-block">
+  <h3>🪐 शनि दोष निवारण</h3>
+  <p>शनिवार व्रत करने से शनि दोष, मंगल दोष, राहु-केतु दोष और कालसर्प दोष शांत होते हैं। निम्न उपाय करें:</p>
+  <ul class="niyam-list">
+    <li class="star"><i class="fa-solid fa-star"></i> शनिवार को हनुमान चालीसा का 7 बार पाठ करें</li>
+    <li class="star"><i class="fa-solid fa-star"></i> "ॐ हं हनुमते रुद्रात्मकाय हुं फट्" का 108 बार जप करें</li>
+    <li class="star"><i class="fa-solid fa-star"></i> काली चींटी को आटा-गुड़ खिलाएं</li>
+    <li class="star"><i class="fa-solid fa-star"></i> गरीबों को काले तिल, लोहा और कंबल दान करें</li>
+    <li class="star"><i class="fa-solid fa-star"></i> पीपल के पेड़ पर सरसों का तेल का दीपक जलाएं</li>
+    <li class="star"><i class="fa-solid fa-star"></i> बजरंग बाण का पाठ करें</li>
+  </ul>
+</div>
+
+<!-- ========== लाभ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> व्रत के लाभ</h2>
+  <div class="shanivar-benefits">
+    <span class="shanivar-benefit"><i class="fa-solid fa-check"></i> शनि दोष शांति</span>
+    <span class="shanivar-benefit"><i class="fa-solid fa-check"></i> कार्य सिद्धि</span>
+    <span class="shanivar-benefit"><i class="fa-solid fa-check"></i> व्यापार में लाभ</span>
+    <span class="shanivar-benefit"><i class="fa-solid fa-check"></i> नौकरी में उन्नति</span>
+    <span class="shanivar-benefit"><i class="fa-solid fa-check"></i> विवाह में सफलता</span>
+    <span class="shanivar-benefit"><i class="fa-solid fa-check"></i> संतान सुख</span>
+    <span class="shanivar-benefit"><i class="fa-solid fa-check"></i> आरोग्य प्राप्ति</span>
+    <span class="shanivar-benefit"><i class="fa-solid fa-check"></i> ग्रह शांति</span>
+    <span class="shanivar-benefit"><i class="fa-solid fa-check"></i> मानसिक शांति</span>
+    <span class="shanivar-benefit"><i class="fa-solid fa-check"></i> भय से मुक्ति</span>
+    <span class="shanivar-benefit"><i class="fa-solid fa-check"></i> पारिवारिक सुख</span>
+    <span class="shanivar-benefit"><i class="fa-solid fa-check"></i> मनोकामना पूर्ण</span>
+  </div>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>शनिवार व्रत क्यों किया जाता है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">शनिवार व्रत <strong>शनि दोष निवारण, कार्य सिद्धि, ग्रह शांति</strong> के लिए किया जाता है। मान्यता है कि शनिवार को हनुमान जी की पूजा करने से शनि देव प्रसन्न होते हैं।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>शनिवार व्रत में क्या खा सकते हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">व्रत में <strong>फल, दूध, दही, साबूदाना, सिंघाड़ा, मूंगफली, आलू और कुट्टू का आटा</strong> खा सकते हैं। अन्न, प्याज, लहसुन और मांस-मदिरा का सेवन न करें।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>शनिवार व्रत कितने समय तक करना चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">कम से कम <strong>21 शनिवार</strong> का व्रत करें। यदि संभव हो तो <strong>1 वर्ष</strong> तक करें। कुछ भक्त जीवनपर्यंत यह व्रत करते हैं।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या महिलाएं शनिवार व्रत कर सकती हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हाँ, महिलाएं पूरी श्रद्धा के साथ शनिवार व्रत कर सकती हैं। हनुमान जी भक्तों में भेद नहीं करते। केवल शुद्धता और श्रद्धा आवश्यक है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>शनि दोष निवारण के लिए क्या करें?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">शनिवार को हनुमान चालीसा का <strong>7 बार पाठ</strong> करें। <strong>काली चींटी को आटा-गुड़</strong> खिलाएं। <strong>पीपल के पेड़ पर सरसों के तेल का दीपक</strong> जलाएं। गरीबों को काले तिल, लोहा और कंबल दान करें।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>शनिवार व्रत में कौन सा मंत्र जपें?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner"><strong>"ॐ हं हनुमते रुद्रात्मकाय हुं फट्"</strong> और <strong>"ॐ शं शनैश्चराय नमः"</strong> का जप करें। हनुमान चालीसा का 7 बार पाठ भी करें।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="60-festivals.html" class="cat-chip"><i class="fa-solid fa-calendar"></i> सभी त्योहार</a>
+    <a href="60a-hanuman-jayanti.html" class="cat-chip"><i class="fa-solid fa-arrow-left"></i> हनुमान जयंती</a>
+    <a href="60b-mangalvar-vrat.html" class="cat-chip"><i class="fa-solid fa-arrow-left"></i> मंगलवार व्रत</a>
+    <a href="42-vrat-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> व्रत कथा</a>
+    <a href="30k-shani-dev.html" class="cat-chip"><i class="fa-solid fa-planet-ringed"></i> हनुमान और शनि देव</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
