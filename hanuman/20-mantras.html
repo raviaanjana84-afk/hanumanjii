@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान जी के सभी मंत्र — 30+ मंत्र अर्थ सहित | Hanuman Mantras</title>
+<meta name="description" content="हनुमान जी के 30+ मंत्र — मूल मंत्र, बीज मंत्र, गायत्री मंत्र, कवच मंत्र, रोग नाशक, शत्रु नाशक, धन प्राप्ति, संतान प्राप्ति, विद्या प्राप्ति — सभी अर्थ, लाभ और विधि सहित।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* Mantra page specific */
+.mantra-hero{
+  width:100%;
+  padding:34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius:var(--radius);
+  text-align:center;
+  margin:16px 0;
+  border:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.mantra-hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.mantra-hero .mh-emoji{
+  font-size:90px;
+  display:block;
+  margin-bottom:10px;
+  filter:drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;
+  z-index:2;
+}
+.mantra-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:28px;
+  color:var(--maroon);
+  margin-bottom:6px;
+  position:relative;
+  z-index:2;
+}
+body.dark .mantra-hero h2{color:var(--gold-light)}
+.mantra-hero .mh-sub{
+  font-size:12.5px;
+  color:var(--ink-soft);
+  letter-spacing:2px;
+  text-transform:uppercase;
+  position:relative;
+  z-index:2;
+}
+
+/* Search bar */
+.mantra-search{
+  position:sticky;
+  top:66px;
+  z-index:60;
+  background:var(--bg);
+  padding:10px 0;
+  margin-bottom:12px;
+}
+.mantra-search .search-bar{
+  display:flex;align-items:center;gap:10px;
+  background:var(--card-bg);
+  border:1.5px solid var(--border);
+  border-radius:30px;
+  padding:10px 16px;
+  box-shadow:var(--shadow);
+  transition:var(--transition);
+}
+.mantra-search .search-bar:focus-within{
+  border-color:var(--gold);
+  box-shadow:0 0 0 4px rgba(212,175,55,.15);
+}
+.mantra-search .search-bar i{color:var(--gold);font-size:15px}
+.mantra-search .search-bar input{
+  flex:1;border:none;outline:none;background:transparent;
+  font-family:inherit;font-size:14px;color:var(--ink);
+}
+.mantra-search .search-bar input::placeholder{color:var(--ink-light)}
+
+/* Category nav */
+.mantra-cat-nav{
+  display:flex;gap:8px;overflow-x:auto;
+  padding:4px 0 14px;
+  scrollbar-width:none;
+}
+.mantra-cat-nav::-webkit-scrollbar{display:none}
+.mantra-cat-chip{
+  flex-shrink:0;
+  padding:9px 16px;
+  background:var(--card-bg);
+  border:1.5px solid var(--border);
+  border-radius:30px;
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--maroon);
+  cursor:pointer;
+  transition:var(--transition);
+  white-space:nowrap;
+  display:flex;align-items:center;gap:6px;
+}
+body.dark .mantra-cat-chip{color:var(--gold-light)}
+.mantra-cat-chip:hover{border-color:var(--gold);transform:translateY(-2px)}
+.mantra-cat-chip.active{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;
+  border-color:transparent;
+  box-shadow:0 4px 16px rgba(122,46,46,.35);
+}
+.mantra-cat-chip i{font-size:14px}
+
+/* Mantra card */
+.mantra-card{
+  background:var(--card-bg);
+  border-radius:16px;
+  padding:18px 16px;
+  margin-bottom:14px;
+  border:1px solid var(--border);
+  transition:var(--transition);
+  position:relative;
+  overflow:hidden;
+  animation:fadeUp .4s ease both;
+}
+.mantra-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:5px;
+  height:100%;
+  background:linear-gradient(180deg,var(--gold),var(--saffron));
+}
+.mantra-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 28px rgba(122,46,46,.15);
+  border-color:var(--gold);
+}
+.mc-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:12px;
+}
+.mc-title{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:16.5px;
+  color:var(--maroon);
+  font-weight:700;
+  line-height:1.3;
+}
+body.dark .mc-title{color:var(--gold-light)}
+.mc-num{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;
+  font-size:10.5px;
+  font-weight:700;
+  padding:3px 10px;
+  border-radius:20px;
+  margin-right:6px;
+  vertical-align:middle;
+  letter-spacing:.5px;
+}
+.mc-badge{
+  font-size:10px;
+  font-weight:600;
+  padding:4px 9px;
+  border-radius:20px;
+  background:rgba(212,175,55,.2);
+  color:var(--maroon);
+  white-space:nowrap;
+  flex-shrink:0;
+}
+body.dark .mc-badge{color:var(--gold-light);background:rgba(212,175,55,.18)}
+
+/* Mantra text box */
+.mc-sanskrit{
+  background:linear-gradient(135deg,rgba(212,175,55,.14),rgba(122,46,46,.06));
+  border-left:4px solid var(--gold);
+  padding:14px 14px;
+  border-radius:10px;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:16px;
+  text-align:center;
+  color:var(--maroon);
+  font-weight:600;
+  line-height:2;
+  margin-bottom:12px;
+  position:relative;
+  word-break:break-word;
+}
+body.dark .mc-sanskrit{color:var(--gold-light)}
+.mc-sanskrit .copy-btn{
+  position:absolute;
+  top:8px;right:8px;
+  background:rgba(122,46,46,.1);
+  border:none;
+  color:var(--maroon);
+  width:28px;height:28px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:11px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:var(--transition);
+}
+.mc-sanskrit .copy-btn:hover{
+  background:var(--maroon);
+  color:#fff;
+  transform:scale(1.1);
+}
+body.dark .mc-sanskrit .copy-btn{color:var(--gold-light);background:rgba(212,175,55,.15)}
+body.dark .mc-sanskrit .copy-btn:hover{background:var(--gold-light);color:var(--maroon-dark)}
+
+/* Mantra info grid */
+.mc-info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:10px;
+}
+@media(max-width:400px){.mc-info{grid-template-columns:1fr}}
+.mc-info-item{
+  background:var(--bg-alt);
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid var(--border);
+}
+.mc-info-item .lbl{
+  font-size:9.5px;
+  color:var(--ink-light);
+  text-transform:uppercase;
+  letter-spacing:.6px;
+  font-weight:500;
+}
+.mc-info-item .val{
+  font-size:12.5px;
+  color:var(--maroon);
+  font-weight:600;
+  margin-top:2px;
+  line-height:1.4;
+}
+body.dark .mc-info-item .val{color:var(--gold-light)}
+
+/* Meaning section */
+.mc-meaning{
+  font-size:13.5px;
+  color:var(--ink-soft);
+  line-height:1.85;
+  margin-bottom:8px;
+  padding:10px 12px;
+  background:var(--bg-alt);
+  border-radius:8px;
+  border-left:3px solid var(--gold);
+}
+.mc-meaning strong{color:var(--maroon)}
+body.dark .mc-meaning strong{color:var(--gold-light)}
+
+/* Benefits section */
+.mc-benefits{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:10px;
+}
+.mc-benefit{
+  font-size:11px;
+  padding:4px 10px;
+  background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(255,107,53,.1));
+  border:1px solid var(--gold);
+  border-radius:20px;
+  color:var(--maroon);
+  font-weight:600;
+}
+body.dark .mc-benefit{color:var(--gold-light)}
+
+/* How to chant */
+.mc-howto{
+  background:rgba(212,175,55,.08);
+  padding:10px 12px;
+  border-radius:8px;
+  font-size:12.5px;
+  color:var(--ink-soft);
+  line-height:1.75;
+}
+.mc-howto strong{color:var(--maroon)}
+body.dark .mc-howto strong{color:var(--gold-light)}
+
+/* Quick reference table */
+.mantra-table-wrap{
+  overflow-x:auto;
+  margin:14px 0;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+.mantra-table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:12.5px;
+  min-width:500px;
+}
+.mantra-table thead{
+  background:linear-gradient(135deg,var(--maroon),var(--maroon-dark));
+  color:#fff;
+}
+.mantra-table th{
+  padding:10px 12px;
+  text-align:left;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:13px;
+  font-weight:600;
+  white-space:nowrap;
+}
+.mantra-table td{
+  padding:10px 12px;
+  border-bottom:1px solid var(--border);
+  color:var(--ink-soft);
+  vertical-align:top;
+}
+.mantra-table tr:last-child td{border-bottom:none}
+.mantra-table tbody tr:hover{background:rgba(212,175,55,.08)}
+.mantra-table td:first-child{
+  color:var(--maroon);
+  font-weight:600;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:13px;
+}
+body.dark .mantra-table td:first-child{color:var(--gold-light)}
+
+/* Category section header */
+.cat-header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:22px 0 12px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--gold);
+}
+.cat-header .ch-icon{
+  font-size:22px;
+  flex-shrink:0;
+}
+.cat-header h3{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:19px;
+  color:var(--maroon);
+  margin:0;
+  border:none;
+  padding:0;
+}
+body.dark .cat-header h3{color:var(--gold-light)}
+.cat-header .ch-count{
+  margin-left:auto;
+  font-size:11px;
+  color:var(--ink-light);
+  background:var(--bg-alt);
+  padding:3px 10px;
+  border-radius:20px;
+  font-weight:600;
+  flex-shrink:0;
+}
+
+/* Stats grid */
+.stats-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:14px 0;
+}
+@media(min-width:480px){.stats-grid{grid-template-columns:1fr 1fr 1fr 1fr}}
+.stat-card{
+  background:linear-gradient(135deg,rgba(212,175,55,.14),rgba(122,46,46,.06));
+  border-radius:12px;
+  padding:14px 10px;
+  text-align:center;
+  border:1px solid var(--border);
+  transition:var(--transition);
+}
+.stat-card:hover{transform:translateY(-3px);border-color:var(--gold)}
+.stat-card .stat-num{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:26px;
+  font-weight:700;
+  color:var(--maroon);
+  line-height:1;
+}
+body.dark .stat-card .stat-num{color:var(--gold-light)}
+.stat-card .stat-lbl{
+  font-size:11px;
+  color:var(--ink-soft);
+  margin-top:6px;
+  font-weight:600;
+  letter-spacing:.4px;
+}
+
+/* "No results" */
+.no-results{
+  text-align:center;
+  padding:40px 20px;
+  color:var(--ink-light);
+  font-size:14px;
+  display:none;
+}
+.no-results i{
+  font-size:48px;
+  color:var(--gold);
+  display:block;
+  margin-bottom:12px;
+  opacity:.5;
+}
+
+/* Section jump nav */
+.jump-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  padding:12px;
+  background:var(--bg-alt);
+  border-radius:12px;
+  border:1px solid var(--border);
+  margin-bottom:16px;
+}
+.jump-nav a{
+  font-size:11.5px;
+  padding:6px 12px;
+  background:var(--card-bg);
+  border-radius:20px;
+  color:var(--maroon);
+  font-weight:600;
+  border:1px solid var(--border);
+  transition:var(--transition);
+}
+body.dark .jump-nav a{color:var(--gold-light)}
+.jump-nav a:hover{
+  background:var(--maroon);
+  color:#fff;
+  border-color:var(--maroon);
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>सभी मंत्र</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<div class="mantra-hero">
+  <span class="mh-emoji">🔱</span>
+  <h2>सभी मंत्र</h2>
+  <div class="mh-sub">अर्थ · लाभ · विधि · जप संख्या</div>
+</div>
+
+<!-- ===== STATS ===== -->
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-num">30+</div>
+    <div class="stat-lbl">कुल मंत्र</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">7</div>
+    <div class="stat-lbl">श्रेणियाँ</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">108</div>
+    <div class="stat-lbl">जप संख्या</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num">∞</div>
+    <div class="stat-lbl">लाभ</div>
+  </div>
+</div>
+
+<!-- ===== SEARCH ===== -->
+<div class="mantra-search">
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="mantraSearch" placeholder="मंत्र खोजें... (मूल, बीज, धन, रोग, शत्रु)" />
+  </div>
+</div>
+
+<!-- ===== CATEGORY NAV ===== -->
+<div class="mantra-cat-nav">
+  <button class="mantra-cat-chip active" data-cat="all"><i class="fa-solid fa-border-all"></i> सभी</button>
+  <button class="mantra-cat-chip" data-cat="mool"><i class="fa-solid fa-om"></i> मूल</button>
+  <button class="mantra-cat-chip" data-cat="beej"><i class="fa-solid fa-seedling"></i> बीज</button>
+  <button class="mantra-cat-chip" data-cat="gayatri"><i class="fa-solid fa-sun"></i> गायत्री</button>
+  <button class="mantra-cat-chip" data-cat="kavach"><i class="fa-solid fa-shield"></i> कवच</button>
+  <button class="mantra-cat-chip" data-cat="rog"><i class="fa-solid fa-heart-pulse"></i> रोग नाशक</button>
+  <button class="mantra-cat-chip" data-cat="shatru"><i class="fa-solid fa-sword"></i> शत्रु नाशक</button>
+  <button class="mantra-cat-chip" data-cat="dhan"><i class="fa-solid fa-coins"></i> धन प्राप्ति</button>
+  <button class="mantra-cat-chip" data-cat="santan"><i class="fa-solid fa-child"></i> संतान</button>
+  <button class="mantra-cat-chip" data-cat="vidya"><i class="fa-solid fa-graduation-cap"></i> विद्या</button>
+  <button class="mantra-cat-chip" data-cat="grah"><i class="fa-solid fa-star"></i> ग्रह शांति</button>
+  <button class="mantra-cat-chip" data-cat="dhyan"><i class="fa-solid fa-spa"></i> ध्यान</button>
+</div>
+
+<!-- ===== JUMP NAV ===== -->
+<div class="jump-nav">
+  <a href="#mool">मूल मंत्र</a>
+  <a href="#beej">बीज मंत्र</a>
+  <a href="#gayatri">गायत्री</a>
+  <a href="#kavach">कवच</a>
+  <a href="#rog">रोग नाशक</a>
+  <a href="#shatru">शत्रु नाशक</a>
+  <a href="#dhan">धन प्राप्ति</a>
+  <a href="#santan">संतान</a>
+  <a href="#vidya">विद्या</a>
+  <a href="#grah">ग्रह शांति</a>
+  <a href="#dhyan">ध्यान</a>
+  <a href="#table">तालिका</a>
+</div>
+
+<!-- ============================================
+     SECTION 1 — MOOL MANTRA
+============================================ -->
+<div class="cat-header" id="mool">
+  <span class="ch-icon">🕉️</span>
+  <h3>मूल मंत्र</h3>
+  <span class="ch-count">4 मंत्र</span>
+</div>
+
+<div class="mantra-card" data-cat="mool">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">1</span>मूल मंत्र</div>
+    <span class="mc-badge">सर्वश्रेष्ठ</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ श्री हनुमते नमः
+    <button class="copy-btn" onclick="copyMantra('ॐ श्री हनुमते नमः')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">मंगल/शनि प्रातः</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष / मूंगा</div></div>
+    <div class="mc-info-item"><div class="lbl">दिशा</div><div class="val">पूर्व / उत्तर</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> श्री हनुमान जी को मैं नमस्कार करता हूँ। यह हनुमान जी का सर्वश्रेष्ठ और सबसे सरल मंत्र है।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">सभी मनोकामना</span>
+    <span class="mc-benefit">संकट मोचन</span>
+    <span class="mc-benefit">बल वृद्धि</span>
+    <span class="mc-benefit">भय मुक्ति</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> स्नान करके लाल वस्त्र पहनें। पूर्व दिशा की ओर मुख करें। लाल रुद्राक्ष माला से 108 बार जप करें। मंगलवार और शनिवार को विशेष फलदायी।</div>
+</div>
+
+<div class="mantra-card" data-cat="mool">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">2</span>हनुमान मूल मंत्र</div>
+    <span class="mc-badge">शक्तिशाली</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हं हनुमते रुद्रात्मकाय हुं फट्
+    <button class="copy-btn" onclick="copyMantra('ॐ हं हनुमते रुद्रात्मकाय हुं फट्')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">मंगलवार प्रातः</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">बीज + मूल संयुक्त</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे रुद्र के अवतार हनुमान, मैं आपको नमस्कार करता हूँ। यह मंत्र अत्यंत शक्तिशाली है और सभी संकटों का नाश करता है।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">शत्रु नाश</span>
+    <span class="mc-benefit">संकट मोचन</span>
+    <span class="mc-benefit">रोग नाश</span>
+    <span class="mc-benefit">रक्षा कवच</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> यह मंत्र "हुं फट्" बीज के साथ है — विशेष सावधानी से जपें। मंगलवार प्रातः स्नान के बाद 108 बार जप करें।</div>
+</div>
+
+<div class="mantra-card" data-cat="mool">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">3</span>संकट मोचन मंत्र</div>
+    <span class="mc-badge">तुरंत फल</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+    <button class="copy-btn" onclick="copyMantra('ॐ श्री हनुमते नमः, संकट मोचनाय नमः')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">संकट के समय तुरंत</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">कोई भी</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">आपातकालीन मंत्र</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ। यह मंत्र तुरंत संकट हरने वाला है।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">तुरंत संकट मोचन</span>
+    <span class="mc-benefit">भय मुक्ति</span>
+    <span class="mc-benefit">आपातकालीन रक्षा</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> किसी भी समय, किसी भी स्थिति में जप करें। श्रद्धा से 11 या 108 बार जप करने से संकट दूर होता है।</div>
+</div>
+
+<div class="mantra-card" data-cat="mool">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">4</span>राम नाम मंत्र</div>
+    <span class="mc-badge">कलियुग</span>
+  </div>
+  <div class="mc-sanskrit">
+    श्री राम जय राम जय जय राम
+    <button class="copy-btn" onclick="copyMantra('श्री राम जय राम जय जय राम')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 / निरंतर</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">कोई भी समय</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">तुलसी या रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">कलियुग का सर्वश्रेष्ठ मंत्र</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> श्री राम की जय हो, राम की जय हो। हनुमान जी की भक्ति का मूल — राम नाम है।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">मोक्ष</span>
+    <span class="mc-benefit">पाप नाश</span>
+    <span class="mc-benefit">हनुमान कृपा</span>
+    <span class="mc-benefit">राम भक्ति</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> जब भी समय मिले — चलते, बैठते, सोते — राम नाम का जप करें। हनुमान जी इस मंत्र से अत्यंत प्रसन्न होते हैं।</div>
+</div>
+
+<!-- ============================================
+     SECTION 2 — BEEJ MANTRA
+============================================ -->
+<div class="cat-header" id="beej">
+  <span class="ch-icon">🌱</span>
+  <h3>बीज मंत्र</h3>
+  <span class="ch-count">3 मंत्र</span>
+</div>
+
+<div class="mantra-card" data-cat="beej">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">5</span>हनुमान बीज मंत्र</div>
+    <span class="mc-badge">शक्ति बीज</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हं हनुमते हुं फट्
+    <button class="copy-btn" onclick="copyMantra('ॐ हं हनुमते हुं फट्')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">ब्रह्म मुहूर्त (4-6 AM)</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">दिशा</div><div class="val">उत्तर / पूर्व</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> यह बीज मंत्र है — "हं" और "हुं" बीज हैं। हनुमान जी की शक्ति का आह्वान करता है।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">शत्रु नाश</span>
+    <span class="mc-benefit">बल वृद्धि</span>
+    <span class="mc-benefit">रोग नाश</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> ब्रह्म मुहूर्त में स्नान करके, लाल वस्त्र पहनकर जप करें। दीक्षा के बाद ही जप करें।</div>
+</div>
+
+<div class="mantra-card" data-cat="beej">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">6</span>वायु बीज मंत्र</div>
+    <span class="mc-badge">वायु शक्ति</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ वं वायुपुत्राय नमः
+    <button class="copy-btn" onclick="copyMantra('ॐ वं वायुपुत्राय नमः')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">मंगलवार प्रातः</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">कोई भी</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">श्वास रोग में लाभ</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे वायु पुत्र हनुमान, मैं आपको नमस्कार करता हूँ। यह मंत्र वायु तत्व को संतुलित करता है।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">श्वास रोग</span>
+    <span class="mc-benefit">वायु विकार</span>
+    <span class="mc-benefit">ऊर्जा वृद्धि</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> मंगलवार और शनिवार को 108 बार जपें। श्वास रोग में विशेष लाभकारी।</div>
+</div>
+
+<div class="mantra-card" data-cat="beej">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">7</span>पंचमुखी बीज मंत्र</div>
+    <span class="mc-badge">महा शक्ति</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ नमो भगवते पंचवक्त्राय,<br>हनुमते, आद्यवीराय,<br>सकलशत्रुसंहारकाय,<br>सकलरोगनाशाय,<br>सकलमनोरथसिद्धये,<br>हुं फट् स्वाहा
+    <button class="copy-btn" onclick="copyMantra('ॐ नमो भगवते पंचवक्त्राय, हनुमते, आद्यवीराय, सकलशत्रुसंहारकाय, सकलरोगनाशाय, सकलमनोरथसिद्धये, हुं फट् स्वाहा')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">मंगल/शनि प्रातः</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष / मूंगा</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">महा-संकट में</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> पंचमुखी हनुमान जी को नमस्कार, जो आदिवीर हैं, सभी शत्रुओं का संहार करते हैं, सभी रोगों को नष्ट करते हैं, और सभी मनोरथों को सिद्ध करते हैं।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">शत्रु नाश</span>
+    <span class="mc-benefit">रोग नाश</span>
+    <span class="mc-benefit">मनोकामना</span>
+    <span class="mc-benefit">कालसर्प दोष</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> यह अत्यंत शक्तिशाली मंत्र है। मंगलवार या शनिवार प्रातः 108 बार जपें। पंचमुखी हनुमान जी की मूर्ति के सामने बैठें।</div>
+</div>
+
+<!-- ============================================
+     SECTION 3 — GAYATRI MANTRA
+============================================ -->
+<div class="cat-header" id="gayatri">
+  <span class="ch-icon">☀️</span>
+  <h3>गायत्री मंत्र</h3>
+  <span class="ch-count">2 मंत्र</span>
+</div>
+
+<div class="mantra-card" data-cat="gayatri">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">8</span>हनुमान गायत्री मंत्र</div>
+    <span class="mc-badge">ज्ञान</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ आंजनेयाय विद्महे<br>महावीराय धीमहि ।<br>तन्नो हनुमानः प्रचोदयात् ॥
+    <button class="copy-btn" onclick="copyMantra('ॐ आंजनेयाय विद्महे महावीराय धीमहि । तन्नो हनुमानः प्रचोदयात् ॥')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">प्रातः 5-7 बजे</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">दिशा</div><div class="val">पूर्व</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हम अंजना के पुत्र का ध्यान करते हैं, महावीर का ध्यान करते हैं। हनुमान हमें प्रेरित करें। यह गायत्री मंत्र बुद्धि और ज्ञान के लिए है।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">बुद्धि वृद्धि</span>
+    <span class="mc-benefit">विद्या प्राप्ति</span>
+    <span class="mc-benefit">एकाग्रता</span>
+    <span class="mc-benefit">स्मरण शक्ति</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> विद्यार्थियों को विशेष रूप से 108 बार जप करना चाहिए। प्रातः स्नान के बाद, पूर्व दिशा में मुख करके जपें।</div>
+</div>
+
+<div class="mantra-card" data-cat="gayatri">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">9</span>पंचमुखी गायत्री मंत्र</div>
+    <span class="mc-badge">सर्व फल</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हनुमानाय विद्महे,<br>पंचवक्त्राय धीमहि ।<br>तन्नो हनुमानः प्रचोदयात् ॥
+    <button class="copy-btn" onclick="copyMantra('ॐ हनुमानाय विद्महे, पंचवक्त्राय धीमहि । तन्नो हनुमानः प्रचोदयात् ॥')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">मंगलवार प्रातः</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">पंचमुखी हनुमान</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हम हनुमान जी का ध्यान करते हैं, पंचमुखी का ध्यान करते हैं। हनुमान हमें प्रेरित करें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">सर्व फल</span>
+    <span class="mc-benefit">रक्षा</span>
+    <span class="mc-benefit">मनोकामना</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> पंचमुखी हनुमान की उपासना में यह मंत्र विशेष है। 108 बार जप करें।</div>
+</div>
+
+<!-- ============================================
+     SECTION 4 — KAVACH MANTRA
+============================================ -->
+<div class="cat-header" id="kavach">
+  <span class="ch-icon">🛡️</span>
+  <h3>कवच मंत्र</h3>
+  <span class="ch-count">2 मंत्र</span>
+</div>
+
+<div class="mantra-card" data-cat="kavach">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">10</span>हनुमान कवच मंत्र</div>
+    <span class="mc-badge">रक्षा</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ श्री हनुमते नमः,<br>सर्वरोगहराय,<br>सर्वविघ्ननाशाय,<br>सर्वभयापहाय,<br>सर्वकार्यसिद्धये,<br>रक्ष रक्ष हुं फट्
+    <button class="copy-btn" onclick="copyMantra('ॐ श्री हनुमते नमः, सर्वरोगहराय, सर्वविघ्ननाशाय, सर्वभयापहाय, सर्वकार्यसिद्धये, रक्ष रक्ष हुं फट्')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">मंगल/शनि प्रातः</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">रक्षा कवच</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, सभी रोगों के हरने वाले, सभी विघ्नों का नाश करने वाले, सभी भयों को दूर करने वाले, सभी कार्यों को सिद्ध करने वाले — मेरी रक्षा करें, रक्षा करें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">सर्व रक्षा</span>
+    <span class="mc-benefit">रोग नाश</span>
+    <span class="mc-benefit">विघ्न नाश</span>
+    <span class="mc-benefit">भय मुक्ति</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> यह मंत्र "कवच" है — रक्षा के लिए। भयभीत स्थिति में, यात्रा से पहले, या कठिन कार्य से पहले 108 बार जपें।</div>
+</div>
+
+<div class="mantra-card" data-cat="kavach">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">11</span>सर्व रक्षा कवच मंत्र</div>
+    <span class="mc-badge">सर्व कवच</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हं हनुमते रुद्रात्मकाय,<br>हुं फट् स्वाहा<br>सर्व रक्षां कुरु कुरु
+    <button class="copy-btn" onclick="copyMantra('ॐ हं हनुमते रुद्रात्मकाय, हुं फट् स्वाहा सर्व रक्षां कुरु कुरु')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">मंगल/शनि</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">यात्रा से पहले</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे रुद्र के अवतार हनुमान, सभी प्रकार की रक्षा करें, रक्षा करें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">यात्रा रक्षा</span>
+    <span class="mc-benefit">दुर्घटना रक्षा</span>
+    <span class="mc-benefit">सर्व रक्षा</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> यात्रा से पहले 108 बार जपें। नए कार्य की शुरुआत में भी जपें।</div>
+</div>
+
+<!-- ============================================
+     SECTION 5 — ROG NASH MANTRA
+============================================ -->
+<div class="cat-header" id="rog">
+  <span class="ch-icon">💊</span>
+  <h3>रोग नाशक मंत्र</h3>
+  <span class="ch-count">3 मंत्र</span>
+</div>
+
+<div class="mantra-card" data-cat="rog">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">12</span>रोग नाशक मंत्र</div>
+    <span class="mc-badge">रोग नाश</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हं हनुमते नमः,<br>सर्वरोगनाशाय<br>सर्वपीड़ाहराय हुं फट्
+    <button class="copy-btn" onclick="copyMantra('ॐ हं हनुमते नमः, सर्वरोगनाशाय सर्वपीड़ाहराय हुं फट्')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">मंगल/शनि प्रातः</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">गंभीर रोग में</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, सभी रोगों का नाश करने वाले, सभी पीड़ाओं को हरने वाले — मैं आपको नमस्कार करता हूँ।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">सभी रोग नाश</span>
+    <span class="mc-benefit">पीड़ा नाश</span>
+    <span class="mc-benefit">स्वास्थ्य लाभ</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> रोगी के सिरहाने बैठकर या रोगी के लिए 108 बार जपें। हनुमान जी की मूर्ति के सामने घी का दीपक जलाएँ।</div>
+</div>
+
+<div class="mantra-card" data-cat="rog">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">13</span>संजीवनी मंत्र</div>
+    <span class="mc-badge">जीवन रक्षा</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ नमो हनुमते,<br>संजीवनी आनय आनय,<br>सर्वरोगान् नाशय नाशय<br>हुं फट् स्वाहा
+    <button class="copy-btn" onclick="copyMantra('ॐ नमो हनुमते, संजीवनी आनय आनय, सर्वरोगान् नाशय नाशय हुं फट् स्वाहा')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">संकट के समय</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">कोई भी</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">गंभीर रोग में</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, संजीवनी लाएँ, लाएँ, सभी रोगों को नष्ट करें, नष्ट करें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">गंभीर रोग</span>
+    <span class="mc-benefit">जीवन रक्षा</span>
+    <span class="mc-benefit">आयु वृद्धि</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> रोगी के लिए या रोगी के सिरहाने बैठकर 108 बार जपें। हनुमान चालीसा भी पढ़ें।</div>
+</div>
+
+<div class="mantra-card" data-cat="rog">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">14</span>आरोग्य मंत्र</div>
+    <span class="mc-badge">स्वास्थ्य</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हनुमते नमः,<br>आरोग्यं देहि देहि,<br>सर्वपीड़ां हर हर
+    <button class="copy-btn" onclick="copyMantra('ॐ हनुमते नमः, आरोग्यं देहि देहि, सर्वपीड़ां हर हर')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">मंगल प्रातः</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">स्वास्थ्य लाभ</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, मुझे आरोग्य दें, दें, सभी पीड़ाओं को हरें, हरें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">स्वास्थ्य</span>
+    <span class="mc-benefit">आरोग्यता</span>
+    <span class="mc-benefit">बल वृद्धि</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> नित्य प्रातः 108 बार जपें। स्वास्थ्य लाभ के लिए विशेष।</div>
+</div>
+
+<!-- ============================================
+     SECTION 6 — SHATRU NASH
+============================================ -->
+<div class="cat-header" id="shatru">
+  <span class="ch-icon">⚔️</span>
+  <h3>शत्रु नाशक मंत्र</h3>
+  <span class="ch-count">2 मंत्र</span>
+</div>
+
+<div class="mantra-card" data-cat="shatru">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">15</span>शत्रु नाशक मंत्र</div>
+    <span class="mc-badge">शत्रु नाश</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हं हनुमते रुद्रात्मकाय,<br>सर्वशत्रून् नाशय नाशय,<br>हुं फट् स्वाहा
+    <button class="copy-btn" onclick="copyMantra('ॐ हं हनुमते रुद्रात्मकाय, सर्वशत्रून् नाशय नाशय, हुं फट् स्वाहा')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">मंगलवार रात्रि</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">दिशा</div><div class="val">दक्षिण</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे रुद्र के अवतार हनुमान, सभी शत्रुओं का नाश करें, नाश करें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">शत्रु नाश</span>
+    <span class="mc-benefit">मुकदमे में विजय</span>
+    <span class="mc-benefit">बाधा नाश</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> मंगलवार रात्रि में दक्षिण दिशा की ओर मुख करके 108 बार जपें। यह मंत्र अत्यंत शक्तिशाली है।</div>
+</div>
+
+<div class="mantra-card" data-cat="shatru">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">16</span>बाधा नाशक मंत्र</div>
+    <span class="mc-badge">विजय</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हनुमते नमः,<br>सर्वविघ्नान् नाशय नाशय,<br>सर्वकार्यं सिद्धिं कुरु कुरु
+    <button class="copy-btn" onclick="copyMantra('ॐ हनुमते नमः, सर्वविघ्नान् नाशय नाशय, सर्वकार्यं सिद्धिं कुरु कुरु')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">मंगल/शनि प्रातः</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">नए कार्य की शुरुआत</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, सभी विघ्नों का नाश करें, नाश करें, सभी कार्यों को सिद्ध करें, सिद्ध करें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">विघ्न नाश</span>
+    <span class="mc-benefit">कार्य सिद्धि</span>
+    <span class="mc-benefit">बाधा नाश</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> नए कार्य की शुरुआत से पहले, कठिन कार्य के लिए, या बार-बार असफलता में 108 बार जपें।</div>
+</div>
+
+<!-- ============================================
+     SECTION 7 — DHAN PRAAPTI
+============================================ -->
+<div class="cat-header" id="dhan">
+  <span class="ch-icon">💰</span>
+  <h3>धन प्राप्ति मंत्र</h3>
+  <span class="ch-count">2 मंत्र</span>
+</div>
+
+<div class="mantra-card" data-cat="dhan">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">17</span>धन प्राप्ति मंत्र</div>
+    <span class="mc-badge">धन लाभ</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ श्री हनुमते नमः,<br>धनं देहि देहि,<br>समृद्धिं देहि देहि,<br>स्वाहा
+    <button class="copy-btn" onclick="copyMantra('ॐ श्री हनुमते नमः, धनं देहि देहि, समृद्धिं देहि देहि, स्वाहा')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">बुधवार / गुरुवार</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">दिशा</div><div class="val">उत्तर</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, मुझे धन दें, दें, समृद्धि दें, दें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">धन प्राप्ति</span>
+    <span class="mc-benefit">समृद्धि</span>
+    <span class="mc-benefit">व्यापार वृद्धि</span>
+    <span class="mc-benefit">कर्ज मुक्ति</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> बुधवार या गुरुवार को 108 बार जपें। हनुमान जी को बेसन के लड्डू का भोग लगाएँ।</div>
+</div>
+
+<div class="mantra-card" data-cat="dhan">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">18</span>कुबेर मंत्र</div>
+    <span class="mc-badge">धन निधि</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हनुमते नमः,<br>कुबेर वरप्रदाय,<br>धनधान्य समृद्धिं देहि देहि,<br>स्वाहा
+    <button class="copy-btn" onclick="copyMantra('ॐ हनुमते नमः, कुबेर वरप्रदाय, धनधान्य समृद्धिं देहि देहि, स्वाहा')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">गुरुवार प्रातः</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">धन संचय के लिए</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, कुबेर के वरदान स्वरूप, धन-धान्य की समृद्धि दें, दें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">धन संचय</span>
+    <span class="mc-benefit">समृद्धि</span>
+    <span class="mc-benefit">व्यापार</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> गुरुवार प्रातः स्नान करके 108 बार जपें। हनुमान जी को गुड़-चना और केला चढ़ाएँ।</div>
+</div>
+
+<!-- ============================================
+     SECTION 8 — SANTAN PRAAPTI
+============================================ -->
+<div class="cat-header" id="santan">
+  <span class="ch-icon">👶</span>
+  <h3>संतान प्राप्ति मंत्र</h3>
+  <span class="ch-count">2 मंत्र</span>
+</div>
+
+<div class="mantra-card" data-cat="santan">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">19</span>संतान प्राप्ति मंत्र</div>
+    <span class="mc-badge">संतान</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हनुमते नमः,<br>संतानं देहि देहि,<br>संतान सुखं देहि देहि,<br>स्वाहा
+    <button class="copy-btn" onclick="copyMantra('ॐ हनुमते नमः, संतानं देहि देहि, संतान सुखं देहि देहि, स्वाहा')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार (40 दिन)</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">मंगल/शुक्र प्रातः</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">पुत्र कामेष्टि</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, संतान दें, दें, संतान सुख दें, दें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">संतान प्राप्ति</span>
+    <span class="mc-benefit">संतान सुख</span>
+    <span class="mc-benefit">गर्भ रक्षा</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> मंगलवार या शुक्रवार प्रातः स्नान करके 108 बार जपें। 40 दिन तक नियमित करें। हनुमान जी को पीला चोला चढ़ाएँ।</div>
+</div>
+
+<div class="mantra-card" data-cat="santan">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">20</span>गर्भ रक्षा मंत्र</div>
+    <span class="mc-badge">गर्भ रक्षा</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हनुमते नमः,<br>गर्भं रक्ष रक्ष,<br>बालं पालय पालय,<br>स्वाहा
+    <button class="copy-btn" onclick="copyMantra('ॐ हनुमते नमः, गर्भं रक्ष रक्ष, बालं पालय पालय, स्वाहा')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार नित्य</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">प्रातः</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">गर्भवती महिला</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, गर्भ की रक्षा करें, रक्षा करें, बालक का पालन करें, पालन करें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">गर्भ रक्षा</span>
+    <span class="mc-benefit">सुरक्षित प्रसव</span>
+    <span class="mc-benefit">बालक रक्षा</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> गर्भवती महिला द्वारा नित्य 108 बार जप। हनुमान जी से संतान की रक्षा की प्रार्थना।</div>
+</div>
+
+<!-- ============================================
+     SECTION 9 — VIDYA PRAAPTI
+============================================ -->
+<div class="cat-header" id="vidya">
+  <span class="ch-icon">📚</span>
+  <h3>विद्या प्राप्ति मंत्र</h3>
+  <span class="ch-count">3 मंत्र</span>
+</div>
+
+<div class="mantra-card" data-cat="vidya">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">21</span>विद्या प्राप्ति मंत्र</div>
+    <span class="mc-badge">विद्या</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हनुमते नमः,<br>विद्यां देहि देहि,<br>बुद्धिं देहि देहि,<br>स्वाहा
+    <button class="copy-btn" onclick="copyMantra('ॐ हनुमते नमः, विद्यां देहि देहि, बुद्धिं देहि देहि, स्वाहा')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार नित्य</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">प्रातः पढ़ाई से पहले</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">कोई भी</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">विद्यार्थी</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, मुझे विद्या दें, दें, बुद्धि दें, दें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">विद्या वृद्धि</span>
+    <span class="mc-benefit">बुद्धि</span>
+    <span class="mc-benefit">स्मरण शक्ति</span>
+    <span class="mc-benefit">परीक्षा में सफलता</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> पढ़ाई से पहले 108 बार जपें। हनुमान जी को पीला चोला और पीले फूल चढ़ाएँ।</div>
+</div>
+
+<div class="mantra-card" data-cat="vidya">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">22</span>बुद्धि प्राप्ति मंत्र</div>
+    <span class="mc-badge">बुद्धि</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हं हनुमते नमः,<br>बुद्धिं प्रयच्छ प्रयच्छ,<br>मेधां प्रयच्छ प्रयच्छ
+    <button class="copy-btn" onclick="copyMantra('ॐ हं हनुमते नमः, बुद्धिं प्रयच्छ प्रयच्छ, मेधां प्रयच्छ प्रयच्छ')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">प्रातः 5-7 बजे</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">विद्यार्थी, बुद्धि</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, मुझे बुद्धि दें, दें, मेधा (स्मरण शक्ति) दें, दें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">बुद्धि वृद्धि</span>
+    <span class="mc-benefit">मेधा शक्ति</span>
+    <span class="mc-benefit">एकाग्रता</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> प्रातः 5-7 बजे के बीच 108 बार जपें। यह ब्रह्म मुहूर्त का समय है — विशेष फलदायी।</div>
+</div>
+
+<div class="mantra-card" data-cat="vidya">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">23</span>सरस्वती मंत्र</div>
+    <span class="mc-badge">ज्ञान</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हनुमते नमः,<br>सरस्वती कृपां कुरु कुरु,<br>ज्ञानं देहि देहि
+    <button class="copy-btn" onclick="copyMantra('ॐ हनुमते नमः, सरस्वती कृपां कुरु कुरु, ज्ञानं देहि देहि')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">बुधवार / बसंत पंचमी</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">सफेद माला</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">विद्यार्थी, वक्ता</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, सरस्वती माता की कृपा करें, करें, मुझे ज्ञान दें, दें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">ज्ञान</span>
+    <span class="mc-benefit">वाणी</span>
+    <span class="mc-benefit">विद्या</span>
+    <span class="mc-benefit">वक्तृत्व</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> बुधवार या बसंत पंचमी को 108 बार जपें। सफेद वस्त्र पहनें।</div>
+</div>
+
+<!-- ============================================
+     SECTION 10 — GRAH SHANTI
+============================================ -->
+<div class="cat-header" id="grah">
+  <span class="ch-icon">🌟</span>
+  <h3>ग्रह शांति मंत्र</h3>
+  <span class="ch-count">3 मंत्र</span>
+</div>
+
+<div class="mantra-card" data-cat="grah">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">24</span>शनि शांति मंत्र</div>
+    <span class="mc-badge">शनि दोष</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हनुमते नमः,<br>शनि दोषं नाशय नाशय,<br>शांतिं कुरु कुरु,<br>हुं फट् स्वाहा
+    <button class="copy-btn" onclick="copyMantra('ॐ हनुमते नमः, शनि दोषं नाशय नाशय, शांतिं कुरु कुरु, हुं फट् स्वाहा')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">शनिवार सूर्यास्त</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">दिशा</div><div class="val">पश्चिम</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, शनि दोष का नाश करें, नाश करें, शांति करें, करें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">शनि दोष नाश</span>
+    <span class="mc-benefit">कालसर्प दोष</span>
+    <span class="mc-benefit">ग्रह शांति</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> शनिवार सूर्यास्त के बाद 108 बार जपें। हनुमान जी को नीला चोला चढ़ाएँ। हनुमान चालीसा पढ़ें।</div>
+</div>
+
+<div class="mantra-card" data-cat="grah">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">25</span>मंगल शांति मंत्र</div>
+    <span class="mc-badge">मंगल दोष</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हनुमते नमः,<br>मंगल दोषं नाशय नाशय,<br>मंगलं कुरु कुरु,<br>स्वाहा
+    <button class="copy-btn" onclick="copyMantra('ॐ हनुमते नमः, मंगल दोषं नाशय नाशय, मंगलं कुरु कुरु, स्वाहा')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">मंगलवार प्रातः</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">मंगल दोष</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, मंगल दोष का नाश करें, नाश करें, मंगल करें, करें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">मंगल दोष</span>
+    <span class="mc-benefit">विवाह बाधा</span>
+    <span class="mc-benefit">भाई-बहन सुख</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> मंगलवार प्रातः 108 बार जपें। हनुमान जी को लाल चोला चढ़ाएँ। लाल फूल अर्पित करें।</div>
+</div>
+
+<div class="mantra-card" data-cat="grah">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">26</span>राहु-केतु शांति मंत्र</div>
+    <span class="mc-badge">राहु-केतु</span>
+  </div>
+  <div class="mc-sanskrit">
+    ॐ हनुमते नमः,<br>राहु-केतु दोषं नाशय नाशय,<br>शांतिं कुरु कुरु,<br>हुं फट् स्वाहा
+    <button class="copy-btn" onclick="copyMantra('ॐ हनुमते नमः, राहु-केतु दोषं नाशय नाशय, शांतिं कुरु कुरु, हुं फट् स्वाहा')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">शनिवार रात्रि</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">लाल रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">राहु-केतु दोष</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> हे हनुमान, राहु-केतु दोष का नाश करें, नाश करें, शांति करें, करें।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">राहु-केतु दोष</span>
+    <span class="mc-benefit">ग्रह शांति</span>
+    <span class="mc-benefit">मानसिक शांति</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> शनिवार रात्रि में 108 बार जपें। हनुमान जी को नीला चोला चढ़ाएँ। पंचमुखी हनुमान मंत्र का भी जप करें।</div>
+</div>
+
+<!-- ============================================
+     SECTION 11 — DHYAN MANTRA
+============================================ -->
+<div class="cat-header" id="dhyan">
+  <span class="ch-icon">🧘</span>
+  <h3>ध्यान मंत्र</h3>
+  <span class="ch-count">4 मंत्र</span>
+</div>
+
+<div class="mantra-card" data-cat="dhyan">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">27</span>ध्यान श्लोक</div>
+    <span class="mc-badge">ध्यान</span>
+  </div>
+  <div class="mc-sanskrit">
+    अतुलित बलधामं हेमशैलाभदेहं,<br>
+    दनुजवनकृशानुं ज्ञानिनामग्रगण्यम् ।<br>
+    सकलगुणनिधानं वानराणामधीशं,<br>
+    रघुपतिप्रियभक्तं वातजातं नमामि ॥
+    <button class="copy-btn" onclick="copyMantra('अतुलित बलधामं हेमशैलाभदेहं, दनुजवनकृशानुं ज्ञानिनामग्रगण्यम् । सकलगुणनिधानं वानराणामधीशं, रघुपतिप्रियभक्तं वातजातं नमामि ॥')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">11 / 108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">प्रातः / सायं</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">ध्यान के लिए</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> अतुलनीय बल के धाम, स्वर्ण पर्वत के समान शरीर वाले, दैत्यों के लिए अग्नि के समान, ज्ञानियों में अग्रगण्य, सभी गुणों के निधान, वानरों के स्वामी, रघुपति के प्रिय भक्त, वायुपुत्र हनुमान को नमस्कार।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">ध्यान सिद्धि</span>
+    <span class="mc-benefit">एकाग्रता</span>
+    <span class="mc-benefit">आत्मिक उन्नति</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> ध्यान के आरंभ में यह श्लोक 11 बार पढ़ें। फिर हनुमान जी के रूप का ध्यान करें।</div>
+</div>
+
+<div class="mantra-card" data-cat="dhyan">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">28</span>प्रातः स्मरण श्लोक</div>
+    <span class="mc-badge">प्रातः</span>
+  </div>
+  <div class="mc-sanskrit">
+    बुद्धिर्बलं यशो धैर्यं<br>
+    निर्भयत्वमरोगता ।<br>
+    अजाड्यं वाक्पटुत्वं च<br>
+    हनुमत्स्मरणाद्भवेत् ॥
+    <button class="copy-btn" onclick="copyMantra('बुद्धिर्बलं यशो धैर्यं निर्भयत्वमरोगता । अजाड्यं वाक्पटुत्वं च हनुमत्स्मरणाद्भवेत् ॥')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">1 / 11 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">प्रातः उठते ही</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">कोई भी</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">दिनचर्या</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> बुद्धि, बल, यश, धैर्य, निर्भयता, रोगमुक्ति, जड़ता का नाश, वाकपटुता — ये सब हनुमान जी के स्मरण से प्राप्त होते हैं।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">बुद्धि</span>
+    <span class="mc-benefit">बल</span>
+    <span class="mc-benefit">यश</span>
+    <span class="mc-benefit">धैर्य</span>
+    <span class="mc-benefit">निर्भयता</span>
+    <span class="mc-benefit">स्वास्थ्य</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> प्रातः उठते ही 1 या 11 बार पढ़ें। पूरा दिन सकारात्मक ऊर्जा के साथ बीतेगा।</div>
+</div>
+
+<div class="mantra-card" data-cat="dhyan">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">29</span>मनोजवं श्लोक</div>
+    <span class="mc-badge">स्तुति</span>
+  </div>
+  <div class="mc-sanskrit">
+    मनोजवं मारुततुल्यवेगं,<br>
+    जितेन्द्रियं बुद्धिमतां वरिष्ठम् ।<br>
+    वातात्मजं वानरयूथमुख्यं,<br>
+    श्रीरामदूतं शरणं प्रपद्ये ॥
+    <button class="copy-btn" onclick="copyMantra('मनोजवं मारुततुल्यवेगं, जितेन्द्रियं बुद्धिमतां वरिष्ठम् । वातात्मजं वानरयूथमुख्यं, श्रीरामदूतं शरणं प्रपद्ये ॥')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">11 / 108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">प्रातः / सायं</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">रुद्राक्ष</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">शरणागति</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> मन की गति वाले, वायु के समान वेग वाले, जितेन्द्रिय, बुद्धिमानों में श्रेष्ठ, वायुपुत्र, वानरों के स्वामी, श्रीरामदूत की शरण में हूँ।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">शरणागति</span>
+    <span class="mc-benefit">भय मुक्ति</span>
+    <span class="mc-benefit">रक्षा</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> प्रातः या सायं 11 बार पढ़ें। संकट में 108 बार पढ़ें।</div>
+</div>
+
+<div class="mantra-card" data-cat="dhyan">
+  <div class="mc-head">
+    <div class="mc-title"><span class="mc-num">30</span>हनुमान वंदना</div>
+    <span class="mc-badge">वंदना</span>
+  </div>
+  <div class="mc-sanskrit">
+    अंजनी गर्भ सम्भूत,<br>
+    कपीन्द्र सखा हनुमान ।<br>
+    रामदूत महावीर,<br>
+    संकट मोचन नाम ॥
+    <button class="copy-btn" onclick="copyMantra('अंजनी गर्भ सम्भूत, कपीन्द्र सखा हनुमान । रामदूत महावीर, संकट मोचन नाम ॥')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+  <div class="mc-info">
+    <div class="mc-info-item"><div class="lbl">जप संख्या</div><div class="val">11 / 108 बार</div></div>
+    <div class="mc-info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">कोई भी</div></div>
+    <div class="mc-info-item"><div class="lbl">माला</div><div class="val">कोई भी</div></div>
+    <div class="mc-info-item"><div class="lbl">विशेष</div><div class="val">वंदना</div></div>
+  </div>
+  <div class="mc-meaning"><strong>अर्थ:</strong> अंजना के गर्भ से जन्मे, वानरों के मित्र, राम के दूत, महावीर, संकट मोचन हनुमान — आपको नमस्कार।</div>
+  <div class="mc-benefits">
+    <span class="mc-benefit">वंदना</span>
+    <span class="mc-benefit">संकट मोचन</span>
+    <span class="mc-benefit">भक्ति</span>
+  </div>
+  <div class="mc-howto"><strong>विधि:</strong> किसी भी समय पढ़ सकते हैं। पूजा के आरंभ में 11 बार पढ़ें।</div>
+</div>
+
+<!-- ============================================
+     QUICK REFERENCE TABLE
+============================================ -->
+<div class="cat-header" id="table">
+  <span class="ch-icon">📊</span>
+  <h3>किस समस्या में कौन सा मंत्र?</h3>
+  <span class="ch-count">Quick Reference</span>
+</div>
+
+<div class="mantra-table-wrap">
+  <table class="mantra-table">
+    <thead>
+      <tr>
+        <th>समस्या</th>
+        <th>मंत्र</th>
+        <th>जप संख्या</th>
+        <th>समय</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>संकट / मुसीबत</td>
+        <td>संकट मोचन मंत्र</td>
+        <td>108 / 1008</td>
+        <td>तुरंत</td>
+      </tr>
+      <tr>
+        <td>रोग / बीमारी</td>
+        <td>रोग नाशक मंत्र</td>
+        <td>108 नित्य</td>
+        <td>प्रातः</td>
+      </tr>
+      <tr>
+        <td>शत्रु बाधा</td>
+        <td>शत्रु नाशक मंत्र</td>
+        <td>108</td>
+        <td>मंगल रात्रि</td>
+      </tr>
+      <tr>
+        <td>धन / समृद्धि</td>
+        <td>धन प्राप्ति मंत्र</td>
+        <td>108</td>
+        <td>बुध/गुरु प्रातः</td>
+      </tr>
+      <tr>
+        <td>संतान प्राप्ति</td>
+        <td>संतान प्राप्ति मंत्र</td>
+        <td>108 (40 दिन)</td>
+        <td>मंगल/शुक्र</td>
+      </tr>
+      <tr>
+        <td>विद्या / परीक्षा</td>
+        <td>विद्या प्राप्ति मंत्र</td>
+        <td>108</td>
+        <td>प्रातः</td>
+      </tr>
+      <tr>
+        <td>शनि दोष</td>
+        <td>शनि शांति मंत्र</td>
+        <td>108</td>
+        <td>शनि सायं</td>
+      </tr>
+      <tr>
+        <td>मंगल दोष</td>
+        <td>मंगल शांति मंत्र</td>
+        <td>108</td>
+        <td>मंगल प्रातः</td>
+      </tr>
+      <tr>
+        <td>राहु-केतु दोष</td>
+        <td>राहु-केतु शांति</td>
+        <td>108</td>
+        <td>शनि रात्रि</td>
+      </tr>
+      <tr>
+        <td>कालसर्प दोष</td>
+        <td>पंचमुखी बीज मंत्र</td>
+        <td>108</td>
+        <td>मंगल/शनि</td>
+      </tr>
+      <tr>
+        <td>भय / डर</td>
+        <td>कवच मंत्र</td>
+        <td>108</td>
+        <td>कोई भी</td>
+      </tr>
+      <tr>
+        <td>विवाह बाधा</td>
+        <td>संतान प्राप्ति मंत्र</td>
+        <td>108</td>
+        <td>मंगल/शुक्र</td>
+      </tr>
+      <tr>
+        <td>कर्ज मुक्ति</td>
+        <td>धन प्राप्ति मंत्र</td>
+        <td>108</td>
+        <td>बुध/गुरु</td>
+      </tr>
+      <tr>
+        <td>नौकरी / व्यापार</td>
+        <td>धन प्राप्ति मंत्र</td>
+        <td>108</td>
+        <td>बुध/गुरु</td>
+      </tr>
+      <tr>
+        <td>बुद्धि / एकाग्रता</td>
+        <td>हनुमान गायत्री</td>
+        <td>108</td>
+        <td>प्रातः</td>
+      </tr>
+      <tr>
+        <td>मानसिक शांति</td>
+        <td>ध्यान श्लोक</td>
+        <td>11</td>
+        <td>प्रातः/सायं</td>
+      </tr>
+      <tr>
+        <td>यात्रा रक्षा</td>
+        <td>सर्व रक्षा कवच</td>
+        <td>108</td>
+        <td>यात्रा से पहले</td>
+      </tr>
+      <tr>
+        <td>गृह क्लेश</td>
+        <td>संकट मोचन मंत्र</td>
+        <td>108</td>
+        <td>मंगल/शनि</td>
+      </tr>
+      <tr>
+        <td>पितृ दोष</td>
+        <td>सफेद चोला + मंत्र</td>
+        <td>108</td>
+        <td>अमावस्या</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============================================
+     MANTRA JAP VIDHI
+============================================ -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📿</span> मंत्र जप की सामान्य विधि</h2>
+
+  <div class="puja-step">
+    <div class="puja-num">1</div>
+    <div class="puja-content">
+      <strong>स्नान और शुद्धि</strong>
+      <p>प्रातः स्नान करके स्वच्छ वस्त्र धारण करें। लाल वस्त्र विशेष लाभकारी।</p>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">2</div>
+    <div class="puja-content">
+      <strong>आसन और दिशा</strong>
+      <p>लाल या पीले रंग के आसन पर बैठें। पूर्व या उत्तर दिशा की ओर मुख करें।</p>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">3</div>
+    <div class="puja-content">
+      <strong>दीप और धूप</strong>
+      <p>घी का दीपक जलाएँ। कपूर और धूप करें। लाल चंदन का तिलक करें।</p>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">4</div>
+    <div class="puja-content">
+      <strong>गुरु और गणेश ध्यान</strong>
+      <p>पहले गुरु और गणेश का ध्यान करें। फिर हनुमान जी का ध्यान करें।</p>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">5</div>
+    <div class="puja-content">
+      <strong>माला ग्रहण</strong>
+      <p>लाल रुद्राक्ष या मूंगे की माला लें। माला को गंगाजल से शुद्ध करें।</p>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">6</div>
+    <div class="puja-content">
+      <strong>जप</strong>
+      <p>ध्यान से मंत्र का जप करें। सुमेरु मणि को पार न करें। मन में भक्ति भाव रखें।</p>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">7</div>
+    <div class="puja-content">
+      <strong>हवन / आरती</strong>
+      <p>जप पूर्ण होने पर हवन करें या हनुमान आरती गाएँ।</p>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">8</div>
+    <div class="puja-content">
+      <strong>प्रसाद वितरण</strong>
+      <p>प्रसाद को सभी को वितरित करें। मन्नत किसी को न बताएँ।</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     QUICK LINKS
+============================================ -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="11-bajrang-baan.html" class="cat-chip"><i class="fa-solid fa-bolt"></i> बजरंग बाण</a>
+    <a href="21-mala.html" class="cat-chip"><i class="fa-solid fa-list-ol"></i> जप माला</a>
+    <a href="40-chola-vidhi.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> चोला विधि</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-fire"></i> पूजा विधि</a>
+    <a href="22-108-names.html" class="cat-chip"><i class="fa-solid fa-list-ol"></i> 108 नाम</a>
+    <a href="43-aarti.html" class="cat-chip"><i class="fa-solid fa-music"></i> आरती</a>
+    <a href="72-grah-shanti.html" class="cat-chip"><i class="fa-solid fa-star"></i> ग्रह शांति</a>
+  </div>
+</div>
+
+<!-- No Results -->
+<div class="no-results" id="noResults">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  कोई मंत्र नहीं मिला। कृपया दूसरा शब्द खोजें।
+</div>
+
+<!-- ===== SHARE ===== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">मंत्र कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+/* ===== SEARCH ===== */
+const searchInput = document.getElementById('mantraSearch');
+const mantraCards = document.querySelectorAll('.mantra-card');
+const noResults = document.getElementById('noResults');
+
+searchInput.addEventListener('input', (e) => {
+  const q = e.target.value.toLowerCase().trim();
+  let visibleCount = 0;
+
+  mantraCards.forEach(card => {
+    const text = card.textContent.toLowerCase();
+    const match = !q || text.includes(q);
+    card.style.display = match ? 'block' : 'none';
+    if (match) visibleCount++;
+  });
+
+  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+
+  // Reset category filter
+  document.querySelectorAll('.mantra-cat-chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('.mantra-cat-chip[data-cat="all"]').classList.add('active');
+});
+
+/* ===== CATEGORY FILTER ===== */
+document.querySelectorAll('.mantra-cat-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.mantra-cat-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    const cat = chip.dataset.cat;
+    let visibleCount = 0;
+
+    mantraCards.forEach(card => {
+      const match = cat === 'all' || card.dataset.cat === cat;
+      card.style.display = match ? 'block' : 'none';
+      if (match) visibleCount++;
+    });
+
+    noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    if (cat !== 'all') {
+      searchInput.value = '';
+    }
+  });
+});
+
+/* ===== SMOOTH SCROLL FOR JUMP NAV ===== */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+});
+
+/* ===== STATS COUNTER ANIMATION ===== */
+window.addEventListener('DOMContentLoaded', () => {
+  const statNums = document.querySelectorAll('.stat-num');
+  statNums.forEach((el, i) => {
+    const text = el.textContent;
+    if (text === '∞') return;
+    const num = parseInt(text);
+    if (isNaN(num)) return;
+    let current = 0;
+    const step = Math.max(1, Math.floor(num / 30));
+    const interval = setInterval(() => {
+      current += step;
+      if (current >= num) {
+        current = num;
+        clearInterval(interval);
+      }
+      el.textContent = current + (text.includes('+') ? '+' : '');
+    }, 30);
+  });
+});
+</script>
+</body>
+</html>
