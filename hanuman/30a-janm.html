@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान जी की जन्म कथा — पूर्ण कथा | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी की जन्म कथा — अंजनी माता, केसरी, पवन देव और शिव जी का रुद्रावतार। संपूर्ण जन्म कथा हिंदी में।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.janm-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.janm-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.janm-hero .janm-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.janm-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .janm-hero h2 { color: var(--gold-light); }
+.janm-hero .janm-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.janm-hero .janm-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.janm-hero .janm-meta span { display: flex; align-items: center; gap: 5px; }
+.janm-hero .janm-meta i { color: var(--gold); }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(212,175,55,.12);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid var(--gold);
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+.katha-block .mantra {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.05));
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,.3);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .katha-block .mantra { color: var(--gold-light); }
+
+/* Moral List */
+.moral-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.moral-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.moral-list li i {
+  color: var(--gold);
+  font-size: 14px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Chapter marker */
+.chapter {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .janm-hero .janm-emoji { font-size: 70px; }
+  .janm-hero h2 { font-size: 23px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="30-katha.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान कथाएँ</span>
+    <h1>जन्म कथा</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="janm-hero">
+  <span class="janm-emoji">🌟</span>
+  <h2>हनुमान जी की जन्म कथा</h2>
+  <div class="janm-sub">Rudravatar • Anjani Putra</div>
+  <div class="janm-meta">
+    <span><i class="fa-solid fa-book-open"></i> 4 अध्याय</span>
+    <span><i class="fa-solid fa-clock"></i> 8 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> विस्तृत</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> कथा का सार</h2>
+  <p>हनुमान जी का जन्म चैत्र मास की पूर्णिमा को हुआ था। वे भगवान शिव के 11वें रुद्रावतार हैं। उनकी माता अंजनी और पिता केसरी थे। पवन देव उनके धर्म पिता बने। इसीलिए उन्हें "अंजनी पुत्र", "केसरीनंदन" और "पवनसुत" कहा जाता है।</p>
+  <p>यह कथा वीरता, भक्ति और दिव्य शक्ति का अद्भुत संगम है। पढ़ें पूरी कथा — 4 अध्यायों में।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">जन्म तिथि</div><div class="val">चैत्र पूर्णिमा</div></div>
+    <div class="info-item"><div class="lbl">माता</div><div class="val">अंजनी देवी</div></div>
+    <div class="info-item"><div class="lbl">पिता</div><div class="val">केसरी</div></div>
+    <div class="info-item"><div class="lbl">धर्म पिता</div><div class="val">पवन देव</div></div>
+    <div class="info-item"><div class="lbl">अवतार</div><div class="val">शिव के 11वें रुद्र</div></div>
+    <div class="info-item"><div class="lbl">जन्म स्थान</div><div class="val">अंजनेरी पर्वत</div></div>
+  </div>
+</div>
+
+<!-- ========== अध्याय 1 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 1</span>
+  <h3>📜 अंजनी देवी का वरदान</h3>
+  <p>सतयुग में अंजनी नाम की एक अप्सरा थीं। एक बार वे पृथ्वी पर घूमते हुए एक ऋषि के आश्रम में पहुँचीं। वहाँ उन्होंने एक बंदर का रूप धारण करके ऋषि की सेवा की। लेकिन एक दिन शरारतवश उन्होंने ऋषि का कमंडल तोड़ दिया।</p>
+  <p>क्रोधित ऋषि ने उन्हें श्राप दिया कि वे वानर योनि में जन्म लेंगी। अंजनी ने क्षमा मांगी, तो ऋषि ने कहा — "तुम्हें वानर योनि में जन्म लेना पड़ेगा, लेकिन भगवान शिव के अंश से तुम्हें पुत्र की प्राप्ति होगी।"</p>
+  <p class="highlight">तभी से अंजनी देवी ने वानर राजकुमारी के रूप में जन्म लिया और भगवान शिव की कठोर तपस्या की। उनकी तपस्या से प्रसन्न होकर शिव जी ने वरदान दिया — "मैं स्वयं तुम्हारे पुत्र रूप में जन्म लूंगा।"</p>
+</div>
+
+<!-- ========== अध्याय 2 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 2</span>
+  <h3>🔱 शिव जी का वरदान और पवन देव</h3>
+  <p>अंजनी देवी की तपस्या से प्रसन्न होकर भगवान शिव ने उन्हें वरदान दिया। शिव जी ने कहा — "हे अंजनी, मैं तुम्हारे पुत्र के रूप में जन्म लूंगा। तुम्हारा पुत्र अत्यंत बलशाली, बुद्धिमान और भक्तिमान होगा।"</p>
+  <p>उसी समय वानर राजा केसरी ने अंजनी से विवाह किया। केसरी वानरराज थे और अत्यंत पराक्रमी थे। कुछ समय पश्चात् केसरी और अंजनी ने एक दिव्य बालक को जन्म दिया।</p>
+  <p>उधर, पवन देव ने भी अंजनी और केसरी के पुत्र को अपना पुत्र स्वीकार किया। उन्होंने बालक को अपना आशीर्वाद दिया और उसे दिव्य शक्तियाँ प्रदान कीं।</p>
+  <p class="highlight">इसीलिए हनुमान जी को तीन पिताओं का आशीर्वाद मिला — केसरी (जन्मदाता), पवन देव (धर्म पिता), और शिव जी (अंशदाता)। यही उनकी अद्वितीय शक्ति का रहस्य है।</p>
+</div>
+
+<!-- ========== अध्याय 3 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 3</span>
+  <h3>🌟 हनुमान जी का जन्म</h3>
+  <p>चैत्र मास की पूर्णिमा को सूर्योदय के समय अंजनी देवी ने एक दिव्य बालक को जन्म दिया। बालक का मुख शिव जी के समान तेजस्वी था। उसके जन्म से ही आकाश में दिव्य प्रकाश फैल गया और देवताओं ने पुष्प वर्षा की।</p>
+  <p>बालक का शरीर वज्र के समान कठोर था, मुख चंद्रमा के समान कांतिमान था, और आँखों में अग्नि की चमक थी। उसे देखकर सभी देवता आश्चर्यचकित रह गए।</p>
+  <p>पवन देव ने बालक को अपनी गोद में लिया और उसका नाम रखा — "आंजनेय"। बाद में वे "हनुमान" के नाम से प्रसिद्ध हुए।</p>
+  <p class="mantra">ॐ श्री हनुमते नमः<br><small>हनुमान जी के जन्म पर इस मंत्र का जप करें</small></p>
+</div>
+
+<!-- ========== अध्याय 4 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 4</span>
+  <h3>🌞 बाल हनुमान की पहली लीला</h3>
+  <p>एक दिन बाल हनुमान ने उगते सूर्य को देखा। उन्हें लगा कि यह कोई पका हुआ आम का फल है। वे तुरंत आकाश की ओर उड़े और सूर्य की ओर बढ़ने लगे।</p>
+  <p>उनकी गति इतनी तेज थी कि हवा भी उनके सामने झुक गई। तीनों लोकों में हलचल मच गई। देवता भयभीत हो गए।</p>
+  <p>इंद्र ने अपना वज्र फेंका, जिससे बाल हनुमान का हनु (जबड़ा) टूट गया। इससे उन्हें "हनुमान" नाम मिला — "हनु" का अर्थ जबड़ा और "मान" का अर्थ टूटा हुआ।</p>
+  <p class="highlight">पवन देव अपने पुत्र की दशा देखकर क्रोधित हो गए। उन्होंने पृथ्वी पर वायु का संचार बंद कर दिया। सभी प्राणी हाँफने लगे। तब ब्रह्मा जी ने पवन देव को शांत किया और बाल हनुमान को अमरत्व का वरदान दिया।</p>
+  <p>इस प्रकार बाल हनुमान को सभी देवताओं से अद्भुत वरदान प्राप्त हुए। यही उनकी महाशक्ति का आधार बना।</p>
+</div>
+
+<!-- ========== शिक्षा ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> कथा से शिक्षा</h2>
+  <ul class="moral-list">
+    <li><i class="fa-solid fa-star"></i> <strong>तपस्या का फल:</strong> अंजनी देवी की तपस्या से शिव जी प्रसन्न हुए — धैर्य और श्रद्धा से सब कुछ प्राप्त होता है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>विनम्रता:</strong> अंजनी देवी ने अपनी भूल के लिए क्षमा मांगी — विनम्रता से ही श्राप से मुक्ति मिली।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>तीन पिताओं का आशीर्वाद:</strong> हनुमान जी को तीन पिताओं का आशीर्वाद मिला — यह दर्शाता है कि गुरुजनों का आशीर्वाद सर्वोच्च है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>बाल लीला:</strong> बाल हनुमान की शरारतें भी दिव्य थीं — बच्चों की शरारतें भी भगवान की लीला का हिस्सा हैं।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>अमरत्व:</strong> बाल हनुमान को अमरत्व का वरदान मिला — भक्ति और निर्दोषता से अमरत्व प्राप्त होता है।</li>
+  </ul>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी का जन्म कब हुआ था?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी का जन्म <strong>चैत्र मास की पूर्णिमा</strong> को हुआ था। यह सामान्यतः मार्च-अप्रैल में आती है। इसे हनुमान जयंती के रूप में मनाया जाता है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी के माता-पिता कौन थे?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी की माता <strong>अंजनी देवी</strong> (वानर राजकुमारी) और पिता <strong>केसरी</strong> (वानर राजा) थे। <strong>पवन देव</strong> उनके धर्म पिता थे। <strong>भगवान शिव</strong> उनके अंशदाता थे।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी को "हनुमान" नाम कैसे मिला?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">बाल हनुमान ने सूर्य को पकड़ लिया। इंद्र के वज्र से उनका <strong>हनु (जबड़ा)</strong> टूट गया। "हनु" का अर्थ जबड़ा और "मान" का अर्थ टूटा हुआ — इसलिए उन्हें "हनुमान" कहा गया।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी किसके अवतार हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी भगवान शिव के <strong>11वें रुद्रावतार</strong> हैं। इसीलिए उन्हें "रुद्रात्मकाय" कहा जाता है। उनमें शिव जी का तेज, पवन देव की गति और केसरी का पराक्रम है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी का जन्म स्थान कहाँ है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">मान्यता है कि हनुमान जी का जन्म <strong>अंजनेरी पर्वत</strong> (महाराष्ट्र) पर हुआ था। कुछ मान्यताओं के अनुसार उनका जन्म <strong>गोकर्ण</strong> (कर्नाटक) में भी हुआ।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> सभी कथाएँ</a>
+    <a href="30b-bal-lila.html" class="cat-chip"><i class="fa-solid fa-arrow-right"></i> बाल लीला</a>
+    <a href="30c-surya-dev.html" class="cat-chip"><i class="fa-solid fa-sun"></i> सूर्य देव प्रसंग</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-om"></i> पूजा विधि</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह कथा शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
