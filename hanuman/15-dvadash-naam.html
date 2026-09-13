@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान द्वादश नाम स्तोत्र — 12 नाम अर्थ सहित | Hanuman Dvadash Naam</title>
+<meta name="description" content="हनुमान द्वादश नाम स्तोत्र — 12 पवित्र नाम, हर नाम का अर्थ, लाभ, जप संख्या, विधि और नियम।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+.dv-hero{
+  width:100%;padding:34px 20px 28px;
+  background:radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius:var(--radius);text-align:center;margin:16px 0;
+  border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.dv-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.dv-hero .dv-emoji{
+  font-size:90px;display:block;margin-bottom:10px;
+  filter:drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;z-index:2;
+}
+.dv-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:26px;color:var(--maroon);margin-bottom:6px;
+  position:relative;z-index:2;line-height:1.3;
+}
+body.dark .dv-hero h2{color:var(--gold-light)}
+.dv-hero .dv-sub{
+  font-size:12.5px;color:var(--ink-soft);letter-spacing:2px;
+  text-transform:uppercase;position:relative;z-index:2;
+}
+.dv-hero .dv-meta{
+  display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+  margin-top:14px;font-size:11.5px;color:var(--ink-soft);
+  position:relative;z-index:2;
+}
+.dv-hero .dv-meta span{display:flex;align-items:center;gap:5px}
+.dv-hero .dv-meta i{color:var(--gold)}
+
+.naam-card{
+  background:var(--card-bg);border-radius:14px;padding:18px 16px;
+  margin-bottom:12px;border:1px solid var(--border);
+  border-left:4px solid var(--gold);transition:var(--transition);
+  position:relative;
+}
+.naam-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(122,46,46,.12);border-left-color:var(--saffron)}
+.naam-num{
+  display:inline-block;background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;font-size:11px;font-weight:700;padding:3px 12px;
+  border-radius:20px;margin-bottom:10px;letter-spacing:.5px;
+}
+.naam-title{
+  font-family:'Tiro Devanagari Hindi',serif;font-size:18px;
+  color:var(--maroon);font-weight:700;margin-bottom:8px;line-height:1.4;
+}
+body.dark .naam-title{color:var(--gold-light)}
+.naam-mantra{
+  font-family:'Tiro Devanagari Hindi',serif;font-size:15px;
+  color:var(--maroon);background:rgba(212,175,55,.12);
+  padding:10px 12px;border-radius:8px;text-align:center;
+  margin-bottom:10px;line-height:1.9;
+}
+body.dark .naam-mantra{color:var(--gold-light)}
+.naam-info{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+@media(max-width:400px){.naam-info{grid-template-columns:1fr}}
+.naam-info-item{
+  background:var(--bg-alt);padding:8px 10px;border-radius:8px;
+  border:1px solid var(--border);
+}
+.naam-info-item .lbl{
+  font-size:9.5px;color:var(--ink-light);text-transform:uppercase;
+  letter-spacing:.6px;font-weight:500;
+}
+.naam-info-item .val{
+  font-size:12.5px;color:var(--maroon);font-weight:600;margin-top:2px;
+}
+body.dark .naam-info-item .val{color:var(--gold-light)}
+.naam-meaning{
+  font-size:13.5px;color:var(--ink-soft);line-height:1.85;
+  background:var(--bg-alt);border-radius:8px;padding:10px 12px;
+  border-left:3px solid var(--gold);
+}
+.naam-meaning strong{color:var(--maroon)}
+body.dark .naam-meaning strong{color:var(--gold-light)}
+.naam-copy{
+  position:absolute;top:12px;right:12px;
+  width:28px;height:28px;border-radius:50%;border:none;
+  background:rgba(122,46,46,.1);color:var(--maroon);font-size:11px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:var(--transition);
+}
+.naam-copy:hover{background:var(--maroon);color:#fff}
+body.dark .naam-copy{color:var(--gold-light);background:rgba(212,175,55,.15)}
+
+.cycle-box{
+  background:linear-gradient(135deg,rgba(212,175,55,.15),rgba(122,46,46,.06));
+  border-radius:14px;padding:18px;border-left:4px solid var(--gold);
+  margin:14px 0;text-align:center;
+}
+.cycle-box h4{
+  font-family:'Tiro Devanagari Hindi',serif;font-size:16px;
+  color:var(--maroon);margin-bottom:10px;
+}
+body.dark .cycle-box h4{color:var(--gold-light)}
+.cycle-name{
+  display:inline-block;margin:4px;padding:6px 14px;
+  background:var(--card-bg);border:1px solid var(--border);
+  border-radius:20px;font-size:12.5px;color:var(--maroon);
+  font-weight:600;
+}
+body.dark .cycle-name{color:var(--gold-light)}
+.cycle-arrow{color:var(--gold);font-size:16px;margin:0 4px}
+
+.faq-item{
+  background:var(--bg-alt);border-radius:12px;margin-bottom:10px;
+  overflow:hidden;border:1px solid var(--border);
+}
+.faq-q{
+  padding:14px 15px;cursor:pointer;display:flex;
+  justify-content:space-between;align-items:center;gap:10px;
+  font-family:'Tiro Devanagari Hindi',serif;font-size:14px;
+  color:var(--maroon);font-weight:600;
+}
+body.dark .faq-q{color:var(--gold-light)}
+.faq-q i{color:var(--gold);font-size:12px;transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q i{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
+.faq-item.open .faq-a{max-height:1000px}
+.faq-a-inner{
+  padding:0 15px 15px;font-size:13px;color:var(--ink-soft);
+  line-height:1.85;border-top:1px dashed var(--border);padding-top:12px;
+}
+.faq-a-inner strong{color:var(--maroon)}
+body.dark .faq-a-inner strong{color:var(--gold-light)}
+
+.dv-benefits{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.dv-benefit{
+  padding:8px 14px;
+  background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(255,107,53,.1));
+  border:1px solid var(--gold);border-radius:30px;
+  font-size:12.5px;color:var(--maroon);font-weight:600;
+  display:flex;align-items:center;gap:6px;
+}
+body.dark .dv-benefit{color:var(--gold-light)}
+.dv-benefit i{font-size:11px;color:var(--saffron)}
+
+.dv-info{
+  background:linear-gradient(135deg, rgba(212,175,55,.14), rgba(122,46,46,.06));
+  border-radius:14px;padding:16px 18px;border-left:4px solid var(--gold);
+  margin:14px 0;
+}
+.dv-info h4{
+  font-family:'Tiro Devanagari Hindi',serif;font-size:16px;
+  color:var(--maroon);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+body.dark .dv-info h4{color:var(--gold-light)}
+.dv-info ul{padding-left:20px;margin:6px 0}
+.dv-info li{
+  font-size:13.5px;line-height:1.85;color:var(--ink-soft);margin-bottom:6px;
+}
+.dv-info li strong{color:var(--maroon)}
+body.dark .dv-info li strong{color:var(--gold-light)}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>द्वादश नाम स्तोत्र</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<div class="dv-hero">
+  <span class="dv-emoji">📿</span>
+  <h2>द्वादश नाम स्तोत्र</h2>
+  <div class="dv-sub">12 पवित्र नाम · सर्व कल्याण</div>
+  <div class="dv-meta">
+    <span><i class="fa-solid fa-list-ol"></i> 12 नाम</span>
+    <span><i class="fa-solid fa-clock"></i> ~3 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> अर्थ सहित</span>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> द्वादश नाम स्तोत्र के बारे में</h2>
+  <p><strong>हनुमान द्वादश नाम स्तोत्र</strong> हनुमान जी के <strong>12 प्रमुख नामों</strong> का संग्रह है। "द्वादश" का अर्थ है <strong>बारह</strong>। इन 12 नामों का नित्य जप करने से जीवन के सभी क्षेत्रों में सफलता मिलती है।</p>
+  <p>यह स्तोत्र <strong>पद्म पुराण</strong> में वर्णित है। माना जाता है कि भगवान शिव ने स्वयं माता पार्वती को यह स्तोत्र बताया था। हर नाम का <strong>अलग अर्थ, अलग लाभ और अलग जप विधि</strong> है।</p>
+  <p>जो भक्त श्रद्धा से इन 12 नामों का जप करता है, उसे <strong>हनुमान जी की विशेष कृपा</strong> प्राप्त होती है।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">स्रोत</div><div class="val">पद्म पुराण</div></div>
+    <div class="info-item"><div class="lbl">नाम संख्या</div><div class="val">12</div></div>
+    <div class="info-item"><div class="lbl">पाठ समय</div><div class="val">~3 मिनट</div></div>
+    <div class="info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगल, शनि</div></div>
+    <div class="info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">प्रातः 5-7 बजे</div></div>
+    <div class="info-item"><div class="lbl">जप संख्या</div><div class="val">108 (हर नाम)</div></div>
+  </div>
+</div>
+
+<div class="cycle-box">
+  <h4>🔄 जप चक्र — 12 नाम</h4>
+  <p style="font-size:12.5px;color:var(--ink-soft);margin-bottom:10px;">
+    एक-एक नाम का 108 बार जप करें, या पूरे स्तोत्र का 12 बार पाठ करें
+  </p>
+  <div>
+    <span class="cycle-name">हनुमान</span><span class="cycle-arrow">→</span>
+    <span class="cycle-name">अंजनीसुत</span><span class="cycle-arrow">→</span>
+    <span class="cycle-name">वायुपुत्र</span><span class="cycle-arrow">→</span>
+    <span class="cycle-name">महावीर</span><span class="cycle-arrow">→</span>
+    <span class="cycle-name">बजरंगबली</span><span class="cycle-arrow">→</span>
+    <span class="cycle-name">संकटमोचन</span><span class="cycle-arrow">→</span>
+    <span class="cycle-name">रामदूत</span><span class="cycle-arrow">→</span>
+    <span class="cycle-name">कपीश्वर</span><span class="cycle-arrow">→</span>
+    <span class="cycle-name">रुद्रात्मक</span><span class="cycle-arrow">→</span>
+    <span class="cycle-name">अंजनेय</span><span class="cycle-arrow">→</span>
+    <span class="cycle-name">वानर</span><span class="cycle-arrow">→</span>
+    <span class="cycle-name">श्री हनुमते</span>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🔸</span> हनुमान जी के 12 नाम</h2>
+
+  <div class="naam-card">
+    <button class="naam-copy" onclick="copyMantra('ॐ हनुमानाय नमः')"><i class="fa-solid fa-copy"></i></button>
+    <span class="naam-num">नाम 1</span>
+    <div class="naam-title">हनुमान</div>
+    <div class="naam-mantra">ॐ हनुमानाय नमः</div>
+    <div class="naam-info">
+      <div class="naam-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+      <div class="naam-info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगलवार</div></div>
+    </div>
+    <div class="naam-meaning"><strong>अर्थ:</strong> "हनु" (ज्ञान) + "मान" (सम्मान) = ज्ञान और सम्मान वाले। जिनकी हनुवटी का चिह्न प्रसिद्ध है।<br><br><strong>लाभ:</strong> बुद्धि वृद्धि, सम्मान प्राप्ति, बल वृद्धि</div>
+  </div>
+
+  <div class="naam-card">
+    <button class="naam-copy" onclick="copyMantra('ॐ अंजनीसुताय नमः')"><i class="fa-solid fa-copy"></i></button>
+    <span class="naam-num">नाम 2</span>
+    <div class="naam-title">अंजनीसुत</div>
+    <div class="naam-mantra">ॐ अंजनीसुताय नमः</div>
+    <div class="naam-info">
+      <div class="naam-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+      <div class="naam-info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगलवार</div></div>
+    </div>
+    <div class="naam-meaning"><strong>अर्थ:</strong> माता अंजना के पुत्र। जो माता के पुत्र रूप में प्रसिद्ध हैं।<br><br><strong>लाभ:</strong> माता का आशीर्वाद, संतान सुख, मातृ-पुत्र प्रेम</div>
+  </div>
+
+  <div class="naam-card">
+    <button class="naam-copy" onclick="copyMantra('ॐ वायुपुत्राय नमः')"><i class="fa-solid fa-copy"></i></button>
+    <span class="naam-num">नाम 3</span>
+    <div class="naam-title">वायुपुत्र</div>
+    <div class="naam-mantra">ॐ वायुपुत्राय नमः</div>
+    <div class="naam-info">
+      <div class="naam-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+      <div class="naam-info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगलवार</div></div>
+    </div>
+    <div class="naam-meaning"><strong>अर्थ:</strong> वायु देव के पुत्र। जो पवन के समान वेगवान हैं।<br><br><strong>लाभ:</strong> श्वास रोग में लाभ, गति, ऊर्जा, शीघ्र कार्य सिद्धि</div>
+  </div>
+
+  <div class="naam-card">
+    <button class="naam-copy" onclick="copyMantra('ॐ महावीराय नमः')"><i class="fa-solid fa-copy"></i></button>
+    <span class="naam-num">नाम 4</span>
+    <div class="naam-title">महावीर</div>
+    <div class="naam-mantra">ॐ महावीराय नमः</div>
+    <div class="naam-info">
+      <div class="naam-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+      <div class="naam-info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगलवार</div></div>
+    </div>
+    <div class="naam-meaning"><strong>अर्थ:</strong> महान वीरता वाले। जो अद्वितीय बलशाली हैं।<br><br><strong>लाभ:</strong> साहस, वीरता, आत्मविश्वास, शत्रु नाश</div>
+  </div>
+
+  <div class="naam-card">
+    <button class="naam-copy" onclick="copyMantra('ॐ बजरंगबलाय नमः')"><i class="fa-solid fa-copy"></i></button>
+    <span class="naam-num">नाम 5</span>
+    <div class="naam-title">बजरंगबली</div>
+    <div class="naam-mantra">ॐ बजरंगबलाय नमः</div>
+    <div class="naam-info">
+      <div class="naam-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+      <div class="naam-info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगल, शनि</div></div>
+    </div>
+    <div class="naam-meaning"><strong>अर्थ:</strong> वज्र के समान शरीर और बल वाले। जिनका शरीर अभेद्य है।<br><br><strong>लाभ:</strong> शारीरिक बल, रोग नाश, दुर्घटना से रक्षा</div>
+  </div>
+
+  <div class="naam-card">
+    <button class="naam-copy" onclick="copyMantra('ॐ संकटमोचनाय नमः')"><i class="fa-solid fa-copy"></i></button>
+    <span class="naam-num">नाम 6</span>
+    <div class="naam-title">संकट मोचन</div>
+    <div class="naam-mantra">ॐ संकटमोचनाय नमः</div>
+    <div class="naam-info">
+      <div class="naam-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+      <div class="naam-info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">तुरंत (आपातकाल)</div></div>
+    </div>
+    <div class="naam-meaning"><strong>अर्थ:</strong> संकट हरने वाले। जो भक्तों के सभी कष्ट दूर करते हैं।<br><br><strong>लाभ:</strong> सभी संकटों से मुक्ति, भय नाश, आपातकालीन रक्षा</div>
+  </div>
+
+  <div class="naam-card">
+    <button class="naam-copy" onclick="copyMantra('ॐ रामदूताय नमः')"><i class="fa-solid fa-copy"></i></button>
+    <span class="naam-num">नाम 7</span>
+    <div class="naam-title">रामदूत</div>
+    <div class="naam-mantra">ॐ रामदूताय नमः</div>
+    <div class="naam-info">
+      <div class="naam-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+      <div class="naam-info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगलवार</div></div>
+    </div>
+    <div class="naam-meaning"><strong>अर्थ:</strong> भगवान श्री राम के दूत। जो राम के परम भक्त हैं।<br><br><strong>लाभ:</strong> राम भक्ति, राम कृपा, मोक्ष, भक्ति वृद्धि</div>
+  </div>
+
+  <div class="naam-card">
+    <button class="naam-copy" onclick="copyMantra('ॐ कपीश्वराय नमः')"><i class="fa-solid fa-copy"></i></button>
+    <span class="naam-num">नाम 8</span>
+    <div class="naam-title">कपीश्वर</div>
+    <div class="naam-mantra">ॐ कपीश्वराय नमः</div>
+    <div class="naam-info">
+      <div class="naam-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+      <div class="naam-info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगलवार</div></div>
+    </div>
+    <div class="naam-meaning"><strong>अर्थ:</strong> वानरों के स्वामी। जो कपि (वानर) सेनापति हैं।<br><br><strong>लाभ:</strong> नेतृत्व क्षमता, शत्रु नाश, विजय</div>
+  </div>
+
+  <div class="naam-card">
+    <button class="naam-copy" onclick="copyMantra('ॐ रुद्रात्मकाय नमः')"><i class="fa-solid fa-copy"></i></button>
+    <span class="naam-num">नाम 9</span>
+    <div class="naam-title">रुद्रात्मक</div>
+    <div class="naam-mantra">ॐ रुद्रात्मकाय नमः</div>
+    <div class="naam-info">
+      <div class="naam-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+      <div class="naam-info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगल, शनि</div></div>
+    </div>
+    <div class="naam-meaning"><strong>अर्थ:</strong> रुद्र (भगवान शिव) के अवतार। जो शिव के 11वें रुद्र हैं।<br><br><strong>लाभ:</strong> शिव कृपा, आत्मिक उन्नति, मोक्ष</div>
+  </div>
+
+  <div class="naam-card">
+    <button class="naam-copy" onclick="copyMantra('ॐ अंजनेयाय नमः')"><i class="fa-solid fa-copy"></i></button>
+    <span class="naam-num">नाम 10</span>
+    <div class="naam-title">अंजनेय</div>
+    <div class="naam-mantra">ॐ अंजनेयाय नमः</div>
+    <div class="naam-info">
+      <div class="naam-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+      <div class="naam-info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगलवार</div></div>
+    </div>
+    <div class="naam-meaning"><strong>अर्थ:</strong> अंजना के पुत्र। जो अंजना देवी के आनंद हैं।<br><br><strong>लाभ:</strong> माता-पिता की सेवा, गुरु कृपा, संतान सुख</div>
+  </div>
+
+  <div class="naam-card">
+    <button class="naam-copy" onclick="copyMantra('ॐ वानराय नमः')"><i class="fa-solid fa-copy"></i></button>
+    <span class="naam-num">नाम 11</span>
+    <div class="naam-title">वानर</div>
+    <div class="naam-mantra">ॐ वानराय नमः</div>
+    <div class="naam-info">
+      <div class="naam-info-item"><div class="lbl">जप संख्या</div><div class="val">108 बार</div></div>
+      <div class="naam-info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगलवार</div></div>
+    </div>
+    <div class="naam-meaning"><strong>अर्थ:</strong> वानर रूप धारी। जो वानर रूप में प्रकट हुए।<br><br><strong>लाभ:</strong> चंचलता शांति, मन संयम, एकाग्रता</div>
+  </div>
+
+  <div class="naam-card">
+    <button class="naam-copy" onclick="copyMantra('ॐ श्री हनुमते नमः')"><i class="fa-solid fa-copy"></i></button>
+    <span class="naam-num">नाम 12</span>
+    <div class="naam-title">श्री हनुमते</div>
+    <div class="naam-mantra">ॐ श्री हनुमते नमः</div>
+    <div class="naam-info">
+      <div class="naam-info-item"><div class="lbl">जप संख्या</div><div class="val">108 / 1008 बार</div></div>
+      <div class="naam-info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगल, शनि</div></div>
+    </div>
+    <div class="naam-meaning"><strong>अर्थ:</strong> श्री हनुमान जी को नमस्कार। यह मूल मंत्र है।<br><br><strong>लाभ:</strong> सभी मनोकामनाओं की पूर्ति, सर्व कल्याण</div>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🪔</span> जप विधि</h2>
+  <div class="dv-info">
+    <h4><i class="fa-solid fa-list-check"></i> द्वादश नाम जप कैसे करें?</h4>
+    <ul>
+      <li><strong>स्नान:</strong> स्नान करके स्वच्छ वस्त्र धारण करें</li>
+      <li><strong>समय:</strong> ब्रह्म मुहूर्त (4-6 AM) सर्वश्रेष्ठ</li>
+      <li><strong>दिशा:</strong> पूर्व दिशा की ओर मुख करें</li>
+      <li><strong>माला:</strong> लाल रुद्राक्ष या मूंगा माला</li>
+      <li><strong>विधि:</strong> पहले हनुमान जी का ध्यान करें, फिर 12 नामों का जप करें</li>
+      <li><strong>संख्या:</strong> हर नाम 108 बार, या पूरा स्तोत्र 12 बार</li>
+      <li><strong>अंत:</strong> हनुमान चालीसा और आरती</li>
+    </ul>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> द्वादश नाम जप के लाभ</h2>
+  <div class="dv-benefits">
+    <span class="dv-benefit"><i class="fa-solid fa-check"></i> सर्व मनोकामना पूर्ति</span>
+    <span class="dv-benefit"><i class="fa-solid fa-check"></i> संकट मोचन</span>
+    <span class="dv-benefit"><i class="fa-solid fa-check"></i> रोग नाश</span>
+    <span class="dv-benefit"><i class="fa-solid fa-check"></i> शत्रु नाश</span>
+    <span class="dv-benefit"><i class="fa-solid fa-check"></i> बल वृद्धि</span>
+    <span class="dv-benefit"><i class="fa-solid fa-check"></i> बुद्धि वृद्धि</span>
+    <span class="dv-benefit"><i class="fa-solid fa-check"></i> भय मुक्ति</span>
+    <span class="dv-benefit"><i class="fa-solid fa-check"></i> धन प्राप्ति</span>
+    <span class="dv-benefit"><i class="fa-solid fa-check"></i> संतान सुख</span>
+    <span class="dv-benefit"><i class="fa-solid fa-check"></i> विद्या प्राप्ति</span>
+    <span class="dv-benefit"><i class="fa-solid fa-check"></i> राम कृपा</span>
+    <span class="dv-benefit"><i class="fa-solid fa-check"></i> मोक्ष प्राप्ति</span>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>द्वादश नाम स्तोत्र कब पढ़ना चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <ul style="padding-left:20px;">
+          <li><strong>प्रातः 5-7 बजे</strong> — सर्वश्रेष्ठ</li>
+          <li><strong>मंगलवार और शनिवार</strong> — विशेष फलदायी</li>
+          <li><strong>संकट के समय</strong> — तुरंत</li>
+          <li><strong>हनुमान जयंती</strong> — विशेष</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या 12 नामों को एक साथ जपना चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>हाँ!</strong> आप 12 नामों को एक साथ जप सकते हैं — "ॐ हनुमानाय नमः, ॐ अंजनीसुताय नमः..." इस प्रकार। या फिर <strong>एक नाम को 108 बार</strong> जपें, फिर दूसरा। दोनों विधियाँ सही हैं।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या महिलाएँ द्वादश नाम जप सकती हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>हाँ, बिल्कुल!</strong> महिलाएँ जप सकती हैं। लेकिन <strong>मासिक धर्म</strong> के दौरान न करें। स्नान करके स्वच्छ वस्त्र पहनें।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>कितने दिन तक जप करना चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>40 दिन का अनुष्ठान</strong> सर्वश्रेष्ठ माना जाता है। यदि रोज़ 12 नाम × 108 बार जप करें, तो 40 दिन में विशेष फल मिलता है। लेकिन <strong>नित्य जप</strong> भी बहुत फलदायी है।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या घर पर जप कर सकते हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>हाँ!</strong> घर के पूजा स्थल पर, पूर्व दिशा की ओर मुख करके, हनुमान जी की मूर्ति के सामने जप करें। घर पर जप पूर्ण फल देता है।
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="11-bajrang-baan.html" class="cat-chip"><i class="fa-solid fa-bolt"></i> बजरंग बाण</a>
+    <a href="12-hanuman-ashtak.html" class="cat-chip"><i class="fa-solid fa-fire"></i> अष्टक</a>
+    <a href="16-kavach.html" class="cat-chip"><i class="fa-solid fa-shield"></i> कवच</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="01-parichay.html" class="cat-chip"><i class="fa-solid fa-book"></i> परिचय</a>
+  </div>
+</div>
+
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
