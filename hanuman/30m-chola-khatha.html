@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>चोला चढ़ाने की कथा — हनुमान जी | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी को चोला चढ़ाने की कथा — सिंदूर और तेल से चोला, माता अंजनी, सीता माता का वरदान और चोला चढ़ाने की विधि।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.chola-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(220,20,60,.45), transparent 65%),
+    linear-gradient(135deg, rgba(178,34,34,.28), rgba(212,175,55,.18));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.chola-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(220,20,60,.18), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.chola-hero .chola-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 30px rgba(220,20,60,.85));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.chola-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .chola-hero h2 { color: var(--gold-light); }
+.chola-hero .chola-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.chola-hero .chola-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.chola-hero .chola-meta span { display: flex; align-items: center; gap: 5px; }
+.chola-hero .chola-meta i { color: var(--gold); }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(220,20,60,.08);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #DC143C;
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+.katha-block .mantra {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.05));
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,.3);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .katha-block .mantra { color: var(--gold-light); }
+
+/* Steps */
+.vidhi-step {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.vidhi-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+.vidhi-content { flex: 1; }
+.vidhi-content strong {
+  display: block;
+  font-size: 14px;
+  color: var(--maroon);
+  margin-bottom: 3px;
+}
+body.dark .vidhi-content strong { color: var(--gold-light); }
+.vidhi-content p {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Moral List */
+.moral-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.moral-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.moral-list li i {
+  color: var(--gold);
+  font-size: 14px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Chapter marker */
+.chapter {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .chola-hero .chola-emoji { font-size: 70px; }
+  .chola-hero h2 { font-size: 23px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="30-katha.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान कथाएँ</span>
+    <h1>चोला चढ़ाने की कथा</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="chola-hero">
+  <span class="chola-emoji">🧵</span>
+  <h2>चोला चढ़ाने की कथा</h2>
+  <div class="chola-sub">Sindoor • Chola • Bhakti</div>
+  <div class="chola-meta">
+    <span><i class="fa-solid fa-book-open"></i> 4 अध्याय</span>
+    <span><i class="fa-solid fa-clock"></i> 5 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> विधि सहित</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> कथा का सार</h2>
+  <p>यह कथा बताती है कि हनुमान जी को सिंदूर और तेल से चोला चढ़ाने की परंपरा कैसे शुरू हुई। एक बार माता अंजनी ने हनुमान जी को सिंदूर लगाते देखा और पूछा — "पुत्र, तुम यह क्यों लगाते हो?" हनुमान जी ने कहा — "माता, यह श्रीराम की भक्ति का प्रतीक है।" यह सुनकर माता अंजनी ने पूरे शरीर पर सिंदूर लगा दिया — तभी से चोला चढ़ाने की परंपरा शुरू हुई।</p>
+  <p>यह कथा भक्ति, प्रेम और समर्पण की अद्भुत कहानी है। पढ़ें पूरी कथा — 4 अध्यायों में।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">मुख्य पात्र</div><div class="val">हनुमान, अंजनी</div></div>
+    <div class="info-item"><div class="lbl">सामग्री</div><div class="val">सिंदूर + तेल</div></div>
+    <div class="info-item"><div class="lbl">प्रतीक</div><div class="val">भक्ति और समर्पण</div></div>
+    <div class="info-item"><div class="lbl">दिन</div><div class="val">मंगलवार/शनिवार</div></div>
+    <div class="info-item"><div class="lbl">लाभ</div><div class="val">मनोकामना पूर्ण</div></div>
+    <div class="info-item"><div class="lbl">विधि</div><div class="val">पूर्ण विधान सहित</div></div>
+  </div>
+</div>
+
+<!-- ========== अध्याय 1 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 1</span>
+  <h3>👩 माता अंजनी का प्रश्न</h3>
+  <p>एक समय की बात है, जब हनुमान जी बाल्यकाल में थे। वे प्रतिदिन प्रातःकाल स्नान करके श्रीराम का ध्यान करते और अपने माथे पर सिंदूर लगाते। उनकी माता अंजनी देवी यह देखतीं और आश्चर्यचकित रह जातीं।</p>
+  <p>एक दिन माता अंजनी ने हनुमान जी से पूछा — "पुत्र, तुम प्रतिदिन अपने माथे पर यह लाल रंग क्यों लगाते हो? यह क्या है?"</p>
+  <p class="highlight">हनुमान जी ने विनम्रता से उत्तर दिया — "हे माता, यह सिंदूर है। यह श्रीराम की भक्ति का प्रतीक है। जितना सिंदूर मैं लगाता हूँ, उतनी ही मेरी भक्ति बढ़ती है। मैं चाहता हूँ कि मेरी भक्ति असीम हो जाए।"</p>
+  <p>माता अंजनी ने पूछा — "तो क्या तुम्हें और सिंदूर चाहिए?" हनुमान जी ने कहा — "हे माता, यदि मेरे पूरे शरीर पर सिंदूर लग जाए, तो मेरी भक्ति भी पूर्ण हो जाएगी।"</p>
+</div>
+
+<!-- ========== अध्याय 2 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 2</span>
+  <h3>🧵 चोला चढ़ाने की परंपरा</h3>
+  <p>माता अंजनी ने हनुमान जी की बात सुनी और मुस्कुराईं। उन्होंने सिंदूर को चमेली के तेल में मिलाया और हनुमान जी के पूरे शरीर पर लगा दिया। हनुमान जी का पूरा शरीर लाल-नारंगी रंग में रंग गया।</p>
+  <p>तभी से हनुमान जी को सिंदूर और तेल से <strong>चोला</strong> चढ़ाने की परंपरा शुरू हुई। यह परंपरा आज भी भारत के सभी हनुमान मंदिरों में प्रचलित है।</p>
+  <p class="highlight">चोला चढ़ाने का अर्थ है — अपनी भक्ति को पूर्ण रूप से समर्पित करना। जो भक्त हनुमान जी को चोला चढ़ाता है, वह अपनी भक्ति और समर्पण को प्रकट करता है।</p>
+  <p>चोला चढ़ाने से हनुमान जी अत्यंत प्रसन्न होते हैं और भक्त की सभी मनोकामनाएं पूर्ण करते हैं। यह भक्ति का सबसे सुंदर रूप है।</p>
+  <p class="mantra">ॐ श्री हनुमते नमः<br><small>चोला चढ़ाने की परंपरा का स्मरण करें</small></p>
+</div>
+
+<!-- ========== अध्याय 3 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 3</span>
+  <h3>🌸 सीता माता का वरदान</h3>
+  <p>एक अन्य कथा के अनुसार, जब हनुमान जी लंका से सीता माता का संदेश लेकर श्रीराम के पास पहुँचे, तब सीता माता ने हनुमान जी को देखा — उनका पूरा शरीर सिंदूर से रंगा हुआ था।</p>
+  <p>सीता माता ने पूछा — "हे हनुमान, तुम्हारे शरीर पर यह सिंदूर क्यों है?" हनुमान जी ने विनम्रता से कहा — "हे माता, यह मेरे प्रभु श्रीराम की भक्ति का प्रतीक है।"</p>
+  <p class="highlight">सीता माता ने हनुमान जी की भक्ति से प्रसन्न होकर उन्हें वरदान दिया — "हे हनुमान, जो भी भक्त श्रद्धा से तुम्हें सिंदूर और तेल का चोला चढ़ाएगा, उसकी सभी मनोकामनाएं पूर्ण होंगी।"</p>
+  <p>तभी से चोला चढ़ाने की परंपरा और भी प्रचलित हो गई। आज भी मंगलवार और शनिवार को हनुमान जी को चोला चढ़ाया जाता है।</p>
+</div>
+
+<!-- ========== अध्याय 4 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 4</span>
+  <h3>🪔 चोला चढ़ाने की विधि</h3>
+  <div class="vidhi-step">
+    <div class="vidhi-num">1</div>
+    <div class="vidhi-content">
+      <strong>स्नान और शुद्धि</strong>
+      <p>प्रातः स्नान करके स्वच्छ लाल या पीले वस्त्र धारण करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">2</div>
+    <div class="vidhi-content">
+      <strong>सामग्री तैयार करें</strong>
+      <p>सिंदूर और चमेली का तेल लें। दोनों को मिलाकर लेप बनाएं।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">3</div>
+    <div class="vidhi-content">
+      <strong>संकल्प लें</strong>
+      <p>हनुमान जी के सामने अपनी मनोकामना कहें और चोला चढ़ाने का संकल्प लें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">4</div>
+    <div class="vidhi-content">
+      <strong>चोला चढ़ाएं</strong>
+      <p>मूर्ति के माथे से चरणों तक सिंदूर-तेल का लेप लगाएं।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">5</div>
+    <div class="vidhi-content">
+      <strong>मंत्र जप</strong>
+      <p>"ॐ हं हनुमते रुद्रात्मकाय हुं फट्" का 108 बार जप करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">6</div>
+    <div class="vidhi-content">
+      <strong>चालीसा पाठ</strong>
+      <p>हनुमान चालीसा का पाठ करें।</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">7</div>
+    <div class="vidhi-content">
+      <strong>भोग और आरती</strong>
+      <p>केला, बूंदी का लड्डू अर्पित करें। आरती करें और प्रसाद बांटें।</p>
+    </div>
+  </div>
+  <p class="mantra">ॐ श्री हनुमते नमः<br><small>चोला चढ़ाने की विधि का पालन करें</small></p>
+</div>
+
+<!-- ========== शिक्षा ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> कथा से शिक्षा</h2>
+  <ul class="moral-list">
+    <li><i class="fa-solid fa-star"></i> <strong>भक्ति का प्रतीक:</strong> सिंदूर भक्ति का प्रतीक है — भक्ति से भगवान प्रसन्न होते हैं।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>माता का प्रेम:</strong> माता अंजनी ने पूरे शरीर पर सिंदूर लगाया — माता का प्रेम अत्यंत गहरा होता है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>समर्पण:</strong> चोला चढ़ाना समर्पण का प्रतीक है — समर्पण से ही सच्ची भक्ति प्रकट होती है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>सीता माता का वरदान:</strong> चोला चढ़ाने से मनोकामना पूर्ण होती है — भक्ति से सब कुछ प्राप्त होता है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>विधि का महत्व:</strong> चोला चढ़ाने की विधि का पालन करना चाहिए — विधि से ही फल प्राप्त होता है।</li>
+  </ul>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी को चोला क्यों चढ़ाते हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">चोला चढ़ाना भक्ति और समर्पण का प्रतीक है। माता अंजनी ने हनुमान जी के पूरे शरीर पर सिंदूर लगाया था — तभी से चोला चढ़ाने की परंपरा शुरू हुई। चोला चढ़ाने से हनुमान जी प्रसन्न होते हैं।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>चोला चढ़ाने में क्या सामग्री लगती है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">चोला चढ़ाने के लिए <strong>सिंदूर और चमेली का तेल</strong> लगता है। दोनों को मिलाकर लेप बनाया जाता है। इसके अलावा लाल पुष्प, केला, बूंदी का लड्डू और गंगाजल भी चढ़ाया जाता है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>चोला कब चढ़ाना चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">चोला <strong>मंगलवार</strong> और <strong>शनिवार</strong> को चढ़ाना सर्वोत्तम है। इसके अलावा हनुमान जयंती, दीपावली और नवरात्रि में भी चोला चढ़ाया जा सकता है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>चोला चढ़ाने का क्या लाभ है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">चोला चढ़ाने से <strong>संकट दूर होते हैं, रोग नष्ट होते हैं, शत्रु शांत होते हैं, आर्थिक समृद्धि आती है, और मनोकामना पूर्ण होती है</strong>। सीता माता ने स्वयं यह वरदान दिया था।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या घर पर चोला चढ़ा सकते हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हाँ, घर पर भी चोला चढ़ा सकते हैं। मूर्ति को स्नान कराएं, सिंदूर-तेल का लेप बनाएं और विधिपूर्वक चोला चढ़ाएं। मंत्र जप करें और प्रसाद वितरित करें।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> सभी कथाएँ</a>
+    <a href="30l-hanuman-aur-kaal.html" class="cat-chip"><i class="fa-solid fa-arrow-left"></i> हनुमान और काल</a>
+    <a href="40-chola-vidhi.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> चोला विधि</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-om"></i> पूजा विधि</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह कथा शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
