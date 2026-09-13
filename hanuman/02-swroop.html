@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान जी का स्वरूप — अष्टमूर्ति, पंचमुखी, सभी रूप | Hanuman Ji Forms</title>
+<meta name="description" content="हनुमान जी के सभी स्वरूप — पंचमुखी, अष्टमूर्ति, बाल रूप, वीर रूप, भक्त रूप, सूक्ष्म रूप, विराट रूप और हर रूप की विस्तृत कथा।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* Swroop page specific */
+.swroop-hero-visual{
+  width:100%;
+  aspect-ratio:1;
+  max-width:320px;
+  margin:0 auto 20px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(212,175,55,.5), transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(255,107,53,.3), transparent 70%),
+    linear-gradient(135deg, rgba(122,46,46,.15), rgba(212,175,55,.1));
+  border:3px solid var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:140px;
+  position:relative;
+  animation:swroopPulse 4s ease-in-out infinite;
+  box-shadow:0 0 60px rgba(212,175,55,.4);
+}
+@keyframes swroopPulse{
+  0%,100%{transform:scale(1);box-shadow:0 0 60px rgba(212,175,55,.4)}
+  50%{transform:scale(1.03);box-shadow:0 0 80px rgba(212,175,55,.6)}
+}
+.swroop-hero-visual::before{
+  content:'';
+  position:absolute;
+  inset:-15px;
+  border-radius:50%;
+  border:2px dashed rgba(212,175,55,.4);
+  animation:spinSlow 30s linear infinite;
+}
+
+.form-card{
+  background:var(--bg-alt);
+  border-radius:14px;
+  padding:18px;
+  margin-bottom:14px;
+  border-left:4px solid var(--gold);
+  position:relative;
+  transition:var(--transition);
+}
+.form-card:hover{transform:translateX(4px);border-left-color:var(--saffron)}
+.form-card .form-num{
+  position:absolute;
+  top:-10px;
+  right:12px;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  padding:3px 10px;
+  border-radius:20px;
+}
+.form-card h4{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:16px;
+  color:var(--maroon);
+  margin-bottom:8px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+body.dark .form-card h4{color:var(--gold-light)}
+.form-card h4 .emoji{font-size:22px}
+.form-card p{
+  font-size:13.5px;
+  line-height:1.85;
+  color:var(--ink-soft);
+  margin-bottom:8px;
+}
+.form-card .sanskrit{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:14.5px;
+  color:var(--maroon);
+  background:rgba(212,175,55,.12);
+  padding:10px 12px;
+  border-radius:8px;
+  text-align:center;
+  margin:10px 0;
+  line-height:1.9;
+}
+body.dark .form-card .sanskrit{color:var(--gold-light)}
+
+.panchmukhi-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:14px 0;
+}
+@media(min-width:480px){.panchmukhi-grid{grid-template-columns:1fr 1fr}}
+.mukh-card{
+  background:linear-gradient(135deg,rgba(212,175,55,.15),rgba(255,107,53,.08));
+  border-radius:12px;
+  padding:14px;
+  text-align:center;
+  border:1px solid var(--gold);
+  transition:var(--transition);
+}
+.mukh-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(212,175,55,.25)}
+.mukh-card .mukh-emoji{font-size:36px;display:block;margin-bottom:6px}
+.mukh-card h5{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:14px;
+  color:var(--maroon);
+  margin-bottom:4px;
+}
+body.dark .mukh-card h5{color:var(--gold-light)}
+.mukh-card p{font-size:11.5px;color:var(--ink-soft);line-height:1.5;margin:0}
+
+.direction-badge{
+  display:inline-block;
+  background:rgba(122,46,46,.15);
+  color:var(--maroon);
+  font-size:10.5px;
+  font-weight:600;
+  padding:3px 10px;
+  border-radius:20px;
+  margin-top:6px;
+}
+body.dark .direction-badge{color:var(--gold-light);background:rgba(212,175,55,.15)}
+
+.puja-step .step-icon{
+  font-size:20px;
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>स्वरूप वर्णन</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<div class="devta-hero">
+  <div class="hero-glow-ring"></div>
+  <div class="swroop-hero-visual">🐒</div>
+  <div class="name">स्वरूप वर्णन</div>
+  <div class="subtitle">अष्टमूर्ति · पंचमुखी · सभी रूप</div>
+  <div class="tagline">"कंचन बरन बिराज सुबेसा"</div>
+</div>
+
+<!-- ===== QUICK NAV ===== -->
+<div class="cat-nav">
+  <a href="#mool" class="cat-chip active"><i class="fa-solid fa-star"></i> मूल स्वरूप</a>
+  <a href="#varnan" class="cat-chip"><i class="fa-solid fa-scroll"></i> वर्णन</a>
+  <a href="#ashtamurti" class="cat-chip"><i class="fa-solid fa-cubes"></i> अष्टमूर्ति</a>
+  <a href="#panchmukhi" class="cat-chip"><i class="fa-solid fa-masks-theater"></i> पंचमुखी</a>
+  <a href="#avatar" class="cat-chip"><i class="fa-solid fa-person"></i> सभी रूप</a>
+  <a href="#dhyan" class="cat-chip"><i class="fa-solid fa-spa"></i> ध्यान श्लोक</a>
+</div>
+
+<!-- ============================================
+     SECTION 1 — MOOL SWAROOP
+============================================ -->
+<div class="devta-section" id="mool">
+  <h2><span class="sec-icon">🌟</span> हनुमान जी का मूल स्वरूप</h2>
+
+  <p>हनुमान जी का मूल स्वरूप <strong>वानर (बंदर) जैसा</strong> है, लेकिन वे केवल एक वानर नहीं — वे <strong>दिव्य शक्ति के स्वामी</strong>, <strong>रुद्र के अवतार</strong>, और <strong>राम के परम भक्त</strong> हैं। उनका शरीर <strong>सिंदूरी (लाल-भूरा)</strong> रंग का है, जो <strong>वीरता, तेज और भक्ति</strong> का प्रतीक है।</p>
+
+  <p>वे सदा <strong>राम नाम</strong> का स्मरण करते रहते हैं, उनके हाथों में <strong>गदा</strong> सुशोभित होती है, और उनके <strong>वक्षस्थल पर राम-सीता</strong> का चित्र अंकित रहता है। उनकी आँखों में <strong>करुणा और बल</strong> दोनों झलकते हैं।</p>
+
+  <div class="mantra-box">
+    मनोजवं मारुततुल्यवेगं, जितेन्द्रियं बुद्धिमतां वरिष्ठम् ।<br>
+    वातात्मजं वानरयूथमुख्यं, श्रीरामदूतं शरणं प्रपद्ये ॥
+    <small>अर्थ: मन की गति वाले, वायु के समान वेग वाले, जितेन्द्रिय, बुद्धिमानों में श्रेष्ठ, वायुपुत्र, वानरों के स्वामी, श्रीरामदूत की शरण में हूँ।</small>
+    <button class="copy-mantra" onclick="copyMantra('मनोजवं मारुततुल्यवेगं, जितेन्द्रियं बुद्धिमतां वरिष्ठम् । वातात्मजं वानरयूथमुख्यं, श्रीरामदूतं शरणं प्रपद्ये ॥')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+</div>
+
+<!-- ============================================
+     SECTION 2 — VARNAN (DETAILED DESCRIPTION)
+============================================ -->
+<div class="devta-section" id="varnan">
+  <h2><span class="sec-icon">📜</span> विस्तृत स्वरूप वर्णन</h2>
+
+  <h3>शरीर का वर्णन</h3>
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">रंग</div><div class="val">सिंदूरी (लाल-भूरा)</div></div>
+    <div class="info-item"><div class="lbl">शरीर</div><div class="val">वानर (बंदर) जैसा, दिव्य</div></div>
+    <div class="info-item"><div class="lbl">तेज</div><div class="val">सूर्य के समान प्रचंड</div></div>
+    <div class="info-item"><div class="lbl">आकार</div><div class="val">इच्छानुसार छोटा-बड़ा</div></div>
+    <div class="info-item"><div class="lbl">बल</div><div class="val">अतुलनीय, वज्र के समान</div></div>
+    <div class="info-item"><div class="lbl">वय</div><div class="val">सदा युवा (चिरंजीवी)</div></div>
+    <div class="info-item"><div class="lbl">नेत्र</div><div class="val">करुणा और बल से भरे</div></div>
+    <div class="info-item"><div class="lbl">मुख</div><div class="val">शांत, भक्तिभाव में लीन</div></div>
+  </div>
+
+  <h3>वस्त्र और आभूषण</h3>
+  <ul>
+    <li><strong>वस्त्र:</strong> लाल रंग की धोती, कभी-कभी सोने के वस्त्र</li>
+    <li><strong>कवच:</strong> सोने का कवच, हीरे-जवाहरात जड़ित</li>
+    <li><strong>मुकुट:</strong> स्वर्ण मुकुट, रत्नों से सुसज्जित</li>
+    <li><strong>कुंडल:</strong> स्वर्ण के कुंडल (कानों में)</li>
+    <li><strong>माला:</strong> मूंज की मेखला (कमर पर), रुद्राक्ष माला</li>
+    <li><strong>अंगूठी:</strong> राम नाम की मुद्रिका (हाथ में)</li>
+  </ul>
+
+  <h3>हाथों में शस्त्र</h3>
+  <ul>
+    <li><strong>दाहिने हाथ:</strong> विशाल गदा (सोने की)</li>
+    <li><strong>बाएँ हाथ:</strong> राम नाम की मुद्रिका</li>
+    <li><strong>वक्ष पर:</strong> राम और सीता का चित्र अंकित</li>
+  </ul>
+
+  <h3>विशेष चिह्न</h3>
+  <ul>
+    <li><strong>वक्षस्थल:</strong> राम-सीता का चित्र</li>
+    <li><strong>हृदय:</strong> राम नाम सदा विराजमान</li>
+    <li><strong>पूँछ:</strong> लंबी, शक्तिशाली, अलंकृत</li>
+    <li><strong>पैर:</strong> नूपुर धारण किए हुए</li>
+  </ul>
+
+  <div class="mantra-box">
+    कंचन बरन बिराज सुबेसा ।<br>
+    कानन कुंडल कुंद बर बेसा ॥
+    <small>अर्थ: स्वर्ण के समान वर्ण वाले, सुंदर वस्त्र धारण किए हुए, कानों में कुंडल और सुंदर वेश में विराजमान।</small>
+  </div>
+
+  <div class="mantra-box">
+    हाथ बज्र औ ध्वजा बिराजै ।<br>
+    काँधे मूँज जनेऊ साजै ॥
+    <small>अर्थ: हाथों में वज्र और ध्वजा सुशोभित है, कंधे पर मूंज का जनेऊ सुशोभित है।</small>
+  </div>
+</div>
+
+<!-- ============================================
+     SECTION 3 — ASHTAMURTI (8 FORMS)
+============================================ -->
+<div class="devta-section" id="ashtamurti">
+  <h2><span class="sec-icon">🔮</span> हनुमान जी की अष्टमूर्ति (8 रूप)</h2>
+
+  <p>शास्त्रों के अनुसार हनुमान जी <strong>आठ प्रमुख रूपों</strong> में प्रकट होते हैं। इन्हें <strong>अष्टमूर्ति</strong> कहा जाता है। हर रूप का अपना विशेष महत्व और फल है।</p>
+
+  <div class="form-card">
+    <span class="form-num">रूप 1</span>
+    <h4><span class="emoji">👶</span> बाल रूप (Child Form)</h4>
+    <p>बालक हनुमान — अत्यंत चंचल, कोमल और शक्तिशाली। इस रूप में उन्होंने सूर्य को फल समझकर पकड़ा, इंद्र के वज्र से मूर्छित हुए, और देवताओं से वरदान प्राप्त किए।</p>
+    <p><strong>कथा:</strong> बाल रूप में हनुमान ने आकाश में छलांग लगाकर सूर्य देव को पकड़ लिया। तब इंद्र ने वज्र प्रहार किया, जिससे उनकी हनुवटी टूट गई।</p>
+    <p><strong>महत्व:</strong> बालकों की रक्षा, संतान सुख, विद्या प्राप्ति।</p>
+    <p><strong>पूजा:</strong> बाल गोपाल के साथ, बच्चों के लिए विशेष।</p>
+  </div>
+
+  <div class="form-card">
+    <span class="form-num">रूप 2</span>
+    <h4><span class="emoji">🧘</span> भक्त रूप (Devotee Form)</h4>
+    <p>राम के चरणों में बैठे हुए, हाथ जोड़े हुए, नेत्रों में भक्ति के आँसू। यह उनका <strong>सबसे प्रिय रूप</strong> है। इस रूप में वे केवल राम नाम का जप करते हैं।</p>
+    <p><strong>कथा:</strong> जब राम ने हनुमान को गले लगाया और कहा "तुम मेरे प्रिय भरत के समान भाई हो" — यही उनकी भक्ति का शिखर था।</p>
+    <p><strong>महत्व:</strong> भक्ति की प्राप्ति, राम कृपा, मोक्ष।</p>
+    <p><strong>पूजा:</strong> भक्ति भाव से, राम दरबार के साथ।</p>
+  </div>
+
+  <div class="form-card">
+    <span class="form-num">रूप 3</span>
+    <h4><span class="emoji">⚔️</span> वीर रूप (Warrior Form)</h4>
+    <p>हाथ में गदा लिए हुए, तेजस्वी, प्रचंड, शत्रुओं का संहार करने वाले। यह <strong>युद्ध का रूप</strong> है।</p>
+    <p><strong>कथा:</strong> अहिरावन वध, कुंभकर्ण पुत्रों का वध, अक्षय कुमार का वध — सभी इसी रूप में।</p>
+    <p><strong>महत्व:</strong> शत्रु नाश, रोग नाश, साहस, बल।</p>
+    <p><strong>पूजा:</strong> मंगलवार, शनिवार, संकट में।</p>
+  </div>
+
+  <div class="form-card">
+    <span class="form-num">रूप 4</span>
+    <h4><span class="emoji">🔍</span> सूक्ष्म रूप (Subtle Form)</h4>
+    <p>अत्यंत छोटा रूप — अणु से भी छोटा। यह रूप <strong>गुप्त कार्यों</strong> के लिए है।</p>
+    <p><strong>कथा:</strong> जब हनुमान अशोक वाटिका में माता सीता से मिले, तो उन्होंने सूक्ष्म रूप धारण किया था।</p>
+    <p><strong>महत्व:</strong> गुप्त शत्रुओं से रक्षा, जासूसी, बुद्धि।</p>
+    <p><strong>पूजा:</strong> गुप्त साधना में।</p>
+  </div>
+
+  <div class="form-card">
+    <span class="form-num">रूप 5</span>
+    <h4><span class="emoji">🏔️</span> विराट रूप (Giant Form)</h4>
+    <p>विशाल, पर्वत के समान, आकाश को छूने वाला। यह <strong>भय उत्पन्न करने वाला</strong> रूप है।</p>
+    <p><strong>कथा:</strong> लंका जाते समय समुद्र को लाँघने के लिए विराट रूप धारण किया। सुरसा का मुख बढ़ाने पर भी उन्होंने अपना रूप बढ़ाया।</p>
+    <p><strong>महत्व:</strong> बड़ी बाधाओं को पार करना।</p>
+    <p><strong>पूजा:</strong> महत्वपूर्ण कार्यों की सिद्धि के लिए।</p>
+  </div>
+
+  <div class="form-card">
+    <span class="form-num">रूप 6</span>
+    <h4><span class="emoji">🐍</span> उग्र रूप (Fierce Form)</h4>
+    <p>अत्यंत क्रोधित, दाढ़ें किटकिटाती हुई, आग उगलती आँखें। यह <strong>शत्रु विनाश</strong> का रूप है।</p>
+    <p><strong>कथा:</strong> जब रावण के दरबार में उन्हें अपमानित किया गया, तब उन्होंने उग्र रूप धारण किया।</p>
+    <p><strong>महत्व:</strong> शत्रु नाश, क्रोध प्रबंधन, रोग नाश।</p>
+    <p><strong>पूजा:</strong> शत्रु बाधा में।</p>
+  </div>
+
+  <div class="form-card">
+    <span class="form-num">रूप 7</span>
+    <h4><span class="emoji">🕉️</span> दिव्य रूप (Divine Form)</h4>
+    <p>समस्त देवताओं से घिरे, दिव्य आभूषणों से अलंकृत, तेजस्वी मुख। यह <strong>आध्यात्मिक उन्नति</strong> का रूप है।</p>
+    <p><strong>कथा:</strong> जब उन्होंने सीता को राम का संदेश दिया, तब दिव्य रूप में प्रकट हुए।</p>
+    <p><strong>महत्व:</strong> आध्यात्मिक उन्नति, ध्यान, मोक्ष।</p>
+    <p><strong>पूजा:</strong> ध्यान और साधना में।</p>
+  </div>
+
+  <div class="form-card">
+    <span class="form-num">रूप 8</span>
+    <h4><span class="emoji">🌍</span> राम दरबार रूप (Ram Darbar Form)</h4>
+    <p>राम के चरणों में बैठे, सीता, लक्ष्मण, भरत, शत्रुघ्न के साथ। यह <strong>राम परिवार</strong> का रूप है।</p>
+    <p><strong>कथा:</strong> जब वे राम, सीता, लक्ष्मण के साथ अयोध्या लौटे, तब यह रूप प्रकट हुआ।</p>
+    <p><strong>महत्व:</strong> पारिवारिक सुख, राम राज्य, मोक्ष।</p>
+    <p><strong>पूजा:</strong> घर के मंदिर में, परिवार के लिए।</p>
+  </div>
+</div>
+
+<!-- ============================================
+     SECTION 4 — PANCHMUKHI (5 FACES)
+============================================ -->
+<div class="devta-section" id="panchmukhi">
+  <h2><span class="sec-icon">🎭</span> पंचमुखी हनुमान (5 Faces)</h2>
+
+  <p>पंचमुखी हनुमान जी का <strong>सबसे शक्तिशाली रूप</strong> माना जाता है। इस रूप में उनके <strong>पाँच मुख</strong> होते हैं, और दस भुजाएँ। यह रूप <strong>अहिरावन वध</strong> के समय प्रकट हुआ था।</p>
+
+  <h3>पंचमुखी रूप की कथा</h3>
+  <p>जब अहिरावन ने राम और लक्ष्मण को पाताल लोक में बंदी बना लिया, तब हनुमान जी पाताल लोक गए। वहाँ <strong>पाताल में अंधकार</strong> था, क्योंकि <strong>पाँच दीपक</strong> बुझ चुके थे — जो पाँच दिशाओं के प्रतीक थे।</p>
+  <p>तब हनुमान जी ने <strong>पंचमुखी रूप</strong> धारण किया — पाँच मुख वाले रूप में पाँचों दिशाओं को प्रकाशित किया और अहिरावन का वध किया।</p>
+
+  <div class="panchmukhi-grid">
+    <div class="mukh-card">
+      <span class="mukh-emoji">🐒</span>
+      <h5>पूर्व — हनुमान</h5>
+      <p>स्वयं हनुमान का मुख — पूर्व दिशा की रक्षा</p>
+      <span class="direction-badge">पूर्व दिशा</span>
+    </div>
+    <div class="mukh-card">
+      <span class="mukh-emoji">🦁</span>
+      <h5>दक्षिण — नरसिंह</h5>
+      <p>नरसिंह भगवान का मुख — दक्षिण दिशा</p>
+      <span class="direction-badge">दक्षिण दिशा</span>
+    </div>
+    <div class="mukh-card">
+      <span class="mukh-emoji">🦅</span>
+      <h5>पश्चिम — गरुड़</h5>
+      <p>गरुड़ देव का मुख — पश्चिम दिशा</p>
+      <span class="direction-badge">पश्चिम दिशा</span>
+    </div>
+    <div class="mukh-card">
+      <span class="mukh-emoji">🐗</span>
+      <h5>उत्तर — वराह</h5>
+      <p>वराह भगवान का मुख — उत्तर दिशा</p>
+      <span class="direction-badge">उत्तर दिशा</span>
+    </div>
+    <div class="mukh-card">
+      <span class="mukh-emoji">🐴</span>
+      <h5>ऊर्ध्व — हयग्रीव</h5>
+      <p>हयग्रीव (अश्वमुख) — ऊपर की दिशा</p>
+      <span class="direction-badge">ऊर्ध्व दिशा</span>
+    </div>
+  </div>
+
+  <h3>पंचमुखी का महत्व</h3>
+  <ul>
+    <li><strong>पाँचों दिशाओं से रक्षा</strong> — शत्रु किसी भी दिशा से आए, रक्षा होती है</li>
+    <li><strong>पंच तत्वों का संतुलन</strong> — पृथ्वी, जल, अग्नि, वायु, आकाश</li>
+    <li><strong>पंच कर्मों की शुद्धि</strong> — सभी कर्मों का शुद्धिकरण</li>
+    <li><strong>पंच रोगों का नाश</strong> — शारीरिक, मानसिक, आत्मिक, सामाजिक, आर्थिक</li>
+  </ul>
+
+  <h3>पंचमुखी मंत्र</h3>
+  <div class="mantra-box">
+    ॐ नमो भगवते पंचवक्त्राय,<br>
+    हनुमते, आद्यवीराय,<br>
+    सकलशत्रुसंहारकाय,<br>
+    सकलरोगनाशाय,<br>
+    सकलमनोरथसिद्धये,<br>
+    हुं फट् स्वाहा ॥
+    <small>अर्थ: पंचमुखी हनुमान जी को नमस्कार, जो आदिवीर हैं, सभी शत्रुओं का संहार करते हैं, सभी रोगों को नष्ट करते हैं, और सभी मनोरथों को सिद्ध करते हैं।</small>
+    <button class="copy-mantra" onclick="copyMantra('ॐ नमो भगवते पंचवक्त्राय, हनुमते, आद्यवीराय, सकलशत्रुसंहारकाय, सकलरोगनाशाय, सकलमनोरथसिद्धये, हुं फट् स्वाहा ॥')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+
+  <h3>पंचमुखी पूजा के लाभ</h3>
+  <ul>
+    <li>✅ शत्रु बाधा का नाश</li>
+    <li>✅ कालसर्प दोष से मुक्ति</li>
+    <li>✅ रोग नाश</li>
+    <li>✅ राहु-केतु शांति</li>
+    <li>✅ मंगल दोष निवारण</li>
+    <li>✅ मनोकामना पूर्ति</li>
+    <li>✅ ग्रह शांति</li>
+    <li>✅ मोक्ष प्राप्ति</li>
+  </ul>
+</div>
+
+<!-- ============================================
+     SECTION 5 — ALL FORMS
+============================================ -->
+<div class="devta-section" id="avatar">
+  <h2><span class="sec-icon">👥</span> हनुमान जी के अन्य प्रमुख रूप</h2>
+
+  <div class="form-card">
+    <h4><span class="emoji">🛡️</span> कवच रूप</h4>
+    <p>हनुमान जी जब किसी भक्त की रक्षा करते हैं, तो वे <strong>कवच रूप</strong> में प्रकट होते हैं। यह रूप अभेद्य होता है।</p>
+    <p><strong>महत्व:</strong> सभी प्रकार की रक्षा।</p>
+  </div>
+
+  <div class="form-card">
+    <h4><span class="emoji">📖</span> ज्ञानी रूप</h4>
+    <p>ग्रंथों में हनुमान जी को <strong>नव व्याकरण के ज्ञाता</strong> कहा गया है। सूर्यदेव से उन्होंने संपूर्ण विद्या प्राप्त की थी।</p>
+    <p><strong>महत्व:</strong> विद्या, बुद्धि, ज्ञान की प्राप्ति।</p>
+  </div>
+
+  <div class="form-card">
+    <h4><span class="emoji">💃</span> नृत्य रूप</h4>
+    <p>राम के आगे नृत्य करते हुए, कीर्तन करते हुए। यह <strong>आनंद का रूप</strong> है।</p>
+    <p><strong>महत्व:</strong> आनंद, उत्सव, भक्ति रस।</p>
+  </div>
+
+  <div class="form-card">
+    <h4><span class="emoji">🚩</span> ध्वजा रूप</h4>
+    <p>राम की सेना में ध्वजा लेकर चलते हुए — सेनापति रूप।</p>
+    <p><strong>महत्व:</strong> नेतृत्व, विजय, सफलता।</p>
+  </div>
+
+  <div class="form-card">
+    <h4><span class="emoji">🧙</span> औषध रूप</h4>
+    <p>संजीवनी बूटी लाते समय <strong>पर्वत रूप</strong> में — जब पूरा पर्वत उठाया।</p>
+    <p><strong>महत्व:</strong> रोग नाश, जीवन रक्षा, आयु वृद्धि।</p>
+  </div>
+
+  <div class="form-card">
+    <h4><span class="emoji">🏹</span> धनुर्धर रूप</h4>
+    <p>कभी-कभी हनुमान जी को धनुष-बाण के साथ भी दर्शाया जाता है।</p>
+    <p><strong>महत्व:</strong> शत्रु संहार, युद्ध विजय।</p>
+  </div>
+
+  <div class="form-card">
+    <h4><span class="emoji">🔥</span> अग्नि रूप</h4>
+    <p>लंका दहन के समय — अग्नि के समान प्रचंड।</p>
+    <p><strong>महत्व:</strong> शत्रु नाश, बाधा निवारण।</p>
+  </div>
+
+  <div class="form-card">
+    <h4><span class="emoji">💧</span> शांत रूप</h4>
+    <p>ध्यान में लीन, शांत, सौम्य — जब वे राम का ध्यान करते हैं।</p>
+    <p><strong>महत्व:</strong> शांति, ध्यान, आत्मिक उन्नति।</p>
+  </div>
+</div>
+
+<!-- ============================================
+     SECTION 6 — DHYAN SHLOK
+============================================ -->
+<div class="devta-section" id="dhyan">
+  <h2><span class="sec-icon">🧘</span> ध्यान श्लोक (Meditation Verses)</h2>
+
+  <p>हनुमान जी के ध्यान के लिए ये श्लोक सर्वश्रेष्ठ हैं। नित्य इनका पाठ करने से उनका दर्शन होता है।</p>
+
+  <h3>1. मूल ध्यान श्लोक</h3>
+  <div class="mantra-box">
+    अंजनेय मतिपाटवं ददातु,<br>
+    रामायण महामाला रत्नं,<br>
+    हनुमान नामकं ध्यायेत् ॥
+    <small>अर्थ: अंजना के पुत्र, बुद्धि के धनी, रामायण रूपी महामाला के रत्न, हनुमान नाम का ध्यान करें।</small>
+    <button class="copy-mantra" onclick="copyMantra('अंजनेय मतिपाटवं ददातु, रामायण महामाला रत्नं, हनुमान नामकं ध्यायेत् ॥')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+
+  <h3>2. वानर वेश ध्यान</h3>
+  <div class="mantra-box">
+    वानरं कपिशार्दूलं, वायुपुत्रं महाबलम् ।<br>
+    सुग्रीवसचिवं ध्यायेत्, सर्वशत्रुविनाशनम् ॥
+    <small>अर्थ: वानर रूप धारी, वायु पुत्र, महाबली, सुग्रीव के मंत्री, सभी शत्रुओं का नाश करने वाले हनुमान का ध्यान करें।</small>
+    <button class="copy-mantra" onclick="copyMantra('वानरं कपिशार्दूलं, वायुपुत्रं महाबलम् । सुग्रीवसचिवं ध्यायेत्, सर्वशत्रुविनाशनम् ॥')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+
+  <h3>3. रूप वर्णन ध्यान</h3>
+  <div class="mantra-box">
+    अतुलित बलधामं हेमशैलाभदेहं,<br>
+    दनुजवनकृशानुं ज्ञानिनामग्रगण्यम् ।<br>
+    सकलगुणनिधानं वानराणामधीशं,<br>
+    रघुपतिप्रियभक्तं वातजातं नमामि ॥
+    <small>अर्थ: अतुलनीय बल के धाम, स्वर्ण पर्वत के समान शरीर वाले, दैत्यों के लिए अग्नि के समान, ज्ञानियों में अग्रगण्य, सभी गुणों के निधान, वानरों के स्वामी, रघुपति के प्रिय भक्त, वायुपुत्र हनुमान को नमस्कार।</small>
+    <button class="copy-mantra" onclick="copyMantra('अतुलित बलधामं हेमशैलाभदेहं, दनुजवनकृशानुं ज्ञानिनामग्रगण्यम् । सकलगुणनिधानं वानराणामधीशं, रघुपतिप्रियभक्तं वातजातं नमामि ॥')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+
+  <h3>4. प्रातः स्मरण श्लोक</h3>
+  <div class="mantra-box">
+    बुद्धिर्बलं यशो धैर्यं निर्भयत्वमरोगता ।<br>
+    अजाड्यं वाक्पटुत्वं च हनुमत्स्मरणाद्भवेत् ॥
+    <small>अर्थ: बुद्धि, बल, यश, धैर्य, निर्भयता, रोगमुक्ति, जड़ता का नाश, वाकपटुता — ये सब हनुमान जी के स्मरण से प्राप्त होते हैं।</small>
+    <button class="copy-mantra" onclick="copyMantra('बुद्धिर्बलं यशो धैर्यं निर्भयत्वमरोगता । अजाड्यं वाक्पटुत्वं च हनुमत्स्मरणाद्भवेत् ॥')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+</div>
+
+<!-- ============================================
+     SECTION 7 — VISUAL DHYAN
+============================================ -->
+<div class="devta-section">
+  <h2><span class="sec-icon">👁️</span> दृश्य ध्यान (Visual Meditation)</h2>
+
+  <p>हनुमान जी का ध्यान करते समय इन बातों का विशेष ध्यान रखें:</p>
+
+  <div class="puja-step">
+    <div class="puja-num">1</div>
+    <div class="puja-content">
+      <strong>मुख का ध्यान</strong>
+      <p>उनका शांत, सौम्य मुख — जिसमें करुणा और बल दोनों हैं। उनके नेत्रों में भक्ति के आँसू।</p>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">2</div>
+    <div class="puja-content">
+      <strong>हृदय का ध्यान</strong>
+      <p>उनके हृदय में राम नाम विराजमान है। वे सदा राम का स्मरण करते हैं।</p>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">3</div>
+    <div class="puja-content">
+      <strong>वक्षस्थल का ध्यान</strong>
+      <p>उनके वक्ष पर राम-सीता का चित्र अंकित है। वे सदा राम-सीता को हृदय में रखते हैं।</p>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">4</div>
+    <div class="puja-content">
+      <strong>हाथों का ध्यान</strong>
+      <p>उनके हाथों में गदा है, और राम नाम की मुद्रिका। गदा शक्ति की प्रतीक है।</p>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">5</div>
+    <div class="puja-content">
+      <strong>चरणों का ध्यान</strong>
+      <p>उनके चरणों में नूपुर हैं। वे राम के चरणों में बैठे रहते हैं।</p>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">6</div>
+    <div class="puja-content">
+      <strong>पूँछ का ध्यान</strong>
+      <p>उनकी लंबी पूँछ में अद्भुत शक्ति है। जब वे लंका गए, तो पूँछ से लंका जलाई।</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     SECTION 8 — QUICK LINKS
+============================================ -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="01-parichay.html" class="cat-chip"><i class="fa-solid fa-book"></i> परिचय</a>
+    <a href="03-janm-katha.html" class="cat-chip"><i class="fa-solid fa-star"></i> जन्म कथा</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="22-108-names.html" class="cat-chip"><i class="fa-solid fa-list-ol"></i> 108 नाम</a>
+    <a href="40-chola-vidhi.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> चोला विधि</a>
+  </div>
+</div>
+
+<!-- ===== SHARE ===== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+/* Smooth scroll for cat-chips */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+      document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+</script>
+</body>
+</html>
