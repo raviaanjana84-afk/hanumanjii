@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>दैनिक पूजा विधि — हनुमान जी | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी की दैनिक पूजा विधि — 12 सरल चरणों में। सामग्री, मंत्र, आरती, प्रदक्षिणा और लाभ की पूरी जानकारी।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.puja-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.puja-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.puja-hero .puja-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.puja-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .puja-hero h2 { color: var(--gold-light); }
+.puja-hero .puja-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.puja-hero .puja-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.puja-hero .puja-meta span { display: flex; align-items: center; gap: 5px; }
+.puja-hero .puja-meta i { color: var(--gold); }
+
+/* Step Cards */
+.puja-step {
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  transition: all .3s ease;
+  position: relative;
+}
+.puja-step:hover {
+  transform: translateX(4px);
+  border-color: var(--gold);
+  box-shadow: 0 4px 16px rgba(212,175,55,.15);
+}
+.puja-num {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  box-shadow: 0 3px 10px rgba(122,46,46,.3);
+}
+.puja-content {
+  flex: 1;
+}
+.puja-content strong {
+  display: block;
+  font-size: 15px;
+  color: var(--maroon);
+  margin-bottom: 4px;
+  font-family: 'Tiro Devanagari Hindi', serif;
+}
+body.dark .puja-content strong { color: var(--gold-light); }
+.puja-content p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+.puja-content .mantra {
+  display: block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(212,175,55,.1);
+  border-left: 3px solid var(--gold);
+  border-radius: 6px;
+  font-size: 13px;
+  color: var(--maroon);
+  font-style: italic;
+}
+body.dark .puja-content .mantra { color: var(--gold-light); }
+
+/* Samagri Checklist */
+.samagri-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+.samagri-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 13px;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all .25s ease;
+}
+.samagri-item:hover {
+  border-color: var(--gold);
+  background: rgba(212,175,55,.06);
+}
+.samagri-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--maroon);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.samagri-item.checked {
+  opacity: .55;
+  text-decoration: line-through;
+}
+
+/* Warning Box */
+.warning-box {
+  padding: 16px 18px;
+  background: linear-gradient(135deg, rgba(255,107,53,.12), rgba(255,107,53,.05));
+  border: 1px solid rgba(255,107,53,.3);
+  border-radius: var(--radius);
+  margin-top: 12px;
+}
+.warning-box h4 {
+  font-size: 14px;
+  color: #D84315;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+body.dark .warning-box h4 { color: #FF8A65; }
+.warning-box ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+/* Benefits */
+.puja-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.puja-benefit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, rgba(212,175,55,.12), rgba(212,175,55,.05));
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 20px;
+  font-size: 12.5px;
+  color: var(--maroon);
+  transition: all .25s ease;
+}
+.puja-benefit:hover {
+  background: rgba(212,175,55,.2);
+  transform: translateY(-2px);
+}
+body.dark .puja-benefit { color: var(--gold-light); }
+.puja-benefit i { color: var(--gold); font-size: 11px; }
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .puja-hero .puja-emoji { font-size: 70px; }
+  .puja-hero h2 { font-size: 23px; }
+  .samagri-grid { grid-template-columns: 1fr 1fr; }
+  .puja-step { padding: 12px; gap: 10px; }
+  .puja-num { width: 30px; height: 30px; font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>दैनिक पूजा विधि</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="puja-hero">
+  <span class="puja-emoji">🪔</span>
+  <h2>दैनिक पूजा विधि</h2>
+  <div class="puja-sub">12 Steps • Complete Guide</div>
+  <div class="puja-meta">
+    <span><i class="fa-solid fa-list-ol"></i> 12 चरण</span>
+    <span><i class="fa-solid fa-clock"></i> 20 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> अर्थ सहित</span>
+  </div>
+</div>
+
+<!-- ========== INTRO SECTION ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> पूजा का महत्व</h2>
+  <p>हनुमान जी की पूजा सनातन धर्म में विशेष स्थान रखती है। वे संकट मोचन, बल-बुद्धि के दाता और श्रीराम के परम भक्त हैं। प्रतिदिन पूजा करने से मन में शक्ति, साहस और शांति का संचार होता है।</p>
+  <p>हनुमान जी की पूजा में विशेष सावधानी रखनी चाहिए क्योंकि वे अत्यंत शक्तिशाली और जल्दी प्रसन्न होने वाले देवता हैं। सही विधि से की गई पूजा शीघ्र फल देती है।</p>
+  <p>यह पूजा विधि घर पर सरलता से की जा सकती है। किसी भी वर्ण, जाति, लिंग या आयु के व्यक्ति हनुमान जी की पूजा कर सकते हैं। केवल श्रद्धा और स्वच्छता आवश्यक है।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">समय</div><div class="val">प्रातः 6-8 बजे</div></div>
+    <div class="info-item"><div class="lbl">दिशा</div><div class="val">पूर्व/उत्तर</div></div>
+    <div class="info-item"><div class="lbl">आवृत्ति</div><div class="val">प्रतिदिन</div></div>
+    <div class="info-item"><div class="lbl">अवधि</div><div class="val">15-20 मिनट</div></div>
+    <div class="info-item"><div class="lbl">वस्त्र</div><div class="val">लाल/पीला</div></div>
+    <div class="info-item"><div class="lbl">भोग</div><div class="val">बूंदी/केला</div></div>
+  </div>
+</div>
+
+<!-- ========== MAIN CONTENT: 12 STEPS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🪔</span> पूजा विधि — 12 चरण</h2>
+
+  <div class="puja-step">
+    <div class="puja-num">1</div>
+    <div class="puja-content">
+      <strong>स्नान और शुद्धि</strong>
+      <p>प्रातः उठकर स्नान करें। स्वच्छ वस्त्र धारण करें। पूजा स्थल को गंगाजल या शुद्ध जल से पवित्र करें। मन में हनुमान जी का ध्यान करें।</p>
+      <span class="mantra">ॐ श्री हनुमते नमः</span>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">2</div>
+    <div class="puja-content">
+      <strong>आसन और दिशा</strong>
+      <p>लाल या पीले रंग का आसन बिछाएं। पूर्व या उत्तर दिशा की ओर मुख करके बैठें। हनुमान जी की मूर्ति या चित्र को सामने रखें।</p>
+      <span class="mantra">ॐ हं हनुमते रुद्रात्मकाय हुं फट्</span>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">3</div>
+    <div class="puja-content">
+      <strong>दीप और धूप</strong>
+      <p>घी या तिल के तेल का दीपक जलाएं। धूप या अगरबत्ती से सुगंधित करें। दीपक को हनुमान जी के दाईं ओर रखें।</p>
+      <span class="mantra">ॐ भूर्भुवः स्वः — दीपं दर्शयामि</span>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">4</div>
+    <div class="puja-content">
+      <strong>सिंदूर और तेल</strong>
+      <p>हनुमान जी को सिंदूर और चमेली का तेल अर्पित करें। सिंदूर को तेल में मिलाकर मूर्ति पर चढ़ाएं। यह हनुमान जी को अत्यंत प्रिय है।</p>
+      <span class="mantra">ॐ श्री हनुमते नमः — सिंदूरं समर्पयामि</span>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">5</div>
+    <div class="puja-content">
+      <strong>पुष्प अर्पण</strong>
+      <p>लाल पुष्प, गेंदा, या लाल कमल अर्पित करें। पुष्प को हनुमान जी के चरणों में रखें। पुष्प अर्पित करते समय मन में भक्ति भाव रखें।</p>
+      <span class="mantra">ॐ हनुमते नमः — पुष्पं समर्पयामि</span>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">6</div>
+    <div class="puja-content">
+      <strong>भोग अर्पण</strong>
+      <p>बूंदी का लड्डू, केला, या गुड़-चना अर्पित करें। भोग को तुलसी दल के साथ रखें। भोग अर्पित करते समय "ॐ हनुमते नमः" कहें।</p>
+      <span class="mantra">ॐ हनुमते नमः — नैवेद्यं समर्पयामि</span>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">7</div>
+    <div class="puja-content">
+      <strong>मंत्र जप</strong>
+      <p>हनुमान जी के बीज मंत्र का 108 बार जप करें। माला का उपयोग करें। जप करते समय मन को एकाग्र रखें।</p>
+      <span class="mantra">ॐ हं हनुमते रुद्रात्मकाय हुं फट् स्वाहा</span>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">8</div>
+    <div class="puja-content">
+      <strong>चालीसा पाठ</strong>
+      <p>हनुमान चालीसा का पाठ करें। यदि समय हो तो बजरंग बाण का भी पाठ करें। पाठ करते समय शुद्ध उच्चारण का ध्यान रखें।</p>
+      <span class="mantra">जय हनुमान ज्ञान गुन सागर। जय कपीस तिहुँ लोक उजागर॥</span>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">9</div>
+    <div class="puja-content">
+      <strong>आरती</strong>
+      <p>हनुमान जी की आरती करें। "आरती कीजै हनुमान लला की" या "जय हनुमान ज्ञान गुन सागर" आरती गाएं। आरती के समय घंटी या शंख बजाएं।</p>
+      <span class="mantra">आरती कीजै हनुमान लला की। दुष्ट दलन रघुनाथ कला की॥</span>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">10</div>
+    <div class="puja-content">
+      <strong>प्रदक्षिणा (7 बार)</strong>
+      <p>हनुमान जी की 7 बार प्रदक्षिणा करें। प्रदक्षिणा करते समय मन में अपनी मनोकामना कहें। 7 प्रदक्षिणा का विशेष महत्व है।</p>
+      <span class="mantra">ॐ हनुमते नमः — प्रदक्षिणं करोमि</span>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">11</div>
+    <div class="puja-content">
+      <strong>प्रसाद वितरण</strong>
+      <p>भोग को प्रसाद रूप में ग्रहण करें और परिवारजनों में बांटें। प्रसाद को कभी नकारें नहीं। प्रसाद ग्रहण करने से पहले हनुमान जी को धन्यवाद दें।</p>
+      <span class="mantra">ॐ श्री हनुमते नमः — प्रसादं गृह्णामि</span>
+    </div>
+  </div>
+
+  <div class="puja-step">
+    <div class="puja-num">12</div>
+    <div class="puja-content">
+      <strong>क्षमा प्रार्थना</strong>
+      <p>पूजा में हुई किसी भी त्रुटि के लिए क्षमा मांगें। हनुमान जी से अपनी मनोकामना पूर्ण करने की प्रार्थना करें।</p>
+      <span class="mantra">हे हनुमान, मेरी जान-अनजान की भूलों को क्षमा करें। मेरी मनोकामना पूर्ण करें।</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== सामग्री CHECKLIST ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📋</span> पूजा सामग्री Checklist</h2>
+  <p style="font-size:13px;color:var(--ink-soft);margin-bottom:10px;">जो सामग्री आपके पास है उसे चेक करें:</p>
+  <div class="samagri-grid">
+    <label class="samagri-item"><input type="checkbox" onchange="toggleSamagri(this)"> 🪔 दीपक</label>
+    <label class="samagri-item"><input type="checkbox" onchange="toggleSamagri(this)"> 🧴 तेल/घी</label>
+    <label class="samagri-item"><input type="checkbox" onchange="toggleSamagri(this)"> 🌿 धूप/अगरबत्ती</label>
+    <label class="samagri-item"><input type="checkbox" onchange="toggleSamagri(this)"> 🔴 सिंदूर</label>
+    <label class="samagri-item"><input type="checkbox" onchange="toggleSamagri(this)"> 🌸 लाल पुष्प</label>
+    <label class="samagri-item"><input type="checkbox" onchange="toggleSamagri(this)"> 🍌 केला</label>
+    <label class="samagri-item"><input type="checkbox" onchange="toggleSamagri(this)"> 🍬 बूंदी लड्डू</label>
+    <label class="samagri-item"><input type="checkbox" onchange="toggleSamagri(this)"> 📿 माला</label>
+    <label class="samagri-item"><input type="checkbox" onchange="toggleSamagri(this)"> 🪔 घंटी</label>
+    <label class="samagri-item"><input type="checkbox" onchange="toggleSamagri(this)"> 🥣 प्रसाद पात्र</label>
+    <label class="samagri-item"><input type="checkbox" onchange="toggleSamagri(this)"> 💧 गंगाजल</label>
+    <label class="samagri-item"><input type="checkbox" onchange="toggleSamagri(this)"> 🧵 लाल कलावा</label>
+  </div>
+</div>
+
+<!-- ========== क्या न करें ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">⚠️</span> क्या न करें</h2>
+  <div class="warning-box">
+    <h4><i class="fa-solid fa-triangle-exclamation"></i> सावधानियाँ</h4>
+    <ul>
+      <li>पूजा के दौरान काले वस्त्र न पहनें — लाल या पीले वस्त्र शुभ हैं</li>
+      <li>हनुमान जी को तुलसी दल न चढ़ाएं — यह उन्हें अप्रिय है</li>
+      <li>पूजा के समय मन में अशुद्ध विचार न लाएं</li>
+      <li>सिंदूर चढ़ाते समय जूते-चप्पल न पहनें</li>
+      <li>पूजा के दौरान बीच में न उठें — पूजा पूरी करें</li>
+      <li>हनुमान जी की मूर्ति को मंदिर में ऊँचाई पर रखें</li>
+      <li>पूजा में की गई भूल के लिए क्षमा अवश्य मांगें</li>
+      <li>प्रसाद को कभी नकारें नहीं — अपमान न करें</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ========== लाभ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> पूजा के लाभ</h2>
+  <div class="puja-benefits">
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> संकटों से मुक्ति</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> बल और साहस में वृद्धि</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> बुद्धि का विकास</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> रोगों से मुक्ति</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> शत्रुओं पर विजय</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> आर्थिक समृद्धि</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> पारिवारिक सुख</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> मानसिक शांति</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> बुरी नजर से रक्षा</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> शनि दोष निवारण</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> मंगल दोष शांति</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> आत्मविश्वास में वृद्धि</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> भय से मुक्ति</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> नकारात्मक ऊर्जा का नाश</span>
+    <span class="puja-benefit"><i class="fa-solid fa-check"></i> मनोकामना पूर्ण</span>
+  </div>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी की पूजा कब करनी चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">प्रातःकाल सूर्योदय के बाद 6 से 8 बजे के बीच पूजा करना सर्वोत्तम है। संध्या काल में भी पूजा की जा सकती है। मंगलवार और शनिवार को पूजा का विशेष महत्व है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या महिलाएं हनुमान जी की पूजा कर सकती हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हाँ, महिलाएं पूरी श्रद्धा के साथ हनुमान जी की पूजा कर सकती हैं। हनुमान जी भक्तों में भेद नहीं करते। केवल शुद्धता और श्रद्धा आवश्यक है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी को क्या भोग लगाना चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">बूंदी के लड्डू, केला, गुड़-चना, मोतीचूर लड्डू और लाल फल हनुमान जी को अत्यंत प्रिय हैं। तुलसी दल न चढ़ाएं।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>पूजा में कौन सा मंत्र जपना चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">"ॐ हं हनुमते रुद्रात्मकाय हुं फट्" बीज मंत्र का 108 बार जप करें। इसके अलावा "ॐ श्री हनुमते नमः" और हनुमान चालीसा का पाठ भी करें।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या घर में हनुमान जी की मूर्ति रख सकते हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हाँ, घर में हनुमान जी की मूर्ति या चित्र रख सकते हैं। इसे मंदिर में ऊँचाई पर रखें और प्रतिदिन पूजा करें। मूर्ति को साफ रखें।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>पूजा में कितनी प्रदक्षिणा करनी चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी की 7 प्रदक्षिणा करनी चाहिए। मान्यता है कि 7 प्रदक्षिणा करने से हनुमान जी शीघ्र प्रसन्न होते हैं और मनोकामना पूर्ण करते हैं।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="11-bajrang-baan.html" class="cat-chip"><i class="fa-solid fa-bolt"></i> बजरंग बाण</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="21-mala.html" class="cat-chip"><i class="fa-solid fa-list-ol"></i> जप माला</a>
+    <a href="40-chola-vidhi.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> चोला विधि</a>
+    <a href="42-vrat-katha.html" class="cat-chip"><i class="fa-solid fa-calendar"></i> व्रत कथा</a>
+    <a href="84-faq.html" class="cat-chip"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+
+function toggleSamagri(el) {
+  const label = el.closest('.samagri-item');
+  if (el.checked) {
+    label.classList.add('checked');
+  } else {
+    label.classList.remove('checked');
+  }
+}
+</script>
+</body>
+</html>
