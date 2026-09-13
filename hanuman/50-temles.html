@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>आरती संग्रह — हनुमान जी | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी की 10+ प्रमुख आरतियाँ और भजन — पूरे बोल, अर्थ सहित। आरती कीजै हनुमान लला की, जय हनुमान ज्ञान गुन सागर और अन्य।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.aarti-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.aarti-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.aarti-hero .aarti-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.aarti-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .aarti-hero h2 { color: var(--gold-light); }
+.aarti-hero .aarti-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.aarti-hero .aarti-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.aarti-hero .aarti-meta span { display: flex; align-items: center; gap: 5px; }
+.aarti-hero .aarti-meta i { color: var(--gold); }
+
+/* Aarti Card */
+.aarti-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: all .3s ease;
+}
+.aarti-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 6px 24px rgba(212,175,55,.15);
+}
+.aarti-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.12), rgba(212,175,55,.04));
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+.aarti-head .aarti-icon {
+  font-size: 26px;
+  filter: drop-shadow(0 0 8px rgba(212,175,55,.5));
+}
+.aarti-head .aarti-title {
+  flex: 1;
+}
+.aarti-head .aarti-title h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 17px;
+  color: var(--maroon);
+  margin: 0 0 2px;
+}
+body.dark .aarti-head .aarti-title h3 { color: var(--gold-light); }
+.aarti-head .aarti-title small {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  letter-spacing: .5px;
+}
+.aarti-head .aarti-toggle {
+  color: var(--gold);
+  font-size: 14px;
+  transition: transform .3s ease;
+}
+.aarti-card.open .aarti-toggle { transform: rotate(180deg); }
+
+.aarti-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease;
+}
+.aarti-card.open .aarti-body { max-height: 1200px; }
+
+.aarti-lyrics {
+  padding: 16px 18px;
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 15px;
+  line-height: 2;
+  color: var(--ink);
+  white-space: pre-line;
+  text-align: center;
+  background: rgba(212,175,55,.03);
+}
+.aarti-lyrics .line {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.aarti-actions {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  background: var(--card-bg);
+}
+.aarti-btn {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  font-family: 'Hind', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all .25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.aarti-btn:hover {
+  border-color: var(--gold);
+  color: var(--maroon);
+  background: rgba(212,175,55,.08);
+}
+body.dark .aarti-btn:hover { color: var(--gold-light); }
+.aarti-btn i { font-size: 12px; }
+.aarti-btn.primary {
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  border-color: transparent;
+}
+.aarti-btn.primary:hover {
+  opacity: .9;
+  color: #fff;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+}
+
+/* Intro Box */
+.intro-box {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+.intro-box p { margin: 0 0 10px; }
+.intro-box p:last-child { margin-bottom: 0; }
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .aarti-hero .aarti-emoji { font-size: 70px; }
+  .aarti-hero h2 { font-size: 23px; }
+  .aarti-lyrics { font-size: 14px; padding: 14px; line-height: 1.9; }
+  .aarti-actions { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>आरती संग्रह</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="aarti-hero">
+  <span class="aarti-emoji">🎵</span>
+  <h2>आरती संग्रह</h2>
+  <div class="aarti-sub">Aarti • Bhajan Collection</div>
+  <div class="aarti-meta">
+    <span><i class="fa-solid fa-music"></i> 10 आरतियाँ</span>
+    <span><i class="fa-solid fa-clock"></i> 25 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> पूरे बोल</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> आरती का महत्व</h2>
+  <div class="intro-box">
+    <p>आरती हिंदू पूजा पद्धति का एक अत्यंत महत्वपूर्ण अंग है। आरती शब्द संस्कृत के "आरात्रिक" से बना है, जिसका अर्थ है — रात्रि में किया जाने वाला दीप दर्शन। आरती में दीपक, घंटी, शंख और भक्ति के साथ भगवान की स्तुति की जाती है।</p>
+    <p>हनुमान जी की आरती करने से भक्त के सभी संकट दूर होते हैं। हनुमान जी को "संकट मोचन" कहा जाता है — जो भी श्रद्धा से उनकी आरती करता है, उसके जीवन से दुख-दर्द दूर हो जाते हैं।</p>
+    <p>निम्न 10 आरतियाँ हनुमान जी की सबसे प्रचलित और शक्तिशाली आरतियाँ हैं। इन्हें प्रतिदिन पढ़ने से मन को शांति और आत्मबल मिलता है।</p>
+  </div>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">आरतियाँ</div><div class="val">10 प्रमुख</div></div>
+    <div class="info-item"><div class="lbl">भजन</div><div class="val">5+ संग्रह</div></div>
+    <div class="info-item"><div class="lbl">समय</div><div class="val">प्रातः/संध्या</div></div>
+    <div class="info-item"><div class="lbl">दिशा</div><div class="val">पूर्व/उत्तर</div></div>
+    <div class="info-item"><div class="lbl">आवृत्ति</div><div class="val">प्रतिदिन</div></div>
+    <div class="info-item"><div class="lbl">अवधि</div><div class="val">5-10 मिनट</div></div>
+  </div>
+</div>
+
+<!-- ========== AARTI 1 ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🪔</span> हनुमान जी की आरतियाँ</h2>
+
+  <div class="aarti-card open" id="aarti1">
+    <div class="aarti-head" onclick="toggleAarti('aarti1')">
+      <span class="aarti-icon">🪔</span>
+      <div class="aarti-title">
+        <h3>आरती कीजै हनुमान लला की</h3>
+        <small>सबसे प्रचलित आरती</small>
+      </div>
+      <i class="fa-solid fa-chevron-down aarti-toggle"></i>
+    </div>
+    <div class="aarti-body">
+      <div class="aarti-lyrics">आरती कीजै हनुमान लला की।
+दुष्ट दलन रघुनाथ कला की॥
+
+जाके बल से गिरिवर काँपे।
+रोग दोष जाके निकट न झाँके॥
+अंजनि पुत्र महा बलदाई।
+संतन के प्रभु सदा सहाई॥
+
+दे बीरा रघुनाथ पठाए।
+लंका जारि सिया सुधि लाए॥
+लंका सो कोट समुद्र सी खाई।
+जाके अगन बुझाइ न पाई॥
+
+लाह समान लंक जरि गई।
+जय जय धुनि सुरपुर में भई॥
+छत्र मणि नागमती छाजै।
+कुंडल कुंड लटा मुख राजै॥
+
+वानर सुभट सबै सुख पावैं।
+राम दरबार सबै सिर नावैं॥
+हनुमत कीर्ति सुरतरु फलवारी।
+जय जय जय कपि राज दुलारी॥</div>
+      <div class="aarti-actions">
+        <button class="aarti-btn primary" onclick="copyAarti(this)">
+          <i class="fa-solid fa-copy"></i> कॉपी करें
+        </button>
+        <button class="aarti-btn" onclick="shareAarti('आरती कीजै हनुमान लला की')">
+          <i class="fa-solid fa-share-nodes"></i> शेयर
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="aarti-card" id="aarti2">
+    <div class="aarti-head" onclick="toggleAarti('aarti2')">
+      <span class="aarti-icon">🌟</span>
+      <div class="aarti-title">
+        <h3>जय हनुमान ज्ञान गुन सागर</h3>
+        <small>प्रातःकालीन आरती</small>
+      </div>
+      <i class="fa-solid fa-chevron-down aarti-toggle"></i>
+    </div>
+    <div class="aarti-body">
+      <div class="aarti-lyrics">जय हनुमान ज्ञान गुन सागर।
+जय कपीस तिहुँ लोक उजागर॥
+
+राम दूत अतुलित बल धामा।
+अंजनि पुत्र पवनसुत नामा॥
+महाबीर बिक्रम बजरंगी।
+कुमति निवार सुमति के संगी॥
+
+कंचन बरन बिराज सुबेसा।
+कानन कुंडल कुंचित केसा॥
+हाथ बज्र औ ध्वजा बिराजै।
+काँधे मूँज जनेऊ साजै॥
+
+संकर सुवन केसरीनंदन।
+तेज प्रताप महा जग बंदन॥
+विद्यावान गुनी अति चातुर।
+राम काज करिबे को आतुर॥
+
+प्रभु चरित्र सुनिबे को रसिया।
+राम लखन सीता मन बसिया॥
+सूक्ष्म रूप धरि सियहिं दिखावा।
+बिकट रूप धरि लंक जरावा॥
+
+भीम रूप धरि असुर सँहारे।
+रामचंद्र के काज सँवारे॥
+लाय सजीवन लखन जियाये।
+श्रीरघुबीर हरषि उर लाये॥</div>
+      <div class="aarti-actions">
+        <button class="aarti-btn primary" onclick="copyAarti(this)">
+          <i class="fa-solid fa-copy"></i> कॉपी करें
+        </button>
+        <button class="aarti-btn" onclick="shareAarti('जय हनुमान ज्ञान गुन सागर')">
+          <i class="fa-solid fa-share-nodes"></i> शेयर
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="aarti-card" id="aarti3">
+    <div class="aarti-head" onclick="toggleAarti('aarti3')">
+      <span class="aarti-icon">⚡</span>
+      <div class="aarti-title">
+        <h3>संकट मोचन आरती</h3>
+        <small>संकट हरण हेतु</small>
+      </div>
+      <i class="fa-solid fa-chevron-down aarti-toggle"></i>
+    </div>
+    <div class="aarti-body">
+      <div class="aarti-lyrics">संकट मोचन हनुमान।
+प्रभु संकट मोचन हनुमान॥
+
+कलियुग केवल नाम अधारा।
+सुमिरि सुमिरि नर उतरहिं पारा॥
+पवन तनय संकट हरन।
+प्रभु संकट मोचन हनुमान॥
+
+सब सुख लहै तुम्हारी सरना।
+तुम रक्षक काहू को डरना॥
+आपन तेज सहरौं आपै।
+तीनों लोक हाँक तें काँपै॥
+
+भूत पिशाच निकट नहिं आवै।
+महाबीर जब नाम सुनावै॥
+नासै रोग हरै सब पीरा।
+जपत निरंतर हनुमत बीरा॥
+
+संकट तें हनुमान छुड़ावै।
+मन क्रम बचन ध्यान जो लावै॥
+जय जय जय हनुमान गोसाईं।
+कृपा करहु गुरुदेव की नाईं॥</div>
+      <div class="aarti-actions">
+        <button class="aarti-btn primary" onclick="copyAarti(this)">
+          <i class="fa-solid fa-copy"></i> कॉपी करें
+        </button>
+        <button class="aarti-btn" onclick="shareAarti('संकट मोचन आरती')">
+          <i class="fa-solid fa-share-nodes"></i> शेयर
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="aarti-card" id="aarti4">
+    <div class="aarti-head" onclick="toggleAarti('aarti4')">
+      <span class="aarti-icon">🔥</span>
+      <div class="aarti-title">
+        <h3>बजरंग बली आरती</h3>
+        <small>वीरता हेतु</small>
+      </div>
+      <i class="fa-solid fa-chevron-down aarti-toggle"></i>
+    </div>
+    <div class="aarti-body">
+      <div class="aarti-lyrics">जय बजरंग बली हनुमान।
+जय बजरंग बली हनुमान॥
+
+संकट कटे मिटे सब पीरा।
+जो सुमिरै हनुमत बलबीरा॥
+जय बजरंग बली हनुमान।
+जय बजरंग बली हनुमान॥
+
+आवत कालि नाम हरि गावै।
+सब जन सुख संपति सब पावै॥
+जय बजरंग बली हनुमान।
+जय बजरंग बली हनुमान॥
+
+राम रूप सब जग में व्यापा।
+हनुमत बल से सब जग काँपा॥
+जय बजरंग बली हनुमान।
+जय बजरंग बली हनुमान॥
+
+लंका जारी सिया सुधि लाई।
+राम काज सब बिधि सब पाई॥
+जय बजरंग बली हनुमान।
+जय बजरंग बली हनुमान॥</div>
+      <div class="aarti-actions">
+        <button class="aarti-btn primary" onclick="copyAarti(this)">
+          <i class="fa-solid fa-copy"></i> कॉपी करें
+        </button>
+        <button class="aarti-btn" onclick="shareAarti('बजरंग बली आरती')">
+          <i class="fa-solid fa-share-nodes"></i> शेयर
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="aarti-card" id="aarti5">
+    <div class="aarti-head" onclick="toggleAarti('aarti5')">
+      <span class="aarti-icon">🛕</span>
+      <div class="aarti-title">
+        <h3>बालाजी आरती</h3>
+        <small>मंदिर विशेष आरती</small>
+      </div>
+      <i class="fa-solid fa-chevron-down aarti-toggle"></i>
+    </div>
+    <div class="aarti-body">
+      <div class="aarti-lyrics">जय जय बालाजी महाराज।
+जय जय बालाजी महाराज॥
+
+संकट में जो तुम्हें पुकारे।
+दौड़े आओ बालाजी सारे॥
+जय जय बालाजी महाराज॥
+
+मेहंदीपुर में राज तुम्हारा।
+सालासर में दरबार प्यारा॥
+जय जय बालाजी महाराज॥
+
+सिंदूर तेल का भोग तुम्हें प्रिय।
+लाल पुष्प से होता जय जय॥
+जय जय बालाजी महाराज॥
+
+मन की मुराद सब पूर्ण करते।
+भक्तों के भव पार उतरते॥
+जय जय बालाजी महाराज॥</div>
+      <div class="aarti-actions">
+        <button class="aarti-btn primary" onclick="copyAarti(this)">
+          <i class="fa-solid fa-copy"></i> कॉपी करें
+        </button>
+        <button class="aarti-btn" onclick="shareAarti('बालाजी आरती')">
+          <i class="fa-solid fa-share-nodes"></i> शेयर
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="aarti-card" id="aarti6">
+    <div class="aarti-head" onclick="toggleAarti('aarti6')">
+      <span class="aarti-icon">🎭</span>
+      <div class="aarti-title">
+        <h3>पंचमुखी हनुमान आरती</h3>
+        <small>विशेष अवसरों हेतु</small>
+      </div>
+      <i class="fa-solid fa-chevron-down aarti-toggle"></i>
+    </div>
+    <div class="aarti-body">
+      <div class="aarti-lyrics">जय पंचमुखी हनुमान।
+जय पंचमुखी हनुमान॥
+
+पाँच मुख दस भुजा विराजे।
+तेज प्रताप सब जग छाजे॥
+जय पंचमुखी हनुमान॥
+
+अहिरावण वध जब कीन्हा।
+पंचमुख रूप धरि लीन्हा॥
+जय पंचमुखी हनुमान॥
+
+राम काज सब बिधि सँवारे।
+दुष्ट दलन सब किए सँहारे॥
+जय पंचमुखी हनुमान॥
+
+भक्तों के सब दुख हरते।
+मन की मुराद सब पूर्ण करते॥
+जय पंचमुखी हनुमान॥</div>
+      <div class="aarti-actions">
+        <button class="aarti-btn primary" onclick="copyAarti(this)">
+          <i class="fa-solid fa-copy"></i> कॉपी करें
+        </button>
+        <button class="aarti-btn" onclick="shareAarti('पंचमुखी हनुमान आरती')">
+          <i class="fa-solid fa-share-nodes"></i> शेयर
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="aarti-card" id="aarti7">
+    <div class="aarti-head" onclick="toggleAarti('aarti7')">
+      <span class="aarti-icon">📖</span>
+      <div class="aarti-title">
+        <h3>हनुमान अष्टक</h3>
+        <small>स्तुति विशेष</small>
+      </div>
+      <i class="fa-solid fa-chevron-down aarti-toggle"></i>
+    </div>
+    <div class="aarti-body">
+      <div class="aarti-lyrics">प्रातः नमामि चरणौ हनुमान्।
+सीताराम रूप धरौ हनुमान्॥
+भूत पिशाच निकट नहिं आवै।
+महाबीर जब नाम सुनावै॥
+
+नासै रोग हरै सब पीरा।
+जपत निरंतर हनुमत बीरा॥
+संकट तें हनुमान छुड़ावै।
+मन क्रम बचन ध्यान जो लावै॥
+
+जय जय जय हनुमान गोसाईं।
+कृपा करहु गुरुदेव की नाईं॥
+जो शत बार पाठ कर कोई।
+छूटहिं बंदि महा सुख होई॥
+
+जो यह पढ़ै हनुमान चालीसा।
+होय सिद्धि साखी गौरीसा॥
+तुलसीदास सदा हरि चेरा।
+कीजै नाथ हृदय महँ डेरा॥</div>
+      <div class="aarti-actions">
+        <button class="aarti-btn primary" onclick="copyAarti(this)">
+          <i class="fa-solid fa-copy"></i> कॉपी करें
+        </button>
+        <button class="aarti-btn" onclick="shareAarti('हनुमान अष्टक')">
+          <i class="fa-solid fa-share-nodes"></i> शेयर
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="aarti-card" id="aarti8">
+    <div class="aarti-head" onclick="toggleAarti('aarti8')">
+      <span class="aarti-icon">🏹</span>
+      <div class="aarti-title">
+        <h3>श्री राम आरती (हनुमान सहित)</h3>
+        <small>राम दरबार आरती</small>
+      </div>
+      <i class="fa-solid fa-chevron-down aarti-toggle"></i>
+    </div>
+    <div class="aarti-body">
+      <div class="aarti-lyrics">श्री रामचंद्र कृपालु भजु मन।
+हरण भवभय दारुणं॥
+नव कंज लोचन कंज मुख कर।
+कंज पद कंजारुणं॥
+
+कंदर्प अगणित अमित छवि।
+नव नील नीरज सुंदरं॥
+पटपीत मानहुँ तड़ित रुचि।
+शुचि नौमि जनक सुतावरं॥
+
+भजु दीनबंधु दिनेश दानव।
+दैत्यवंश निकंदनं॥
+रघुनंद आनंदकंद काशी।
+दशरथ नंदनं॥
+
+शिर मुकुट कुंडल तिलक चारु।
+उर मालु नीलमणि सोहतं॥
+हनुमत सेवत सिया पति।
+सब सुख संपति सोहतं॥</div>
+      <div class="aarti-actions">
+        <button class="aarti-btn primary" onclick="copyAarti(this)">
+          <i class="fa-solid fa-copy"></i> कॉपी करें
+        </button>
+        <button class="aarti-btn" onclick="shareAarti('श्री राम आरती')">
+          <i class="fa-solid fa-share-nodes"></i> शेयर
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="aarti-card" id="aarti9">
+    <div class="aarti-head" onclick="toggleAarti('aarti9')">
+      <span class="aarti-icon">🌿</span>
+      <div class="aarti-title">
+        <h3>संजीवनी आरती</h3>
+        <small>रोग निवारण हेतु</small>
+      </div>
+      <i class="fa-solid fa-chevron-down aarti-toggle"></i>
+    </div>
+    <div class="aarti-body">
+      <div class="aarti-lyrics">जय संजीवनी लाये हनुमान।
+जय संजीवनी लाये हनुमान॥
+
+लखन के प्राण बचाये हनुमान।
+द्रोणगिरि लंका लाये हनुमान॥
+जय संजीवनी लाये हनुमान॥
+
+रोग शोक सब दूर भगाये।
+भक्तों के सब दुख हर लाये॥
+जय संजीवनी लाये हनुमान॥
+
+आरोग्य सुख संपति दाता।
+संकट मोचन बल के दाता॥
+जय संजीवनी लाये हनुमान॥
+
+भक्तों की सब पीर मिटावै।
+मन की मुराद सब पूर्ण करावै॥
+जय संजीवनी लाये हनुमान॥</div>
+      <div class="aarti-actions">
+        <button class="aarti-btn primary" onclick="copyAarti(this)">
+          <i class="fa-solid fa-copy"></i> कॉपी करें
+        </button>
+        <button class="aarti-btn" onclick="shareAarti('संजीवनी आरती')">
+          <i class="fa-solid fa-share-nodes"></i> शेयर
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="aarti-card" id="aarti10">
+    <div class="aarti-head" onclick="toggleAarti('aarti10')">
+      <span class="aarti-icon">🪔</span>
+      <div class="aarti-title">
+        <h3>हनुमान चालीसा (आरती रूप में)</h3>
+        <small>संपूर्ण पाठ</small>
+      </div>
+      <i class="fa-solid fa-chevron-down aarti-toggle"></i>
+    </div>
+    <div class="aarti-body">
+      <div class="aarti-lyrics">जय हनुमान ज्ञान गुन सागर।
+जय कपीस तिहुँ लोक उजागर॥
+राम दूत अतुलित बल धामा।
+अंजनि पुत्र पवनसुत नामा॥
+
+महाबीर बिक्रम बजरंगी।
+कुमति निवार सुमति के संगी॥
+कंचन बरन बिराज सुबेसा।
+कानन कुंडल कुंचित केसा॥
+
+हाथ बज्र औ ध्वजा बिराजै।
+काँधे मूँज जनेऊ साजै॥
+संकर सुवन केसरीनंदन।
+तेज प्रताप महा जग बंदन॥
+
+विद्यावान गुनी अति चातुर।
+राम काज करिबे को आतुर॥
+प्रभु चरित्र सुनिबे को रसिया।
+राम लखन सीता मन बसिया॥
+
+सूक्ष्म रूप धरि सियहिं दिखावा।
+बिकट रूप धरि लंक जरावा॥
+भीम रूप धरि असुर सँहारे।
+रामचंद्र के काज सँवारे॥
+
+लाय सजीवन लखन जियाये।
+श्रीरघुबीर हरषि उर लाये॥
+रघुपति कीन्ही बहुत बड़ाई।
+तुम मम प्रिय भरतहि सम भाई॥
+
+सहस बदन तुम्हरो जस गावैं।
+अस कहि श्रीपति कंठ लगावैं॥
+सनकादिक ब्रह्मादि मुनीसा।
+नारद सारद सहित अहीसा॥</div>
+      <div class="aarti-actions">
+        <button class="aarti-btn primary" onclick="copyAarti(this)">
+          <i class="fa-solid fa-copy"></i> कॉपी करें
+        </button>
+        <button class="aarti-btn" onclick="shareAarti('हनुमान चालीसा')">
+          <i class="fa-solid fa-share-nodes"></i> शेयर
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>आरती कब करनी चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">आरती प्रातःकाल और संध्या काल दोनों समय की जा सकती है। प्रातः सूर्योदय के बाद और संध्या को सूर्यास्त के समय आरती करना सर्वोत्तम है। मंगलवार और शनिवार को आरती का विशेष महत्व है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>आरती में क्या-क्या सामग्री चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">आरती के लिए दीपक (घी या तेल का), घंटी, शंख, धूप, अगरबत्ती, पुष्प, और प्रसाद आवश्यक है। आरती की थाली में दीपक, पुष्प, अक्षत और कुमकुम रखें।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या आरती में घंटी बजाना जरूरी है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हाँ, आरती में घंटी बजाना शुभ माना जाता है। घंटी की ध्वनि से नकारात्मक ऊर्जा दूर होती है और वातावरण पवित्र होता है। यदि घंटी न हो तो शंख बजाएं।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या महिलाएं आरती कर सकती हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हाँ, महिलाएं पूरी श्रद्धा के साथ आरती कर सकती हैं। हनुमान जी भक्तों में भेद नहीं करते। केवल शुद्धता और श्रद्धा आवश्यक है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>आरती की थाली कैसे सजाएं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">आरती की थाली में दीपक, धूप, पुष्प, अक्षत, कुमकुम, और प्रसाद रखें। थाली को साफ और पवित्र रखें। आरती करते समय थाली को दक्षिणावर्त घुमाएं।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>आरती कितनी बार करनी चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">प्रतिदिन कम से कम 1 बार आरती अवश्य करें। विशेष अवसरों पर 3, 5 या 7 बार आरती कर सकते हैं। मंगलवार और शनिवार को 7 बार आरती का विशेष महत्व है।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="11-bajrang-baan.html" class="cat-chip"><i class="fa-solid fa-bolt"></i> बजरंग बाण</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="21-mala.html" class="cat-chip"><i class="fa-solid fa-list-ol"></i> जप माला</a>
+    <a href="40-chola-vidhi.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> चोला विधि</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-om"></i> पूजा विधि</a>
+    <a href="84-faq.html" class="cat-chip"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+
+function toggleAarti(id) {
+  const card = document.getElementById(id);
+  card.classList.toggle('open');
+}
+
+function copyAarti(btn) {
+  const card = btn.closest('.aarti-card');
+  const lyrics = card.querySelector('.aarti-lyrics').innerText;
+  navigator.clipboard.writeText(lyrics).then(() => {
+    showToast('आरती कॉपी हो गई 🙏');
+  }).catch(() => {
+    showToast('कॉपी नहीं हो सकी');
+  });
+}
+
+function shareAarti(title) {
+  if (navigator.share) {
+    navigator.share({
+      title: title,
+      text: title + ' — हनुमान जी की आरती',
+      url: window.location.href
+    }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(window.location.href);
+    showToast('लिंक कॉपी हो गया');
+  }
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  if (!toast) return;
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2200);
+}
+</script>
+</body>
+</html>
