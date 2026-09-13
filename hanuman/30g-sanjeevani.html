@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>संजीवनी बूटी — हनुमान जी की कथा | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी और संजीवनी बूटी — लक्ष्मण मूर्छित, द्रोणगिरि पर्वत उठाना, संजीवनी से लक्ष्मण जीवित और श्रीराम का प्रेम।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.sanjeevani-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(76,175,80,.4), transparent 65%),
+    linear-gradient(135deg, rgba(46,125,50,.22), rgba(212,175,55,.14));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.sanjeevani-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(76,175,80,.15), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.sanjeevani-hero .sanjeevani-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 26px rgba(76,175,80,.85));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.sanjeevani-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .sanjeevani-hero h2 { color: var(--gold-light); }
+.sanjeevani-hero .sanjeevani-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.sanjeevani-hero .sanjeevani-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.sanjeevani-hero .sanjeevani-meta span { display: flex; align-items: center; gap: 5px; }
+.sanjeevani-hero .sanjeevani-meta i { color: var(--gold); }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(76,175,80,.1);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #4CAF50;
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+.katha-block .mantra {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.05));
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,.3);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .katha-block .mantra { color: var(--gold-light); }
+
+/* Moral List */
+.moral-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.moral-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.moral-list li i {
+  color: var(--gold);
+  font-size: 14px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Chapter marker */
+.chapter {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .sanjeevani-hero .sanjeevani-emoji { font-size: 70px; }
+  .sanjeevani-hero h2 { font-size: 23px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="30-katha.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान कथाएँ</span>
+    <h1>संजीवनी बूटी</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="sanjeevani-hero">
+  <span class="sanjeevani-emoji">🌿</span>
+  <h2>संजीवनी बूटी</h2>
+  <div class="sanjeevani-sub">Dronagiri • Lakshman Ji</div>
+  <div class="sanjeevani-meta">
+    <span><i class="fa-solid fa-book-open"></i> 4 अध्याय</span>
+    <span><i class="fa-solid fa-clock"></i> 7 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> विस्तृत</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> कथा का सार</h2>
+  <p>यह कथा हनुमान जी की सबसे अद्भुत और शक्तिशाली लीलाओं में से एक है। जब लक्ष्मण जी मेघनाद के शक्ति बाण से मूर्छित हो गए, तब हनुमान जी ने द्रोणगिरि पर्वत उठाकर संजीवनी बूटी लाकर लक्ष्मण जी को जीवित किया।</p>
+  <p>यह कथा भक्ति, सेवा और अद्वितीय शक्ति का प्रतीक है। पढ़ें पूरी कथा — 4 अध्यायों में।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">स्थान</div><div class="val">लंका युद्धभूमि</div></div>
+    <div class="info-item"><div class="lbl">मुख्य पात्र</div><div class="val">हनुमान, लक्ष्मण, राम</div></div>
+    <div class="info-item"><div class="lbl">पर्वत</div><div class="val">द्रोणगिरि</div></div>
+    <div class="info-item"><div class="lbl">औषधि</div><div class="val">संजीवनी बूटी</div></div>
+    <div class="info-item"><div class="lbl">मुख्य गुण</div><div class="val">सेवा, भक्ति</div></div>
+    <div class="info-item"><div class="lbl">शिक्षा</div><div class="val">सेवा का महत्व</div></div>
+  </div>
+</div>
+
+<!-- ========== अध्याय 1 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 1</span>
+  <h3>⚔️ लक्ष्मण जी मूर्छित</h3>
+  <p>लंका युद्ध में रावण के पुत्र मेघनाद ने अनेक दिव्यास्त्रों का प्रयोग किया। एक दिन उसने लक्ष्मण जी पर शक्ति बाण चलाया। शक्ति बाण लक्ष्मण जी के हृदय में लगा और वे मूर्छित होकर भूमि पर गिर पड़े।</p>
+  <p>श्रीराम ने अपने भाई को मूर्छित देखा तो उनका हृदय व्याकुल हो गया। उन्होंने विलाप करते हुए कहा — "हे लक्ष्मण, तुम्हारे बिना मैं जीवित नहीं रह सकता।" पूरी वानर सेना चिंतित हो गई।</p>
+  <p class="highlight">तब सुशेण वैद्य (रावण के भाई) ने कहा — "हे राम, लक्ष्मण को बचाने का एक ही उपाय है — संजीवनी बूटी। यह औषधि द्रोणगिरि पर्वत पर मिलती है। केवल हनुमान ही इसे शीघ्र ला सकते हैं।"</p>
+  <p>श्रीराम ने हनुमान जी की ओर देखा। हनुमान जी ने हाथ जोड़कर कहा — "हे प्रभु, आज्ञा दें। मैं शीघ्र ही संजीवनी लेकर आता हूँ।" उन्होंने श्रीराम के चरणों में प्रणाम किया और आकाश की ओर उड़ान भरी।</p>
+</div>
+
+<!-- ========== अध्याय 2 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 2</span>
+  <h3>🏔️ द्रोणगिरि पर्वत की यात्रा</h3>
+  <p>हनुमान जी आकाश में उड़ते हुए द्रोणगिरि पर्वत की ओर बढ़े। उनकी गति इतनी तेज थी कि बादल भी उनके सामने छोटे लगने लगे। उन्होंने समुद्र, वन, पर्वत और नदियाँ पार कीं।</p>
+  <p>रास्ते में उन्होंने अनेक बाधाओं का सामना किया। कालनेमि नामक राक्षस ने उन्हें रोकने का प्रयास किया, लेकिन हनुमान जी ने उसे पराजित किया।</p>
+  <p class="highlight">जब हनुमान जी द्रोणगिरि पर्वत पर पहुँचे, तो उन्होंने संजीवनी बूटी की खोज शुरू की। लेकिन पर्वत पर अनेक जड़ी-बूटियाँ थीं। संजीवनी बूटी को पहचानना कठिन था। हनुमान जी ने बहुत प्रयास किया, लेकिन संजीवनी नहीं मिली।</p>
+  <p>समय बीत रहा था। लक्ष्मण जी की दशा गंभीर थी। हनुमान जी ने सोचा — "यदि मैं संजीवनी ढूँढने में समय लगाऊँगा, तो लक्ष्मण जी का जीवन संकट में पड़ जाएगा।"</p>
+</div>
+
+<!-- ========== अध्याय 3 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 3</span>
+  <h3>💪 द्रोणगिरि पर्वत उठाना</h3>
+  <p>हनुमान जी ने एक अद्भुत निर्णय लिया। उन्होंने अपना रूप विशाल किया और <strong>पूरा द्रोणगिरि पर्वत</strong> अपने हाथों पर उठा लिया। उन्होंने सोचा — "यदि मैं पूरा पर्वत ही ले जाऊँगा, तो संजीवनी भी साथ आ जाएगी।"</p>
+  <p>पर्वत को उठाकर हनुमान जी आकाश में उड़ने लगे। उनकी गति इतनी तेज थी कि हवा भी उनके सामने झुक गई। तीनों लोकों में हलचल मच गई। देवता आश्चर्यचकित होकर देखने लगे।</p>
+  <p class="highlight">रास्ते में हनुमान जी को भरत जी मिले। भरत जी ने हनुमान जी को दूर से देखकर सोचा — "कोई राक्षस पर्वत ले जा रहा है।" उन्होंने अपना बाण चलाया। हनुमान जी ने भरत जी को पहचाना और हाथ जोड़कर कहा — "हे भरत, मैं हनुमान हूँ। लक्ष्मण जी के लिए संजीवनी ले जा रहा हूँ।" भरत जी ने लज्जित होकर अपना बाण वापस लिया।</p>
+  <p>हनुमान जी लंका पहुँचे और पर्वत को भूमि पर रखा। सुशेण वैद्य ने संजीवनी बूटी निकाली और लक्ष्मण जी को दी।</p>
+</div>
+
+<!-- ========== अध्याय 4 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 4</span>
+  <h3>🌟 लक्ष्मण जीवित और श्रीराम का प्रेम</h3>
+  <p>संजीवनी बूटी के प्रभाव से लक्ष्मण जी के प्राण लौट आए। उन्होंने आँखें खोलीं और श्रीराम को देखा। श्रीराम ने अपने भाई को जीवित देखकर हर्षित होकर उन्हें हृदय से लगा लिया।</p>
+  <p>श्रीराम ने हनुमान जी की ओर देखा और कहा — "हे हनुमान, तुमने अद्भुत कार्य किया है। तुम्हारे बिना लक्ष्मण जीवित नहीं हो सकते थे। तुम मेरे प्राणों के समान हो।"</p>
+  <p class="highlight">हनुमान जी ने विनम्रता से कहा — "हे प्रभु, यह सब आपकी कृपा से हुआ है। मैं तो केवल आपका सेवक हूँ। आपकी सेवा में ही मेरा जीवन सफल है।"</p>
+  <p>इस घटना के बाद पूरी वानर सेना में उत्साह भर गया। श्रीराम ने हनुमान जी को हृदय से लगाया और कहा — "हे हनुमान, जहाँ तुम्हारी भक्ति होगी, वहाँ मैं सदा उपस्थित रहूँगा।"</p>
+  <p class="mantra">ॐ श्री हनुमते नमः<br><small>हनुमान जी की सेवा भावना का स्मरण करें</small></p>
+</div>
+
+<!-- ========== शिक्षा ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> कथा से शिक्षा</h2>
+  <ul class="moral-list">
+    <li><i class="fa-solid fa-star"></i> <strong>सेवा भाव:</strong> हनुमान जी ने श्रीराम के लिए तुरंत संजीवनी लाने का संकल्प किया — सेवा भाव से ही भगवान प्रसन्न होते हैं।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>बुद्धि का प्रयोग:</strong> हनुमान जी ने संजीवनी न मिलने पर पूरा पर्वत उठा लिया — बुद्धि से हर समस्या का समाधान मिलता है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>समय की पाबंदी:</strong> हनुमान जी ने समय बचाने के लिए पूरा पर्वत उठाया — समय का सदुपयोग करना चाहिए।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>विनम्रता:</strong> हनुमान जी ने सारा श्रेय श्रीराम को दिया — विनम्रता सबसे बड़ा आभूषण है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>श्रीराम का प्रेम:</strong> श्रीराम ने हनुमान जी को हृदय से लगाया — भक्ति से भगवान प्रसन्न होते हैं।</li>
+  </ul>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>लक्ष्मण जी मूर्छित कैसे हुए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">लंका युद्ध में रावण के पुत्र <strong>मेघनाद</strong> ने लक्ष्मण जी पर <strong>शक्ति बाण</strong> चलाया। शक्ति बाण लक्ष्मण जी के हृदय में लगा और वे मूर्छित होकर भूमि पर गिर पड़े।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी ने पूरा पर्वत क्यों उठाया?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी को संजीवनी बूटी नहीं मिली। समय बीत रहा था और लक्ष्मण जी की दशा गंभीर थी। इसलिए उन्होंने <strong>पूरा द्रोणगिरि पर्वत</strong> उठा लिया ताकि संजीवनी भी साथ आ जाए।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>रास्ते में भरत जी ने हनुमान जी पर बाण क्यों चलाया?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">भरत जी ने हनुमान जी को दूर से देखकर सोचा — "कोई राक्षस पर्वत ले जा रहा है।" उन्होंने अपना बाण चलाया। हनुमान जी ने भरत जी को पहचाना और हाथ जोड़कर कहा — "हे भरत, मैं हनुमान हूँ।" भरत जी ने लज्जित होकर अपना बाण वापस लिया।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>संजीवनी बूटी से क्या हुआ?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">सुशेण वैद्य ने संजीवनी बूटी निकाली और लक्ष्मण जी को दी। संजीवनी के प्रभाव से लक्ष्मण जी के प्राण लौट आए। उन्होंने आँखें खोलीं और श्रीराम को देखा।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>इस कथा से हमें क्या सीख मिलती है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">इस कथा से सीख मिलती है कि <strong>सेवा भाव से भगवान प्रसन्न होते हैं</strong>, <strong>बुद्धि से हर समस्या का समाधान मिलता है</strong>, और <strong>विनम्रता सबसे बड़ा आभूषण है</strong>।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> सभी कथाएँ</a>
+    <a href="30f-lanka-dahan.html" class="cat-chip"><i class="fa-solid fa-arrow-left"></i> लंका दहन</a>
+    <a href="30h-ahiravan-vadh.html" class="cat-chip"><i class="fa-solid fa-arrow-right"></i> अहिरावण वध</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-om"></i> पूजा विधि</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह कथा शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
