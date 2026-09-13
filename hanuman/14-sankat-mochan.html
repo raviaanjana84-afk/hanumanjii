@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>संकट मोचन हनुमानाष्टक — अर्थ सहित | Sankat Mochan Hanumanashtak</title>
+<meta name="description" content="संकट मोचन हनुमानाष्टक — 8 श्लोक, हर श्लोक का अर्थ, संकट नाशक, पाठ विधि, लाभ और नियम।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+.sm-hero{
+  width:100%;padding:34px 20px 28px;
+  background:radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius:var(--radius);text-align:center;margin:16px 0;
+  border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.sm-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.sm-hero .sm-emoji{
+  font-size:90px;display:block;margin-bottom:10px;
+  filter:drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;z-index:2;
+}
+.sm-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:26px;color:var(--maroon);margin-bottom:6px;
+  position:relative;z-index:2;line-height:1.3;
+}
+body.dark .sm-hero h2{color:var(--gold-light)}
+.sm-hero .sm-sub{
+  font-size:12.5px;color:var(--ink-soft);letter-spacing:2px;
+  text-transform:uppercase;position:relative;z-index:2;
+}
+.sm-hero .sm-meta{
+  display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+  margin-top:14px;font-size:11.5px;color:var(--ink-soft);
+  position:relative;z-index:2;
+}
+.sm-hero .sm-meta span{display:flex;align-items:center;gap:5px}
+.sm-hero .sm-meta i{color:var(--gold)}
+
+.sm-shloka{
+  background:var(--card-bg);border-radius:16px;padding:20px 18px;
+  margin-bottom:14px;border:1px solid var(--border);
+  transition:var(--transition);position:relative;overflow:hidden;
+}
+.sm-shloka::before{
+  content:'';position:absolute;top:0;left:0;width:5px;height:100%;
+  background:linear-gradient(180deg,var(--gold),var(--saffron));
+}
+.sm-shloka:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 28px rgba(122,46,46,.15);
+  border-color:var(--gold);
+}
+.sm-shloka-num{
+  display:inline-block;background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;font-size:11px;font-weight:700;padding:3px 12px;
+  border-radius:20px;margin-bottom:12px;letter-spacing:.5px;
+}
+.sm-shloka-text{
+  font-family:'Tiro Devanagari Hindi',serif;font-size:16px;
+  color:var(--maroon);line-height:2.1;font-weight:600;
+  text-align:center;margin-bottom:14px;padding:0 4px;
+}
+body.dark .sm-shloka-text{color:var(--gold-light)}
+.sm-shloka-actions{
+  display:flex;gap:8px;justify-content:center;margin-bottom:12px;
+}
+.sm-shloka-actions button{
+  padding:7px 16px;border-radius:20px;
+  border:1px solid var(--border);background:var(--bg-alt);
+  color:var(--maroon);font-size:11.5px;font-weight:600;
+  cursor:pointer;transition:var(--transition);
+  display:flex;align-items:center;gap:5px;font-family:inherit;
+}
+body.dark .sm-shloka-actions button{color:var(--gold-light)}
+.sm-shloka-actions button:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+.sm-shloka-actions button i{font-size:11px}
+.sm-shloka-meaning{
+  background:var(--bg-alt);border-radius:10px;padding:14px;
+  font-size:13.5px;color:var(--ink-soft);line-height:1.9;
+  border-left:3px solid var(--gold);display:none;
+}
+.sm-shloka-meaning.show{display:block;animation:fadeUp .3s ease}
+.sm-shloka-meaning strong{color:var(--maroon)}
+body.dark .sm-shloka-meaning strong{color:var(--gold-light)}
+
+.sm-info{
+  background:linear-gradient(135deg, rgba(212,175,55,.14), rgba(122,46,46,.06));
+  border-radius:14px;padding:16px 18px;
+  border-left:4px solid var(--gold);margin:14px 0;
+}
+.sm-info h4{
+  font-family:'Tiro Devanagari Hindi',serif;font-size:16px;
+  color:var(--maroon);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+body.dark .sm-info h4{color:var(--gold-light)}
+.sm-info ul{padding-left:20px;margin:6px 0}
+.sm-info li{
+  font-size:13.5px;line-height:1.85;color:var(--ink-soft);margin-bottom:6px;
+}
+.sm-info li strong{color:var(--maroon)}
+body.dark .sm-info li strong{color:var(--gold-light)}
+
+.sm-benefits{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.sm-benefit{
+  padding:8px 14px;
+  background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(255,107,53,.1));
+  border:1px solid var(--gold);border-radius:30px;
+  font-size:12.5px;color:var(--maroon);font-weight:600;
+  display:flex;align-items:center;gap:6px;
+}
+body.dark .sm-benefit{color:var(--gold-light)}
+.sm-benefit i{font-size:11px;color:var(--saffron)}
+
+.sm-warning{
+  background:linear-gradient(135deg, rgba(255,107,53,.12), rgba(122,46,46,.08));
+  border-left:4px solid var(--saffron);
+  border-radius:12px;padding:16px;margin:14px 0;
+}
+.sm-warning h4{
+  font-family:'Tiro Devanagari Hindi',serif;font-size:15px;
+  color:var(--maroon);margin-bottom:8px;
+  display:flex;align-items:center;gap:8px;
+}
+body.dark .sm-warning h4{color:var(--gold-light)}
+.sm-warning h4 i{color:var(--saffron)}
+.sm-warning ul{padding-left:20px;margin:6px 0}
+.sm-warning li{
+  font-size:13px;color:var(--ink-soft);line-height:1.75;margin-bottom:5px;
+}
+
+.faq-item{
+  background:var(--bg-alt);border-radius:12px;margin-bottom:10px;
+  overflow:hidden;border:1px solid var(--border);
+}
+.faq-q{
+  padding:14px 15px;cursor:pointer;display:flex;
+  justify-content:space-between;align-items:center;gap:10px;
+  font-family:'Tiro Devanagari Hindi',serif;font-size:14px;
+  color:var(--maroon);font-weight:600;
+}
+body.dark .faq-q{color:var(--gold-light)}
+.faq-q i{color:var(--gold);font-size:12px;transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q i{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
+.faq-item.open .faq-a{max-height:1000px}
+.faq-a-inner{
+  padding:0 15px 15px;font-size:13px;color:var(--ink-soft);
+  line-height:1.85;border-top:1px dashed var(--border);padding-top:12px;
+}
+.faq-a-inner strong{color:var(--maroon)}
+body.dark .faq-a-inner strong{color:var(--gold-light)}
+
+.toggle-all-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin:14px auto;padding:10px 22px;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;border:none;border-radius:30px;font-size:13px;font-weight:600;
+  cursor:pointer;box-shadow:0 4px 14px rgba(122,46,46,.3);
+  transition:var(--transition);
+}
+.toggle-all-btn:hover{transform:translateY(-2px)}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>संकट मोचन अष्टक</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<div class="sm-hero">
+  <span class="sm-emoji">🚨</span>
+  <h2>संकट मोचन हनुमानाष्टक</h2>
+  <div class="sm-sub">संकट नाशक · 8 श्लोक</div>
+  <div class="sm-meta">
+    <span><i class="fa-solid fa-list-ol"></i> 8 श्लोक</span>
+    <span><i class="fa-solid fa-clock"></i> ~3 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> अर्थ सहित</span>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> संकट मोचन अष्टक के बारे में</h2>
+  <p><strong>संकट मोचन हनुमानाष्टक</strong> एक अत्यंत प्रसिद्ध स्तोत्र है, जो <strong>तुलसीदास जी</strong> द्वारा रचित माना जाता है। इसमें <strong>8 श्लोक</strong> हैं — इसलिए इसे अष्टक कहा जाता है।</p>
+  <p>यह स्तोत्र हनुमान जी को <strong>"संकट मोचन"</strong> के रूप में संबोधित करता है — वे जो सभी संकटों को हरते हैं। जब भी जीवन में कोई संकट आता है, तब इसका पाठ अचूक उपाय है।</p>
+  <p>वाराणसी का प्रसिद्ध <strong>संकट मोचन मंदिर</strong> इसी स्तोत्र से जुड़ा है — जहाँ तुलसीदास जी ने इसकी रचना की थी।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">रचयिता</div><div class="val">तुलसीदास जी</div></div>
+    <div class="info-item"><div class="lbl">श्लोक संख्या</div><div class="val">8</div></div>
+    <div class="info-item"><div class="lbl">पाठ समय</div><div class="val">~3 मिनट</div></div>
+    <div class="info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगल, शनि</div></div>
+    <div class="info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">प्रातः / सायं</div></div>
+    <div class="info-item"><div class="lbl">विशेष</div><div class="val">संकट नाशक</div></div>
+  </div>
+</div>
+
+<button class="toggle-all-btn" onclick="toggleAllMeanings()">
+  <i class="fa-solid fa-book"></i>
+  <span id="toggleText">सभी अर्थ दिखाएँ</span>
+</button>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🔸</span> संकट मोचन हनुमानाष्टक (संपूर्ण)</h2>
+
+  <div class="sm-shloka">
+    <span class="sm-shloka-num">श्लोक 1</span>
+    <div class="sm-shloka-text">
+      बाल समय रबि बोजि लियो ताहि मधुर फल जानू ।<br>
+      जगत लाजि बोजि लियो ताहि मधुर फल जानू ॥
+    </div>
+    <div class="sm-shloka-actions">
+      <button onclick="toggleShloka(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyShloka(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="sm-shloka-meaning"><strong>अर्थ:</strong> बाल्यकाल में आपने सूर्य देव को मीठा फल समझकर पकड़ लिया था। संपूर्ण जगत को लज्जित करते हुए आपने उन्हें निगल लिया था। हे हनुमान, आपकी यह अद्भुत बाल लीला है।</div>
+  </div>
+
+  <div class="sm-shloka">
+    <span class="sm-shloka-num">श्लोक 2</span>
+    <div class="sm-shloka-text">
+      प्रभु मुद्रिका मेलि मुख माहीं ।<br>
+      जलधि लांघि गये अचरज नाहीं ॥
+    </div>
+    <div class="sm-shloka-actions">
+      <button onclick="toggleShloka(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyShloka(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="sm-shloka-meaning"><strong>अर्थ:</strong> श्री राम की मुद्रिका को मुख में रखकर आपने समुद्र को लाँघ लिया — इसमें कोई आश्चर्य नहीं है। हे संकट मोचन, आपके लिए यह साधारण कार्य है।</div>
+  </div>
+
+  <div class="sm-shloka">
+    <span class="sm-shloka-num">श्लोक 3</span>
+    <div class="sm-shloka-text">
+      दुर्गम काज जगत के जेते ।<br>
+      सुगम अनुग्रह तुम्हरे तेते ॥
+    </div>
+    <div class="sm-shloka-actions">
+      <button onclick="toggleShloka(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyShloka(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="sm-shloka-meaning"><strong>अर्थ:</strong> संसार के जितने भी कठिन कार्य हैं, वे सब आपकी कृपा से सुगम हो जाते हैं। हे संकट मोचन, आपकी कृपा से हर दुर्गम कार्य सरल हो जाता है।</div>
+  </div>
+
+  <div class="sm-shloka">
+    <span class="sm-shloka-num">श्लोक 4</span>
+    <div class="sm-shloka-text">
+      राम दुआरे तुम रखवारे ।<br>
+      होत न आज्ञा बिनु पैसारे ॥
+    </div>
+    <div class="sm-shloka-actions">
+      <button onclick="toggleShloka(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyShloka(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="sm-shloka-meaning"><strong>अर्थ:</strong> आप श्री राम के द्वार के रखवारे हैं। आपकी आज्ञा के बिना कोई भी प्रवेश नहीं कर सकता। हे संकट मोचन, आप राम दरबार के रक्षक हैं।</div>
+  </div>
+
+  <div class="sm-shloka">
+    <span class="sm-shloka-num">श्लोक 5</span>
+    <div class="sm-shloka-text">
+      सब सुख लहै तुम्हारी सरना ।<br>
+      तुम रक्षक काहू को डर ना ॥
+    </div>
+    <div class="sm-shloka-actions">
+      <button onclick="toggleShloka(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyShloka(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="sm-shloka-meaning"><strong>अर्थ:</strong> आपकी शरण में आने वाले को सभी सुख प्राप्त होते हैं। जब आप रक्षक हैं, तो किसी का भय नहीं रहता। हे संकट मोचन, आप भक्तों के रक्षक हैं।</div>
+  </div>
+
+  <div class="sm-shloka">
+    <span class="sm-shloka-num">श्लोक 6</span>
+    <div class="sm-shloka-text">
+      आपन तेज सम्हारो आपै ।<br>
+      तीनों लोक हाँक तें काँपै ॥
+    </div>
+    <div class="sm-shloka-actions">
+      <button onclick="toggleShloka(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyShloka(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="sm-shloka-meaning"><strong>अर्थ:</strong> आप अपने तेज को स्वयं संभाल सकते हैं। आपकी गर्जना से तीनों लोक काँप उठते हैं। हे संकट मोचन, आपका तेज अद्वितीय है।</div>
+  </div>
+
+  <div class="sm-shloka">
+    <span class="sm-shloka-num">श्लोक 7</span>
+    <div class="sm-shloka-text">
+      भूत पिसाच निकट नहिं आवै ।<br>
+      महाबीर जब नाम सुनावै ॥
+    </div>
+    <div class="sm-shloka-actions">
+      <button onclick="toggleShloka(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyShloka(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="sm-shloka-meaning"><strong>अर्थ:</strong> जब महावीर हनुमान का नाम सुना जाता है, तो भूत-पिशाच निकट नहीं आते। हे संकट मोचन, आपके नाम मात्र से सभी बुरी शक्तियाँ भाग जाती हैं।</div>
+  </div>
+
+  <div class="sm-shloka">
+    <span class="sm-shloka-num">श्लोक 8</span>
+    <div class="sm-shloka-text">
+      नासै रोग हरै सब पीरा ।<br>
+      जपत निरंतर हनुमत बीरा ॥
+    </div>
+    <div class="sm-shloka-actions">
+      <button onclick="toggleShloka(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyShloka(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="sm-shloka-meaning"><strong>अर्थ:</strong> वीर हनुमान का निरंतर जप करने से सभी रोग नष्ट होते हैं और सभी पीड़ाएँ दूर होती हैं। हे संकट मोचन, आपके जप से सब कुछ ठीक हो जाता है।</div>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🪔</span> पाठ विधि</h2>
+  <div class="sm-info">
+    <h4><i class="fa-solid fa-list-check"></i> कैसे पढ़ें संकट मोचन अष्टक?</h4>
+    <ul>
+      <li><strong>स्नान:</strong> स्नान करके स्वच्छ वस्त्र धारण करें</li>
+      <li><strong>समय:</strong> प्रातः या सायं, विशेषकर मंगलवार/शनिवार</li>
+      <li><strong>दिशा:</strong> पूर्व दिशा की ओर मुख करें</li>
+      <li><strong>दीप:</strong> घी का दीपक जलाएँ, धूप करें</li>
+      <li><strong>भोग:</strong> बेसन के लड्डू और केला</li>
+      <li><strong>संख्या:</strong> 1 बार, 7 बार, या 21 बार</li>
+      <li><strong>अंत:</strong> हनुमान चालीसा और आरती</li>
+    </ul>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> संकट मोचन अष्टक के लाभ</h2>
+  <div class="sm-benefits">
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> सभी संकटों का नाश</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> रोग नाश</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> पीड़ा नाश</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> शत्रु नाश</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> भूत-प्रेत बाधा से रक्षा</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> भय मुक्ति</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> मानसिक शांति</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> बल वृद्धि</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> आत्मविश्वास</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> पारिवारिक सुख</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> धन प्राप्ति</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> ग्रह शांति</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> शनि दोष निवारण</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> कालसर्प दोष मुक्ति</span>
+    <span class="sm-benefit"><i class="fa-solid fa-check"></i> मोक्ष प्राप्ति</span>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">⚠️</span> क्या न करें?</h2>
+  <div class="sm-warning">
+    <h4><i class="fa-solid fa-triangle-exclamation"></i> वर्जित बातें</h4>
+    <ul>
+      <li>❌ अशुद्ध अवस्था में पाठ न करें</li>
+      <li>❌ तुलसी न चढ़ाएँ</li>
+      <li>❌ मांस, मदिरा का सेवन न करें</li>
+      <li>❌ क्रोध और अहंकार से पाठ न करें</li>
+      <li>❌ गलत उच्चारण में पाठ न करें</li>
+      <li>❌ चमड़े की वस्तु पास न रखें</li>
+    </ul>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>संकट मोचन अष्टक कब पढ़ना चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">प्रातः 5-7 बजे या सायं 6-8 बजे के बीच पढ़ें। मंगलवार और शनिवार को विशेष फलदायी है। संकट के समय तुरंत पढ़ सकते हैं।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>संकट मोचन और हनुमान अष्टक में अंतर?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान अष्टक — हनुमान जी की स्तुति, बाल लीला और महान कार्यों का वर्णन। संकट मोचन अष्टक — हनुमान जी को "संकट मोचन" रूप में संबोधित — संकट नाश के लिए। दोनों में कुछ श्लोक समान हैं, लेकिन संकट मोचन में रक्षा की भावना अधिक है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या महिलाएँ संकट मोचन अष्टक पढ़ सकती हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हाँ, बिल्कुल! महिलाएँ पढ़ सकती हैं। लेकिन मासिक धर्म के दौरान न पढ़ें। स्नान करके स्वच्छ वस्त्र पहनें।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>संकट मोचन अष्टक से क्या लाभ होता है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">नित्य पाठ से सभी प्रकार के संकट, रोग, शत्रु बाधा, भूत-प्रेत बाधा, भय दूर होते हैं। मानसिक शांति मिलती है और जीवन में सुख-समृद्धि आती है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>कितनी बार पढ़ें?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">1 बार नित्य पाठ। सामान्य संकट में 7 बार, बड़े संकट में 21 बार, महा संकट में 108 बार।</div>
+    </div>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="11-bajrang-baan.html" class="cat-chip"><i class="fa-solid fa-bolt"></i> बजरंग बाण</a>
+    <a href="12-hanuman-ashtak.html" class="cat-chip"><i class="fa-solid fa-fire"></i> अष्टक</a>
+    <a href="13-hanuman-bahuk.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> बाहुक</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-fire"></i> पूजा विधि</a>
+  </div>
+</div>
+
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+function toggleShloka(btn) {
+  const card = btn.closest('.sm-shloka');
+  const meaning = card.querySelector('.sm-shloka-meaning');
+  meaning.classList.toggle('show');
+  if (meaning.classList.contains('show')) {
+    btn.innerHTML = '<i class="fa-solid fa-book"></i> छिपाएँ';
+  } else {
+    btn.innerHTML = '<i class="fa-solid fa-book-open"></i> अर्थ';
+  }
+  if (navigator.vibrate) navigator.vibrate(15);
+}
+
+function copyShloka(btn) {
+  const card = btn.closest('.sm-shloka');
+  const text = card.querySelector('.sm-shloka-text')?.innerText || '';
+  copyMantra(text);
+}
+
+let allVisible = false;
+function toggleAllMeanings() {
+  allVisible = !allVisible;
+  document.querySelectorAll('.sm-shloka-meaning').forEach(m => {
+    m.classList.toggle('show', allVisible);
+  });
+  document.querySelectorAll('.sm-shloka-actions button:first-child').forEach(btn => {
+    btn.innerHTML = allVisible
+      ? '<i class="fa-solid fa-book"></i> छिपाएँ'
+      : '<i class="fa-solid fa-book-open"></i> अर्थ';
+  });
+  const t = document.getElementById('toggleText');
+  if (t) t.textContent = allVisible ? 'सभी अर्थ छिपाएँ' : 'सभी अर्थ दिखाएँ';
+}
+
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
