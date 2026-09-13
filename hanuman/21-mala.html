@@ -1,0 +1,1627 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>डिजिटल जप माला — हनुमान जी | Digital Japa Mala Counter</title>
+<meta name="description" content="हनुमान जी की डिजिटल जप माला — Tap to count, 108/1008 target, streak tracker, statistics, sound & haptic feedback, achievements. Offline support with localStorage." />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* Mala page specific */
+.mala-hero{
+  width:100%;
+  padding:30px 20px 24px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius:var(--radius);
+  text-align:center;
+  margin:16px 0;
+  border:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.mala-hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.mala-hero .mh-emoji{
+  font-size:70px;
+  display:block;
+  margin-bottom:8px;
+  filter:drop-shadow(0 0 22px rgba(212,175,55,.85));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;
+  z-index:2;
+}
+.mala-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:26px;
+  color:var(--maroon);
+  margin-bottom:6px;
+  position:relative;
+  z-index:2;
+}
+body.dark .mala-hero h2{color:var(--gold-light)}
+.mala-hero .mh-sub{
+  font-size:12px;
+  color:var(--ink-soft);
+  letter-spacing:2px;
+  text-transform:uppercase;
+  position:relative;
+  z-index:2;
+}
+
+/* ===== MALA COUNTER MAIN ===== */
+.mala-main{
+  background:var(--card-bg);
+  border-radius:20px;
+  padding:24px 18px;
+  margin-bottom:16px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-lg);
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.mala-main::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--gold),var(--saffron),var(--gold-light));
+  animation:shimmer 3s linear infinite;
+  background-size:200% 100%;
+}
+@keyframes shimmer{
+  0%{background-position:200% 0}
+  100%{background-position:-200% 0}
+}
+
+/* Mala circle progress */
+.mala-circle-wrap{
+  position:relative;
+  width:260px;
+  height:260px;
+  margin:0 auto 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+@media(max-width:380px){.mala-circle-wrap{width:220px;height:220px}}
+
+.mala-svg{
+  position:absolute;
+  inset:0;
+  transform:rotate(-90deg);
+  width:100%;
+  height:100%;
+}
+.mala-svg circle{
+  fill:none;
+  stroke-width:12;
+  stroke-linecap:round;
+}
+.mala-svg .track{stroke:var(--border)}
+.mala-svg .progress{
+  stroke:url(#malaGradient);
+  stroke-dasharray:754;
+  stroke-dashoffset:754;
+  transition:stroke-dashoffset .4s cubic-bezier(.4,0,.2,1);
+}
+
+.mala-center{
+  position:relative;
+  z-index:2;
+  text-align:center;
+}
+.mala-big-count{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:64px;
+  font-weight:700;
+  color:var(--maroon);
+  line-height:1;
+  text-shadow:0 2px 10px rgba(212,175,55,.25);
+  transition:transform .15s;
+}
+@media(max-width:380px){.mala-big-count{font-size:52px}}
+body.dark .mala-big-count{color:var(--gold-light)}
+.mala-big-count.bump{animation:bump .25s ease}
+@keyframes bump{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+  100%{transform:scale(1)}
+}
+.mala-target-text{
+  font-size:13.5px;
+  color:var(--ink-soft);
+  margin-top:6px;
+  font-weight:600;
+  letter-spacing:.5px;
+}
+.mala-percent{
+  font-size:11.5px;
+  color:var(--gold);
+  margin-top:2px;
+  font-weight:600;
+}
+body.dark .mala-percent{color:var(--gold-light)}
+
+/* Tap button */
+.mala-tap-btn{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, #FF8C5A, #7A2E2E);
+  color:#fff;
+  border:4px solid rgba(255,255,255,.3);
+  font-size:44px;
+  cursor:pointer;
+  box-shadow:
+    0 10px 30px rgba(122,46,46,.5),
+    inset 0 -6px 20px rgba(0,0,0,.25),
+    inset 0 4px 16px rgba(255,255,255,.2);
+  transition:transform .12s, box-shadow .2s;
+  margin:8px auto 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+.mala-tap-btn:active{
+  transform:scale(.9);
+  box-shadow:
+    0 4px 12px rgba(122,46,46,.7),
+    inset 0 -3px 12px rgba(0,0,0,.3),
+    inset 0 2px 8px rgba(255,255,255,.15);
+}
+.mala-tap-btn::after{
+  content:'';
+  position:absolute;
+  inset:-8px;
+  border-radius:50%;
+  border:2px solid rgba(212,175,55,.4);
+  animation:pulseRing 2.5s infinite;
+  pointer-events:none;
+}
+
+/* Action buttons */
+.mala-actions{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin-top:10px;
+}
+@media(max-width:420px){.mala-actions{grid-template-columns:repeat(2,1fr)}}
+.mala-action{
+  padding:11px 8px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--bg-alt);
+  color:var(--maroon);
+  font-size:11.5px;
+  font-weight:600;
+  cursor:pointer;
+  transition:var(--transition);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:4px;
+  line-height:1.15;
+}
+body.dark .mala-action{color:var(--gold-light)}
+.mala-action:hover{
+  background:var(--maroon);
+  color:#fff;
+  border-color:var(--maroon);
+  transform:translateY(-2px);
+}
+.mala-action i{
+  font-size:16px;
+  color:var(--gold);
+}
+.mala-action:hover i{color:#fff}
+
+/* ===== TARGET SELECTOR ===== */
+.target-section{
+  background:var(--card-bg);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:16px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+.target-section h3{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:15.5px;
+  color:var(--maroon);
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+body.dark .target-section h3{color:var(--gold-light)}
+.target-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.target-chip{
+  padding:9px 18px;
+  border-radius:30px;
+  border:1.5px solid var(--border);
+  background:var(--bg-alt);
+  color:var(--maroon);
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
+  transition:var(--transition);
+  flex:1;
+  text-align:center;
+  min-width:70px;
+}
+body.dark .target-chip{color:var(--gold-light)}
+.target-chip:hover{border-color:var(--gold);transform:translateY(-2px)}
+.target-chip.active{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;
+  border-color:transparent;
+  box-shadow:0 4px 14px rgba(122,46,46,.35);
+}
+.target-chip small{
+  display:block;
+  font-size:9.5px;
+  opacity:.75;
+  font-weight:500;
+  margin-top:2px;
+}
+
+/* ===== MANTRA SELECTOR ===== */
+.mantra-select{
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1.5px solid var(--border);
+  background:var(--bg-alt);
+  color:var(--maroon);
+  font-family:inherit;
+  font-size:13.5px;
+  font-weight:600;
+  cursor:pointer;
+  transition:var(--transition);
+}
+body.dark .mantra-select{color:var(--gold-light);background:var(--bg-alt)}
+.mantra-select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.15)}
+
+/* ===== STATS GRID ===== */
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-bottom:16px;
+}
+@media(min-width:480px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
+.stat-card{
+  background:linear-gradient(135deg,rgba(212,175,55,.14),rgba(122,46,46,.06));
+  border-radius:14px;
+  padding:14px 10px;
+  text-align:center;
+  border:1px solid var(--border);
+  transition:var(--transition);
+}
+.stat-card:hover{transform:translateY(-3px);border-color:var(--gold)}
+.stat-num{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:26px;
+  font-weight:700;
+  color:var(--maroon);
+  line-height:1;
+}
+body.dark .stat-num{color:var(--gold-light)}
+.stat-lbl{
+  font-size:10.5px;
+  color:var(--ink-soft);
+  margin-top:6px;
+  font-weight:600;
+  letter-spacing:.4px;
+}
+
+/* ===== STREAK CALENDAR ===== */
+.streak-calendar{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:4px;
+  margin:12px 0;
+}
+.day-cell{
+  aspect-ratio:1;
+  border-radius:6px;
+  background:var(--bg-alt);
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:9px;
+  color:var(--ink-light);
+  font-weight:600;
+  cursor:pointer;
+  transition:var(--transition);
+}
+.day-cell:hover{transform:scale(1.1)}
+.day-cell.done{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;
+  border-color:transparent;
+}
+.day-cell.done-high{
+  background:linear-gradient(135deg,#FF8C5A,#7A2E2E);
+  color:#fff;
+}
+.day-cell.today{
+  box-shadow:0 0 0 2px var(--gold);
+}
+
+/* ===== ACHIEVEMENTS ===== */
+.achievements-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:12px 0;
+}
+@media(min-width:480px){.achievements-grid{grid-template-columns:repeat(4,1fr)}}
+.achievement{
+  background:var(--bg-alt);
+  border-radius:12px;
+  padding:12px 8px;
+  text-align:center;
+  border:2px solid var(--border);
+  transition:var(--transition);
+  position:relative;
+  filter:grayscale(1);
+  opacity:.5;
+}
+.achievement.unlocked{
+  filter:grayscale(0);
+  opacity:1;
+  border-color:var(--gold);
+  background:linear-gradient(135deg,rgba(212,175,55,.2),rgba(255,107,53,.1));
+  box-shadow:0 4px 14px rgba(212,175,55,.25);
+}
+.achievement .a-icon{
+  font-size:26px;
+  display:block;
+  margin-bottom:5px;
+}
+.achievement .a-name{
+  font-size:10.5px;
+  font-weight:700;
+  color:var(--maroon);
+  line-height:1.2;
+}
+body.dark .achievement .a-name{color:var(--gold-light)}
+.achievement .a-desc{
+  font-size:9px;
+  color:var(--ink-light);
+  margin-top:3px;
+  line-height:1.3;
+}
+.achievement.unlocked::before{
+  content:'✓';
+  position:absolute;
+  top:4px;
+  right:6px;
+  color:var(--gold);
+  font-size:11px;
+  font-weight:700;
+}
+
+/* ===== SESSION INFO ===== */
+.session-info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin:12px 0;
+}
+.session-item{
+  background:var(--bg-alt);
+  padding:10px 12px;
+  border-radius:10px;
+  border-left:3px solid var(--gold);
+}
+.session-item .si-lbl{
+  font-size:10px;
+  color:var(--ink-light);
+  text-transform:uppercase;
+  letter-spacing:.6px;
+}
+.session-item .si-val{
+  font-size:15px;
+  color:var(--maroon);
+  font-weight:700;
+  margin-top:3px;
+  font-family:'Tiro Devanagari Hindi',serif;
+}
+body.dark .session-item .si-val{color:var(--gold-light)}
+
+/* ===== SECTION HEADER ===== */
+.section-header{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:20px 0 12px;
+  padding-bottom:8px;
+  border-bottom:2px solid var(--gold);
+}
+.section-header .sh-icon{
+  font-size:20px;
+  flex-shrink:0;
+}
+.section-header h3{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:18px;
+  color:var(--maroon);
+  margin:0;
+  border:none;
+  padding:0;
+  flex:1;
+}
+body.dark .section-header h3{color:var(--gold-light)}
+.section-header .sh-action{
+  font-size:11px;
+  padding:5px 12px;
+  background:var(--bg-alt);
+  border:1px solid var(--border);
+  border-radius:20px;
+  color:var(--maroon);
+  font-weight:600;
+  cursor:pointer;
+  transition:var(--transition);
+}
+body.dark .section-header .sh-action{color:var(--gold-light)}
+.section-header .sh-action:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+
+/* ===== COMPLETION MODAL ===== */
+.completion-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  z-index:2000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  backdrop-filter:blur(8px);
+}
+.completion-modal.show{
+  display:flex;
+  animation:fadeUp .4s ease;
+}
+.completion-box{
+  background:var(--card-bg);
+  border-radius:24px;
+  padding:32px 24px;
+  max-width:380px;
+  width:100%;
+  text-align:center;
+  border:3px solid var(--gold);
+  position:relative;
+  overflow:hidden;
+}
+.completion-box::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 0%, rgba(212,175,55,.3), transparent 60%);
+  animation:pulseGlow 2s infinite;
+  pointer-events:none;
+}
+.completion-box .c-emoji{
+  font-size:72px;
+  display:block;
+  margin-bottom:12px;
+  animation:floatIcon 1.5s ease-in-out infinite;
+  position:relative;
+  z-index:1;
+}
+.completion-box h3{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:24px;
+  color:var(--maroon);
+  margin-bottom:8px;
+  position:relative;
+  z-index:1;
+}
+body.dark .completion-box h3{color:var(--gold-light)}
+.completion-box p{
+  font-size:14px;
+  color:var(--ink-soft);
+  margin-bottom:16px;
+  position:relative;
+  z-index:1;
+  line-height:1.7;
+}
+.completion-box .c-btns{
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  position:relative;
+  z-index:1;
+}
+.completion-box .c-btn{
+  padding:11px 22px;
+  border-radius:30px;
+  border:none;
+  font-size:13.5px;
+  font-weight:600;
+  cursor:pointer;
+  transition:var(--transition);
+  font-family:inherit;
+}
+.completion-box .c-btn.primary{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;
+  box-shadow:0 6px 20px rgba(122,46,46,.4);
+}
+.completion-box .c-btn.secondary{
+  background:var(--bg-alt);
+  color:var(--maroon);
+  border:1px solid var(--border);
+}
+body.dark .completion-box .c-btn.secondary{color:var(--gold-light)}
+
+/* ===== CONFETTI ANIMATION ===== */
+.confetti{
+  position:fixed;
+  width:10px;
+  height:10px;
+  top:-20px;
+  z-index:3000;
+  pointer-events:none;
+  animation:confettiFall 3s linear forwards;
+}
+@keyframes confettiFall{
+  0%{transform:translateY(0) rotate(0);opacity:1}
+  100%{transform:translateY(100vh) rotate(720deg);opacity:0}
+}
+
+/* ===== FAQ ===== */
+.faq-item{
+  background:var(--bg-alt);
+  border-radius:12px;
+  margin-bottom:10px;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+.faq-q{
+  padding:13px 15px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:14px;
+  color:var(--maroon);
+  font-weight:600;
+}
+body.dark .faq-q{color:var(--gold-light)}
+.faq-q i{
+  color:var(--gold);
+  font-size:12px;
+  transition:transform .3s;
+  flex-shrink:0;
+}
+.faq-item.open .faq-q i{transform:rotate(180deg)}
+.faq-a{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .5s cubic-bezier(.4,0,.2,1);
+}
+.faq-item.open .faq-a{max-height:1000px}
+.faq-a-inner{
+  padding:0 15px 15px;
+  font-size:13px;
+  color:var(--ink-soft);
+  line-height:1.8;
+  border-top:1px dashed var(--border);
+  padding-top:12px;
+}
+
+/* ===== BENEFITS CHIPS ===== */
+.benefit-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:10px;
+}
+.benefit-chip{
+  padding:6px 12px;
+  background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(255,107,53,.1));
+  border:1px solid var(--gold);
+  border-radius:20px;
+  font-size:11.5px;
+  color:var(--maroon);
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+body.dark .benefit-chip{color:var(--gold-light)}
+.benefit-chip i{font-size:10px;color:var(--saffron)}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>डिजिटल जप माला</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<div class="mala-hero">
+  <span class="mh-emoji">📿</span>
+  <h2>डिजिटल जप माला</h2>
+  <div class="mh-sub">Tap · Count · Track · Achieve</div>
+</div>
+
+<!-- ===== MANTRA SELECTOR ===== -->
+<div class="target-section">
+  <h3><i class="fa-solid fa-om"></i> मंत्र चुनें</h3>
+  <select class="mantra-select" id="mantraSelect">
+    <option value="ॐ श्री हनुमते नमः">ॐ श्री हनुमते नमः (मूल मंत्र)</option>
+    <option value="ॐ हं हनुमते रुद्रात्मकाय हुं फट्">ॐ हं हनुमते रुद्रात्मकाय हुं फट् (बीज)</option>
+    <option value="ॐ श्री हनुमते नमः, संकट मोचनाय नमः">संकट मोचन मंत्र</option>
+    <option value="ॐ आंजनेयाय विद्महे महावीराय धीमहि । तन्नो हनुमानः प्रचोदयात् ॥">हनुमान गायत्री मंत्र</option>
+    <option value="श्री राम जय राम जय जय राम">राम नाम मंत्र</option>
+    <option value="ॐ नमो भगवते पंचवक्त्राय, हनुमते, आद्यवीराय">पंचमुखी मंत्र</option>
+    <option value="जय श्री राम">जय श्री राम</option>
+    <option value="जय हनुमान">जय हनुमान</option>
+  </select>
+</div>
+
+<!-- ===== TARGET SELECTOR ===== -->
+<div class="target-section">
+  <h3><i class="fa-solid fa-bullseye"></i> लक्ष्य चुनें</h3>
+  <div class="target-chips">
+    <button class="target-chip" data-target="11">11<small>अल्प</small></button>
+    <button class="target-chip" data-target="27">27<small>चौथाई</small></button>
+    <button class="target-chip" data-target="54">54<small>आधी</small></button>
+    <button class="target-chip active" data-target="108">108<small>पूर्ण माला</small></button>
+    <button class="target-chip" data-target="1008">1008<small>महा</small></button>
+    <button class="target-chip" data-target="0">∞<small>असीम</small></button>
+  </div>
+</div>
+
+<!-- ===== MALA MAIN ===== -->
+<div class="mala-main">
+
+  <div class="mala-circle-wrap">
+    <svg class="mala-svg" viewBox="0 0 260 260">
+      <defs>
+        <linearGradient id="malaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#D4AF37"/>
+          <stop offset="50%" stop-color="#FF6B35"/>
+          <stop offset="100%" stop-color="#7A2E2E"/>
+        </linearGradient>
+      </defs>
+      <circle class="track" cx="130" cy="130" r="120"></circle>
+      <circle class="progress" id="malaProgress" cx="130" cy="130" r="120"></circle>
+    </svg>
+    <div class="mala-center">
+      <div class="mala-big-count" id="malaCount">0</div>
+      <div class="mala-target-text" id="malaTargetText">/ 108</div>
+      <div class="mala-percent" id="malaPercent">0% पूर्ण</div>
+    </div>
+  </div>
+
+  <button class="mala-tap-btn" id="malaTapBtn" onclick="malaTap()" aria-label="जप करें">
+    🕉️
+  </button>
+
+  <div class="mala-actions">
+    <button class="mala-action" onclick="malaMinus()">
+      <i class="fa-solid fa-minus"></i>
+      -1
+    </button>
+    <button class="mala-action" onclick="malaReset()">
+      <i class="fa-solid fa-rotate-left"></i>
+      रीसेट
+    </button>
+    <button class="mala-action" onclick="toggleSound()" id="soundBtn">
+      <i class="fa-solid fa-volume-high" id="soundIcon"></i>
+      आवाज़
+    </button>
+    <button class="mala-action" onclick="toggleVibrate()" id="vibrateBtn">
+      <i class="fa-solid fa-mobile-screen" id="vibrateIcon"></i>
+      कंपन
+    </button>
+  </div>
+
+  <div class="session-info">
+    <div class="session-item">
+      <div class="si-lbl">सत्र का समय</div>
+      <div class="si-val" id="sessionTime">00:00</div>
+    </div>
+    <div class="session-item">
+      <div class="si-lbl">गति (जप/मिनट)</div>
+      <div class="si-val" id="sessionSpeed">0</div>
+    </div>
+  </div>
+
+  <div class="mantra-display" style="margin-top:14px;padding:12px;background:rgba(212,175,55,.1);border-radius:10px;font-family:'Tiro Devanagari Hindi',serif;font-size:14px;color:var(--maroon);text-align:center;line-height:1.9;" id="mantraDisplay">
+    ॐ श्री हनुमते नमः
+  </div>
+
+</div>
+
+<!-- ===== STATS ===== -->
+<div class="section-header">
+  <span class="sh-icon">📊</span>
+  <h3>आँकड़े (Statistics)</h3>
+  <button class="sh-action" onclick="resetStats()">रीसेट</button>
+</div>
+
+<div class="stats-grid">
+  <div class="stat-card">
+    <div class="stat-num" id="statToday">0</div>
+    <div class="stat-lbl">आज</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num" id="statWeek">0</div>
+    <div class="stat-lbl">इस सप्ताह</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num" id="statMonth">0</div>
+    <div class="stat-lbl">इस माह</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-num" id="statTotal">0</div>
+    <div class="stat-lbl">कुल जप</div>
+  </div>
+</div>
+
+<!-- ===== STREAK ===== -->
+<div class="section-header">
+  <span class="sh-icon">🔥</span>
+  <h3>Streak — निरंतरता</h3>
+  <div style="font-size:11.5px;color:var(--gold);font-weight:700;" id="streakCount">0 दिन</div>
+</div>
+
+<div class="devta-section" style="margin-top:0;">
+  <div class="streak-calendar" id="streakCalendar">
+    <!-- JS will populate -->
+  </div>
+  <p style="text-align:center;font-size:11.5px;color:var(--ink-light);margin:8px 0 0;">
+    <i class="fa-solid fa-circle-info"></i> कम से कम 108 जप करने पर दिन हरा हो जाता है
+  </p>
+</div>
+
+<!-- ===== ACHIEVEMENTS ===== -->
+<div class="section-header">
+  <span class="sh-icon">🏆</span>
+  <h3>Achievements</h3>
+  <div style="font-size:11.5px;color:var(--gold);font-weight:700;" id="achieveCount">0 / 12</div>
+</div>
+
+<div class="achievements-grid" id="achievementsGrid">
+  <!-- JS will populate -->
+</div>
+
+<!-- ===== BENEFITS ===== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">✨</span> जप माला के लाभ</h2>
+
+  <div class="benefit-chips">
+    <span class="benefit-chip"><i class="fa-solid fa-check"></i> मानसिक शांति</span>
+    <span class="benefit-chip"><i class="fa-solid fa-check"></i> एकाग्रता</span>
+    <span class="benefit-chip"><i class="fa-solid fa-check"></i> आत्मिक उन्नति</span>
+    <span class="benefit-chip"><i class="fa-solid fa-check"></i> पाप नाश</span>
+    <span class="benefit-chip"><i class="fa-solid fa-check"></i> संकट मोचन</span>
+    <span class="benefit-chip"><i class="fa-solid fa-check"></i> रोग नाश</span>
+    <span class="benefit-chip"><i class="fa-solid fa-check"></i> भय मुक्ति</span>
+    <span class="benefit-chip"><i class="fa-solid fa-check"></i> बल वृद्धि</span>
+    <span class="benefit-chip"><i class="fa-solid fa-check"></i> बुद्धि वृद्धि</span>
+    <span class="benefit-chip"><i class="fa-solid fa-check"></i> कर्म शुद्धि</span>
+    <span class="benefit-chip"><i class="fa-solid fa-check"></i> मनोकामना पूर्ति</span>
+    <span class="benefit-chip"><i class="fa-solid fa-check"></i> मोक्ष</span>
+  </div>
+</div>
+
+<!-- ===== HOW TO USE ===== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> माला कैसे उपयोग करें?</h2>
+
+  <div class="puja-step">
+    <div class="puja-num">1</div>
+    <div class="puja-content">
+      <strong>मंत्र चुनें</strong>
+      <p>ऊपर dropdown से अपना मंत्र चुनें — मूल मंत्र, गायत्री, संकट मोचन आदि।</p>
+    </div>
+  </div>
+  <div class="puja-step">
+    <div class="puja-num">2</div>
+    <div class="puja-content">
+      <strong>लक्ष्य चुनें</strong>
+      <p>11, 27, 54, 108, 1008, या असीम (∞) में से लक्ष्य चुनें।</p>
+    </div>
+  </div>
+  <div class="puja-step">
+    <div class="puja-num">3</div>
+    <div class="puja-content">
+      <strong>🕉️ बटन दबाएँ</strong>
+      <p>हर बार "ॐ" बटन दबाएँ — गिनती बढ़ेगी, प्रगति रिंग भरेगी।</p>
+    </div>
+  </div>
+  <div class="puja-step">
+    <div class="puja-num">4</div>
+    <div class="puja-content">
+      <strong>आवाज़ और कंपन</strong>
+      <p>आवाज़ और कंपन toggle buttons से on/off करें।</p>
+    </div>
+  </div>
+  <div class="puja-step">
+    <div class="puja-num">5</div>
+    <div class="puja-content">
+      <strong>लक्ष्य पूर्ण होने पर</strong>
+      <p>लक्ष्य पूर्ण होते ही celebration + 🎉 + achievement unlock।</p>
+    </div>
+  </div>
+  <div class="puja-step">
+    <div class="puja-num">6</div>
+    <div class="puja-content">
+      <strong>डेटा save रहता है</strong>
+      <p>आपकी जप संख्या, streak और achievements localStorage में save रहते हैं — app बंद करने पर भी।</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FAQ ===== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या डिजिटल माला से जप करना सही है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>हाँ, बिल्कुल!</strong> शास्त्रों में <strong>मन, वचन और कर्म</strong> से जप को महत्व दिया गया है। डिजिटल माला से <strong>गिनती</strong> का काम आसान हो जाता है और आप <strong>पूरा ध्यान मंत्र में</strong> लगा सकते हैं। लेकिन यदि संभव हो तो <strong>रुद्राक्ष या मूंगे की माला</strong> का उपयोग करें — उसमें स्पर्श का लाभ भी मिलता है। डिजिटल माला <strong>यात्रा, ऑफिस, या जब वास्तविक माला न हो</strong> तब उपयोगी है।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>लक्ष्य पूरा होने पर क्या होता है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        जब आप लक्ष्य (जैसे 108) पूरा करते हैं, तो:
+        <ul style="padding-left:20px;margin-top:6px;">
+          <li>🎉 Celebration modal दिखता है</li>
+          <li>🎊 Confetti गिरती है</li>
+          <li>🔊 ध्वनि बजती है</li>
+          <li>📳 कंपन होता है</li>
+          <li>🏆 Achievement unlock हो सकती है</li>
+          <li>📊 Stats में जुड़ जाता है</li>
+        </ul>
+        इसके बाद आप <strong>दोबारा जप शुरू</strong> कर सकते हैं — counter 0 से शुरू होगा, लेकिन <strong>कुल जप</strong> stats में जुड़ता रहेगा।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या मेरा डेटा सुरक्षित रहता है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>हाँ, पूरी तरह!</strong> आपका सारा डेटा <strong>आपके फोन/ब्राउज़र में ही</strong> (localStorage में) save रहता है। कोई भी डेटा <strong>इंटरनेट पर नहीं भेजा जाता</strong>। यह पूरी तरह <strong>प्राइवेट</strong> है। आप जब चाहें, "रीसेट" button से अपना डेटा मिटा सकते हैं।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>कितने जप रोज़ करने चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        शास्त्रों के अनुसार:
+        <ul style="padding-left:20px;margin-top:6px;">
+          <li><strong>न्यूनतम:</strong> 1 माला (108 जप)</li>
+          <li><strong>सामान्य:</strong> 3-5 माला (324-540 जप)</li>
+          <li><strong>विशेष:</strong> 9 माला (972 जप)</li>
+          <li><strong>महा साधना:</strong> 11-21 माला</li>
+          <li><strong>अनुष्ठान:</strong> 1008 जप (1 महा-माला)</li>
+        </ul>
+        <strong>महत्वपूर्ण:</strong> नियमितता (रोज़) > अधिक संख्या। रोज़ 108 जप > एक दिन 1008 जप।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या मैं कई मंत्र एक साथ जप सकता हूँ?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>हाँ!</strong> आप <strong>dropdown से मंत्र बदल</strong> सकते हैं। हर मंत्र की गिनती <strong>अलग-अलग</strong> नहीं होती — यह सिर्फ <strong>कुल जप</strong> गिनता है। लेकिन सुझाव है कि एक बार में <strong>एक ही मंत्र</strong> पर ध्यान दें — इससे <strong>एकाग्रता</strong> बढ़ती है।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>Achievement कैसे unlock होती है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        Achievements विभिन्न milestones पर unlock होती हैं:
+        <ul style="padding-left:20px;margin-top:6px;">
+          <li><strong>First Step:</strong> पहला जप</li>
+          <li><strong>108 Master:</strong> 1 माला पूर्ण</li>
+          <li><strong>1080:</strong> 10 माला पूर्ण</li>
+          <li><strong>10800:</strong> 100 माला पूर्ण</li>
+          <li><strong>3-Day Streak:</strong> लगातार 3 दिन</li>
+          <li><strong>7-Day Streak:</strong> लगातार 7 दिन</li>
+          <li><strong>30-Day Streak:</strong> लगातार 30 दिन</li>
+          <li><strong>1000 Japa:</strong> 1000 कुल जप</li>
+          <li><strong>10K Japa:</strong> 10,000 कुल जप</li>
+          <li><strong>1 Lakh Japa:</strong> 1,00,000 कुल जप</li>
+          <li><strong>Speed Master:</strong> 60 जप/मिनट</li>
+          <li><strong>All-Rounder:</strong> सभी unlock</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== QUICK LINKS ===== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="22-108-names.html" class="cat-chip"><i class="fa-solid fa-list-ol"></i> 108 नाम</a>
+    <a href="40-chola-vidhi.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> चोला विधि</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-fire"></i> पूजा विधि</a>
+    <a href="85-30day-plan.html" class="cat-chip"><i class="fa-solid fa-calendar"></i> 30 दिन योजना</a>
+  </div>
+</div>
+
+<!-- ===== SHARE ===== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- ===== COMPLETION MODAL ===== -->
+<div class="completion-modal" id="completionModal">
+  <div class="completion-box">
+    <span class="c-emoji">🎉</span>
+    <h3 id="completeTitle">माला पूर्ण!</h3>
+    <p id="completeMsg">आपने 108 जप पूर्ण किए। हनुमान जी की कृपा आप पर बनी रहे 🙏</p>
+    <div class="c-btns">
+      <button class="c-btn primary" onclick="startNewRound()">नई माला शुरू</button>
+      <button class="c-btn secondary" onclick="closeCompletion()">ठीक है</button>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">जप सुरक्षित है 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+/* ============================================
+   MALA COUNTER — COMPLETE LOGIC
+============================================ */
+
+// Constants
+const STORAGE_KEYS = {
+  count: 'malaCount',
+  target: 'malaTarget',
+  total: 'malaTotal',
+  today: 'malaToday',
+  todayDate: 'malaTodayDate',
+  week: 'malaWeek',
+  month: 'malaMonth',
+  streak: 'malaStreak',
+  lastJapa: 'malaLastJapa',
+  history: 'malaHistory',
+  sound: 'malaSound',
+  vibrate: 'malaVibrate',
+  achievements: 'malaAchievements',
+  mantra: 'malaMantra'
+};
+
+// State
+let state = {
+  count: 0,
+  target: 108,
+  total: 0,
+  today: 0,
+  todayDate: new Date().toDateString(),
+  week: 0,
+  month: 0,
+  streak: 0,
+  lastJapaDate: null,
+  history: {}, // { '2026-01-15': 108, ... }
+  sound: true,
+  vibrate: true,
+  achievements: [],
+  sessionStart: Date.now(),
+  sessionCount: 0
+};
+
+// Load state
+function loadState() {
+  try {
+    const saved = {};
+    Object.keys(STORAGE_KEYS).forEach(k => {
+      const val = localStorage.getItem(STORAGE_KEYS[k]);
+      if (val !== null) saved[k] = val;
+    });
+
+    if (saved.count) state.count = parseInt(saved.count);
+    if (saved.target) state.target = parseInt(saved.target);
+    if (saved.total) state.total = parseInt(saved.total);
+    if (saved.today) state.today = parseInt(saved.today);
+    if (saved.todayDate) state.todayDate = saved.todayDate;
+    if (saved.week) state.week = parseInt(saved.week);
+    if (saved.month) state.month = parseInt(saved.month);
+    if (saved.streak) state.streak = parseInt(saved.streak);
+    if (saved.lastJapa) state.lastJapaDate = saved.lastJapa;
+    if (saved.history) state.history = JSON.parse(saved.history);
+    if (saved.sound !== undefined) state.sound = saved.sound === 'true';
+    if (saved.vibrate !== undefined) state.vibrate = saved.vibrate === 'true';
+    if (saved.achievements) state.achievements = JSON.parse(saved.achievements);
+    if (saved.mantra) {
+      const sel = document.getElementById('mantraSelect');
+      if (sel) sel.value = saved.mantra;
+    }
+
+    // Reset today if date changed
+    const todayStr = new Date().toDateString();
+    if (state.todayDate !== todayStr) {
+      state.todayDate = todayStr;
+      state.today = 0;
+      localStorage.setItem(STORAGE_KEYS.todayDate, todayStr);
+      localStorage.setItem(STORAGE_KEYS.today, 0);
+    }
+  } catch (e) {
+    console.warn('State load error:', e);
+  }
+}
+
+// Save state
+function saveState() {
+  try {
+    localStorage.setItem(STORAGE_KEYS.count, state.count);
+    localStorage.setItem(STORAGE_KEYS.target, state.target);
+    localStorage.setItem(STORAGE_KEYS.total, state.total);
+    localStorage.setItem(STORAGE_KEYS.today, state.today);
+    localStorage.setItem(STORAGE_KEYS.todayDate, state.todayDate);
+    localStorage.setItem(STORAGE_KEYS.week, state.week);
+    localStorage.setItem(STORAGE_KEYS.month, state.month);
+    localStorage.setItem(STORAGE_KEYS.streak, state.streak);
+    if (state.lastJapaDate) localStorage.setItem(STORAGE_KEYS.lastJapa, state.lastJapaDate);
+    localStorage.setItem(STORAGE_KEYS.history, JSON.stringify(state.history));
+    localStorage.setItem(STORAGE_KEYS.sound, state.sound);
+    localStorage.setItem(STORAGE_KEYS.vibrate, state.vibrate);
+    localStorage.setItem(STORAGE_KEYS.achievements, JSON.stringify(state.achievements));
+    localStorage.setItem(STORAGE_KEYS.mantra, document.getElementById('mantraSelect')?.value || '');
+  } catch (e) {
+    console.warn('State save error:', e);
+  }
+}
+
+// ===== UI UPDATE FUNCTIONS =====
+function updateUI() {
+  const countEl = document.getElementById('malaCount');
+  const targetEl = document.getElementById('malaTargetText');
+  const percentEl = document.getElementById('malaPercent');
+  const progressEl = document.getElementById('malaProgress');
+
+  if (countEl) countEl.textContent = state.count;
+  if (targetEl) targetEl.textContent = state.target === 0 ? '/ ∞' : '/ ' + state.target;
+
+  // Progress ring
+  const circumference = 754; // 2 * PI * 120
+  if (state.target === 0) {
+    // Infinite mode — pulse animation
+    if (progressEl) progressEl.style.strokeDashoffset = circumference * 0.5;
+    if (percentEl) percentEl.textContent = '∞ मोड';
+  } else {
+    const percent = Math.min(100, (state.count / state.target) * 100);
+    const offset = circumference - (percent / 100) * circumference;
+    if (progressEl) progressEl.style.strokeDashoffset = offset;
+    if (percentEl) percentEl.textContent = Math.round(percent) + '% पूर्ण';
+  }
+
+  // Stats
+  updateStatsUI();
+
+  // Streak
+  updateStreakUI();
+
+  // Achievements
+  updateAchievementsUI();
+}
+
+function updateStatsUI() {
+  const set = (id, val) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = val.toLocaleString('hi-IN');
+  };
+  set('statToday', state.today);
+  set('statWeek', state.week);
+  set('statMonth', state.month);
+  set('statTotal', state.total);
+}
+
+function updateStreakUI() {
+  const el = document.getElementById('streakCount');
+  if (el) el.textContent = state.streak + ' दिन';
+
+  // Build calendar (last 35 days)
+  const cal = document.getElementById('streakCalendar');
+  if (!cal) return;
+  cal.innerHTML = '';
+
+  const today = new Date();
+  for (let i = 34; i >= 0; i--) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    const key = d.toDateString();
+    const isoKey = d.toISOString().split('T')[0];
+    const count = state.history[isoKey] || 0;
+
+    const cell = document.createElement('div');
+    cell.className = 'day-cell';
+    if (count >= 108) cell.classList.add('done-high');
+    else if (count > 0) cell.classList.add('done');
+    if (i === 0) cell.classList.add('today');
+
+    cell.textContent = d.getDate();
+    cell.title = isoKey + ': ' + count + ' जप';
+    cal.appendChild(cell);
+  }
+}
+
+// ===== ACHIEVEMENTS =====
+const ACHIEVEMENTS_LIST = [
+  { id: 'first', icon: '👣', name: 'पहला कदम', desc: '1 जप', check: () => state.total >= 1 },
+  { id: 'mala108', icon: '📿', name: '108 Master', desc: '108 जप', check: () => state.total >= 108 },
+  { id: 'mala1080', icon: '🌟', name: '1080 जप', desc: '10 माला', check: () => state.total >= 1080 },
+  { id: 'mala10800', icon: '💫', name: '10,800 जप', desc: '100 माला', check: () => state.total >= 10800 },
+  { id: 'mala1lakh', icon: '🏅', name: '1 लाख जप', desc: 'लाख जप', check: () => state.total >= 100000 },
+  { id: 'streak3', icon: '🔥', name: '3 Day Streak', desc: '3 दिन', check: () => state.streak >= 3 },
+  { id: 'streak7', icon: '🔥🔥', name: '7 Day Streak', desc: '7 दिन', check: () => state.streak >= 7 },
+  { id: 'streak30', icon: '🌟🔥', name: '30 Day Streak', desc: '30 दिन', check: () => state.streak >= 30 },
+  { id: 'speed60', icon: '⚡', name: 'गति मास्टर', desc: '60 जप/मिनट', check: () => getSessionSpeed() >= 60 },
+  { id: 'night', icon: '🌙', name: 'रात्रि साधक', desc: 'रात्रि जप', check: () => new Date().getHours() >= 22 || new Date().getHours() < 4 },
+  { id: 'early', icon: '🌅', name: 'ब्रह्म मुहूर्त', desc: '4-6 AM जप', check: () => new Date().getHours() >= 4 && new Date().getHours() < 6 },
+  { id: 'thousand', icon: '💎', name: '1000 क्लब', desc: '1000 जप', check: () => state.total >= 1000 }
+];
+
+function updateAchievementsUI() {
+  const grid = document.getElementById('achievementsGrid');
+  if (!grid) return;
+
+  let unlockedCount = 0;
+  grid.innerHTML = '';
+
+  ACHIEVEMENTS_LIST.forEach(a => {
+    const unlocked = state.achievements.includes(a.id);
+    if (unlocked) unlockedCount++;
+
+    const div = document.createElement('div');
+    div.className = 'achievement' + (unlocked ? ' unlocked' : '');
+    div.innerHTML = `
+      <span class="a-icon">${a.icon}</span>
+      <div class="a-name">${a.name}</div>
+      <div class="a-desc">${a.desc}</div>
+    `;
+    grid.appendChild(div);
+  });
+
+  const countEl = document.getElementById('achieveCount');
+  if (countEl) countEl.textContent = unlockedCount + ' / ' + ACHIEVEMENTS_LIST.length;
+}
+
+function checkAchievements() {
+  ACHIEVEMENTS_LIST.forEach(a => {
+    if (!state.achievements.includes(a.id)) {
+      try {
+        if (a.check()) {
+          state.achievements.push(a.id);
+          showToast('🏆 Achievement unlocked: ' + a.name);
+          if (state.vibrate && navigator.vibrate) navigator.vibrate([50, 30, 50, 30, 100]);
+        }
+      } catch (e) {}
+    }
+  });
+  updateAchievementsUI();
+}
+
+// ===== MAIN TAP FUNCTION =====
+function malaTap() {
+  state.count++;
+  state.total++;
+  state.today++;
+  state.week++;
+  state.month++;
+  state.sessionCount++;
+
+  // Update history
+  const todayIso = new Date().toISOString().split('T')[0];
+  state.history[todayIso] = (state.history[todayIso] || 0) + 1;
+
+  // Update streak
+  updateStreak();
+
+  // Save
+  saveState();
+
+  // UI Update
+  const countEl = document.getElementById('malaCount');
+  if (countEl) {
+    countEl.textContent = state.count;
+    countEl.classList.add('bump');
+    setTimeout(() => countEl.classList.remove('bump'), 250);
+  }
+  updateUI();
+
+  // Haptic
+  if (state.vibrate && navigator.vibrate) navigator.vibrate(20);
+
+  // Sound
+  if (state.sound) playBeadSound();
+
+  // Check completion
+  if (state.target > 0 && state.count === state.target) {
+    completeMala();
+  }
+
+  // Check achievements
+  checkAchievements();
+}
+
+function updateStreak() {
+  const today = new Date().toDateString();
+  const last = state.lastJapaDate;
+
+  if (last === today) {
+    // Same day — no change
+    return;
+  }
+
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yestStr = yesterday.toDateString();
+
+  if (last === yestStr || last === null) {
+    // Continuous — increment streak (or start fresh)
+    if (last === yestStr) {
+      state.streak++;
+    } else {
+      state.streak = 1;
+    }
+  } else {
+    // Gap — reset streak
+    state.streak = 1;
+  }
+
+  state.lastJapaDate = today;
+}
+
+// ===== MINUS =====
+function malaMinus() {
+  if (state.count > 0) {
+    state.count--;
+    if (state.total > 0) state.total--;
+    if (state.today > 0) state.today--;
+    if (state.week > 0) state.week--;
+    if (state.month > 0) state.month--;
+    const todayIso = new Date().toISOString().split('T')[0];
+    if (state.history[todayIso]) {
+      state.history[todayIso] = Math.max(0, state.history[todayIso] - 1);
+    }
+    saveState();
+    updateUI();
+    if (state.vibrate && navigator.vibrate) navigator.vibrate(10);
+  }
+}
+
+// ===== RESET =====
+function malaReset() {
+  if (!confirm('क्या आप माला रीसेट करना चाहते हैं? आपके सारे आँकड़े सुरक्षित रहेंगे।')) return;
+  state.count = 0;
+  state.sessionStart = Date.now();
+  state.sessionCount = 0;
+  saveState();
+  updateUI();
+  showToast('🔄 माला रीसेट हो गई');
+}
+
+function resetStats() {
+  if (!confirm('क्या आप सभी आँकड़े और achievements रीसेट करना चाहते हैं? यह वापस नहीं होगा।')) return;
+  state = {
+    count: 0, target: state.target, total: 0, today: 0,
+    todayDate: new Date().toDateString(), week: 0, month: 0,
+    streak: 0, lastJapaDate: null, history: {},
+    sound: state.sound, vibrate: state.vibrate,
+    achievements: [], sessionStart: Date.now(), sessionCount: 0
+  };
+  saveState();
+  updateUI();
+  showToast('📊 सारे आँकड़े रीसेट हो गए');
+}
+
+// ===== COMPLETION =====
+function completeMala() {
+  // Confetti
+  launchConfetti();
+
+  // Sound
+  if (state.sound) playCompletionSound();
+
+  // Vibrate
+  if (state.vibrate && navigator.vibrate) {
+    navigator.vibrate([100, 50, 100, 50, 300]);
+  }
+
+  // Modal
+  const modal = document.getElementById('completionModal');
+  const title = document.getElementById('completeTitle');
+  const msg = document.getElementById('completeMsg');
+
+  if (state.target === 0) {
+    title.textContent = 'महा जप!';
+    msg.textContent = 'आपने ' + state.count + ' जप पूर्ण किए। हनुमान जी की कृपा आप पर बनी रहे 🙏';
+  } else {
+    title.textContent = 'माला पूर्ण!';
+    msg.textContent = 'आपने ' + state.target + ' जप पूर्ण किए। हनुमान जी की कृपा आप पर बनी रहे 🙏';
+  }
+
+  if (modal) modal.classList.add('show');
+}
+
+function closeCompletion() {
+  document.getElementById('completionModal')?.classList.remove('show');
+}
+
+function startNewRound() {
+  closeCompletion();
+  state.count = 0;
+  state.sessionStart = Date.now();
+  state.sessionCount = 0;
+  saveState();
+  updateUI();
+  showToast('📿 नई माला शुरू — जय हनुमान');
+}
+
+// ===== CONFETTI =====
+function launchConfetti() {
+  const colors = ['#D4AF37', '#FF6B35', '#7A2E2E', '#F4D160', '#FF8C5A'];
+  for (let i = 0; i < 50; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random() * 100 + '%';
+    c.style.background = colors[Math.floor(Math.random() * colors.length)];
+    c.style.animationDelay = Math.random() * 0.5 + 's';
+    c.style.animationDuration = (2 + Math.random() * 2) + 's';
+    c.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 5000);
+  }
+}
+
+// ===== SOUND (Web Audio API) =====
+let audioCtx = null;
+function initAudio() {
+  if (!audioCtx) {
+    try {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    } catch (e) {}
+  }
+}
+
+function playBeadSound() {
+  initAudio();
+  if (!audioCtx) return;
+  try {
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.frequency.value = 800 + Math.random() * 200;
+    osc.type = 'sine';
+    gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+    osc.start(audioCtx.currentTime);
+    osc.stop(audioCtx.currentTime + 0.08);
+  } catch (e) {}
+}
+
+function playCompletionSound() {
+  initAudio();
+  if (!audioCtx) return;
+  try {
+    const notes = [523.25, 659.25, 783.99, 1046.5]; // C E G C
+    notes.forEach((freq, i) => {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.frequency.value = freq;
+      osc.type = 'sine';
+      const start = audioCtx.currentTime + i * 0.15;
+      gain.gain.setValueAtTime(0.15, start);
+      gain.gain.exponentialRampToValueAtTime(0.001, start + 0.4);
+      osc.start(start);
+      osc.stop(start + 0.4);
+    });
+  } catch (e) {}
+}
+
+// ===== SOUND TOGGLE =====
+function toggleSound() {
+  state.sound = !state.sound;
+  const icon = document.getElementById('soundIcon');
+  if (icon) icon.className = state.sound ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
+  saveState();
+  showToast(state.sound ? '🔊 आवाज़ चालू' : '🔇 आवाज़ बंद');
+}
+
+function toggleVibrate() {
+  state.vibrate = !state.vibrate;
+  const icon = document.getElementById('vibrateIcon');
+  if (icon) icon.className = state.vibrate ? 'fa-solid fa-mobile-screen' : 'fa-solid fa-mobile-screen-button';
+  saveState();
+  showToast(state.vibrate ? '📳 कंपन चालू' : '📴 कंपन बंद');
+}
+
+// ===== SESSION TIMER =====
+function getSessionSpeed() {
+  const elapsed = (Date.now() - state.sessionStart) / 60000; // minutes
+  if (elapsed < 0.05) return 0;
+  return Math.round(state.sessionCount / elapsed);
+}
+
+function updateSessionTimer() {
+  const elapsed = Math.floor((Date.now() - state.sessionStart) / 1000);
+  const min = String(Math.floor(elapsed / 60)).padStart(2, '0');
+  const sec = String(elapsed % 60).padStart(2, '0');
+  const timeEl = document.getElementById('sessionTime');
+  const speedEl = document.getElementById('sessionSpeed');
+  if (timeEl) timeEl.textContent = min + ':' + sec;
+  if (speedEl) speedEl.textContent = getSessionSpeed();
+}
+setInterval(updateSessionTimer, 1000);
+
+// ===== MANTRA DISPLAY =====
+function updateMantraDisplay() {
+  const sel = document.getElementById('mantraSelect');
+  const disp = document.getElementById('mantraDisplay');
+  if (sel && disp) {
+    disp.textContent = sel.value;
+    state.mantra = sel.value;
+    saveState();
+  }
+}
+
+// ===== FAQ =====
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
+  loadState();
+  updateUI();
+  updateSessionTimer();
+
+  // Target chips
+  document.querySelectorAll('.target-chip').forEach(chip => {
+    const t = parseInt(chip.dataset.target);
+    if (t === state.target) chip.classList.add('active');
+    else chip.classList.remove('active');
+
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.target-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      state.target = t;
+      state.count = 0;
+      state.sessionStart = Date.now();
+      state.sessionCount = 0;
+      saveState();
+      updateUI();
+      if (navigator.vibrate) navigator.vibrate(20);
+    });
+  });
+
+  // Sound icon
+  const soundIcon = document.getElementById('soundIcon');
+  if (soundIcon) soundIcon.className = state.sound ? 'fa-solid fa-volume-high' : 'fa-solid fa-volume-xmark';
+  const vibIcon = document.getElementById('vibrateIcon');
+  if (vibIcon) vibIcon.className = state.vibrate ? 'fa-solid fa-mobile-screen' : 'fa-solid fa-mobile-screen-button';
+
+  // Mantra change
+  const sel = document.getElementById('mantraSelect');
+  if (sel) {
+    sel.addEventListener('change', updateMantraDisplay);
+    updateMantraDisplay();
+  }
+
+  // Keyboard shortcut: Space to tap
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'SELECT') {
+      e.preventDefault();
+      malaTap();
+    }
+  });
+});
+</script>
+</body>
+</html>
