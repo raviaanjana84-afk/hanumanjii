@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान जी के त्योहार — संपूर्ण संग्रह | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी से जुड़े प्रमुख त्योहार — हनुमान जयंती, मंगलवार व्रत, शनिवार व्रत, दीपावली और अन्य। पूरी जानकारी हिंदी में।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.festival-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.festival-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.festival-hero .festival-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.festival-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .festival-hero h2 { color: var(--gold-light); }
+.festival-hero .festival-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.festival-hero .festival-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.festival-hero .festival-meta span { display: flex; align-items: center; gap: 5px; }
+.festival-hero .festival-meta i { color: var(--gold); }
+
+/* Stats */
+.festival-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+}
+.stat-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.stat-item .num {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--maroon);
+  font-family: 'Tiro Devanagari Hindi', serif;
+}
+body.dark .stat-item .num { color: var(--gold-light); }
+.stat-item .lbl {
+  font-size: 10.5px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* Category Chips */
+.cat-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.cat-chip {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  font-family: 'Hind', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all .25s ease;
+}
+.cat-chip:hover {
+  border-color: var(--gold);
+  color: var(--maroon);
+}
+.cat-chip.active {
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  border-color: transparent;
+}
+
+/* Festival Cards */
+.festival-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+.festival-card {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: all .3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.festival-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--maroon), var(--gold), var(--saffron));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s ease;
+}
+.festival-card:hover::before { transform: scaleX(1); }
+.festival-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 8px 28px rgba(212,175,55,.18);
+}
+.festival-card .fc-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.festival-card .fc-emoji {
+  font-size: 42px;
+  filter: drop-shadow(0 0 12px rgba(212,175,55,.5));
+  flex-shrink: 0;
+  transition: transform .3s ease;
+}
+.festival-card:hover .fc-emoji { transform: scale(1.1) rotate(-5deg); }
+.festival-card .fc-info { flex: 1; min-width: 0; }
+.festival-card .fc-title {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 17px;
+  color: var(--maroon);
+  margin: 0 0 3px;
+  line-height: 1.3;
+}
+body.dark .festival-card .fc-title { color: var(--gold-light); }
+.festival-card .fc-badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(212,175,55,.15);
+  color: var(--maroon);
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+body.dark .festival-card .fc-badge { color: var(--gold-light); }
+.festival-card .fc-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+.festival-card .fc-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.festival-card .fc-foot .fc-date {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.festival-card .fc-foot .fc-arrow {
+  color: var(--gold);
+  transition: transform .3s ease;
+}
+.festival-card:hover .fc-foot .fc-arrow { transform: translateX(4px); }
+
+/* Featured Card */
+.festival-card.featured {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(212,175,55,.1), rgba(122,46,46,.05));
+  border-color: rgba(212,175,55,.4);
+}
+.festival-card.featured .fc-emoji { font-size: 56px; }
+
+/* Countdown */
+.countdown-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.countdown-item {
+  min-width: 70px;
+  padding: 10px 8px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.countdown-item .num {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--maroon);
+  font-family: 'Tiro Devanagari Hindi', serif;
+}
+body.dark .countdown-item .num { color: var(--gold-light); }
+.countdown-item .lbl {
+  font-size: 10px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* No Result */
+.no-result {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+.no-result.show { display: block; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .festival-hero .festival-emoji { font-size: 70px; }
+  .festival-hero h2 { font-size: 23px; }
+  .festival-grid { grid-template-columns: 1fr; }
+  .festival-card .fc-emoji { font-size: 36px; }
+  .festival-card.featured .fc-emoji { font-size: 46px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>त्योहार</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="festival-hero">
+  <span class="festival-emoji">🎉</span>
+  <h2>हनुमान जी के त्योहार</h2>
+  <div class="festival-sub">Festivals • Vrat • Parv</div>
+  <div class="festival-meta">
+    <span><i class="fa-solid fa-calendar"></i> 7+ त्योहार</span>
+    <span><i class="fa-solid fa-clock"></i> 25 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> विस्तृत जानकारी</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> त्योहारों का महत्व</h2>
+  <p>हनुमान जी से जुड़े अनेक त्योहार और व्रत हैं। ये त्योहार भक्तों के लिए विशेष महत्व रखते हैं। इन दिनों में हनुमान जी की पूजा करने से विशेष फल प्राप्त होता है।</p>
+  <p>हनुमान जयंती सबसे प्रमुख त्योहार है, जो चैत्र पूर्णिमा को मनाया जाता है। इसके अलावा मंगलवार और शनिवार के व्रत भी विशेष महत्व रखते हैं।</p>
+  <p>यहाँ <strong>7+ प्रमुख त्योहारों और व्रतों</strong> की जानकारी दी गई है — तिथि, महत्व, विधि और लाभ सहित।</p>
+</div>
+
+<!-- ========== STATS ========== -->
+<div class="festival-stats">
+  <div class="stat-item"><div class="num">7+</div><div class="lbl">त्योहार</div></div>
+  <div class="stat-item"><div class="num">3</div><div class="lbl">मुख्य व्रत</div></div>
+  <div class="stat-item"><div class="num">12</div><div class="lbl">महीने</div></div>
+</div>
+
+<!-- ========== CATEGORY CHIPS ========== -->
+<div class="cat-chips" id="catChips">
+  <button class="cat-chip active" data-cat="all" onclick="filterCat(this)">सभी</button>
+  <button class="cat-chip" data-cat="jayanti" onclick="filterCat(this)">जयंती</button>
+  <button class="cat-chip" data-cat="vrat" onclick="filterCat(this)">व्रत</button>
+  <button class="cat-chip" data-cat="parv" onclick="filterCat(this)">पर्व</button>
+</div>
+
+<!-- ========== FESTIVAL GRID ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🎉</span> सभी त्योहार</h2>
+
+  <div class="festival-grid" id="festivalGrid">
+
+    <!-- Featured: हनुमान जयंती -->
+    <a href="60a-hanuman-jayanti.html" class="festival-card featured" data-cat="jayanti">
+      <div class="fc-top">
+        <span class="fc-emoji">🎂</span>
+        <div class="fc-info">
+          <h3 class="fc-title">हनुमान जयंती</h3>
+          <span class="fc-badge">मुख्य त्योहार</span>
+        </div>
+      </div>
+      <p class="fc-desc">हनुमान जी का जन्मदिन — चैत्र पूर्णिमा को मनाया जाता है। इस दिन विशेष पूजा, चालीसा पाठ, चोला चढ़ाना और प्रसाद वितरण किया जाता है। पूरे भारत में हर्षोल्लास से मनाया जाता है।</p>
+      <div class="fc-foot">
+        <span class="fc-date"><i class="fa-solid fa-calendar"></i> चैत्र पूर्णिमा (मार्च-अप्रैल)</span>
+        <span class="fc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- मंगलवार व्रत -->
+    <a href="60b-mangalvar-vrat.html" class="festival-card" data-cat="vrat">
+      <div class="fc-top">
+        <span class="fc-emoji">🔴</span>
+        <div class="fc-info">
+          <h3 class="fc-title">मंगलवार व्रत</h3>
+          <span class="fc-badge">साप्ताहिक व्रत</span>
+        </div>
+      </div>
+      <p class="fc-desc">हर मंगलवार को हनुमान जी का व्रत रखा जाता है। यह व्रत बल, साहस, संकट निवारण और मंगल दोष शांति के लिए किया जाता है।</p>
+      <div class="fc-foot">
+        <span class="fc-date"><i class="fa-solid fa-calendar"></i> प्रत्येक मंगलवार</span>
+        <span class="fc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- शनिवार व्रत -->
+    <a href="60c-shanivar-vrat.html" class="festival-card" data-cat="vrat">
+      <div class="fc-top">
+        <span class="fc-emoji">🔵</span>
+        <div class="fc-info">
+          <h3 class="fc-title">शनिवार व्रत</h3>
+          <span class="fc-badge">साप्ताहिक व्रत</span>
+        </div>
+      </div>
+      <p class="fc-desc">हर शनिवार को हनुमान जी का व्रत रखा जाता है। यह व्रत शनि दोष निवारण, कार्य सिद्धि और ग्रह शांति के लिए किया जाता है।</p>
+      <div class="fc-foot">
+        <span class="fc-date"><i class="fa-solid fa-calendar"></i> प्रत्येक शनिवार</span>
+        <span class="fc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- दीपावली -->
+    <a href="60-festivals.html" class="festival-card" data-cat="parv">
+      <div class="fc-top">
+        <span class="fc-emoji">🪔</span>
+        <div class="fc-info">
+          <h3 class="fc-title">दीपावली</h3>
+          <span class="fc-badge">पर्व</span>
+        </div>
+      </div>
+      <p class="fc-desc">दीपावली पर हनुमान जी की विशेष पूजा की जाती है। मान्यता है कि इस दिन हनुमान जी की पूजा से विशेष फल मिलता है।</p>
+      <div class="fc-foot">
+        <span class="fc-date"><i class="fa-solid fa-calendar"></i> कार्तिक अमावस्या (अक्टूबर-नवंबर)</span>
+        <span class="fc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- नवरात्रि -->
+    <a href="60-festivals.html" class="festival-card" data-cat="parv">
+      <div class="fc-top">
+        <span class="fc-emoji">🌺</span>
+        <div class="fc-info">
+          <h3 class="fc-title">नवरात्रि</h3>
+          <span class="fc-badge">पर्व</span>
+        </div>
+      </div>
+      <p class="fc-desc">नवरात्रि के 9 दिनों में हनुमान जी की विशेष पूजा की जाती है। मान्यता है कि इस दौरान हनुमान जी की पूजा से विशेष फल मिलता है।</p>
+      <div class="fc-foot">
+        <span class="fc-date"><i class="fa-solid fa-calendar"></i> चैत्र/आश्विन (मार्च-अप्रैल/सितंबर-अक्टूबर)</span>
+        <span class="fc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- राम नवमी -->
+    <a href="60-festivals.html" class="festival-card" data-cat="parv">
+      <div class="fc-top">
+        <span class="fc-emoji">🏹</span>
+        <div class="fc-info">
+          <h3 class="fc-title">राम नवमी</h3>
+          <span class="fc-badge">पर्व</span>
+        </div>
+      </div>
+      <p class="fc-desc">राम नवमी पर हनुमान जी की विशेष पूजा की जाती है। हनुमान जी श्रीराम के परम भक्त हैं, इसलिए इस दिन उनकी पूजा का विशेष महत्व है।</p>
+      <div class="fc-foot">
+        <span class="fc-date"><i class="fa-solid fa-calendar"></i> चैत्र शुक्ल नवमी (मार्च-अप्रैल)</span>
+        <span class="fc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- विजयादशमी -->
+    <a href="60-festivals.html" class="festival-card" data-cat="parv">
+      <div class="fc-top">
+        <span class="fc-emoji">⚔️</span>
+        <div class="fc-info">
+          <h3 class="fc-title">विजयादशमी</h3>
+          <span class="fc-badge">पर्व</span>
+        </div>
+      </div>
+      <p class="fc-desc">विजयादशमी पर हनुमान जी की विशेष पूजा की जाती है। यह दिन बुराई पर अच्छाई की विजय का प्रतीक है।</p>
+      <div class="fc-foot">
+        <span class="fc-date"><i class="fa-solid fa-calendar"></i> आश्विन शुक्ल दशमी (सितंबर-अक्टूबर)</span>
+        <span class="fc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- चैत्र पूर्णिमा -->
+    <a href="60-festivals.html" class="festival-card" data-cat="jayanti">
+      <div class="fc-top">
+        <span class="fc-emoji">🌕</span>
+        <div class="fc-info">
+          <h3 class="fc-title">चैत्र पूर्णिमा</h3>
+          <span class="fc-badge">जयंती</span>
+        </div>
+      </div>
+      <p class="fc-desc">चैत्र पूर्णिमा को हनुमान जी का जन्म हुआ था। इस दिन हनुमान जयंती मनाई जाती है। यह दिन भक्तों के लिए अत्यंत महत्वपूर्ण है।</p>
+      <div class="fc-foot">
+        <span class="fc-date"><i class="fa-solid fa-calendar"></i> चैत्र पूर्णिमा (मार्च-अप्रैल)</span>
+        <span class="fc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="no-result" id="noResult">
+    <span style="font-size:50px;display:block;margin-bottom:10px;">🔍</span>
+    <p>इस श्रेणी में कोई त्योहार नहीं मिला।</p>
+  </div>
+
+</div>
+
+<!-- ========== Countdown ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">⏰</span> अगली हनुमान जयंती</h2>
+  <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:10px;">हनुमान जयंती चैत्र पूर्णिमा को मनाई जाती है। अगली हनुमान जयंती के लिए उलटी गिनती:</p>
+  <div class="countdown-box" id="countdown">
+    <div class="countdown-item"><div class="num" id="days">--</div><div class="lbl">दिन</div></div>
+    <div class="countdown-item"><div class="num" id="hours">--</div><div class="lbl">घंटे</div></div>
+    <div class="countdown-item"><div class="num" id="mins">--</div><div class="lbl">मिनट</div></div>
+    <div class="countdown-item"><div class="num" id="secs">--</div><div class="lbl">सेकंड</div></div>
+  </div>
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> कथाएँ</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-om"></i> पूजा विधि</a>
+    <a href="42-vrat-katha.html" class="cat-chip"><i class="fa-solid fa-calendar"></i> व्रत कथा</a>
+    <a href="43-aarti.html" class="cat-chip"><i class="fa-solid fa-music"></i> आरती</a>
+    <a href="50-temples.html" class="cat-chip"><i class="fa-solid fa-place-of-worship"></i> मंदिर</a>
+    <a href="84-faq.html" class="cat-chip"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function filterCat(btn) {
+  document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  const cat = btn.dataset.cat;
+  const cards = document.querySelectorAll('#festivalGrid .festival-card');
+  let visible = 0;
+
+  cards.forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = '';
+      visible++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  document.getElementById('noResult').classList.toggle('show', visible === 0);
+}
+
+/* Countdown Timer — अगली हनुमान जयंती (चैत्र पूर्णिमा) */
+function updateCountdown() {
+  const now = new Date();
+  const year = now.getFullYear();
+  // चैत्र पूर्णिमा — सामान्यतः मार्च-अप्रैल। यहाँ अप्रैल 12 मान लिया गया है।
+  let target = new Date(year, 3, 12); // April 12
+  if (now > target) {
+    target = new Date(year + 1, 3, 12);
+  }
+  const diff = target - now;
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const secs = Math.floor((diff % (1000 * 60)) / 1000);
+  document.getElementById('days').textContent = days;
+  document.getElementById('hours').textContent = hours;
+  document.getElementById('mins').textContent = mins;
+  document.getElementById('secs').textContent = secs;
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>
