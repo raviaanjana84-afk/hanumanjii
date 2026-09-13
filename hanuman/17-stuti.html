@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान स्तुति संग्रह — स्तुति, वंदना, मारुति स्तोत्र | Hanuman Stuti</title>
+<meta name="description" content="हनुमान स्तुति संग्रह — हनुमान स्तुति, वंदना, मारुति स्तोत्र, पंचरत्न स्तोत्र, सहस्रनाम — सभी अर्थ सहित।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+.st-hero{
+  width:100%;padding:34px 20px 28px;
+  background:radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius:var(--radius);text-align:center;margin:16px 0;
+  border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.st-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.st-hero .st-emoji{
+  font-size:90px;display:block;margin-bottom:10px;
+  filter:drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;z-index:2;
+}
+.st-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:28px;color:var(--maroon);margin-bottom:6px;
+  position:relative;z-index:2;
+}
+body.dark .st-hero h2{color:var(--gold-light)}
+.st-hero .st-sub{
+  font-size:12.5px;color:var(--ink-soft);letter-spacing:2px;
+  text-transform:uppercase;position:relative;z-index:2;
+}
+.st-hero .st-meta{
+  display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+  margin-top:14px;font-size:11.5px;color:var(--ink-soft);
+  position:relative;z-index:2;
+}
+.st-hero .st-meta span{display:flex;align-items:center;gap:5px}
+.st-hero .st-meta i{color:var(--gold)}
+
+/* Stotra nav tabs */
+.st-nav{
+  display:flex;gap:8px;overflow-x:auto;
+  padding:4px 0 14px;
+  scrollbar-width:none;
+}
+.st-nav::-webkit-scrollbar{display:none}
+.st-chip{
+  flex-shrink:0;
+  padding:9px 16px;
+  background:var(--card-bg);
+  border:1.5px solid var(--border);
+  border-radius:30px;
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--maroon);
+  cursor:pointer;
+  transition:var(--transition);
+  white-space:nowrap;
+  display:flex;align-items:center;gap:6px;
+  text-decoration:none;
+}
+body.dark .st-chip{color:var(--gold-light)}
+.st-chip:hover{border-color:var(--gold);transform:translateY(-2px)}
+.st-chip i{font-size:14px}
+
+/* Stotra section */
+.stotra-section{
+  background:var(--card-bg);
+  border-radius:16px;
+  padding:20px 18px;
+  margin-bottom:16px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+}
+.stotra-section::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:5px;
+  height:100%;
+  background:linear-gradient(180deg,var(--gold),var(--saffron));
+}
+.stotra-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:14px;
+}
+.stotra-title{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:19px;
+  color:var(--maroon);
+  font-weight:700;
+  line-height:1.3;
+}
+body.dark .stotra-title{color:var(--gold-light)}
+.stotra-badge{
+  font-size:10.5px;
+  padding:4px 12px;
+  border-radius:20px;
+  background:rgba(212,175,55,.2);
+  color:var(--maroon);
+  font-weight:700;
+  flex-shrink:0;
+  letter-spacing:.3px;
+}
+body.dark .stotra-badge{color:var(--gold-light);background:rgba(212,175,55,.18)}
+.stotra-text{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:15.5px;
+  color:var(--maroon);
+  line-height:2.1;
+  font-weight:600;
+  text-align:center;
+  margin-bottom:14px;
+  padding:16px 12px;
+  background:linear-gradient(135deg,rgba(212,175,55,.12),rgba(122,46,46,.05));
+  border-radius:12px;
+  border-left:4px solid var(--gold);
+}
+body.dark .stotra-text{color:var(--gold-light)}
+.stotra-actions{
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+.stotra-actions button{
+  padding:8px 16px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  background:var(--bg-alt);
+  color:var(--maroon);
+  font-size:12px;
+  font-weight:600;
+  cursor:pointer;
+  transition:var(--transition);
+  display:flex;
+  align-items:center;
+  gap:5px;
+  font-family:inherit;
+}
+body.dark .stotra-actions button{color:var(--gold-light)}
+.stotra-actions button:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+.stotra-actions button i{font-size:11px}
+.stotra-meaning{
+  background:var(--bg-alt);
+  border-radius:10px;
+  padding:14px;
+  font-size:13.5px;
+  color:var(--ink-soft);
+  line-height:1.9;
+  border-left:3px solid var(--gold);
+  display:none;
+  margin-top:10px;
+}
+.stotra-meaning.show{display:block;animation:fadeUp .3s ease}
+.stotra-meaning strong{color:var(--maroon)}
+body.dark .stotra-meaning strong{color:var(--gold-light)}
+
+/* Info box */
+.st-info{
+  background:linear-gradient(135deg, rgba(212,175,55,.14), rgba(122,46,46,.06));
+  border-radius:14px;
+  padding:16px 18px;
+  border-left:4px solid var(--gold);
+  margin:14px 0;
+}
+.st-info h4{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:16px;
+  color:var(--maroon);
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+body.dark .st-info h4{color:var(--gold-light)}
+.st-info ul{padding-left:20px;margin:6px 0}
+.st-info li{
+  font-size:13.5px;
+  line-height:1.85;
+  color:var(--ink-soft);
+  margin-bottom:6px;
+}
+.st-info li strong{color:var(--maroon)}
+body.dark .st-info li strong{color:var(--gold-light)}
+
+/* Benefits */
+.st-benefits{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:12px 0;
+}
+.st-benefit{
+  padding:8px 14px;
+  background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(255,107,53,.1));
+  border:1px solid var(--gold);
+  border-radius:30px;
+  font-size:12.5px;
+  color:var(--maroon);
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+body.dark .st-benefit{color:var(--gold-light)}
+.st-benefit i{font-size:11px;color:var(--saffron)}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>स्तुति संग्रह</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<div class="st-hero">
+  <span class="st-emoji">🙏</span>
+  <h2>स्तुति संग्रह</h2>
+  <div class="st-sub">स्तुति · वंदना · मारुति स्तोत्र</div>
+  <div class="st-meta">
+    <span><i class="fa-solid fa-list-ol"></i> 10+ स्तोत्र</span>
+    <span><i class="fa-solid fa-clock"></i> ~15 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> अर्थ सहित</span>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> स्तुति संग्रह के बारे में</h2>
+  <p>यहाँ हनुमान जी की <strong>प्रमुख स्तुतियाँ, वंदनाएँ, और स्तोत्र</strong> संकलित हैं। हर स्तोत्र का अपना विशेष महत्व, अर्थ और फल है।</p>
+  <p>इनका नित्य पाठ करने से हनुमान जी की विशेष कृपा प्राप्त होती है। <strong>प्रातः, सायं, या मंगलवार/शनिवार</strong> को इनका पाठ विशेष फलदायी है।</p>
+  <p>हर स्तोत्र के साथ <strong>संस्कृत पाठ, हिंदी अर्थ, और लाभ</strong> दिए गए हैं।</p>
+</div>
+
+<!-- Nav chips -->
+<div class="st-nav">
+  <a href="#vandana" class="st-chip"><i class="fa-solid fa-hands-praying"></i> वंदना</a>
+  <a href="#stuti" class="st-chip"><i class="fa-solid fa-om"></i> स्तुति</a>
+  <a href="#maruti" class="st-chip"><i class="fa-solid fa-star"></i> मारुति स्तोत्र</a>
+  <a href="#pancharatna" class="st-chip"><i class="fa-solid fa-gem"></i> पंचरत्न</a>
+  <a href="#sahasranama" class="st-chip"><i class="fa-solid fa-list-ol"></i> सहस्रनाम</a>
+</div>
+
+<!-- ===== VANDANA ===== -->
+<div class="stotra-section" id="vandana">
+  <div class="stotra-header">
+    <div class="stotra-title">🙏 हनुमान वंदना</div>
+    <span class="stotra-badge">प्रारंभिक</span>
+  </div>
+  <div class="stotra-text">
+    अंजनी गर्भ सम्भूत, कपीन्द्र सखा हनुमान ।<br>
+    रामदूत महावीर, संकट मोचन नाम ॥
+  </div>
+  <div class="stotra-actions">
+    <button onclick="toggleMeaning(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+    <button onclick="copyText(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+  <div class="stotra-meaning">
+    <strong>अर्थ:</strong> अंजना के गर्भ से जन्मे, वानरों के मित्र, राम के दूत, महावीर, संकट मोचन हनुमान — आपको नमस्कार।<br><br>
+    <strong>लाभ:</strong> नित्य पाठ से हनुमान जी की कृपा, भक्ति वृद्धि, संकट मोचन।
+  </div>
+</div>
+
+<!-- ===== STUTI ===== -->
+<div class="stotra-section" id="stuti">
+  <div class="stotra-header">
+    <div class="stotra-title">🕉️ हनुमान स्तुति</div>
+    <span class="stotra-badge">मुख्य</span>
+  </div>
+  <div class="stotra-text">
+    मनोजवं मारुततुल्यवेगं,<br>
+    जितेन्द्रियं बुद्धिमतां वरिष्ठम् ।<br>
+    वातात्मजं वानरयूथमुख्यं,<br>
+    श्रीरामदूतं शरणं प्रपद्ये ॥
+  </div>
+  <div class="stotra-actions">
+    <button onclick="toggleMeaning(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+    <button onclick="copyText(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+  <div class="stotra-meaning">
+    <strong>अर्थ:</strong> मन की गति वाले, वायु के समान वेग वाले, जितेन्द्रिय, बुद्धिमानों में श्रेष्ठ, वायुपुत्र, वानरों के स्वामी, श्रीरामदूत की शरण में हूँ।<br><br>
+    <strong>लाभ:</strong> शरणागति, भय मुक्ति, रक्षा, बुद्धि वृद्धि।
+  </div>
+</div>
+
+<!-- ===== MARUTI STOTRA ===== -->
+<div class="stotra-section" id="maruti">
+  <div class="stotra-header">
+    <div class="stotra-title">⭐ मारुति स्तोत्र</div>
+    <span class="stotra-badge">शक्तिशाली</span>
+  </div>
+  <div class="stotra-text">
+    मारुतिर्नमतां श्रेष्ठः,<br>
+    सर्वशत्रुनिवारणः ।<br>
+    रामभक्तो महातेजाः,<br>
+    सदा रक्षतु मां प्रभुः ॥
+  </div>
+  <div class="stotra-actions">
+    <button onclick="toggleMeaning(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+    <button onclick="copyText(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+  <div class="stotra-meaning">
+    <strong>अर्थ:</strong> वायुपुत्र, जो सभी में श्रेष्ठ हैं, सभी शत्रुओं का नाश करने वाले हैं, रामभक्त, महातेजस्वी — वे प्रभु सदा मेरी रक्षा करें।<br><br>
+    <strong>लाभ:</strong> शत्रु नाश, रक्षा, तेज वृद्धि।
+  </div>
+</div>
+
+<!-- ===== PANCHARATNA ===== -->
+<div class="stotra-section" id="pancharatna">
+  <div class="stotra-header">
+    <div class="stotra-title">💎 हनुमान पंचरत्न स्तोत्र</div>
+    <span class="stotra-badge">5 रत्न</span>
+  </div>
+  <div class="stotra-text">
+    बुद्धिर्बलं यशो धैर्यं,<br>
+    निर्भयत्वमरोगता ।<br>
+    अजाड्यं वाक्पटुत्वं च,<br>
+    हनुमत्स्मरणाद्भवेत् ॥
+  </div>
+  <div class="stotra-actions">
+    <button onclick="toggleMeaning(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+    <button onclick="copyText(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+  <div class="stotra-meaning">
+    <strong>अर्थ:</strong> बुद्धि, बल, यश, धैर्य, निर्भयता, रोगमुक्ति, जड़ता का नाश, वाकपटुता — ये सब हनुमान जी के स्मरण से प्राप्त होते हैं।<br><br>
+    <strong>लाभ:</strong> बुद्धि, बल, यश, धैर्य, स्वास्थ्य — पाँच रत्नों की प्राप्ति।
+  </div>
+</div>
+
+<!-- ===== SAHASRANAMA ===== -->
+<div class="stotra-section" id="sahasranama">
+  <div class="stotra-header">
+    <div class="stotra-title">📜 हनुमान सहस्रनाम (सारांश)</div>
+    <span class="stotra-badge">1000 नाम</span>
+  </div>
+  <div class="stotra-text">
+    हनुमान सहस्रनाम में हनुमान जी के<br>
+    1000 पवित्र नामों का वर्णन है ।<br>
+    नित्य पाठ से सर्व मनोकामना सिद्ध होती है ॥
+  </div>
+  <div class="stotra-actions">
+    <button onclick="toggleMeaning(this)"><i class="fa-solid fa-book-open"></i> विस्तार</button>
+    <button onclick="copyText(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+  <div class="stotra-meaning">
+    <strong>हनुमान सहस्रनाम</strong> में हनुमान जी के 1000 नाम हैं। इसमें उनके सभी गुणों, कार्यों और स्वरूपों का वर्णन है।<br><br>
+    <strong>मुख्य नाम:</strong> हनुमान, अंजनीसुत, वायुपुत्र, महावीर, बजरंगबली, संकटमोचन, रामदूत, कपीश्वर, रुद्रात्मक, अंजनेय, वानर, श्री हनुमते...<br><br>
+    <strong>लाभ:</strong> सर्व मनोकामना पूर्ति, मोक्ष, हनुमान जी की विशेष कृपा।
+  </div>
+</div>
+
+<!-- ===== ADDITIONAL STOTRAS ===== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔸</span> अन्य प्रमुख स्तुतियाँ</h2>
+
+  <div class="stotra-section" style="margin-bottom:12px;">
+    <div class="stotra-header">
+      <div class="stotra-title">🌟 हनुमान द्वादश नाम</div>
+      <span class="stotra-badge">12 नाम</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-soft);line-height:1.85;margin:0;">
+      12 नामों का स्तोत्र — अलग पेज पर विस्तार से देखें। हर नाम का अर्थ, लाभ और जप विधि।
+    </p>
+    <a href="15-dvadash-naam.html" class="st-chip" style="margin-top:10px;display:inline-flex;">
+      <i class="fa-solid fa-arrow-right"></i> पूरा पढ़ें
+    </a>
+  </div>
+
+  <div class="stotra-section" style="margin-bottom:12px;">
+    <div class="stotra-header">
+      <div class="stotra-title">🛡️ हनुमान कवच</div>
+      <span class="stotra-badge">रक्षा</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-soft);line-height:1.85;margin:0;">
+      12 श्लोकों का रक्षा कवच — सभी दिशाओं से सुरक्षा। चारों ओर हनुमान जी का कवच।
+    </p>
+    <a href="16-kavach.html" class="st-chip" style="margin-top:10px;display:inline-flex;">
+      <i class="fa-solid fa-arrow-right"></i> पूरा पढ़ें
+    </a>
+  </div>
+
+  <div class="stotra-section" style="margin-bottom:12px;">
+    <div class="stotra-header">
+      <div class="stotra-title">📜 हनुमान चालीसा</div>
+      <span class="stotra-badge">40 चौपाई</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-soft);line-height:1.85;margin:0;">
+      तुलसीदास कृत — 40 चौपाइयाँ + 2 दोहे, हर पंक्ति का अर्थ, ऑडियो सहित।
+    </p>
+    <a href="10-chalisa.html" class="st-chip" style="margin-top:10px;display:inline-flex;">
+      <i class="fa-solid fa-arrow-right"></i> पूरा पढ़ें
+    </a>
+  </div>
+
+  <div class="stotra-section" style="margin-bottom:12px;">
+    <div class="stotra-header">
+      <div class="stotra-title">🏹 बजरंग बाण</div>
+      <span class="stotra-badge">अस्त्र</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-soft);line-height:1.85;margin:0;">
+      संकट में अचूक उपाय — 44 पंक्तियाँ, हर पंक्ति का अर्थ, पाठ विधि।
+    </p>
+    <a href="11-bajrang-baan.html" class="st-chip" style="margin-top:10px;display:inline-flex;">
+      <i class="fa-solid fa-arrow-right"></i> पूरा पढ़ें
+    </a>
+  </div>
+
+  <div class="stotra-section" style="margin-bottom:12px;">
+    <div class="stotra-header">
+      <div class="stotra-title">🔥 हनुमान अष्टक</div>
+      <span class="stotra-badge">8 श्लोक</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-soft);line-height:1.85;margin:0;">
+      8 श्लोकों का अष्टक — संकट नाशक, रोग नाशक, हर श्लोक का अर्थ।
+    </p>
+    <a href="12-hanuman-ashtak.html" class="st-chip" style="margin-top:10px;display:inline-flex;">
+      <i class="fa-solid fa-arrow-right"></i> पूरा पढ़ें
+    </a>
+  </div>
+
+  <div class="stotra-section" style="margin-bottom:12px;">
+    <div class="stotra-header">
+      <div class="stotra-title">🌊 हनुमान बाहुक</div>
+      <span class="stotra-badge">51 छंद</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-soft);line-height:1.85;margin:0;">
+      तुलसीदास कृत — 51 छंद, रोग नाशक, हर छंद का अर्थ।
+    </p>
+    <a href="13-hanuman-bahuk.html" class="st-chip" style="margin-top:10px;display:inline-flex;">
+      <i class="fa-solid fa-arrow-right"></i> पूरा पढ़ें
+    </a>
+  </div>
+
+  <div class="stotra-section">
+    <div class="stotra-header">
+      <div class="stotra-title">🚨 संकट मोचन अष्टक</div>
+      <span class="stotra-badge">संकट</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--ink-soft);line-height:1.85;margin:0;">
+      8 श्लोकों का संकट मोचन अष्टक — सभी संकटों का नाश।
+    </p>
+    <a href="14-sankat-mochan.html" class="st-chip" style="margin-top:10px;display:inline-flex;">
+      <i class="fa-solid fa-arrow-right"></i> पूरा पढ़ें
+    </a>
+  </div>
+</div>
+
+<!-- ===== BENEFITS ===== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> स्तुति पाठ के लाभ</h2>
+  <div class="st-benefits">
+    <span class="st-benefit"><i class="fa-solid fa-check"></i> हनुमान कृपा</span>
+    <span class="st-benefit"><i class="fa-solid fa-check"></i> संकट मोचन</span>
+    <span class="st-benefit"><i class="fa-solid fa-check"></i> रोग नाश</span>
+    <span class="st-benefit"><i class="fa-solid fa-check"></i> शत्रु नाश</span>
+    <span class="st-benefit"><i class="fa-solid fa-check"></i> भय मुक्ति</span>
+    <span class="st-benefit"><i class="fa-solid fa-check"></i> बल वृद्धि</span>
+    <span class="st-benefit"><i class="fa-solid fa-check"></i> बुद्धि वृद्धि</span>
+    <span class="st-benefit"><i class="fa-solid fa-check"></i> यश और कीर्ति</span>
+    <span class="st-benefit"><i class="fa-solid fa-check"></i> धन प्राप्ति</span>
+    <span class="st-benefit"><i class="fa-solid fa-check"></i> मोक्ष</span>
+  </div>
+</div>
+
+<!-- ===== QUICK LINKS ===== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="11-bajrang-baan.html" class="cat-chip"><i class="fa-solid fa-bolt"></i> बजरंग बाण</a>
+    <a href="12-hanuman-ashtak.html" class="cat-chip"><i class="fa-solid fa-fire"></i> अष्टक</a>
+    <a href="13-hanuman-bahuk.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> बाहुक</a>
+    <a href="14-sankat-mochan.html" class="cat-chip"><i class="fa-solid fa-shield"></i> संकट मोचन</a>
+    <a href="15-dvadash-naam.html" class="cat-chip"><i class="fa-solid fa-list-ol"></i> द्वादश नाम</a>
+    <a href="16-kavach.html" class="cat-chip"><i class="fa-solid fa-shield-halved"></i> कवच</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+  </div>
+</div>
+
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+function toggleMeaning(btn) {
+  const section = btn.closest('.stotra-section');
+  const meaning = section.querySelector('.stotra-meaning');
+  meaning.classList.toggle('show');
+  if (meaning.classList.contains('show')) {
+    btn.innerHTML = '<i class="fa-solid fa-book"></i> छिपाएँ';
+  } else {
+    btn.innerHTML = '<i class="fa-solid fa-book-open"></i> अर्थ';
+  }
+  if (navigator.vibrate) navigator.vibrate(15);
+}
+
+function copyText(btn) {
+  const section = btn.closest('.stotra-section');
+  const text = section.querySelector('.stotra-text')?.innerText || '';
+  copyMantra(text);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+});
+</script>
+</body>
+</html>
