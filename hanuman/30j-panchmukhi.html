@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>पंचमुखी हनुमान — हनुमान जी की कथा | Sanatan Gyan Kosh</title>
+<meta name="description" content="पंचमुखी हनुमान की कथा — अहिरावण वध, पाँच मुखों का रहस्य, दिव्य शक्तियाँ और पूजा विधि। पूरी कथा हिंदी में।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.panch-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(138,43,226,.5), transparent 65%),
+    linear-gradient(135deg, rgba(75,0,130,.28), rgba(212,175,55,.18));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.panch-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(138,43,226,.22), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.panch-hero .panch-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 30px rgba(138,43,226,.9));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.panch-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .panch-hero h2 { color: var(--gold-light); }
+.panch-hero .panch-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.panch-hero .panch-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.panch-hero .panch-meta span { display: flex; align-items: center; gap: 5px; }
+.panch-hero .panch-meta i { color: var(--gold); }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(138,43,226,.08);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #8A2BE2;
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+.katha-block .mantra {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.05));
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,.3);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .katha-block .mantra { color: var(--gold-light); }
+
+/* Face Grid */
+.face-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+.face-item {
+  padding: 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+  transition: all .25s ease;
+}
+.face-item:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+.face-item .face-emoji {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 6px;
+}
+.face-item .face-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+  margin-bottom: 4px;
+}
+body.dark .face-item .face-name { color: var(--gold-light); }
+.face-item .face-desc {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* Moral List */
+.moral-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.moral-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.moral-list li i {
+  color: var(--gold);
+  font-size: 14px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Chapter marker */
+.chapter {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .panch-hero .panch-emoji { font-size: 70px; }
+  .panch-hero h2 { font-size: 23px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+  .face-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="30-katha.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान कथाएँ</span>
+    <h1>पंचमुखी हनुमान</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="panch-hero">
+  <span class="panch-emoji">🎭</span>
+  <h2>पंचमुखी हनुमान</h2>
+  <div class="panch-sub">Panchmukhi • Five Faces</div>
+  <div class="panch-meta">
+    <span><i class="fa-solid fa-book-open"></i> 4 अध्याय</span>
+    <span><i class="fa-solid fa-clock"></i> 6 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> विस्तृत</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> कथा का सार</h2>
+  <p>पंचमुखी हनुमान हनुमान जी का सबसे शक्तिशाली और रहस्यमयी रूप है। इस रूप में उनके पाँच मुख और दस भुजाएँ हैं। यह रूप उन्होंने अहिरावण वध के समय धारण किया था। पंचमुखी रूप में हनुमान जी को अत्यंत शक्तिशाली माना जाता है — यह रूप हर प्रकार की बाधा, शत्रु और नकारात्मक शक्ति का नाश करता है।</p>
+  <p>यह कथा पंचमुखी रूप की उत्पत्ति, महत्व और पूजा विधि बताती है। पढ़ें पूरी कथा — 4 अध्यायों में।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">मुख</div><div class="val">5 मुख</div></div>
+    <div class="info-item"><div class="lbl">भुजाएँ</div><div class="val">10 भुजाएँ</div></div>
+    <div class="info-item"><div class="lbl">प्रसंग</div><div class="val">अहिरावण वध</div></div>
+    <div class="info-item"><div class="lbl">शक्ति</div><div class="val">सर्वोच्च</div></div>
+    <div class="info-item"><div class="lbl">पूजा</div><div class="val">मंगलवार/शनिवार</div></div>
+    <div class="info-item"><div class="lbl">लाभ</div><div class="val">सभी बाधा नाश</div></div>
+  </div>
+</div>
+
+<!-- ========== अध्याय 1 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 1</span>
+  <h3>🌙 अहिरावण का षड्यंत्र</h3>
+  <p>लंका युद्ध के अंतिम चरण में जब रावण के सभी पुत्र और सेनापति मारे गए, तब अहिरावण नामक राक्षस ने एक षड्यंत्र रचा। वह रावण का मित्र था और मायावी विद्या में निपुण था।</p>
+  <p>अहिरावण ने सोचा — "यदि मैं रात्रि में श्रीराम और लक्ष्मण को चुरा ले जाऊँ, तो वानर सेना निराश हो जाएगी और रावण विजयी होगा।" उसने माया से श्रीराम और लक्ष्मण का रूप धारण किया और उनके स्थान पर स्वयं बैठ गया।</p>
+  <p class="highlight">अहिरावण ने सोते हुए श्रीराम और लक्ष्मण को उठाकर पाताल लोक ले जाकर बंदी बना लिया। उसने उन्हें देवी के सामने बलि चढ़ाने की तैयारी की।</p>
+  <p>प्रातःकाल जब सभी उठे, तो उन्होंने देखा — श्रीराम और लक्ष्मण मूर्छित अवस्था में हैं। हनुमान जी ने श्रीराम के चरणों को छुआ, तो उन्हें पता चला कि ये माया है — असली श्रीराम और लक्ष्मण तो कहीं और हैं।</p>
+</div>
+
+<!-- ========== अध्याय 2 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 2</span>
+  <h3>🕳️ पाताल लोक और माया का सामना</h3>
+  <p>हनुमान जी ने तुरंत पाताल लोक की ओर प्रस्थान किया। उन्होंने अपना रूप छोटा किया और पृथ्वी की गहराइयों में उतर गए। रास्ते में उन्होंने अनेक बाधाओं का सामना किया।</p>
+  <p>पाताल लोक में उन्होंने अहिरावण के महल को खोजा। वहाँ उन्होंने देखा — श्रीराम और लक्ष्मण बंदी अवस्था में हैं। अहिरावण उन्हें बलि चढ़ाने की तैयारी कर रहा था।</p>
+  <p class="highlight">हनुमान जी ने देखा कि अहिरावण के महल के बाहर एक दीपक जल रहा है। उन्हें पता चला कि यह दीपक अहिरावण की प्राण शक्ति है। जब तक यह दीपक जलता रहेगा, अहिरावण अजेय रहेगा।</p>
+  <p>हनुमान जी ने अपनी पूंछ से दीपक बुझा दिया। लेकिन अहिरावण ने अपनी माया से अनेक रूप धारण कर लिए। उसने हनुमान जी पर अनेक दिव्यास्त्रों का प्रयोग किया। हनुमान जी को समझ आया कि अहिरावण की माया को तोड़ने के लिए उन्हें कोई विशेष उपाय करना होगा।</p>
+</div>
+
+<!-- ========== अध्याय 3 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 3</span>
+  <h3>🎭 पंचमुखी रूप की उत्पत्ति</h3>
+  <p>हनुमान जी ने अपनी माता अंजनी और श्रीराम का स्मरण किया। उन्होंने सोचा — "अहिरावण की माया को तोड़ने के लिए मुझे दिव्य शक्ति की आवश्यकता है।" तब उन्होंने <strong>पंचमुखी रूप</strong> धारण किया।</p>
+  <p>पंचमुखी रूप में हनुमान जी के पाँच मुख थे और दस भुजाएँ थीं। उनका तेज इतना प्रबल था कि अहिरावण की माया टूट गई।</p>
+
+  <div class="face-grid">
+    <div class="face-item">
+      <span class="face-emoji">🐒</span>
+      <div class="face-name">हनुमान मुख</div>
+      <div class="face-desc">पूर्व दिशा — बल और भक्ति</div>
+    </div>
+    <div class="face-item">
+      <span class="face-emoji">🦁</span>
+      <div class="face-name">नरसिंह मुख</div>
+      <div class="face-desc">दक्षिण दिशा — शत्रु नाश</div>
+    </div>
+    <div class="face-item">
+      <span class="face-emoji">🦅</span>
+      <div class="face-name">गरुड़ मुख</div>
+      <div class="face-desc">पश्चिम दिशा — विष और रोग नाश</div>
+    </div>
+    <div class="face-item">
+      <span class="face-emoji">🐗</span>
+      <div class="face-name">वराह मुख</div>
+      <div class="face-desc">उत्तर दिशा — समृद्धि और रक्षा</div>
+    </div>
+    <div class="face-item">
+      <span class="face-emoji">🐴</span>
+      <div class="face-name">हयग्रीव मुख</div>
+      <div class="face-desc">ऊर्ध्व दिशा — ज्ञान और विद्या</div>
+    </div>
+  </div>
+
+  <p class="highlight">पंचमुखी रूप में हनुमान जी ने अहिरावण पर प्रहार किया और उसका वध कर दिया। उन्होंने श्रीराम और लक्ष्मण को बंधन मुक्त किया और ससम्मान पाताल लोक से बाहर लाए।</p>
+</div>
+
+<!-- ========== अध्याय 4 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 4</span>
+  <h3>🌟 पंचमुखी हनुमान का महत्व</h3>
+  <p>पंचमुखी हनुमान का रूप अत्यंत शक्तिशाली माना जाता है। यह रूप हर प्रकार की बाधा, शत्रु, रोग, भूत-प्रेत और नकारात्मक शक्ति का नाश करता है।</p>
+  <p>पंचमुखी हनुमान की पूजा मंगलवार और शनिवार को विशेष रूप से की जाती है। इस रूप की पूजा से भक्त को सभी दिशाओं से रक्षा मिलती है।</p>
+  <p class="highlight">पंचमुखी हनुमान का ध्यान करते समय भक्त को चाहिए कि वे पाँचों मुखों का स्मरण करें — हनुमान, नरसिंह, गरुड़, वराह और हयग्रीव। प्रत्येक मुख एक विशेष शक्ति का प्रतीक है।</p>
+  <p>पंचमुखी हनुमान की पूजा से तंत्र बाधा, शत्रु बाधा, रोग बाधा और ग्रह दोष शांत होते हैं। जो भक्त श्रद्धा से इस रूप की पूजा करता है, उसके सभी संकट दूर होते हैं।</p>
+  <p class="mantra">ॐ नमो भगवते पंचमुखाय हनुमते<br><small>पंचमुखी हनुमान का स्मरण करें</small></p>
+</div>
+
+<!-- ========== शिक्षा ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> कथा से शिक्षा</h2>
+  <ul class="moral-list">
+    <li><i class="fa-solid fa-star"></i> <strong>दिव्य शक्ति:</strong> हनुमान जी ने पंचमुखी रूप धारण किया — भक्ति से दिव्य शक्ति प्राप्त होती है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>बुद्धि का प्रयोग:</strong> हनुमान जी ने पहले दीपक बुझाया, फिर युद्ध किया — बुद्धि से हर समस्या का समाधान मिलता है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>सेवा भाव:</strong> हनुमान जी ने श्रीराम की रक्षा के लिए पाताल लोक तक जाने का संकल्प किया — सेवा भाव से ही भगवान प्रसन्न होते हैं।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>सर्वशक्तिमान:</strong> पंचमुखी रूप सभी दिशाओं से रक्षा करता है — भगवान हर दिशा से भक्त की रक्षा करते हैं।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>विनम्रता:</strong> हनुमान जी ने सारा श्रेय श्रीराम को दिया — विनम्रता सबसे बड़ा आभूषण है।</li>
+  </ul>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>पंचमुखी हनुमान के पाँच मुख कौन-कौन से हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">पंचमुखी हनुमान के पाँच मुख हैं — <strong>हनुमान, नरसिंह, गरुड़, वराह और हयग्रीव</strong>। प्रत्येक मुख एक विशेष शक्ति और दिशा का प्रतीक है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी ने पंचमुखी रूप कब धारण किया?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी ने <strong>अहिरावण वध</strong> के समय पंचमुखी रूप धारण किया। अहिरावण की माया को तोड़ने और उसका वध करने के लिए उन्होंने यह रूप धारण किया।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>पंचमुखी हनुमान की पूजा कब करनी चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">पंचमुखी हनुमान की पूजा <strong>मंगलवार</strong> और <strong>शनिवार</strong> को विशेष रूप से की जाती है। इसके अलावा हनुमान जयंती, दीपावली और नवरात्रि में भी पूजा की जा सकती है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>पंचमुखी हनुमान की पूजा से क्या लाभ होता है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">पंचमुखी हनुमान की पूजा से <strong>तंत्र बाधा, शत्रु बाधा, रोग बाधा, भूत-प्रेत बाधा और ग्रह दोष</strong> शांत होते हैं। सभी दिशाओं से रक्षा मिलती है और मनोकामना पूर्ण होती है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>पंचमुखी हनुमान का मंत्र क्या है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">पंचमुखी हनुमान का मुख्य मंत्र है — <strong>"ॐ नमो भगवते पंचमुखाय हनुमते"</strong>। इसके अलावा <strong>"ॐ हं हनुमते रुद्रात्मकाय हुं फट्"</strong> का जप भी किया जाता है।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> सभी कथाएँ</a>
+    <a href="30i-bharat-milan.html" class="cat-chip"><i class="fa-solid fa-arrow-left"></i> भरत मिलन</a>
+    <a href="30k-shani-dev.html" class="cat-chip"><i class="fa-solid fa-arrow-right"></i> हनुमान और शनि देव</a>
+    <a href="30h-ahiravan-vadh.html" class="cat-chip"><i class="fa-solid fa-sword"></i> अहिरावण वध</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह कथा शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
