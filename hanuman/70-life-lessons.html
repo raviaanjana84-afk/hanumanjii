@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>25 जीवन सीख — हनुमान जी से | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी के जीवन से 25 अमूल्य जीवन सीख — साहस, भक्ति, विनम्रता, सेवा और समर्पण के सिद्धांत।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.lessons-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,193,7,.4), transparent 65%),
+    linear-gradient(135deg, rgba(255,152,0,.22), rgba(212,175,55,.18));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.lessons-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,193,7,.18), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.lessons-hero .lessons-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 26px rgba(255,193,7,.9));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.lessons-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .lessons-hero h2 { color: var(--gold-light); }
+.lessons-hero .lessons-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.lessons-hero .lessons-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.lessons-hero .lessons-meta span { display: flex; align-items: center; gap: 5px; }
+.lessons-hero .lessons-meta i { color: var(--gold); }
+
+/* Stats */
+.lessons-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+}
+.stat-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.stat-item .num {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--maroon);
+  font-family: 'Tiro Devanagari Hindi', serif;
+}
+body.dark .stat-item .num { color: var(--gold-light); }
+.stat-item .lbl {
+  font-size: 10.5px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* Category Chips */
+.cat-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.cat-chip {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  font-family: 'Hind', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all .25s ease;
+}
+.cat-chip:hover {
+  border-color: var(--gold);
+  color: var(--maroon);
+}
+.cat-chip.active {
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  border-color: transparent;
+}
+
+/* Lesson Cards */
+.lessons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+.lesson-card {
+  display: flex;
+  gap: 14px;
+  padding: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all .3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.lesson-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--maroon), var(--gold));
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .4s ease;
+}
+.lesson-card:hover::before { transform: scaleY(1); }
+.lesson-card:hover {
+  transform: translateX(6px);
+  border-color: var(--gold);
+  box-shadow: 0 6px 20px rgba(212,175,55,.15);
+}
+.lesson-num {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(122,46,46,.3);
+}
+.lesson-body { flex: 1; min-width: 0; }
+.lesson-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.lesson-title {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  margin: 0;
+  line-height: 1.3;
+}
+body.dark .lesson-title { color: var(--gold-light); }
+.lesson-tag {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(212,175,55,.15);
+  color: var(--maroon);
+  font-weight: 600;
+  letter-spacing: .5px;
+  white-space: nowrap;
+}
+body.dark .lesson-tag { color: var(--gold-light); }
+.lesson-desc {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin: 0 0 8px;
+}
+.lesson-quote {
+  display: block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(212,175,55,.08);
+  border-left: 3px solid var(--gold);
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-style: italic;
+  color: var(--maroon);
+}
+body.dark .lesson-quote { color: var(--gold-light); }
+
+/* No Result */
+.no-result {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+.no-result.show { display: block; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .lessons-hero .lessons-emoji { font-size: 70px; }
+  .lessons-hero h2 { font-size: 23px; }
+  .lesson-card { padding: 14px; gap: 10px; }
+  .lesson-num { width: 38px; height: 38px; font-size: 15px; }
+  .lesson-title { font-size: 15px; }
+  .lesson-desc { font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>25 जीवन सीख</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="lessons-hero">
+  <span class="lessons-emoji">💡</span>
+  <h2>25 जीवन सीख</h2>
+  <div class="lessons-sub">Life Lessons • Hanuman Ji</div>
+  <div class="lessons-meta">
+    <span><i class="fa-solid fa-lightbulb"></i> 25 सीख</span>
+    <span><i class="fa-solid fa-clock"></i> 20 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> विस्तृत</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> जीवन सीख का महत्व</h2>
+  <p>हनुमान जी का जीवन हमें अनेक अमूल्य सीख देता है। उनका जीवन साहस, भक्ति, विनम्रता, सेवा और समर्पण का प्रतीक है। उनके जीवन से हम सीख सकते हैं कि कैसे कठिन परिस्थितियों में भी धैर्य और भक्ति बनाए रखें।</p>
+  <p>यहाँ हनुमान जी के जीवन से <strong>25 अमूल्य सीख</strong> दी गई हैं जो हमारे दैनिक जीवन में उपयोगी हैं।</p>
+</div>
+
+<!-- ========== STATS ========== -->
+<div class="lessons-stats">
+  <div class="stat-item"><div class="num">25</div><div class="lbl">सीख</div></div>
+  <div class="stat-item"><div class="num">5</div><div class="lbl">श्रेणियाँ</div></div>
+  <div class="stat-item"><div class="num">20</div><div class="lbl">मिनट पढ़ना</div></div>
+</div>
+
+<!-- ========== CATEGORY CHIPS ========== -->
+<div class="cat-chips" id="catChips">
+  <button class="cat-chip active" data-cat="all" onclick="filterCat(this)">सभी</button>
+  <button class="cat-chip" data-cat="bhakti" onclick="filterCat(this)">भक्ति</button>
+  <button class="cat-chip" data-cat="sahas" onclick="filterCat(this)">साहस</button>
+  <button class="cat-chip" data-cat="vinamrata" onclick="filterCat(this)">विनम्रता</button>
+  <button class="cat-chip" data-cat="seva" onclick="filterCat(this)">सेवा</button>
+  <button class="cat-chip" data-cat="jeevan" onclick="filterCat(this)">जीवन</button>
+</div>
+
+<!-- ========== LESSONS LIST ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">💡</span> सभी 25 सीख</h2>
+
+  <div class="lessons-list" id="lessonsList">
+
+    <!-- 1 -->
+    <div class="lesson-card" data-cat="bhakti">
+      <div class="lesson-num">1</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">भक्ति सर्वोपरि है</h3>
+          <span class="lesson-tag">भक्ति</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने अपना पूरा जीवन श्रीराम की भक्ति में समर्पित कर दिया। उनकी भक्ति ने उन्हें अमर बना दिया।</p>
+        <span class="lesson-quote">भक्ति में ही सच्चा सुख है — भगवान की भक्ति से जीवन सार्थक होता है।</span>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="lesson-card" data-cat="sahas">
+      <div class="lesson-num">2</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">साहस से बड़े कार्य संभव</h3>
+          <span class="lesson-tag">साहस</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने अकेले ही लंका में प्रवेश किया और लंका दहन किया। उनका साहस अद्वितीय था।</p>
+        <span class="lesson-quote">साहस से बड़े से बड़े कार्य संभव होते हैं — डर को हराओ, साहस से आगे बढ़ो।</span>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="lesson-card" data-cat="vinamrata">
+      <div class="lesson-num">3</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">विनम्रता सबसे बड़ा आभूषण</h3>
+          <span class="lesson-tag">विनम्रता</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने सदा विनम्रता बनाए रखी। उन्होंने अपनी सारी उपलब्धियों का श्रेय श्रीराम को दिया।</p>
+        <span class="lesson-quote">विनम्रता से भगवान प्रसन्न होते हैं — अहंकार का अंत निश्चित है।</span>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="lesson-card" data-cat="seva">
+      <div class="lesson-num">4</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">सेवा भाव सर्वोच्च धर्म</h3>
+          <span class="lesson-tag">सेवा</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने श्रीराम की सेवा में अपना जीवन समर्पित कर दिया। उनकी सेवा भावना ने उन्हें "राम दूत" बनाया।</p>
+        <span class="lesson-quote">सेवा भाव से ही भगवान प्रसन्न होते हैं — सेवा में ही सच्चा सुख है।</span>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="lesson-card" data-cat="jeevan">
+      <div class="lesson-num">5</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">माता-पिता का सम्मान</h3>
+          <span class="lesson-tag">जीवन</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने सदा अपनी माता अंजनी और पिता केसरी का सम्मान किया। उनकी मातृ-भक्ति अद्वितीय थी।</p>
+        <span class="lesson-quote">माता-पिता की सेवा करो — उनके आशीर्वाद से जीवन सफल होता है।</span>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="lesson-card" data-cat="sahas">
+      <div class="lesson-num">6</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">बुद्धि से हर समस्या का समाधान</h3>
+          <span class="lesson-tag">साहस</span>
+        </div>
+        <p class="lesson-desc">संजीवनी न मिलने पर हनुमान जी ने पूरा पर्वत ही उठा लिया। यह उनकी बुद्धिमत्ता का प्रतीक था।</p>
+        <span class="lesson-quote">बुद्धि से हर समस्या का समाधान मिलता है — शक्ति से अधिक बुद्धि काम आती है।</span>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="lesson-card" data-cat="bhakti">
+      <div class="lesson-num">7</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">नाम जप की शक्ति</h3>
+          <span class="lesson-tag">भक्ति</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने सदा श्रीराम का नाम जपा। उनका नाम जप ही उनकी शक्ति का स्रोत था।</p>
+        <span class="lesson-quote">भगवान का नाम जपो — नाम जप से मन शुद्ध होता है और शक्ति मिलती है।</span>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="lesson-card" data-cat="jeevan">
+      <div class="lesson-num">8</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">धैर्य और संयम</h3>
+          <span class="lesson-tag">जीवन</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने कठिन परिस्थितियों में भी धैर्य बनाए रखा। उनका संयम अद्वितीय था।</p>
+        <span class="lesson-quote">धैर्य और संयम रखो — कठिन समय में धैर्य ही सबसे बड़ा सहारा है।</span>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="lesson-card" data-cat="seva">
+      <div class="lesson-num">9</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">मित्रता का महत्व</h3>
+          <span class="lesson-tag">सेवा</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने श्रीराम और सुग्रीव की मित्रता कराई। उन्होंने सच्ची मित्रता का उदाहरण प्रस्तुत किया।</p>
+        <span class="lesson-quote">सच्ची मित्रता जीवन बदल देती है — मित्रों का सम्मान करो।</span>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="lesson-card" data-cat="vinamrata">
+      <div class="lesson-num">10</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">क्षमा वीरों का आभूषण</h3>
+          <span class="lesson-tag">विनम्रता</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने शनि देव को पराजित करके भी क्षमा किया। उनकी क्षमाशीलता अद्वितीय थी।</p>
+        <span class="lesson-quote">क्षमा करो — क्षमा वीरों का आभूषण है, क्रोध से कभी अच्छा नहीं होता।</span>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="lesson-card" data-cat="bhakti">
+      <div class="lesson-num">11</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">समर्पण से अमरत्व</h3>
+          <span class="lesson-tag">भक्ति</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने श्रीराम के लिए अपना सर्वस्व समर्पित किया। इसी समर्पण से उन्हें अमरत्व मिला।</p>
+        <span class="lesson-quote">पूर्ण समर्पण करो — समर्पण से अमरत्व प्राप्त होता है।</span>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="lesson-card" data-cat="sahas">
+      <div class="lesson-num">12</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">आत्मविश्वास की शक्ति</h3>
+          <span class="lesson-tag">साहस</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी को अपनी शक्ति पर पूरा विश्वास था। उन्होंने समुद्र पार किया, लंका जलाई और संजीवनी लाई।</p>
+        <span class="lesson-quote">अपने आप पर विश्वास रखो — आत्मविश्वास से हर कठिनाई पार होती है।</span>
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="lesson-card" data-cat="jeevan">
+      <div class="lesson-num">13</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">समय का महत्व</h3>
+          <span class="lesson-tag">जीवन</span>
+        </div>
+        <p class="lesson-desc">संजीवनी लाते समय हनुमान जी ने समय बचाने के लिए पूरा पर्वत उठा लिया। उन्हें समय का महत्व पता था।</p>
+        <span class="lesson-quote">समय का सदुपयोग करो — समय सबसे मूल्यवान धन है।</span>
+      </div>
+    </div>
+
+    <!-- 14 -->
+    <div class="lesson-card" data-cat="bhakti">
+      <div class="lesson-num">14</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">गुरु का महत्व</h3>
+          <span class="lesson-tag">भक्ति</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने सूर्य देव को अपना गुरु माना। उन्होंने गुरु का सदा सम्मान किया।</p>
+        <span class="lesson-quote">गुरु का सम्मान करो — गुरु कृपा से ज्ञान और सफलता मिलती है।</span>
+      </div>
+    </div>
+
+    <!-- 15 -->
+    <div class="lesson-card" data-cat="sahas">
+      <div class="lesson-num">15</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">संकट से न डरें</h3>
+          <span class="lesson-tag">साहस</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने अनेक संकटों का सामना किया, लेकिन कभी नहीं डरे। वे सदा संकटों से लड़े।</p>
+        <span class="lesson-quote">संकट से न डरो — संकट ही हमें मजबूत बनाते हैं।</span>
+      </div>
+    </div>
+
+    <!-- 16 -->
+    <div class="lesson-card" data-cat="seva">
+      <div class="lesson-num">16</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">दूसरों की सहायता</h3>
+          <span class="lesson-tag">सेवा</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने सदा दूसरों की सहायता की — सीता की खोज, लक्ष्मण की रक्षा, सुग्रीव को राज्य।</p>
+        <span class="lesson-quote">दूसरों की सहायता करो — सहायता से ही जीवन सार्थक होता है।</span>
+      </div>
+    </div>
+
+    <!-- 17 -->
+    <div class="lesson-card" data-cat="vinamrata">
+      <div class="lesson-num">17</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">सरलता और सादगी</h3>
+          <span class="lesson-tag">विनम्रता</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी सदा सरल और सादा जीवन जीते थे। उन्हें वैभव की कोई चाह नहीं थी।</p>
+        <span class="lesson-quote">सरल और सादा जीवन जियो — सादगी में ही सच्चा सुख है।</span>
+      </div>
+    </div>
+
+    <!-- 18 -->
+    <div class="lesson-card" data-cat="jeevan">
+      <div class="lesson-num">18</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">सत्य की राह</h3>
+          <span class="lesson-tag">जीवन</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने सदा सत्य का मार्ग चुना। उन्होंने कभी झूठ नहीं बोला।</p>
+        <span class="lesson-quote">सत्य की राह पर चलो — सत्य ही सबसे बड़ा धर्म है।</span>
+      </div>
+    </div>
+
+    <!-- 19 -->
+    <div class="lesson-card" data-cat="bhakti">
+      <div class="lesson-num">19</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">ध्यान और एकाग्रता</h3>
+          <span class="lesson-tag">भक्ति</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी सदा श्रीराम के ध्यान में लीन रहते थे। उनकी एकाग्रता अद्वितीय थी।</p>
+        <span class="lesson-quote">ध्यान और एकाग्रता से हर कार्य में सफलता मिलती है।</span>
+      </div>
+    </div>
+
+    <!-- 20 -->
+    <div class="lesson-card" data-cat="sahas">
+      <div class="lesson-num">20</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">अपनी शक्ति को पहचानो</h3>
+          <span class="lesson-tag">साहस</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी को अपनी शक्ति का ज्ञान नहीं था। जाम्बवान ने उन्हें उनकी शक्ति का स्मरण कराया।</p>
+        <span class="lesson-quote">अपनी शक्ति को पहचानो — तुम्हारे अंदर अद्भुत शक्तियाँ छिपी हैं।</span>
+      </div>
+    </div>
+
+    <!-- 21 -->
+    <div class="lesson-card" data-cat="seva">
+      <div class="lesson-num">21</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">वचन का पालन</h3>
+          <span class="lesson-tag">सेवा</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने सदा अपने वचन का पालन किया। उन्होंने श्रीराम को दिया वचन निभाया।</p>
+        <span class="lesson-quote">वचन का पालन करो — वचन का पालन सच्चे व्यक्ति का लक्षण है।</span>
+      </div>
+    </div>
+
+    <!-- 22 -->
+    <div class="lesson-card" data-cat="vinamrata">
+      <div class="lesson-num">22</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">सबको समान समझो</h3>
+          <span class="lesson-tag">विनम्रता</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने कभी किसी में भेद नहीं किया। वे वानर, मनुष्य, राक्षस — सबको समान मानते थे।</p>
+        <span class="lesson-quote">सबको समान समझो — भेदभाव से जीवन में दुख आता है।</span>
+      </div>
+    </div>
+
+    <!-- 23 -->
+    <div class="lesson-card" data-cat="jeevan">
+      <div class="lesson-num">23</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">कर्म करो, फल की चिंता न करो</h3>
+          <span class="lesson-tag">जीवन</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने सदा अपना कर्म किया, फल की चिंता नहीं की। उन्होंने श्रीराम के लिए नि:स्वार्थ कार्य किए।</p>
+        <span class="lesson-quote">कर्म करो, फल की चिंता मत करो — नि:स्वार्थ कर्म ही सच्ची सेवा है।</span>
+      </div>
+    </div>
+
+    <!-- 24 -->
+    <div class="lesson-card" data-cat="bhakti">
+      <div class="lesson-num">24</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">हृदय में भगवान का वास</h3>
+          <span class="lesson-tag">भक्ति</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी ने अपने हृदय में श्रीराम और सीता को बसाया। उनका हृदय भगवान का निवास था।</p>
+        <span class="lesson-quote">हृदय में भगवान को बसाओ — हृदय में भगवान का वास ही सच्ची भक्ति है।</span>
+      </div>
+    </div>
+
+    <!-- 25 -->
+    <div class="lesson-card" data-cat="jeevan">
+      <div class="lesson-num">25</div>
+      <div class="lesson-body">
+        <div class="lesson-head">
+          <h3 class="lesson-title">जीवन का उद्देश्य</h3>
+          <span class="lesson-tag">जीवन</span>
+        </div>
+        <p class="lesson-desc">हनुमान जी का जीवन श्रीराम की सेवा में समर्पित था। उनका जीवन हमें सिखाता है कि जीवन का उद्देश्य सेवा और भक्ति है।</p>
+        <span class="lesson-quote">जीवन का उद्देश्य सेवा और भक्ति है — इसी से जीवन सार्थक होता है।</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="no-result" id="noResult">
+    <span style="font-size:50px;display:block;margin-bottom:10px;">🔍</span>
+    <p>इस श्रेणी में कोई सीख नहीं मिली।</p>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> कथाएँ</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-om"></i> पूजा विधि</a>
+    <a href="71-problems.html" class="cat-chip"><i class="fa-solid fa-circle-question"></i> समस्याओं का समाधान</a>
+    <a href="72-grah-shanti.html" class="cat-chip"><i class="fa-solid fa-star"></i> ग्रह शांति</a>
+    <a href="84-faq.html" class="cat-chip"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function filterCat(btn) {
+  document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  const cat = btn.dataset.cat;
+  const cards = document.querySelectorAll('#lessonsList .lesson-card');
+  let visible = 0;
+
+  cards.forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = '';
+      visible++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  document.getElementById('noResult').classList.toggle('show', visible === 0);
+}
+</script>
+</body>
+</html>
