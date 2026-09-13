@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>सूर्य देव प्रसंग — हनुमान जी | Sanatan Gyan Kosh</title>
+<meta name="description" content="बाल हनुमान और सूर्य देव प्रसंग — सूर्य को फल समझकर पकड़ना, इंद्र का वज्र, हनु टूटना और हनुमान नाम की उत्पत्ति।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.surya-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,180,0,.5), transparent 65%),
+    linear-gradient(135deg, rgba(255,107,53,.25), rgba(212,175,55,.18));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.surya-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,180,0,.2), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.surya-hero .surya-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 30px rgba(255,180,0,.9));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.surya-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .surya-hero h2 { color: var(--gold-light); }
+.surya-hero .surya-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.surya-hero .surya-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.surya-hero .surya-meta span { display: flex; align-items: center; gap: 5px; }
+.surya-hero .surya-meta i { color: var(--gold); }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(212,175,55,.12);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid var(--gold);
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+.katha-block .mantra {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.05));
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,.3);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .katha-block .mantra { color: var(--gold-light); }
+
+/* Moral List */
+.moral-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.moral-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.moral-list li i {
+  color: var(--gold);
+  font-size: 14px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Chapter marker */
+.chapter {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .surya-hero .surya-emoji { font-size: 70px; }
+  .surya-hero h2 { font-size: 23px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="30-katha.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान कथाएँ</span>
+    <h1>सूर्य देव प्रसंग</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="surya-hero">
+  <span class="surya-emoji">☀️</span>
+  <h2>सूर्य देव प्रसंग</h2>
+  <div class="surya-sub">Surya Grahan • Hanuman Naam</div>
+  <div class="surya-meta">
+    <span><i class="fa-solid fa-book-open"></i> 4 अध्याय</span>
+    <span><i class="fa-solid fa-clock"></i> 5 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> विस्तृत</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> कथा का सार</h2>
+  <p>यह वह अमर कथा है जिससे हनुमान जी को उनका नाम मिला। बाल हनुमान ने उगते सूर्य को पका हुआ आम का फल समझकर पकड़ लिया। इससे तीनों लोकों में हलचल मच गई। इंद्र के वज्र से उनका हनु (जबड़ा) टूटा और वे "हनुमान" कहलाए।</p>
+  <p>यह कथा वीरता, मासूमियत और दिव्य शक्ति का अद्भुत संगम है। पढ़ें पूरी कथा — 4 अध्यायों में।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">मुख्य पात्र</div><div class="val">बाल हनुमान</div></div>
+    <div class="info-item"><div class="lbl">देवता</div><div class="val">सूर्य देव</div></div>
+    <div class="info-item"><div class="lbl">वज्र</div><div class="val">इंद्र का</div></div>
+    <div class="info-item"><div class="lbl">परिणाम</div><div class="val">हनु टूटा</div></div>
+    <div class="info-item"><div class="lbl">नाम</div><div class="val">हनुमान</div></div>
+    <div class="info-item"><div class="lbl">क्रोध</div><div class="val">पवन देव</div></div>
+  </div>
+</div>
+
+<!-- ========== अध्याय 1 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 1</span>
+  <h3>🌅 प्रातःकाल का दृश्य</h3>
+  <p>एक दिन प्रातःकाल बाल हनुमान अपनी माता अंजनी के साथ आश्रम के बाहर खेल रहे थे। तभी उन्होंने पूर्व दिशा में उगते सूर्य को देखा। सूर्य देव का तेज इतना प्रबल था कि आकाश लाल-नारंगी रंग में रंग गया।</p>
+  <p>बाल हनुमान ने सूर्य को ध्यान से देखा। उनकी मासूम बुद्धि में यह विचार आया — "यह क्या है? इतना बड़ा, गोल, लाल-नारंगी! यह तो कोई विशाल पका हुआ आम का फल है।"</p>
+  <p class="highlight">बाल हनुमान की भूख जाग गई। उन्होंने मन ही मन कहा — "इतना बड़ा फल! मैं इसे अवश्य खाऊँगा। यह मेरे लिए ही बना है।"</p>
+  <p>उन्होंने अपनी माता से पूछा — "माँ, वह ऊपर जो बड़ा सा फल है, वह क्या है?" अंजनी माता ने कहा — "वह सूर्य देव हैं, पुत्र। वे सबको प्रकाश देते हैं।" लेकिन बाल हनुमान के मन में तो फल खाने की जिद ठान ली थी।</p>
+</div>
+
+<!-- ========== अध्याय 2 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 2</span>
+  <h3>🚀 सूर्य की ओर उड़ान</h3>
+  <p>बाल हनुमान ने अपनी माता की बात अनसुनी कर दी। उन्होंने अपनी दिव्य शक्ति का प्रयोग किया और आकाश की ओर उड़ने लगे। उनकी गति इतनी तेज थी कि हवा भी उनके सामने झुक गई।</p>
+  <p>उनके उड़ने से आकाश में हलचल मच गई। पक्षी आश्चर्यचकित होकर देखने लगे। बादल उनके रास्ते से हट गए। सूर्य देव ने बाल हनुमान को अपनी ओर आते देखा और आश्चर्यचकित रह गए।</p>
+  <p class="highlight">बाल हनुमान सूर्य देव के निकट पहुँचे और उन्हें पकड़ लिया। सूर्य देव की तेजस्विता से उनका मुख लाल हो गया। वे सूर्य को अपने मुँह की ओर बढ़ाने लगे।</p>
+  <p>सूर्य देव ने भयभीत होकर कहा — "हे बालक, मैं सूर्य देव हूँ, फल नहीं! मुझे छोड़ दो, अन्यथा तीनों लोकों में अंधकार छा जाएगा।" लेकिन बाल हनुमान अपनी जिद पर अड़े रहे।</p>
+  <p class="mantra">ॐ श्री हनुमते नमः<br><small>बाल हनुमान की वीरता का स्मरण करें</small></p>
+</div>
+
+<!-- ========== अध्याय 3 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 3</span>
+  <h3>⚡ इंद्र का वज्र प्रहार</h3>
+  <p>सूर्य देव ने भयभीत होकर ब्रह्मा जी को पुकारा — "हे ब्रह्मा, यह बालक मुझे खा जाएगा! कोई उपाय करो!" तीनों लोकों में हलचल मच गई। देवता भयभीत हो गए।</p>
+  <p>सूर्य देव की पुकार सुनकर इंद्र देव तुरंत वहाँ पहुँचे। उन्होंने देखा कि एक छोटा बालक सूर्य को पकड़े हुए आकाश में उड़ रहा है। इंद्र देव को क्रोध आया।</p>
+  <p>उन्होंने अपना वज्र उठाया और बाल हनुमान पर प्रहार किया। वज्र इतना शक्तिशाली था कि बाल हनुमान का <strong>हनु (जबड़ा)</strong> टूट गया।</p>
+  <p class="highlight">बाल हनुमान मूर्छित होकर पृथ्वी पर गिर पड़े। उनका मुख रक्त से लाल हो गया। अंजनी माता ने अपने पुत्र को मूर्छित देखा और विलाप करने लगीं।</p>
+  <p>इंद्र देव ने सोचा — "यह कोई साधारण बालक नहीं है। इसकी शक्ति असाधारण है।" लेकिन अब क्या होगा? यह सोचकर सभी देवता चिंतित हो गए।</p>
+</div>
+
+<!-- ========== अध्याय 4 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 4</span>
+  <h3>🌟 हनुमान नाम की उत्पत्ति और पवन देव का कोप</h3>
+  <p><strong>"हनु"</strong> का अर्थ है जबड़ा और <strong>"मान"</strong> का अर्थ है टूटा हुआ। इंद्र के वज्र से बाल हनुमान का हनु टूटा — इसलिए उन्हें <strong>"हनुमान"</strong> कहा गया। यह नाम उनकी वीरता और दिव्यता का प्रतीक बन गया।</p>
+  <p>उधर, पवन देव को जब अपने पुत्र की दशा का पता चला, तो वे अत्यंत क्रोधित हो गए। उन्होंने पृथ्वी पर वायु का संचार बंद कर दिया।</p>
+  <p>सभी प्राणी हाँफने लगे। पेड़-पौधे मुरझाने लगे। नदियाँ सूखने लगीं। तीनों लोकों में हाहाकार मच गया। देवता पवन देव से प्रार्थना करने लगे।</p>
+  <p class="highlight">तब ब्रह्मा जी ने पवन देव को शांत किया और कहा — "हे पवन, तुम्हारा पुत्र अमर है। यह कोई साधारण बालक नहीं, बल्कि भगवान शिव का अंश है। इसे कोई हानि नहीं पहुँचा सकता।"</p>
+  <p>फिर सभी देवताओं ने बाल हनुमान को अनेक वरदान दिए। ब्रह्मा जी ने अमरत्व, इंद्र ने वज्र शरीर, अग्नि ने अग्नि में न जलने का वरदान, वरुण ने जल में न डूबने का वरदान, वायु ने आकाश में उड़ने का वरदान, और शिव जी ने बुद्धि-विद्या-भक्ति का वरदान दिया।</p>
+  <p class="mantra">ॐ हं हनुमते रुद्रात्मकाय हुं फट्<br><small>हनुमान जी के नाम की उत्पत्ति का स्मरण करें</small></p>
+</div>
+
+<!-- ========== शिक्षा ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> कथा से शिक्षा</h2>
+  <ul class="moral-list">
+    <li><i class="fa-solid fa-star"></i> <strong>मासूमियत की शक्ति:</strong> बाल हनुमान की मासूम बुद्धि ने उन्हें सूर्य तक पहुँचा दिया — मासूमियत में दिव्य शक्ति होती है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>जिद का परिणाम:</strong> बाल हनुमान की जिद ने उन्हें वरदान दिलाया — सकारात्मक जिद इंसान को आगे बढ़ाती है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>नाम का महत्व:</strong> हनु टूटने से "हनुमान" नाम पड़ा — नाम में ही व्यक्तित्व छिपा होता है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>पिता का प्रेम:</strong> पवन देव ने पुत्र के लिए पृथ्वी पर वायु बंद कर दी — पिता का प्रेम सर्वोच्च है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>देवताओं की कृपा:</strong> सभी देवताओं ने बाल हनुमान को वरदान दिए — भगवान भक्तों को कभी निराश नहीं करते।</li>
+  </ul>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>बाल हनुमान ने सूर्य को क्यों पकड़ा?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">बाल हनुमान को उगता सूर्य एक विशाल पका हुआ आम का फल लगा। उनकी मासूम बुद्धि में यह विचार आया कि इसे खाना चाहिए। इसलिए उन्होंने सूर्य को पकड़ लिया।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>"हनुमान" नाम की उत्पत्ति कैसे हुई?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">इंद्र के वज्र प्रहार से बाल हनुमान का <strong>हनु (जबड़ा)</strong> टूट गया। "हनु" का अर्थ जबड़ा और "मान" का अर्थ टूटा हुआ — इसलिए उन्हें "हनुमान" कहा गया।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>इंद्र ने वज्र क्यों फेंका?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">सूर्य देव की पुकार सुनकर इंद्र देव वहाँ पहुँचे। उन्होंने देखा कि बाल हनुमान सूर्य को पकड़े हुए हैं। इंद्र देव को क्रोध आया और उन्होंने अपना वज्र बाल हनुमान पर फेंका।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>पवन देव ने क्रोधित होकर क्या किया?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">पवन देव ने अपने पुत्र की दशा देखकर क्रोधित होकर <strong>पृथ्वी पर वायु का संचार बंद कर दिया</strong>। सभी प्राणी हाँफने लगे। तब ब्रह्मा जी ने उन्हें शांत किया।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>इस कथा से हमें क्या सीख मिलती है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">इस कथा से सीख मिलती है कि <strong>मासूमियत में दिव्य शक्ति होती है</strong>, <strong>सकारात्मक जिद इंसान को आगे बढ़ाती है</strong>, और <strong>माता-पिता का प्रेम अत्यंत गहरा होता है</strong>।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> सभी कथाएँ</a>
+    <a href="30a-janm.html" class="cat-chip"><i class="fa-solid fa-star"></i> जन्म कथा</a>
+    <a href="30b-bal-lila.html" class="cat-chip"><i class="fa-solid fa-arrow-left"></i> बाल लीला</a>
+    <a href="30d-ram-milan.html" class="cat-chip"><i class="fa-solid fa-arrow-right"></i> राम मिलन</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह कथा शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
