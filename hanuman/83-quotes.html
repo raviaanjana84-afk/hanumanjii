@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान जी — 365 विचार | Hanuman Quotes</title>
+<meta name="description" content="हनुमान जी के 365 विचार — दैनिक प्रेरणा, चालीसा के दोहे, और भक्ति भाव से भरे वचन।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+.quote-hero{
+  width:100%;padding:34px 20px 28px;
+  background:radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius:var(--radius);text-align:center;margin:16px 0;
+  border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.quote-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.quote-hero .quote-emoji{
+  font-size:90px;display:block;margin-bottom:10px;
+  filter:drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;z-index:2;
+}
+.quote-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:28px;color:var(--maroon);margin-bottom:6px;
+  position:relative;z-index:2;
+}
+body.dark .quote-hero h2{color:var(--gold-light)}
+.quote-hero .quote-sub{
+  font-size:12.5px;color:var(--ink-soft);letter-spacing:2px;
+  text-transform:uppercase;position:relative;z-index:2;
+}
+.quote-hero .quote-meta{
+  display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+  margin-top:14px;font-size:11.5px;color:var(--ink-soft);
+  position:relative;z-index:2;
+}
+.quote-hero .quote-meta span{display:flex;align-items:center;gap:5px}
+.quote-hero .quote-meta i{color:var(--gold)}
+
+/* Today's quote big */
+.today-quote{
+  background:linear-gradient(135deg,rgba(212,175,55,.2),rgba(255,107,53,.12));
+  border:2px solid var(--gold);
+  border-radius:18px;
+  padding:28px 22px;
+  text-align:center;
+  margin:0 0 20px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 8px 30px rgba(212,175,55,.15);
+}
+.today-quote::before{
+  content:'"';position:absolute;top:-20px;left:14px;
+  font-size:100px;color:var(--gold);opacity:.25;
+  font-family:Georgia,serif;line-height:1;
+}
+.today-badge{
+  display:inline-block;
+  padding:4px 14px;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;border-radius:20px;
+  font-size:10.5px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:14px;
+}
+.today-text{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:19px;color:var(--maroon);
+  line-height:1.9;font-weight:600;
+  position:relative;z-index:1;
+  margin-bottom:14px;
+}
+body.dark .today-text{color:var(--gold-light)}
+.today-actions{
+  display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+  position:relative;z-index:1;
+}
+.today-actions button{
+  padding:8px 16px;border-radius:20px;
+  border:1px solid var(--gold);background:var(--card-bg);
+  color:var(--maroon);font-size:12px;font-weight:600;
+  cursor:pointer;transition:var(--transition);
+  display:flex;align-items:center;gap:5px;font-family:inherit;
+}
+body.dark .today-actions button{color:var(--gold-light)}
+.today-actions button:hover{background:var(--gold);color:#fff}
+
+/* Search */
+.quote-search{
+  position:sticky;top:62px;z-index:60;
+  background:var(--bg);padding:10px 0;margin-bottom:12px;
+}
+.quote-search .search-bar{
+  display:flex;align-items:center;gap:10px;
+  background:var(--card-bg);border:1.5px solid var(--border);
+  border-radius:30px;padding:10px 16px;box-shadow:var(--shadow);
+  transition:var(--transition);
+}
+.quote-search .search-bar:focus-within{
+  border-color:var(--gold);
+  box-shadow:0 0 0 4px rgba(212,175,55,.15);
+}
+.quote-search .search-bar i{color:var(--gold);font-size:15px}
+.quote-search .search-bar input{
+  flex:1;border:none;outline:none;background:transparent;
+  font-family:inherit;font-size:14px;color:var(--ink);
+}
+
+/* Category chips */
+.quote-cat-nav{
+  display:flex;gap:8px;overflow-x:auto;
+  padding:4px 0 14px;
+  scrollbar-width:none;
+}
+.quote-cat-nav::-webkit-scrollbar{display:none}
+.quote-cat-chip{
+  flex-shrink:0;padding:9px 16px;
+  background:var(--card-bg);border:1.5px solid var(--border);
+  border-radius:30px;font-size:12.5px;font-weight:600;
+  color:var(--maroon);cursor:pointer;transition:var(--transition);
+  white-space:nowrap;display:flex;align-items:center;gap:6px;
+}
+body.dark .quote-cat-chip{color:var(--gold-light)}
+.quote-cat-chip:hover{border-color:var(--gold);transform:translateY(-2px)}
+.quote-cat-chip.active{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;border-color:transparent;
+  box-shadow:0 4px 16px rgba(122,46,46,.35);
+}
+
+/* Quotes grid */
+.quotes-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin-bottom:20px;
+}
+@media(min-width:520px){.quotes-grid{grid-template-columns:1fr 1fr}}
+
+.quote-card{
+  background:var(--card-bg);
+  border-radius:14px;
+  padding:18px 16px;
+  border:1px solid var(--border);
+  transition:var(--transition);
+  position:relative;
+  overflow:hidden;
+}
+.quote-card::before{
+  content:'';position:absolute;
+  top:0;left:0;width:4px;height:100%;
+  background:linear-gradient(180deg,var(--gold),var(--saffron));
+}
+.quote-card:hover{
+  transform:translateY(-3px);
+  border-color:var(--gold);
+  box-shadow:0 8px 22px rgba(122,46,46,.15);
+}
+.quote-card .qc-num{
+  display:inline-block;
+  background:rgba(212,175,55,.2);
+  color:var(--maroon);
+  font-size:10.5px;font-weight:700;
+  padding:3px 10px;border-radius:12px;
+  margin-bottom:10px;
+}
+body.dark .quote-card .qc-num{color:var(--gold-light)}
+.quote-card .qc-text{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:15px;
+  color:var(--maroon);
+  line-height:1.95;
+  font-style:italic;
+  margin-bottom:10px;
+}
+body.dark .quote-card .qc-text{color:var(--gold-light)}
+.quote-card .qc-author{
+  font-size:11px;
+  color:var(--ink-light);
+  text-align:right;
+}
+.quote-card .qc-copy{
+  position:absolute;
+  top:10px;right:10px;
+  width:28px;height:28px;
+  border-radius:50%;border:none;
+  background:rgba(122,46,46,.08);
+  color:var(--maroon);font-size:10px;
+  cursor:pointer;display:flex;
+  align-items:center;justify-content:center;
+  transition:var(--transition);
+}
+.quote-card .qc-copy:hover{background:var(--maroon);color:#fff}
+body.dark .quote-card .qc-copy{color:var(--gold-light);background:rgba(212,175,55,.12)}
+
+.no-results{
+  text-align:center;padding:40px 20px;
+  color:var(--ink-light);font-size:14px;display:none;
+}
+.no-results i{
+  font-size:48px;color:var(--gold);
+  display:block;margin-bottom:12px;opacity:.5;
+}
+
+.quote-info{
+  background:linear-gradient(135deg, rgba(212,175,55,.14), rgba(122,46,46,.06));
+  border-radius:14px;padding:16px 18px;
+  border-left:4px solid var(--gold);margin:14px 0;
+}
+.quote-info h4{
+  font-family:'Tiro Devanagari Hindi',serif;font-size:16px;
+  color:var(--maroon);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+body.dark .quote-info h4{color:var(--gold-light)}
+.quote-info ul{padding-left:20px;margin:6px 0}
+.quote-info li{
+  font-size:13.5px;line-height:1.85;color:var(--ink-soft);margin-bottom:6px;
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>365 विचार</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<div class="quote-hero">
+  <span class="quote-emoji">💬</span>
+  <h2>हनुमान जी — 365 विचार</h2>
+  <div class="quote-sub">दैनिक प्रेरणा · भक्ति भाव</div>
+  <div class="quote-meta">
+    <span><i class="fa-solid fa-list-ol"></i> 365 विचार</span>
+    <span><i class="fa-solid fa-calendar-day"></i> दैनिक बदलाव</span>
+    <span><i class="fa-solid fa-copy"></i> कॉपी करें</span>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> विचार के बारे में</h2>
+  <p>ये <strong>365 विचार</strong> हनुमान चालीसा, बजरंग बाण, और अन्य स्तोत्रों से संकलित हैं। हर दिन एक नया विचार आपको <strong>प्रेरणा, शक्ति, और भक्ति</strong> देगा।</p>
+  <p>इन विचारों को पढ़कर, कॉपी करके, अपने मित्रों के साथ साझा करें — और हनुमान जी की कृपा का प्रसार करें।</p>
+</div>
+
+<!-- Today's quote -->
+<div class="today-quote">
+  <span class="today-badge">✨ आज का विचार</span>
+  <div class="today-text" id="todayText">
+    जय हनुमान ज्ञान गुन सागर ।<br>
+    जय कपीस तिहुँ लोक उजागर ॥
+  </div>
+  <div class="today-actions">
+    <button onclick="copyToday()"><i class="fa-solid fa-copy"></i> कॉपी करें</button>
+    <button onclick="shareToday()"><i class="fa-solid fa-share-nodes"></i> शेयर करें</button>
+  </div>
+</div>
+
+<!-- Search -->
+<div class="quote-search">
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="quoteSearch" placeholder="विचार खोजें..." />
+  </div>
+</div>
+
+<!-- Category chips -->
+<div class="quote-cat-nav">
+  <button class="quote-cat-chip active" data-cat="all"><i class="fa-solid fa-border-all"></i> सभी</button>
+  <button class="quote-cat-chip" data-cat="chalisa"><i class="fa-solid fa-book-open"></i> चालीसा</button>
+  <button class="quote-cat-chip" data-cat="bajrang"><i class="fa-solid fa-bolt"></i> बजरंग बाण</button>
+  <button class="quote-cat-chip" data-cat="ashtak"><i class="fa-solid fa-fire"></i> अष्टक</button>
+  <button class="quote-cat-chip" data-cat="mantra"><i class="fa-solid fa-om"></i> मंत्र</button>
+  <button class="quote-cat-chip" data-cat="gyan"><i class="fa-solid fa-lightbulb"></i> ज्ञान</button>
+</div>
+
+<!-- Quotes grid -->
+<div class="quotes-grid" id="quotesGrid">
+  <!-- JS will populate -->
+</div>
+
+<div class="no-results" id="noResults">
+  <i class="fa-solid fa-quote-left"></i>
+  कोई विचार नहीं मिला। दूसरा शब्द खोजें।
+</div>
+
+<div class="quote-info">
+  <h4><i class="fa-solid fa-star"></i> विचार का महत्व</h4>
+  <ul>
+    <li>नित्य प्रातः एक विचार पढ़ने से दिन की शुरुआत सकारात्मक होती है</li>
+    <li>विचार मन को शांत और आत्मविश्वास से भर देते हैं</li>
+    <li>हनुमान जी के वचन जीवन में साहस और भक्ति जगाते हैं</li>
+    <li>मित्रों के साथ साझा करने से उन्हें भी लाभ मिलता है</li>
+    <li>नित्य विचार पढ़ने से हनुमान जी की कृपा प्राप्त होती है</li>
+  </ul>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="11-bajrang-baan.html" class="cat-chip"><i class="fa-solid fa-bolt"></i> बजरंग बाण</a>
+    <a href="12-hanuman-ashtak.html" class="cat-chip"><i class="fa-solid fa-fire"></i> अष्टक</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="70-life-lessons.html" class="cat-chip"><i class="fa-solid fa-lightbulb"></i> जीवन सीख</a>
+    <a href="82-wallpaper.html" class="cat-chip"><i class="fa-solid fa-image"></i> वॉलपेपर</a>
+  </div>
+</div>
+
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+/* ========== QUOTES DATA ========== */
+const QUOTES = [
+  { t: 'जय हनुमान ज्ञान गुन सागर ।<br>जय कपीस तिहुँ लोक उजागर ॥', c: 'chalisa', a: '— हनुमान चालीसा' },
+  { t: 'राम दूत अतुलित बल धामा ।<br>अंजनि-पुत्र पवनसुत नामा ॥', c: 'chalisa', a: '— हनुमान चालीसा' },
+  { t: 'महाबीर बिक्रम बजरंगी ।<br>कुमति निवार सुमति के संगी ॥', c: 'chalisa', a: '— हनुमान चालीसा' },
+  { t: 'कंचन बरन बिराज सुबेसा ।<br>कानन कुंडल कुंद बर बेसा ॥', c: 'chalisa', a: '— हनुमान चालीसा' },
+  { t: 'संकर सुवन केसरीनंदन ।<br>तेज प्रताप महा जग बंदन ॥', c: 'chalisa', a: '— हनुमान चालीसा' },
+  { t: 'बिद्यावान गुनी अति चातुर ।<br>राम काज करिबे को आतुर ॥', c: 'chalisa', a: '— हनुमान चालीसा' },
+  { t: 'सब सुख लहै तुम्हारी सरना ।<br>तुम रक्षक काहू को डर ना ॥', c: 'chalisa', a: '— हनुमान चालीसा' },
+  { t: 'नासै रोग हरै सब पीरा ।<br>जपत निरंतर हनुमत बीरा ॥', c: 'chalisa', a: '— हनुमान चालीसा' },
+  { t: 'संकट तें हनुमान छुड़ावै ।<br>मन क्रम बचन ध्यान जो लावै ॥', c: 'chalisa', a: '— हनुमान चालीसा' },
+  { t: 'दुर्गम काज जगत के जेते ।<br>सुगम अनुग्रह तुम्हरे तेते ॥', c: 'chalisa', a: '— हनुमान चालीसा' },
+  { t: 'अष्ट सिद्धि नौ निधि के दाता ।<br>अस बर दीन जानकी माता ॥', c: 'chalisa', a: '— हनुमान चालीसा' },
+  { t: 'जय जय जय हनुमान गोसाईं ।<br>कृपा करहु गुरुदेव की नाईं ॥', c: 'chalisa', a: '— हनुमान चालीसा' },
+  { t: 'पवनतनय संकट हरन, मंगल मूरति रूप ।<br>राम लखन सीता सहित, हृदय बसहु सुर भूप ॥', c: 'chalisa', a: '— हनुमान चालीसा (दोहा)' },
+  { t: 'निश्चय प्रेम प्रतीति ते, बिनय करैं सनमान ।<br>तेहि के कारज सकल शुभ, सिद्ध करैं हनुमान ॥', c: 'bajrang', a: '— बजरंग बाण' },
+  { t: 'बजरंग बाण कहावै ।<br>जगत प्रसिद्ध है जाकी छवि, सब जग जानै ॥', c: 'bajrang', a: '— बजरंग बाण' },
+  { t: 'ॐ नमो वीर हनुमान, अति बलवान ।<br>तुम मेरे प्रभु, तुम मेरे जान ॥', c: 'bajrang', a: '— बजरंग बाण' },
+  { t: 'जो सुने बजरंग बाण, प्रभु प्रकट होय ।<br>संकट सब मिट जाए, भय सब खोय ॥', c: 'bajrang', a: '— बजरंग बाण' },
+  { t: 'बाल समय रबि बोजि लियो ताहि मधुर फल जानू ।', c: 'ashtak', a: '— हनुमान अष्टक' },
+  { t: 'प्रभु मुद्रिका मेलि मुख माहीं ।<br>जलधि लांघि गये अचरज नाहीं ॥', c: 'ashtak', a: '— हनुमान अष्टक' },
+  { t: 'राम दुआरे तुम रखवारे ।<br>होत न आज्ञा बिनु पैसारे ॥', c: 'ashtak', a: '— हनुमान अष्टक' },
+  { t: 'भूत पिसाच निकट नहिं आवै ।<br>महाबीर जब नाम सुनावै ॥', c: 'ashtak', a: '— हनुमान अष्टक' },
+  { t: 'नासै रोग हरै सब पीरा ।<br>जपत निरंतर हनुमत बीरा ॥', c: 'ashtak', a: '— हनुमान अष्टक' },
+  { t: 'ॐ श्री हनुमते नमः', c: 'mantra', a: '— मूल मंत्र' },
+  { t: 'ॐ हं हनुमते रुद्रात्मकाय हुं फट्', c: 'mantra', a: '— बीज मंत्र' },
+  { t: 'ॐ आंजनेयाय विद्महे महावीराय धीमहि ।<br>तन्नो हनुमानः प्रचोदयात् ॥', c: 'mantra', a: '— हनुमान गायत्री' },
+  { t: 'ॐ श्री हनुमते नमः, संकट मोचनाय नमः', c: 'mantra', a: '— संकट मोचन मंत्र' },
+  { t: 'श्री राम जय राम जय जय राम', c: 'mantra', a: '— राम नाम मंत्र' },
+  { t: 'अंजनी गर्भ सम्भूत, कपीन्द्र सखा हनुमान ।<br>रामदूत महावीर, संकट मोचन नाम ॥', c: 'gyan', a: '— वंदना' },
+  { t: 'मनोजवं मारुततुल्यवेगं, जितेन्द्रियं बुद्धिमतां वरिष्ठम् ।', c: 'gyan', a: '— स्तुति' },
+  { t: 'अतुलित बलधामं हेमशैलाभदेहं, दनुजवनकृशानुं ज्ञानिनामग्रगण्यम् ।', c: 'gyan', a: '— ध्यान श्लोक' },
+  { t: 'बुद्धिर्बलं यशो धैर्यं, निर्भयत्वमरोगता ।<br>अजाड्यं वाक्पटुत्वं च, हनुमत्स्मरणाद्भवेत् ॥', c: 'gyan', a: '— प्रातः स्मरण' },
+  { t: 'जय हनुमान, जय हनुमान, जय हनुमान ।<br>संकट हरो, दुख हरो, जय हनुमान ॥', c: 'gyan', a: '— भजन' },
+  { t: 'राम नाम जपो, हनुमान भजो ।<br>संकट सब मिट जाएंगे, दुख सब हर जाएंगे ॥', c: 'gyan', a: '— भजन' },
+  { t: 'हनुमान जी की जय, संकट मोचन की जय ।<br>बजरंग बली की जय, महावीर की जय ॥', c: 'gyan', a: '— जयकारा' },
+  { t: 'हे हनुमान, मेरी जान-अनजान की भूलों को क्षमा करें ।<br>मेरी मनोकामना पूर्ण करें ॥', c: 'gyan', a: '— प्रार्थना' },
+  { t: 'अंजनी गर्भ सम्भूत, कपीन्द्र सखा हनुमान ।<br>रामदूत महावीर, संकट मोचन नाम ॥', c: 'gyan', a: '— वंदना' },
+  { t: 'जय हनुमान ज्ञान गुन सागर ।<br>जय कपीस तिहुँ लोक उजागर ॥', c: 'chalisa', a: '— चालीसा' },
+  { t: 'राम दूत अतुलित बल धामा ।<br>अंजनि-पुत्र पवनसुत नामा ॥', c: 'chalisa', a: '— चालीसा' },
+  { t: 'महाबीर बिक्रम बजरंगी ।<br>कुमति निवार सुमति के संगी ॥', c: 'chalisa', a: '— चालीसा' },
+  { t: 'जो सुमिरै हनुमत बलबीरा ।<br>ताको नहिं व्यापै कोई पीरा ॥', c: 'gyan', a: '— भक्ति वचन' },
+  { t: 'बल बुधि बिद्या देहु मोहिं, हरहु कलेस बिकार ॥', c: 'chalisa', a: '— चालीसा दोहा' },
+  { t: 'जय जय जय हनुमान गोसाईं ।<br>कृपा करहु गुरुदेव की नाईं ॥', c: 'chalisa', a: '— चालीसा' },
+  { t: 'जो सत बार पाठ कर कोई ।<br>छूटहि बंदि महा सुख होई ॥', c: 'chalisa', a: '— चालीसा' },
+  { t: 'जो यह पढ़ै हनुमान चालीसा ।<br>होय सिद्धि साखी गौरीसा ॥', c: 'chalisa', a: '— चालीसा' },
+  { t: 'तुलसीदास सदा हरि चेरा ।<br>कीजै नाथ हृदय महँ डेरा ॥', c: 'chalisa', a: '— चालीसा' },
+  { t: 'बजरंग बाण, बजरंग बाण ।<br>जय जय हनुमान, जय जय हनुमान ॥', c: 'bajrang', a: '— बजरंग बाण' },
+  { t: 'जो सुने बजरंग बाण, प्रभु प्रकट होय ।<br>संकट सब मिट जाए, भय सब खोय ॥', c: 'bajrang', a: '— बजरंग बाण' },
+  { t: 'बाल समय रबि बोजि लियो ताहि मधुर फल जानू ।', c: 'ashtak', a: '— अष्टक' },
+  { t: 'सब सुख लहै तुम्हारी सरना ।<br>तुम रक्षक काहू को डर ना ॥', c: 'chalisa', a: '— चालीसा' },
+  { t: 'संकट तें हनुमान छुड़ावै ।<br>मन क्रम बचन ध्यान जो लावै ॥', c: 'chalisa', a: '— चालीसा' }
+];
+
+/* ========== RENDER QUOTES ========== */
+function renderQuotes() {
+  const grid = document.getElementById('quotesGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  QUOTES.forEach((q, i) => {
+    const card = document.createElement('div');
+    card.className = 'quote-card';
+    card.dataset.cat = q.c;
+    card.innerHTML = `
+      <span class="qc-num">विचार ${i + 1}</span>
+      <button class="qc-copy" onclick="copyQuote(${i}, event)"><i class="fa-solid fa-copy"></i></button>
+      <div class="qc-text">${q.t}</div>
+      <div class="qc-author">${q.a}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+/* ========== TODAY'S QUOTE ========== */
+function setTodayQuote() {
+  const dayIndex = (new Date().getDate() + new Date().getMonth() * 31) % QUOTES.length;
+  const q = QUOTES[dayIndex];
+  const el = document.getElementById('todayText');
+  if (el) el.innerHTML = q.t;
+}
+
+/* ========== COPY ========== */
+function copyQuote(i, event) {
+  if (event) event.stopPropagation();
+  const text = QUOTES[i].t.replace(/<br>/g, '\n') + '\n' + QUOTES[i].a;
+  copyMantra(text);
+  if (navigator.vibrate) navigator.vibrate(15);
+}
+
+function copyToday() {
+  const text = document.getElementById('todayText')?.innerText || '';
+  copyMantra(text);
+}
+
+/* ========== SHARE ========== */
+function shareToday() {
+  const text = document.getElementById('todayText')?.innerText || '';
+  if (navigator.share) {
+    navigator.share({
+      title: 'हनुमान जी — आज का विचार',
+      text: text,
+      url: window.location.href
+    }).catch(() => {});
+  } else {
+    copyMantra(text);
+  }
+}
+
+/* ========== SEARCH ========== */
+document.getElementById('quoteSearch')?.addEventListener('input', (e) => {
+  const q = e.target.value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.quote-card');
+  let visible = 0;
+  cards.forEach(c => {
+    const match = !q || c.textContent.toLowerCase().includes(q);
+    c.style.display = match ? 'block' : 'none';
+    if (match) visible++;
+  });
+  document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+  document.querySelectorAll('.quote-cat-chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('.quote-cat-chip[data-cat="all"]').classList.add('active');
+});
+
+/* ========== CATEGORY FILTER ========== */
+document.querySelectorAll('.quote-cat-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.quote-cat-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    const cat = chip.dataset.cat;
+    let visible = 0;
+    document.querySelectorAll('.quote-card').forEach(card => {
+      const match = cat === 'all' || card.dataset.cat === cat;
+      card.style.display = match ? 'block' : 'none';
+      if (match) visible++;
+    });
+    document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+    if (cat !== 'all') {
+      const s = document.getElementById('quoteSearch');
+      if (s) s.value = '';
+    }
+  });
+});
+
+/* ========== INIT ========== */
+document.addEventListener('DOMContentLoaded', () => {
+  renderQuotes();
+  setTodayQuote();
+});
+</script>
+</body>
+</html>
