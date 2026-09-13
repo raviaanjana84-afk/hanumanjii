@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>लंका दहन — हनुमान जी की कथा | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी का लंका दहन — अशोक वाटिका में सीता दर्शन, रावण दरबार, पूंछ में आग और लंका दहन की पूरी कथा।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.lanka-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,107,53,.5), transparent 65%),
+    linear-gradient(135deg, rgba(200,50,30,.25), rgba(255,107,53,.18));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.lanka-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,107,53,.2), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.lanka-hero .lanka-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 30px rgba(255,107,53,.9));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.lanka-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .lanka-hero h2 { color: var(--gold-light); }
+.lanka-hero .lanka-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.lanka-hero .lanka-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.lanka-hero .lanka-meta span { display: flex; align-items: center; gap: 5px; }
+.lanka-hero .lanka-meta i { color: var(--gold); }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(255,107,53,.1);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid var(--saffron);
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+.katha-block .mantra {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.05));
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,.3);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .katha-block .mantra { color: var(--gold-light); }
+
+/* Moral List */
+.moral-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.moral-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.moral-list li i {
+  color: var(--gold);
+  font-size: 14px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Chapter marker */
+.chapter {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .lanka-hero .lanka-emoji { font-size: 70px; }
+  .lanka-hero h2 { font-size: 23px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="30-katha.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान कथाएँ</span>
+    <h1>लंका दहन</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="lanka-hero">
+  <span class="lanka-emoji">🔥</span>
+  <h2>लंका दहन</h2>
+  <div class="lanka-sub">Ashok Vatika • Lanka Dahan</div>
+  <div class="lanka-meta">
+    <span><i class="fa-solid fa-book-open"></i> 5 अध्याय</span>
+    <span><i class="fa-solid fa-clock"></i> 9 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> विस्तृत</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> कथा का सार</h2>
+  <p>यह हनुमान जी की सबसे वीरतापूर्ण कथाओं में से एक है। सुग्रीव की वानर सेना ने सीता की खोज की। हनुमान जी ने समुद्र पार करके लंका में प्रवेश किया, अशोक वाटिका में सीता माता के दर्शन किए, रावण के दरबार में अपमान सहा, और अंत में अपनी पूंछ में आग लगाकर पूरी लंका को जला दिया।</p>
+  <p>यह कथा वीरता, भक्ति और शक्ति का अद्भुत संगम है। पढ़ें पूरी कथा — 5 अध्यायों में।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">स्थान</div><div class="val">लंका</div></div>
+    <div class="info-item"><div class="lbl">मुख्य पात्र</div><div class="val">हनुमान, सीता, रावण</div></div>
+    <div class="info-item"><div class="lbl">वाटिका</div><div class="val">अशोक वाटिका</div></div>
+    <div class="info-item"><div class="lbl">परिणाम</div><div class="val">लंका दहन</div></div>
+    <div class="info-item"><div class="lbl">मुख्य गुण</div><div class="val">वीरता, भक्ति</div></div>
+    <div class="info-item"><div class="lbl">शिक्षा</div><div class="val">साहस और समर्पण</div></div>
+  </div>
+</div>
+
+<!-- ========== अध्याय 1 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 1</span>
+  <h3>🌊 समुद्र पार करना</h3>
+  <p>सुग्रीव की वानर सेना ने चारों दिशाओं में सीता की खोज शुरू की। हनुमान जी को दक्षिण दिशा में जाने का कार्य मिला। वे अपने साथी वानरों के साथ समुद्र तट पर पहुँचे।</p>
+  <p>समुद्र सौ योजन चौड़ा था। सभी वानर चिंतित हो गए — "इतना विशाल समुद्र कैसे पार करेंगे?" तब जाम्बवान ने हनुमान जी से कहा — "हे हनुमान, आप अपनी शक्ति को पहचानें। आप समुद्र पार कर सकते हैं।"</p>
+  <p class="highlight">हनुमान जी ने अपनी माता अंजनी और पवन देव का स्मरण किया। उन्होंने अपना रूप विशाल किया और समुद्र की ओर उड़ान भरी। उनकी गति इतनी तेज थी कि बादल भी उनके सामने छोटे लगने लगे।</p>
+  <p>रास्ते में मैनाक पर्वत ने उन्हें विश्राम का प्रस्ताव दिया, लेकिन हनुमान जी ने कहा — "हे मैनाक, मैं श्रीराम का कार्य कर रहा हूँ। विश्राम का समय नहीं है।" उन्होंने सुरसा का सामना किया और अपना रूप छोटा करके उनके मुख में प्रवेश किया। फिर सिंहिका का वध किया। अंत में वे लंका पहुँचे।</p>
+</div>
+
+<!-- ========== अध्याय 2 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 2</span>
+  <h3>🌸 अशोक वाटिका में सीता दर्शन</h3>
+  <p>हनुमान जी ने लंका में प्रवेश किया। उन्होंने अपना रूप छोटा कर लिया और रात्रि में लंका का भ्रमण किया। उन्होंने रावण के महल, भवन और उद्यान देखे। लेकिन सीता माता कहीं नहीं मिलीं।</p>
+  <p>अंत में वे अशोक वाटिका पहुँचे। वहाँ उन्होंने एक वृक्ष पर बैठकर देखा — सीता माता एक पेड़ के नीचे बैठी थीं। उनका मुख उदास था, आँखों में आँसू थे। वे श्रीराम का ध्यान कर रही थीं।</p>
+  <p class="highlight">हनुमान जी की आँखों में भी आँसू आ गए। उन्होंने सोचा — "यह मेरी माता सीता हैं। इनकी दशा देखकर मेरा हृदय द्रवित हो रहा है।" उन्होंने वृक्ष से गिरकर सीता माता को प्रणाम किया।</p>
+  <p>सीता माता ने हनुमान जी को देखकर पूछा — "तुम कौन हो?" हनुमान जी ने विनम्रता से कहा — "हे माता, मैं श्रीराम का दूत हनुमान हूँ। प्रभु ने मुझे आपकी खोज में भेजा है।" उन्होंने श्रीराम की मुद्रिका सीता माता को दी। सीता माता ने मुद्रिका देखकर अपना दुख भुला दिया।</p>
+</div>
+
+<!-- ========== अध्याय 3 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 3</span>
+  <h3>⚔️ रावण दरबार में अपमान</h3>
+  <p>सीता माता से भेंट के बाद हनुमान जी ने सोचा — "अब मैं रावण को चेतावनी देता हूँ।" उन्होंने अशोक वाटिका को नष्ट करना शुरू किया। उन्होंने अनेक राक्षसों का वध किया।</p>
+  <p>रावण के सैनिकों ने हनुमान जी को पकड़ने का प्रयास किया, लेकिन वे सब पराजित हुए। अंत में इंद्रजित (मेघनाद) ने ब्रह्मास्त्र से हनुमान जी को बंदी बनाया और रावण के दरबार में प्रस्तुत किया।</p>
+  <p class="highlight">रावण ने हनुमान जी को देखकर कहा — "तू कौन है? किसने तुझे भेजा है?" हनुमान जी ने विनम्रता से कहा — "मैं श्रीराम का दूत हनुमान हूँ। मैं तुम्हें चेतावनी देता हूँ — सीता माता को श्रीराम को लौटा दो, अन्यथा तुम्हारा विनाश निश्चित है।"</p>
+  <p>रावण क्रोधित हो गया। उसने हनुमान जी की पूंछ में आग लगाने का आदेश दिया। राक्षसों ने हनुमान जी की पूंछ में कपड़ा लपेटकर आग लगा दी। लेकिन हनुमान जी ने अपनी पूंछ को बढ़ाया और लंका के चारों ओर घुमाया।</p>
+</div>
+
+<!-- ========== अध्याय 4 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 4</span>
+  <h3>🔥 लंका दहन</h3>
+  <p>हनुमान जी ने अपनी जलती पूंछ को लंका के महलों, भवनों, उद्यानों और बाजारों पर घुमाया। आग इतनी तेजी से फैली कि पूरी लंका जलने लगी।</p>
+  <p>राक्षस भयभीत होकर भागने लगे। रावण का महल भी आग की चपेट में आ गया। लंका में हाहाकार मच गया। लेकिन अशोक वाटिका जहाँ सीता माता थीं, वहाँ आग नहीं पहुँची।</p>
+  <p class="highlight">हनुमान जी ने सोचा — "यदि सीता माता को कुछ हो गया तो मैं श्रीराम को क्या मुँह दिखाऊँगा?" उन्होंने सीता माता को प्रणाम किया और कहा — "हे माता, मैं जाता हूँ। श्रीराम शीघ्र ही आपको लेने आएँगे।"</p>
+  <p>हनुमान जी ने अपनी पूंछ की आग को बुझाया और समुद्र की ओर उड़ान भरी। वे सीता माता का संदेश लेकर श्रीराम के पास पहुँचे। श्रीराम ने हनुमान जी को हृदय से लगाया और कहा — "हे हनुमान, तुमने अद्भुत कार्य किया है।"</p>
+  <p class="mantra">जय हनुमान ज्ञान गुन सागर<br><small>हनुमान जी की वीरता का स्मरण करें</small></p>
+</div>
+
+<!-- ========== अध्याय 5 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 5</span>
+  <h3>🌟 कथा का सार और महत्व</h3>
+  <p>लंका दहन की कथा हनुमान जी की वीरता, बुद्धि और भक्ति का प्रतीक है। उन्होंने अकेले ही लंका में प्रवेश किया, सीता माता से भेंट की, रावण को चेतावनी दी, और लंका को जला दिया।</p>
+  <p>यह कथा बताती है कि जब भक्त अपने भगवान के कार्य में जुटता है, तो उसे कोई रोक नहीं सकता। हनुमान जी की भक्ति और साहस आज भी भक्तों को प्रेरणा देती है।</p>
+  <p class="highlight">लंका दहन की कथा सुनने और पढ़ने से भय दूर होता है, साहस बढ़ता है, और शत्रुओं पर विजय प्राप्त होती है। जो भी श्रद्धा से इस कथा का पाठ करता है, उसके सभी संकट दूर होते हैं।</p>
+  <p class="mantra">ॐ हं हनुमते रुद्रात्मकाय हुं फट्<br><small>लंका दहन की कथा का स्मरण करें</small></p>
+</div>
+
+<!-- ========== शिक्षा ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> कथा से शिक्षा</h2>
+  <ul class="moral-list">
+    <li><i class="fa-solid fa-star"></i> <strong>साहस:</strong> हनुमान जी ने अकेले ही लंका में प्रवेश किया — साहस से बड़े से बड़े कार्य संभव होते हैं।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>भक्ति:</strong> हनुमान जी ने सीता माता को प्रणाम किया — भक्ति में विनम्रता आवश्यक है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>बुद्धि:</strong> हनुमान जी ने अपनी पूंछ बढ़ाकर लंका जलाई — बुद्धि से हर समस्या का समाधान मिलता है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>चेतावनी:</strong> हनुमान जी ने रावण को चेतावनी दी — बुराई को सुधरने का अवसर देना चाहिए।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>समर्पण:</strong> हनुमान जी ने श्रीराम के कार्य में अपना सर्वस्व लगाया — समर्पण से ही सच्ची भक्ति प्रकट होती है।</li>
+  </ul>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी ने समुद्र कैसे पार किया?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी ने अपनी माता अंजनी और पवन देव का स्मरण किया। उन्होंने अपना रूप विशाल किया और समुद्र की ओर उड़ान भरी। रास्ते में उन्होंने सुरसा और सिंहिका का सामना किया और अंत में लंका पहुँचे।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>सीता माता ने हनुमान जी को कैसे पहचाना?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी ने सीता माता को श्रीराम की मुद्रिका दी। मुद्रिका देखकर सीता माता ने हनुमान जी को पहचान लिया और अपना दुख भुला दिया।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>रावण ने हनुमान जी की पूंछ में आग क्यों लगाई?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी ने रावण को चेतावनी दी — "सीता माता को श्रीराम को लौटा दो।" रावण क्रोधित हो गया और उसने हनुमान जी की पूंछ में आग लगाने का आदेश दिया।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>लंका दहन में अशोक वाटिका क्यों नहीं जली?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी ने सोचा — "यदि सीता माता को कुछ हो गया तो मैं श्रीराम को क्या मुँह दिखाऊँगा?" उन्होंने अशोक वाटिका को नहीं जलाया, जहाँ सीता माता थीं।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>लंका दहन की कथा से हमें क्या सीख मिलती है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">इस कथा से सीख मिलती है कि <strong>साहस से बड़े से बड़े कार्य संभव होते हैं</strong>, <strong>भक्ति में विनम्रता आवश्यक है</strong>, और <strong>समर्पण से ही सच्ची भक्ति प्रकट होती है</strong>।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> सभी कथाएँ</a>
+    <a href="30e-sugriva-mitra.html" class="cat-chip"><i class="fa-solid fa-arrow-left"></i> सुग्रीव मित्रता</a>
+    <a href="30g-sanjeevani.html" class="cat-chip"><i class="fa-solid fa-arrow-right"></i> संजीवनी बूटी</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-om"></i> पूजा विधि</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह कथा शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
