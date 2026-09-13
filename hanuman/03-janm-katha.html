@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान जी की जन्म कथा — 3 संस्करण, संपूर्ण विवरण</title>
+<meta name="description" content="हनुमान जी की जन्म कथा — अंजना देवी की तपस्या, शिव वरदान, वायु देव की भूमिका, बाल लीला, सूर्य देव प्रसंग, देवताओं के वरदान — सब कुछ विस्तार से।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* Katha page specific */
+.story-hero{
+  width:100%;
+  padding:36px 20px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.35), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.2), rgba(255,107,53,.12));
+  border-radius:var(--radius);
+  text-align:center;
+  margin:16px 0;
+  border:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.story-hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.story-hero .story-emoji{
+  font-size:90px;
+  display:block;
+  margin-bottom:10px;
+  filter:drop-shadow(0 0 24px rgba(212,175,55,.8));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;
+  z-index:2;
+}
+.story-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:26px;
+  color:var(--maroon);
+  margin-bottom:6px;
+  position:relative;
+  z-index:2;
+}
+body.dark .story-hero h2{color:var(--gold-light)}
+.story-hero p{
+  font-size:13px;
+  color:var(--ink-soft);
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  position:relative;
+  z-index:2;
+}
+
+.chapter{
+  background:var(--bg-alt);
+  border-radius:14px;
+  padding:20px 18px;
+  margin-bottom:16px;
+  border-left:4px solid var(--gold);
+  position:relative;
+  transition:var(--transition);
+}
+.chapter:hover{border-left-color:var(--saffron)}
+.chapter-num{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:11px;
+  font-weight:700;
+  padding:4px 12px;
+  border-radius:20px;
+  margin-bottom:10px;
+  letter-spacing:1px;
+}
+.chapter h3{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:18px;
+  color:var(--maroon);
+  margin-bottom:12px;
+  line-height:1.4;
+}
+body.dark .chapter h3{color:var(--gold-light)}
+.chapter p{
+  font-size:14.5px;
+  line-height:1.95;
+  color:var(--ink-soft);
+  margin-bottom:12px;
+}
+.chapter p strong{color:var(--maroon);font-weight:600}
+body.dark .chapter p strong{color:var(--gold-light)}
+.chapter blockquote{
+  background:linear-gradient(135deg,rgba(212,175,55,.15),rgba(255,107,53,.08));
+  border-left:3px solid var(--gold);
+  padding:12px 16px;
+  margin:12px 0;
+  border-radius:8px;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:15px;
+  color:var(--maroon);
+  line-height:1.9;
+  font-style:italic;
+}
+body.dark .chapter blockquote{color:var(--gold-light)}
+.chapter blockquote small{
+  display:block;
+  font-family:'Hind',sans-serif;
+  font-size:12px;
+  color:var(--ink-soft);
+  margin-top:8px;
+  font-style:normal;
+}
+
+.version-tabs{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:4px 0 14px;
+  scrollbar-width:none;
+}
+.version-tabs::-webkit-scrollbar{display:none}
+.version-tab{
+  flex-shrink:0;
+  padding:10px 18px;
+  background:var(--card-bg);
+  border:1.5px solid var(--border);
+  border-radius:12px;
+  font-size:13px;
+  font-weight:600;
+  color:var(--maroon);
+  cursor:pointer;
+  transition:var(--transition);
+  white-space:nowrap;
+  text-align:center;
+}
+body.dark .version-tab{color:var(--gold-light)}
+.version-tab:hover{border-color:var(--gold);transform:translateY(-2px)}
+.version-tab.active{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;
+  border-color:transparent;
+  box-shadow:0 4px 16px rgba(122,46,46,.35);
+}
+.version-tab small{
+  display:block;
+  font-size:10px;
+  opacity:.8;
+  font-weight:400;
+  margin-top:2px;
+}
+
+.timeline{
+  position:relative;
+  padding-left:30px;
+  margin:20px 0;
+}
+.timeline::before{
+  content:'';
+  position:absolute;
+  left:10px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:linear-gradient(180deg,var(--gold),var(--saffron),var(--gold));
+}
+.timeline-item{
+  position:relative;
+  padding:0 0 20px 0;
+}
+.timeline-item::before{
+  content:'';
+  position:absolute;
+  left:-25px;
+  top:6px;
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:var(--gold);
+  border:3px solid var(--bg);
+  box-shadow:0 0 0 2px var(--gold);
+}
+.timeline-item h4{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:15px;
+  color:var(--maroon);
+  margin-bottom:4px;
+}
+body.dark .timeline-item h4{color:var(--gold-light)}
+.timeline-item p{
+  font-size:13px;
+  color:var(--ink-soft);
+  line-height:1.75;
+  margin:0;
+}
+
+.vardaan-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin:16px 0;
+}
+@media(min-width:480px){
+  .vardaan-grid{grid-template-columns:1fr 1fr}
+}
+.vardaan-card{
+  background:linear-gradient(135deg,rgba(212,175,55,.15),rgba(255,107,53,.08));
+  border-radius:12px;
+  padding:14px 16px;
+  border-left:4px solid var(--gold);
+  transition:var(--transition);
+}
+.vardaan-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(212,175,55,.2)}
+.vardaan-card h5{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:14.5px;
+  color:var(--maroon);
+  margin-bottom:6px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+body.dark .vardaan-card h5{color:var(--gold-light)}
+.vardaan-card p{
+  font-size:12.5px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  margin:0;
+}
+
+.moral-box{
+  background:linear-gradient(135deg,rgba(122,46,46,.12),rgba(212,175,55,.08));
+  border:2px dashed var(--gold);
+  border-radius:14px;
+  padding:18px;
+  margin:18px 0;
+}
+.moral-box h4{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:16px;
+  color:var(--maroon);
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+body.dark .moral-box h4{color:var(--gold-light)}
+.moral-box ul{padding-left:20px;margin:8px 0}
+.moral-box li{
+  font-size:13.5px;
+  line-height:1.85;
+  color:var(--ink-soft);
+  margin-bottom:6px;
+}
+
+.quote-divider{
+  text-align:center;
+  font-family:'Tiro Devanagari Hindi',serif;
+  color:var(--gold);
+  font-size:24px;
+  letter-spacing:8px;
+  margin:24px 0;
+  opacity:.6;
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>जन्म कथा</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<div class="story-hero">
+  <span class="story-emoji">🌟</span>
+  <h2>जन्म कथा</h2>
+  <p>हनुमान जी का दिव्य जन्म</p>
+</div>
+
+<!-- ===== QUICK NAV ===== -->
+<div class="cat-nav">
+  <a href="#intro" class="cat-chip active"><i class="fa-solid fa-book"></i> प्रस्तावना</a>
+  <a href="#version1" class="cat-chip"><i class="fa-solid fa-1"></i> संस्करण 1</a>
+  <a href="#version2" class="cat-chip"><i class="fa-solid fa-2"></i> संस्करण 2</a>
+  <a href="#version3" class="cat-chip"><i class="fa-solid fa-3"></i> संस्करण 3</a>
+  <a href="#vardaan" class="cat-chip"><i class="fa-solid fa-gift"></i> वरदान</a>
+  <a href="#moral" class="cat-chip"><i class="fa-solid fa-lightbulb"></i> शिक्षा</a>
+</div>
+
+<!-- ============================================
+     SECTION 1 — INTRODUCTION
+============================================ -->
+<div class="devta-section" id="intro">
+  <h2><span class="sec-icon">📖</span> प्रस्तावना</h2>
+
+  <p>हनुमान जी की जन्म कथा <strong>तीन प्रमुख संस्करणों</strong> में मिलती है। तीनों संस्करण अलग-अलग पुराणों में वर्णित हैं और तीनों ही सत्य हैं — क्योंकि हनुमान जी <strong>शिव, वायु और राम</strong> — तीनों के अंश हैं।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">जन्म तिथि</div><div class="val">चैत्र पूर्णिमा</div></div>
+    <div class="info-item"><div class="lbl">जन्म युग</div><div class="val">त्रेता युग</div></div>
+    <div class="info-item"><div class="lbl">माता</div><div class="val">अंजना देवी</div></div>
+    <div class="info-item"><div class="lbl">पिता</div><div class="val">केसरी (वानर राजा)</div></div>
+    <div class="info-item"><div class="lbl">दिव्य पिता</div><div class="val">वायु देव</div></div>
+    <div class="info-item"><div class="lbl">अवतार</div><div class="val">शिव के 11वें रुद्र</div></div>
+    <div class="info-item"><div class="lbl">जन्म स्थान</div><div class="val">अंजनेरी पर्वत</div></div>
+    <div class="info-item"><div class="lbl">स्थान (वर्तमान)</div><div class="val">सापुतारा, गुजरात</div></div>
+  </div>
+
+  <h3>तीनों संस्करणों का सारांश</h3>
+  <ul>
+    <li><strong>संस्करण 1 (शिव पुराण):</strong> अंजना ने शिव की तपस्या की, शिव के अंश से जन्म</li>
+    <li><strong>संस्करण 2 (रामायण):</strong> वायु देव ने अंजना के गर्भ में दिव्य प्रसाद स्थापित किया</li>
+    <li><strong>संस्करण 3 (दशरथ यज्ञ):</strong> दशरथ के पुत्र कामेष्टि यज्ञ का प्रसाद अंजना को मिला</li>
+  </ul>
+</div>
+
+<!-- ============================================
+     SECTION 2 — VERSION 1 (Shiva Purana)
+============================================ -->
+<div class="devta-section" id="version1">
+  <h2><span class="sec-icon">🔱</span> संस्करण 1 — शिव पुराण के अनुसार</h2>
+
+  <div class="chapter">
+    <span class="chapter-num">अध्याय 1</span>
+    <h3>🌺 पूर्व जन्म — पुंजिकस्थला अप्सरा</h3>
+    <p>पूर्व जन्म में <strong>अंजना देवी</strong> स्वर्ग की एक सुंदर अप्सरा थीं, जिनका नाम <strong>पुंजिकस्थला</strong> था। वे अत्यंत रूपवती और गुणवती थीं।</p>
+    <p>एक दिन वे ऋषि-मुनियों के आश्रम में गईं। रास्ते में उन्होंने एक <strong>वानर</strong> को देखा जो <strong>ध्यान में लीन</strong> था। उसकी स्थिति देखकर पुंजिकस्थला हँस पड़ीं।</p>
+    <p>उनके इस हँसी के कारण ऋषि ने उन्हें श्राप दिया — <strong>"तूने एक तपस्वी का उपहास किया है। इसलिए तू वानरी योनि में जन्म लेगी।"</strong></p>
+    <p>पुंजिकस्थला ने बहुत प्रार्थना की, तब ऋषि ने श्राप वापस नहीं लिया, लेकिन <strong>वरदान</strong> दिया — <strong>"तू वानरी बनेगी, लेकिन तेरा पुत्र शिव के अंश से जन्म लेगा।"</strong></p>
+  </div>
+
+  <div class="chapter">
+    <span class="chapter-num">अध्याय 2</span>
+    <h3>🙏 अंजना का जन्म और विवाह</h3>
+    <p>अप्सरा पुंजिकस्थला ने <strong>अंजना</strong> नाम से वानरी योनि में जन्म लिया। उनका विवाह <strong>वानर राजा केसरी</strong> से हुआ, जो <strong>मेरु पर्वत</strong> के राजा थे।</p>
+    <p>केसरी अत्यंत बलवान, धर्मात्मा और शिव के परम भक्त थे। विवाह के बाद अंजना और केसरी दोनों ने <strong>संतान प्राप्ति</strong> की इच्छा से तपस्या करने का निश्चय किया।</p>
+    <blockquote>
+      "हे भगवान शिव, हमें ऐसा पुत्र दें जो आपके समान तेजस्वी, बलवान और भक्त हो।"<br>
+      <small>— अंजना और केसरी की प्रार्थना</small>
+    </blockquote>
+  </div>
+
+  <div class="chapter">
+    <span class="chapter-num">अध्याय 3</span>
+    <h3>🔥 अंजना की घोर तपस्या</h3>
+    <p>अंजना देवी ने <strong>अंजनेरी पर्वत</strong> पर जाकर घोर तपस्या शुरू की। वे <strong>12 वर्षों तक</strong> केवल वायु और जल पर रहीं। दिन-रात <strong>शिवलिंग</strong> का अभिषेक करतीं और "ॐ नमः शिवाय" का जप करतीं।</p>
+    <p>उनकी तपस्या से संपूर्ण तीनों लोक <strong>कंपित</strong> हो उठे। देवता, ऋषि-मुनि — सभी उनकी तपस्या से आश्चर्यचकित हो गए।</p>
+    <p><strong>वर्षा, धूप, ठंड</strong> — कुछ भी उनकी तपस्या को रोक न सका। उनके शरीर पर <strong>दीमकों ने बाँबी</strong> बना दी, फिर भी वे विचलित न हुईं।</p>
+  </div>
+
+  <div class="chapter">
+    <span class="chapter-num">अध्याय 4</span>
+    <h3>🌟 शिव जी का प्रकट होना</h3>
+    <p>अंजना की तपस्या से प्रसन्न होकर <strong>भगवान शिव</strong> स्वयं प्रकट हुए। उन्होंने अंजना से कहा — <strong>"हे देवी, तुम्हारी तपस्या से मैं प्रसन्न हूँ। वर माँगो।"</strong></p>
+    <p>अंजना ने हाथ जोड़कर कहा — <strong>"हे स्वामी, मुझे ऐसा पुत्र दें जो आपके समान तेजस्वी, बलवान, ज्ञानी और अमर हो।"</strong></p>
+    <p>शिव जी मुस्कुराए और बोले — <strong>"ऐसा ही होगा। मैं स्वयं अपने 11वें रुद्र अवतार के रूप में तुम्हारे गर्भ से जन्म लूँगा।"</strong></p>
+
+    <blockquote>
+      "हे अंजना, तुम्हारा पुत्र मेरे ही अंश से जन्मेगा। वह अत्यंत बलवान, बुद्धिमान, और भगवान विष्णु के अवतार श्री राम का परम भक्त होगा।"<br>
+      <small>— भगवान शिव का वरदान</small>
+    </blockquote>
+  </div>
+
+  <div class="chapter">
+    <span class="chapter-num">अध्याय 5</span>
+    <h3>👶 दिव्य जन्म</h3>
+    <p>शिव जी के वरदान के बाद अंजना देवी ने <strong>चैत्र मास की पूर्णिमा</strong> को एक <strong>दिव्य पुत्र</strong> को जन्म दिया। उस समय <strong>सूर्य ग्रहण</strong> था। शिशु का शरीर <strong>सिंदूरी रंग</strong> का, तेजस्वी और अत्यंत सुंदर था।</p>
+    <p>जन्म के समय <strong>दिव्य नाद</strong> हुआ, <strong>पुष्प वर्षा</strong> हुई, और <strong>देवताओं ने दुंदुभि बजाई</strong>। संपूर्ण ब्रह्मांड में एक <strong>आनंद की लहर</strong> दौड़ गई।</p>
+    <p>उस शिशु के मुख पर <strong>अद्भुत तेज</strong> था। उसका शरीर <strong>वज्र के समान मजबूत</strong> था और उसकी आँखों में <strong>अनंत ज्ञान</strong> झलकता था।</p>
+  </div>
+</div>
+
+<!-- ============================================
+     SECTION 3 — VERSION 2 (Ramayana)
+============================================ -->
+<div class="devta-section" id="version2">
+  <h2><span class="sec-icon">🌬️</span> संस्करण 2 — रामायण के अनुसार</h2>
+
+  <div class="chapter">
+    <span class="chapter-num">अध्याय 1</span>
+    <h3>🏔️ केसरी और अंजना की तपस्या</h3>
+    <p>वानर राजा <strong>केसरी</strong> और उनकी पत्नी <strong>अंजना</strong> ने संतान प्राप्ति के लिए भगवान शिव की घोर तपस्या की। दोनों ने <strong>12 वर्षों</strong> तक कठोर तप किया।</p>
+    <p>उनकी तपस्या से प्रसन्न होकर शिव जी ने वरदान दिया — "तुम्हारा पुत्र मेरे ही अंश से जन्मेगा।"</p>
+  </div>
+
+  <div class="chapter">
+    <span class="chapter-num">अध्याय 2</span>
+    <h3>🍬 वायु देव की भूमिका</h3>
+    <p>एक अन्य कथा के अनुसार, जब <strong>राजा दशरथ</strong> ने पुत्र कामेष्टि यज्ञ किया, तब यज्ञ से <strong>दिव्य खीर (प्रसाद)</strong> प्रकट हुई। यह खीर <strong>तीन भागों</strong> में बाँटी गई — कौशल्या, कैकेयी और सुमित्रा को दी गई।</p>
+    <p>लेकिन एक <strong>चौथा भाग</strong> भी था — जो एक <strong>दिव्य पक्षी (पतंगा)</strong> के रूप में आकाश में उड़ गया।</p>
+    <p>वह पक्षी उड़ता-उड़ता अंजना देवी के हाथों में जा गिरा। <strong>वायु देव</strong> ने उस दिव्य प्रसाद को अंजना के गर्भ में स्थापित कर दिया।</p>
+    <blockquote>
+      "हे अंजना, यह प्रसाद स्वयं भगवान विष्णु का अंश है। इससे तुम्हारा पुत्र जन्म लेगा, जो राम का परम भक्त होगा।"<br>
+      <small>— वायु देव का संदेश</small>
+    </blockquote>
+  </div>
+
+  <div class="chapter">
+    <span class="chapter-num">अध्याय 3</span>
+    <h3>👶 चैत्र पूर्णिमा का दिव्य जन्म</h3>
+    <p>इस प्रकार <strong>चैत्र पूर्णिमा</strong> को अंजना देवी ने एक दिव्य पुत्र को जन्म दिया। इस बालक के शरीर में <strong>शिव का तेज, वायु का वेग, और विष्णु का अंश</strong> — तीनों का समावेश था।</p>
+    <p>इसलिए हनुमान जी को <strong>तीनों देवताओं का संयुक्त अवतार</strong> कहा जाता है।</p>
+
+    <div class="vardaan-grid">
+      <div class="vardaan-card">
+        <h5>🔱 शिव का अंश</h5>
+        <p>तेज, ज्ञान, योग शक्ति, और 11वें रुद्र का अवतार</p>
+      </div>
+      <div class="vardaan-card">
+        <h5>🌬️ वायु का अंश</h5>
+        <p>वेग, अटूट ऊर्जा, और जीवन शक्ति</p>
+      </div>
+      <div class="vardaan-card">
+        <h5>🕉️ विष्णु का अंश</h5>
+        <p>राम भक्ति, रक्षा, और धर्म की स्थापना</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     SECTION 4 — VERSION 3 (Dasharath Yajna)
+============================================ -->
+<div class="devta-section" id="version3">
+  <h2><span class="sec-icon">📿</span> संस्करण 3 — दशरथ यज्ञ से जुड़ी कथा</h2>
+
+  <div class="chapter">
+    <span class="chapter-num">अध्याय 1</span>
+    <h3>🔥 दशरथ का पुत्र कामेष्टि यज्ञ</h3>
+    <p>अयोध्या के राजा <strong>दशरथ</strong> को संतान नहीं थी। उन्होंने <strong>ऋष्यश्रृंग ऋषि</strong> के निर्देशन में <strong>पुत्र कामेष्टि यज्ञ</strong> किया।</p>
+    <p>यज्ञ से <strong>दिव्य खीर (पायस)</strong> प्रकट हुई। दशरथ ने उसे अपनी तीनों रानियों में बाँट दिया — <strong>कौशल्या, कैकेयी और सुमित्रा</strong> को।</p>
+  </div>
+
+  <div class="chapter">
+    <span class="chapter-num">अध्याय 2</span>
+    <h3>🦅 दिव्य पक्षी का चमत्कार</h3>
+    <p>यज्ञ के समय एक <strong>दिव्य पक्षी</strong> आकाश में उड़ रहा था। उसने यज्ञ का <strong>चौथा भाग</strong> (जो बचा था) अपनी चोंच में उठा लिया और आकाश में उड़ गया।</p>
+    <p>वह पक्षी <strong>अंजनेरी पर्वत</strong> की ओर उड़ा, जहाँ अंजना देवी तपस्या कर रही थीं। पक्षी ने वह दिव्य प्रसाद <strong>अंजना देवी के हाथों में</strong> गिरा दिया।</p>
+    <p>अंजना देवी ने उस प्रसाद को ग्रहण किया और <strong>चैत्र पूर्णिमा</strong> को उन्हें दिव्य पुत्र की प्राप्ति हुई।</p>
+  </div>
+
+  <div class="chapter">
+    <span class="chapter-num">अध्याय 3</span>
+    <h3>🌺 राम और हनुमान — दोनों भाई</h3>
+    <p>चूँकि यह प्रसाद <strong>दशरथ के यज्ञ</strong> का था, इसलिए माना जाता है कि <strong>हनुमान जी भी दशरथ के ही पुत्र हैं</strong> — आध्यात्मिक रूप से।</p>
+    <p>इसीलिए हनुमान जी और भगवान राम में <strong>भाई का संबंध</strong> भी माना जाता है। राम ने स्वयं कहा था — <strong>"तुम मेरे प्रिय भरत के समान भाई हो।"</strong></p>
+
+    <blockquote>
+      "रघुपति कीन्ही बहुत बड़ाई ।<br>
+      तुम मम प्रिय भरतहि सम भाई ॥"<br>
+      <small>— हनुमान चालीसा</small>
+    </blockquote>
+  </div>
+</div>
+
+<!-- ============================================
+     SECTION 5 — VARDAAN
+============================================ -->
+<div class="devta-section" id="vardaan">
+  <h2><span class="sec-icon">🎁</span> देवताओं के वरदान</h2>
+
+  <p>हनुमान जी के जन्म के बाद, उनकी बाल लीला और सूर्य देव प्रसंग के बाद, सभी देवताओं ने उन्हें <strong>अनेक वरदान</strong> दिए।</p>
+
+  <div class="vardaan-grid">
+    <div class="vardaan-card">
+      <h5>🔥 अग्नि देव</h5>
+      <p>"तुम्हारा शरीर अग्नि के समान अभेद्य होगा। आग तुम्हें जला न सकेगी।"</p>
+    </div>
+    <div class="vardaan-card">
+      <h5>🌬️ वायु देव</h5>
+      <p>"तुम्हारी गति वायु से भी तेज़ होगी। तुम मेरे समान वेगवान होगे।"</p>
+    </div>
+    <div class="vardaan-card">
+      <h5>⚡ इंद्र देव</h5>
+      <p>"तुम्हारा शरीर वज्र के समान मजबूत होगा। कोई शस्त्र तुम्हें काट न सकेगा।"</p>
+    </div>
+    <div class="vardaan-card">
+      <h5>🌊 वरुण देव</h5>
+      <p>"तुम्हारी रक्षा जल से होगी। जल तुम्हें हानि न पहुँचाएगा।"</p>
+    </div>
+    <div class="vardaan-card">
+      <h5>☀️ सूर्य देव</h5>
+      <p>"तुम्हें समस्त शास्त्रों का ज्ञान होगा। तुम मेरे प्रिय शिष्य होगे।"</p>
+    </div>
+    <div class="vardaan-card">
+      <h5>🌙 चंद्र देव</h5>
+      <p>"तुम्हारा मन सदा शांत रहेगा। तुम्हें कभी अशांति न होगी।"</p>
+    </div>
+    <div class="vardaan-card">
+      <h5>🕉️ ब्रह्मा जी</h5>
+      <p>"तुम्हें ब्रह्म विद्या का ज्ञान होगा। तुम अमर रहोगे।"</p>
+    </div>
+    <div class="vardaan-card">
+      <h5>🔱 शिव जी</h5>
+      <p>"तुम मेरे ही अंश हो। तुम्हें कोई पराजित नहीं कर सकेगा।"</p>
+    </div>
+    <div class="vardaan-card">
+      <h5>🐍 नाग देव</h5>
+      <p>"तुम्हें विष से हानि न होगी। नाग तुम्हारे मित्र होंगे।"</p>
+    </div>
+    <div class="vardaan-card">
+      <h5>⚔️ कार्तिकेय</h5>
+      <p>"तुम्हें युद्ध विद्या में सिद्धि मिलेगी। तुम महायोद्धा बनोगे।"</p>
+    </div>
+    <div class="vardaan-card">
+      <h5>💀 यमराज</h5>
+      <p>"तुम्हें मृत्यु का भय नहीं होगा। तुम मृत्युंजय होगे।"</p>
+    </div>
+    <div class="vardaan-card">
+      <h5>💎 कुबेर देव</h5>
+      <p>"तुम्हें धन-धान्य की कमी न होगी। तुम सदा समृद्ध रहोगे।"</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     SECTION 6 — BAL LILA (Childhood)
+============================================ -->
+<div class="devta-section">
+  <h2><span class="sec-icon">👶</span> बाल लीला (Childhood)</h2>
+
+  <p>हनुमान जी का बचपन अत्यंत <strong>चंचल, मनोरंजक और अद्भुत</strong> था। वे अपनी माता अंजना के लिए आनंद का स्रोत थे, लेकिन उनकी शरारतें कभी-कभी <strong>तीनों लोकों</strong> को हिला देती थीं।</p>
+
+  <div class="chapter">
+    <span class="chapter-num">लीला 1</span>
+    <h3>🍎 सूर्य देव को फल समझना</h3>
+    <p>एक दिन बालक हनुमान ने आकाश में <strong>सूर्य देव</strong> को देखा। उन्हें वह <strong>बड़ा लाल फल</strong> लगा। वे तुरंत आकाश में छलांग लगाकर सूर्य की ओर उड़ चले।</p>
+    <p><strong>3000 योजन</strong> (लगभग 40,000 किलोमीटर) की दूरी तय करके वे सूर्य के पास पहुँचे। उन्होंने सूर्य देव को पकड़ लिया, जिससे <strong>पूरा ब्रह्मांड अंधकार</strong> में डूब गया।</p>
+  </div>
+
+  <div class="chapter">
+    <span class="chapter-num">लीला 2</span>
+    <h3>⚡ इंद्र का वज्र प्रहार</h3>
+    <p>जब संपूर्ण ब्रह्मांड अंधकार में डूब गया, तब <strong>इंद्र देव</strong> घबरा गए। उन्होंने अपने <strong>वज्र</strong> से बालक हनुमान पर प्रहार किया।</p>
+    <p>वज्र उनकी <strong>हनुवटी (ठोड़ी)</strong> पर लगा, और वे मूर्छित होकर पृथ्वी पर गिर पड़े। उनकी हनुवटी टूट गई — इसलिए उनका नाम <strong>"हनुमान"</strong> पड़ा।</p>
+  </div>
+
+  <div class="chapter">
+    <span class="chapter-num">लीला 3</span>
+    <h3>🌬️ वायु देव का क्रोध</h3>
+    <p>अपने पुत्र को मूर्छित देखकर <strong>वायु देव</strong> अत्यंत क्रोधित हुए। उन्होंने कहा — <strong>"जब मेरे पुत्र को ही नहीं बख्शा गया, तो अब मैं संसार में वायु प्रवाह रोक दूँगा।"</strong></p>
+    <p>वायु देव ने अपनी शक्ति को <strong>पवन कुंड</strong> में बंद कर दिया। इससे संपूर्ण संसार में <strong>श्वास लेना दूभर</strong> हो गया। सभी प्राणी तड़पने लगे।</p>
+  </div>
+
+  <div class="chapter">
+    <span class="chapter-num">लीला 4</span>
+    <h3>🙏 देवताओं का वरदान</h3>
+    <p>जब सभी देवता ब्रह्मा जी के पास पहुँचे, तब ब्रह्मा जी ने सभी देवताओं को वायु देव को शांत करने का सुझाव दिया।</p>
+    <p>सभी देवताओं ने बालक हनुमान को <strong>अनेक वरदान</strong> दिए और वायु देव से क्षमा माँगी। वायु देव शांत हुए और अपनी शक्ति वापस लौटाई।</p>
+  </div>
+
+  <div class="chapter">
+    <span class="chapter-num">लीला 5</span>
+    <h3>🧠 गुरु दक्षिणा — सूर्य से शिक्षा</h3>
+    <p>बड़े होने पर हनुमान जी ने सूर्य देव को गुरु बनाया। सूर्यदेव ने छाया रूप में उन्हें <strong>समस्त वेद, शास्त्र, नीति, धर्म, और युद्ध विद्या</strong> सिखाई।</p>
+    <p>शिक्षा पूर्ण होने पर गुरु दक्षिणा में हनुमान जी ने अपना <strong>वानर रूप</strong> अर्पित किया और <strong>मनुष्य रूप</strong> में सूर्यदेव के साथ रहने लगे।</p>
+  </div>
+
+  <div class="chapter">
+    <span class="chapter-num">लीला 6</span>
+    <h3>🐍 कालसर्प से मुलाकात</h3>
+    <p>एक बार बालक हनुमान <strong>कालसर्प</strong> (समय के सर्प) से मिले। कालसर्प ने उन्हें डसना चाहा, लेकिन हनुमान जी ने उसे <strong>अपनी पूँछ</strong> में बाँध दिया।</p>
+    <p>तब कालसर्प ने उन्हें वरदान दिया — <strong>"तुम्हें कभी काल का भय नहीं होगा। तुम मृत्युंजय होगे।"</strong></p>
+  </div>
+</div>
+
+<!-- ============================================
+     SECTION 7 — MORAL
+============================================ -->
+<div class="devta-section" id="moral">
+  <h2><span class="sec-icon">💡</span> जन्म कथा से शिक्षा</h2>
+
+  <div class="moral-box">
+    <h4><i class="fa-solid fa-lightbulb"></i> 10 जीवन शिक्षाएँ</h4>
+    <ul>
+      <li><strong>1. तपस्या का फल:</strong> अंजना की 12 वर्ष की तपस्या ने उन्हें दिव्य पुत्र दिलाया — धैर्य और निष्ठा से सब कुछ मिलता है।</li>
+      <li><strong>2. श्राप भी वरदान बन सकता है:</strong> पुंजिकस्थला का श्राप ही उन्हें अंजना बनाकर हनुमान जी की माता बना दिया।</li>
+      <li><strong>3. तीनों देवताओं का अंश:</strong> जीवन में शिव (ज्ञान), वायु (गति) और विष्णु (भक्ति) — तीनों का संतुलन जरूरी है।</li>
+      <li><strong>4. शिव का वरदान:</strong> भक्ति और तपस्या से स्वयं भगवान भी प्रसन्न होते हैं।</li>
+      <li><strong>5. माता-पिता का महत्व:</strong> केसरी और अंजना — दोनों ने पुत्र के लिए तपस्या की।</li>
+      <li><strong>6. गुरु का चुनाव:</strong> हनुमान जी ने सूर्यदेव को गुरु बनाया — सही गुरु जीवन बदल देता है।</li>
+      <li><strong>7. बालक की शक्ति:</strong> छोटे बच्चों में भी असीम शक्ति होती है — उन्हें सही दिशा दें।</li>
+      <li><strong>8. क्रोध का नियंत्रण:</strong> वायु देव का क्रोध पूरे संसार को प्रभावित कर सकता था — क्रोध से बचें।</li>
+      <li><strong>9. क्षमा का महत्व:</strong> देवताओं ने क्षमा माँगी और वायु शांत हुए — क्षमा शक्ति है।</li>
+      <li><strong>10. हर जीव की रक्षा:</strong> हनुमान जी का जन्म देवताओं की रक्षा के लिए हुआ — सेवा सर्वोच्च धर्म है।</li>
+    </ul>
+  </div>
+
+  <div class="quote-divider">🕉️ 🕉️ 🕉️</div>
+
+  <div class="mantra-box">
+    ॐ अंजनी गर्भ सम्भूताय नमः<br>
+    ॐ केसरी नंदनाय नमः<br>
+    ॐ पवन पुत्राय नमः
+    <small>अर्थ: अंजना के गर्भ से जन्मे, केसरी के पुत्र, वायु के पुत्र हनुमान को नमस्कार।</small>
+    <button class="copy-mantra" onclick="copyMantra('ॐ अंजनी गर्भ सम्भूताय नमः ॐ केसरी नंदनाय नमः ॐ पवन पुत्राय नमः')"><i class="fa-solid fa-copy"></i></button>
+  </div>
+</div>
+
+<!-- ============================================
+     SECTION 8 — TIMELINE
+============================================ -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📅</span> जन्म कथा की समय-रेखा</h2>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h4>पूर्व जन्म — अप्सरा पुंजिकस्थला</h4>
+      <p>स्वर्ग की अप्सरा, ऋषि के श्राप से वानरी योनि का वरदान</p>
+    </div>
+    <div class="timeline-item">
+      <h4>अंजना का जन्म</h4>
+      <p>वानरी योनि में जन्म, नाम अंजना</p>
+    </div>
+    <div class="timeline-item">
+      <h4>विवाह — केसरी से</h4>
+      <p>वानर राजा केसरी से विवाह</p>
+    </div>
+    <div class="timeline-item">
+      <h4>तपस्या — 12 वर्ष</h4>
+      <p>शिव की घोर तपस्या, अंजनेरी पर्वत पर</p>
+    </div>
+    <div class="timeline-item">
+      <h4>शिव जी का वरदान</h4>
+      <p>शिव जी प्रकट, वरदान — "मेरे अंश से पुत्र होगा"</p>
+    </div>
+    <div class="timeline-item">
+      <h4>दशरथ का यज्ञ</h4>
+      <p>अयोध्या में पुत्र कामेष्टि यज्ञ</p>
+    </div>
+    <div class="timeline-item">
+      <h4>दिव्य प्रसाद की प्राप्ति</h4>
+      <p>वायु देव ने प्रसाद अंजना के गर्भ में स्थापित किया</p>
+    </div>
+    <div class="timeline-item">
+      <h4>जन्म — चैत्र पूर्णिमा</h4>
+      <p>दिव्य पुत्र का जन्म, सूर्य ग्रहण के समय</p>
+    </div>
+    <div class="timeline-item">
+      <h4>बाल लीला</h4>
+      <p>सूर्य देव प्रसंग, इंद्र का वज्र, देवताओं के वरदान</p>
+    </div>
+    <div class="timeline-item">
+      <h4>गुरु दीक्षा</h4>
+      <p>सूर्यदेव से शिक्षा, समस्त विद्या की प्राप्ति</p>
+    </div>
+    <div class="timeline-item">
+      <h4>राम मिलन</h4>
+      <p>श्रीराम से मुलाकात — भक्ति का आरंभ</p>
+    </div>
+    <div class="timeline-item">
+      <h4>चिरंजीवी</h4>
+      <p>सात चिरंजीवियों में शामिल, सदा जीवित</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     SECTION 9 — QUICK LINKS
+============================================ -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="01-parichay.html" class="cat-chip"><i class="fa-solid fa-book"></i> परिचय</a>
+    <a href="02-swroop.html" class="cat-chip"><i class="fa-solid fa-image"></i> स्वरूप</a>
+    <a href="30a-janm.html" class="cat-chip"><i class="fa-solid fa-star"></i> जन्म (विस्तृत)</a>
+    <a href="30b-bal-lila.html" class="cat-chip"><i class="fa-solid fa-child"></i> बाल लीला</a>
+    <a href="30c-surya-dev.html" class="cat-chip"><i class="fa-solid fa-sun"></i> सूर्य देव</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="40-chola-vidhi.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> चोला विधि</a>
+  </div>
+</div>
+
+<!-- ===== SHARE ===== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+/* Smooth scroll for cat-chips */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+      document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+</script>
+</body>
+</html>
