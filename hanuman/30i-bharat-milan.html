@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>भरत मिलन — हनुमान जी की कथा | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी और भरत मिलन — भरत का वन गमन, चित्रकूट में भेंट, चरण पादुका और श्रीराम का राज्याभिषेक। पूरी कथा हिंदी में।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.bharat-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,182,193,.45), transparent 65%),
+    linear-gradient(135deg, rgba(194,24,91,.2), rgba(212,175,55,.15));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.bharat-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255,105,180,.15), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.bharat-hero .bharat-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 26px rgba(255,105,180,.85));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.bharat-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .bharat-hero h2 { color: var(--gold-light); }
+.bharat-hero .bharat-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.bharat-hero .bharat-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.bharat-hero .bharat-meta span { display: flex; align-items: center; gap: 5px; }
+.bharat-hero .bharat-meta i { color: var(--gold); }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(255,105,180,.08);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #FF69B4;
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+.katha-block .mantra {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.05));
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,.3);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .katha-block .mantra { color: var(--gold-light); }
+
+/* Moral List */
+.moral-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.moral-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.moral-list li i {
+  color: var(--gold);
+  font-size: 14px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Chapter marker */
+.chapter {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .bharat-hero .bharat-emoji { font-size: 70px; }
+  .bharat-hero h2 { font-size: 23px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="30-katha.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान कथाएँ</span>
+    <h1>भरत मिलन</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="bharat-hero">
+  <span class="bharat-emoji">💝</span>
+  <h2>भरत मिलन</h2>
+  <div class="bharat-sub">Chitrakoot • Charan Paduka</div>
+  <div class="bharat-meta">
+    <span><i class="fa-solid fa-book-open"></i> 4 अध्याय</span>
+    <span><i class="fa-solid fa-clock"></i> 5 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> विस्तृत</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> कथा का सार</h2>
+  <p>यह कथा भरत जी और श्रीराम के अमर प्रेम की है। जब श्रीराम वनवास के लिए गए, तो भरत जी उन्हें खोजते हुए चित्रकूट पहुँचे। वहाँ उन्होंने श्रीराम से भेंट की और उन्हें अयोध्या लौटने की प्रार्थना की। श्रीराम ने वनवास का वचन निभाते हुए इनकार कर दिया। तब भरत जी ने श्रीराम की चरण पादुका लेकर अयोध्या लौटे और सिंहासन पर रखकर राज्य किया।</p>
+  <p>इस कथा में हनुमान जी की भूमिका भी महत्वपूर्ण है — उन्होंने भरत जी को श्रीराम तक पहुँचाया। पढ़ें पूरी कथा — 4 अध्यायों में।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">स्थान</div><div class="val">चित्रकूट</div></div>
+    <div class="info-item"><div class="lbl">मुख्य पात्र</div><div class="val">भरत, राम, हनुमान</div></div>
+    <div class="info-item"><div class="lbl">प्रतीक</div><div class="val">चरण पादुका</div></div>
+    <div class="info-item"><div class="lbl">परिणाम</div><div class="val">अयोध्या राज्य</div></div>
+    <div class="info-item"><div class="lbl">मुख्य गुण</div><div class="val">भाईचारा, त्याग</div></div>
+    <div class="info-item"><div class="lbl">शिक्षा</div><div class="val">भाई का प्रेम</div></div>
+  </div>
+</div>
+
+<!-- ========== अध्याय 1 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 1</span>
+  <h3>👑 अयोध्या का शोक</h3>
+  <p>राजा दशरथ के वनवास आदेश के बाद श्रीराम, सीता और लक्ष्मण वन चले गए। अयोध्या में शोक की लहर दौड़ गई। भरत जी उस समय अपने मामा के घर थे। जब उन्हें पता चला, तो वे तुरंत अयोध्या लौटे।</p>
+  <p>भरत जी ने माता कौशल्या से पूछा — "माता, मेरे भाई श्रीराम कहाँ हैं?" कौशल्या ने रोते हुए पूरा वृत्तांत सुनाया। भरत जी का हृदय व्याकुल हो गया। उन्होंने माता कैकेयी से कहा — "माता, आपने मेरे लिए यह राज्य माँगा, लेकिन मुझे यह राज्य नहीं चाहिए। मुझे तो मेरे भाई चाहिए।"</p>
+  <p class="highlight">भरत जी ने निश्चय किया — "मैं श्रीराम को वन से वापस लाऊँगा।" वे अपने सैन्य और मंत्रियों के साथ वन की ओर चल पड़े। रास्ते में उन्होंने अनेक ऋषि-मुनियों से श्रीराम का पता पूछा।</p>
+</div>
+
+<!-- ========== अध्याय 2 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 2</span>
+  <h3>🌳 चित्रकूट की यात्रा</h3>
+  <p>भरत जी अपनी सेना के साथ चित्रकूट पहुँचे। उन्होंने श्रीराम, सीता और लक्ष्मण को वन में देखा। श्रीराम जटा-जूट धारण किए हुए, वल्कल वस्त्र पहने हुए थे। भरत जी ने उन्हें देखा और दौड़कर उनके चरणों में गिर पड़े।</p>
+  <p>भरत जी ने रोते हुए कहा — "हे भाई, मुझे अयोध्या लौट चलिए। मुझे राज्य नहीं चाहिए। आपके बिना अयोध्या सूनी है।" उनकी आँखों से आँसू बह रहे थे।</p>
+  <p class="highlight">श्रीराम ने भरत जी को उठाया और हृदय से लगाया। उन्होंने कहा — "हे भरत, मैंने पिता को वचन दिया है। वनवास के 14 वर्ष पूरे होने तक मैं अयोध्या नहीं लौट सकता। यह मेरा धर्म है।"</p>
+  <p>भरत जी ने बहुत प्रार्थना की, लेकिन श्रीराम अपने वचन पर अडिग रहे। तब भरत जी ने कहा — "हे भाई, यदि आप नहीं आ सकते, तो मुझे अपनी चरण पादुका दे दीजिए। मैं उन्हें सिंहासन पर रखकर राज्य करूँगा।"</p>
+</div>
+
+<!-- ========== अध्याय 3 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 3</span>
+  <h3>👣 चरण पादुका और हनुमान जी की भूमिका</h3>
+  <p>श्रीराम ने भरत जी को अपनी चरण पादुका दीं। भरत जी ने उन्हें सिर पर धारण किया और कहा — "हे भाई, मैं 14 वर्ष तक इन्हीं पादुकाओं को सिंहासन पर रखकर राज्य करूँगा। आपके लौटने पर मैं राज्य आपको समर्पित कर दूँगा।"</p>
+  <p>इस अवसर पर हनुमान जी की भूमिका महत्वपूर्ण थी। हनुमान जी ने भरत जी को श्रीराम तक पहुँचाया और उनकी भेंट कराई। उन्होंने भरत जी की भक्ति और त्याग को देखकर कहा — "हे भरत, आपका त्याग अद्वितीय है। आप श्रीराम के सच्चे भाई हैं।"</p>
+  <p class="highlight">भरत जी ने हनुमान जी को हृदय से लगाया और कहा — "हे हनुमान, आपने मेरे भाई की सेवा में अपना जीवन समर्पित कर दिया है। आप धन्य हैं।"</p>
+  <p>भरत जी ने नंदीग्राम में रहकर तपस्वी जीवन व्यतीत किया। वे 14 वर्ष तक श्रीराम की चरण पादुका की सेवा करते रहे। उन्होंने राज्य का कार्य भी किया, लेकिन स्वयं राजा नहीं बने।</p>
+</div>
+
+<!-- ========== अध्याय 4 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 4</span>
+  <h3>🌟 श्रीराम का राज्याभिषेक</h3>
+  <p>14 वर्ष के वनवास के बाद श्रीराम, सीता और लक्ष्मण अयोध्या लौटे। भरत जी ने उन्हें दूर से देखा और दौड़कर उनके चरणों में गिर पड़े। उन्होंने कहा — "हे भाई, आपने मेरा जीवन सफल कर दिया।"</p>
+  <p>श्रीराम ने भरत जी को हृदय से लगाया और कहा — "हे भरत, तुमने 14 वर्ष तक मेरी चरण पादुका की सेवा की। तुम्हारा त्याग अद्वितीय है। आज मैं तुम्हें राज्य समर्पित करता हूँ।"</p>
+  <p class="highlight">लेकिन भरत जी ने विनम्रता से कहा — "हे भाई, यह राज्य आपका है। मैं तो केवल सेवक हूँ। आप ही अयोध्या के राजा हैं।" तब श्रीराम का राज्याभिषेक हुआ और रामराज्य की स्थापना हुई।</p>
+  <p>इस अवसर पर हनुमान जी ने भी श्रीराम को प्रणाम किया। श्रीराम ने हनुमान जी को हृदय से लगाया और कहा — "हे हनुमान, तुम मेरे प्राणों के समान हो। तुम्हारी भक्ति अमर है।"</p>
+  <p class="mantra">श्री राम जय राम जय जय राम<br><small>भरत जी के त्याग और भक्ति का स्मरण करें</small></p>
+</div>
+
+<!-- ========== शिक्षा ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> कथा से शिक्षा</h2>
+  <ul class="moral-list">
+    <li><i class="fa-solid fa-star"></i> <strong>भाई का प्रेम:</strong> भरत जी ने राज्य त्यागकर भाई का प्रेम चुना — भाई का प्रेम सबसे बड़ा धन है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>त्याग:</strong> भरत जी ने 14 वर्ष तक चरण पादुका की सेवा की — त्याग से ही महानता प्राप्त होती है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>वचन का पालन:</strong> श्रीराम ने पिता का वचन निभाया — वचन का पालन सच्चे व्यक्ति का लक्षण है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>सेवा भाव:</strong> हनुमान जी ने भरत जी को श्रीराम तक पहुँचाया — सेवा भाव से ही भगवान प्रसन्न होते हैं।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>विनम्रता:</strong> भरत जी ने राज्य अस्वीकार किया — विनम्रता सबसे बड़ा आभूषण है।</li>
+  </ul>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>भरत जी ने राज्य क्यों अस्वीकार किया?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">भरत जी को राज्य नहीं चाहिए था। उन्हें अपने भाई श्रीराम का प्रेम चाहिए था। उन्होंने कहा — "मुझे राज्य नहीं, मेरे भाई चाहिए।" इसलिए उन्होंने राज्य अस्वीकार कर दिया।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>चरण पादुका का क्या महत्व है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">चरण पादुका श्रीराम के चरणों का प्रतीक है। भरत जी ने 14 वर्ष तक इन्हीं पादुकाओं को सिंहासन पर रखकर राज्य किया। यह भक्ति और समर्पण का प्रतीक है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी की इस कथा में क्या भूमिका थी?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी ने भरत जी को श्रीराम तक पहुँचाया और उनकी भेंट कराई। उन्होंने भरत जी की भक्ति और त्याग को देखकर उनकी प्रशंसा की।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>भरत जी ने 14 वर्ष कैसे बिताए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">भरत जी ने नंदीग्राम में रहकर तपस्वी जीवन व्यतीत किया। उन्होंने 14 वर्ष तक श्रीराम की चरण पादुका की सेवा की। उन्होंने राज्य का कार्य भी किया, लेकिन स्वयं राजा नहीं बने।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>इस कथा से हमें क्या सीख मिलती है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">इस कथा से सीख मिलती है कि <strong>भाई का प्रेम सबसे बड़ा धन है</strong>, <strong>त्याग से महानता प्राप्त होती है</strong>, और <strong>वचन का पालन सच्चे व्यक्ति का लक्षण है</strong>।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> सभी कथाएँ</a>
+    <a href="30h-ahiravan-vadh.html" class="cat-chip"><i class="fa-solid fa-arrow-left"></i> अहिरावण वध</a>
+    <a href="30j-panchmukhi.html" class="cat-chip"><i class="fa-solid fa-arrow-right"></i> पंचमुखी हनुमान</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-om"></i> पूजा विधि</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह कथा शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
