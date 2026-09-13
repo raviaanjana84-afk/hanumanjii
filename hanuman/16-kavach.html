@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान कवच — संपूर्ण रक्षा कवच | Hanuman Kavach</title>
+<meta name="description" content="हनुमान कवच — संपूर्ण रक्षा कवच, हर श्लोक का अर्थ, पाठ विधि, लाभ और नियम।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+.kv-hero{
+  width:100%;padding:34px 20px 28px;
+  background:radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius:var(--radius);text-align:center;margin:16px 0;
+  border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.kv-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.kv-hero .kv-emoji{
+  font-size:90px;display:block;margin-bottom:10px;
+  filter:drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;z-index:2;
+}
+.kv-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:28px;color:var(--maroon);margin-bottom:6px;
+  position:relative;z-index:2;
+}
+body.dark .kv-hero h2{color:var(--gold-light)}
+.kv-hero .kv-sub{
+  font-size:12.5px;color:var(--ink-soft);letter-spacing:2px;
+  text-transform:uppercase;position:relative;z-index:2;
+}
+.kv-hero .kv-meta{
+  display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+  margin-top:14px;font-size:11.5px;color:var(--ink-soft);
+  position:relative;z-index:2;
+}
+.kv-hero .kv-meta span{display:flex;align-items:center;gap:5px}
+.kv-hero .kv-meta i{color:var(--gold)}
+
+.kv-verse{
+  background:var(--card-bg);border-radius:14px;padding:18px 16px;
+  margin-bottom:12px;border:1px solid var(--border);
+  border-left:4px solid var(--gold);transition:var(--transition);
+  position:relative;
+}
+.kv-verse:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(122,46,46,.12);
+  border-left-color:var(--saffron);
+}
+.kv-verse-num{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;font-size:11px;font-weight:700;
+  padding:3px 12px;border-radius:20px;margin-bottom:10px;
+}
+.kv-verse-text{
+  font-family:'Tiro Devanagari Hindi',serif;font-size:16px;
+  color:var(--maroon);line-height:2.1;font-weight:600;
+  text-align:center;margin-bottom:10px;padding:0 4px;
+}
+body.dark .kv-verse-text{color:var(--gold-light)}
+.kv-verse-meaning{
+  font-size:13.5px;color:var(--ink-soft);line-height:1.85;
+  background:var(--bg-alt);border-radius:8px;padding:10px 12px;
+  border-left:3px solid var(--gold);display:none;
+}
+.kv-verse-meaning.show{display:block;animation:fadeUp .3s ease}
+.kv-verse-meaning strong{color:var(--maroon)}
+body.dark .kv-verse-meaning strong{color:var(--gold-light)}
+.kv-actions{
+  display:flex;gap:8px;justify-content:center;margin-top:10px;
+}
+.kv-actions button{
+  padding:6px 14px;border-radius:20px;
+  border:1px solid var(--border);background:var(--bg-alt);
+  color:var(--maroon);font-size:11.5px;font-weight:600;
+  cursor:pointer;transition:var(--transition);
+  display:flex;align-items:center;gap:5px;font-family:inherit;
+}
+body.dark .kv-actions button{color:var(--gold-light)}
+.kv-actions button:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+.kv-actions button i{font-size:10px}
+
+.kv-info{
+  background:linear-gradient(135deg, rgba(212,175,55,.14), rgba(122,46,46,.06));
+  border-radius:14px;padding:16px 18px;border-left:4px solid var(--gold);
+  margin:14px 0;
+}
+.kv-info h4{
+  font-family:'Tiro Devanagari Hindi',serif;font-size:16px;
+  color:var(--maroon);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+body.dark .kv-info h4{color:var(--gold-light)}
+.kv-info ul{padding-left:20px;margin:6px 0}
+.kv-info li{
+  font-size:13.5px;line-height:1.85;color:var(--ink-soft);margin-bottom:6px;
+}
+.kv-info li strong{color:var(--maroon)}
+body.dark .kv-info li strong{color:var(--gold-light)}
+
+.kv-benefits{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.kv-benefit{
+  padding:8px 14px;
+  background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(255,107,53,.1));
+  border:1px solid var(--gold);border-radius:30px;
+  font-size:12.5px;color:var(--maroon);font-weight:600;
+  display:flex;align-items:center;gap:6px;
+}
+body.dark .kv-benefit{color:var(--gold-light)}
+.kv-benefit i{font-size:11px;color:var(--saffron)}
+
+.faq-item{
+  background:var(--bg-alt);border-radius:12px;margin-bottom:10px;
+  overflow:hidden;border:1px solid var(--border);
+}
+.faq-q{
+  padding:14px 15px;cursor:pointer;display:flex;
+  justify-content:space-between;align-items:center;gap:10px;
+  font-family:'Tiro Devanagari Hindi',serif;font-size:14px;
+  color:var(--maroon);font-weight:600;
+}
+body.dark .faq-q{color:var(--gold-light)}
+.faq-q i{color:var(--gold);font-size:12px;transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q i{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
+.faq-item.open .faq-a{max-height:1000px}
+.faq-a-inner{
+  padding:0 15px 15px;font-size:13px;color:var(--ink-soft);
+  line-height:1.85;border-top:1px dashed var(--border);padding-top:12px;
+}
+.faq-a-inner strong{color:var(--maroon)}
+body.dark .faq-a-inner strong{color:var(--gold-light)}
+
+.toggle-all-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin:14px auto;padding:10px 22px;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;border:none;border-radius:30px;font-size:13px;font-weight:600;
+  cursor:pointer;box-shadow:0 4px 14px rgba(122,46,46,.3);
+  transition:var(--transition);
+}
+.toggle-all-btn:hover{transform:translateY(-2px)}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>हनुमान कवच</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<div class="kv-hero">
+  <span class="kv-emoji">🛡️</span>
+  <h2>हनुमान कवच</h2>
+  <div class="kv-sub">संपूर्ण रक्षा कवच</div>
+  <div class="kv-meta">
+    <span><i class="fa-solid fa-list-ol"></i> 12 श्लोक</span>
+    <span><i class="fa-solid fa-clock"></i> ~5 मिनट</span>
+    <span><i class="fa-solid fa-shield"></i> सर्व रक्षा</span>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> हनुमान कवच के बारे में</h2>
+  <p><strong>हनुमान कवच</strong> एक अत्यंत शक्तिशाली रक्षा स्तोत्र है। "कवच" का अर्थ है <strong>कवच, ढाल, रक्षा</strong>। इस स्तोत्र का पाठ करने से भक्त के चारों ओर हनुमान जी का <strong>दिव्य कवच</strong> बन जाता है।</p>
+  <p>यह कवच <strong>सभी प्रकार की बाधाओं, शत्रुओं, रोगों, दुर्घटनाओं, और बुरी शक्तियों</strong> से रक्षा करता है। जो भक्त नित्य इसका पाठ करता है, उसे कोई हानि नहीं पहुँचा सकता।</p>
+  <p>यह कवच <strong>मंगलवार, शनिवार, और हनुमान जयंती</strong> को पढ़ना विशेष फलदायी है। <strong>यात्रा से पहले, नए कार्य की शुरुआत में, और संकट के समय</strong> इसका पाठ करना चाहिए।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">श्लोक संख्या</div><div class="val">12</div></div>
+    <div class="info-item"><div class="lbl">पाठ समय</div><div class="val">~5 मिनट</div></div>
+    <div class="info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगल, शनि</div></div>
+    <div class="info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">प्रातः 5-7 बजे</div></div>
+    <div class="info-item"><div class="lbl">विशेष</div><div class="val">सर्व रक्षा</div></div>
+    <div class="info-item"><div class="lbl">जप संख्या</div><div class="val">1 / 7 / 21 बार</div></div>
+  </div>
+</div>
+
+<button class="toggle-all-btn" onclick="toggleAllMeanings()">
+  <i class="fa-solid fa-book"></i>
+  <span id="toggleText">सभी अर्थ दिखाएँ</span>
+</button>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🔸</span> श्री हनुमान कवच (संपूर्ण)</h2>
+
+  <div class="kv-verse">
+    <span class="kv-verse-num">श्लोक 1</span>
+    <div class="kv-verse-text">
+      ॐ श्री हनुमते नमः,<br>
+      सर्व रक्षां कुरु कुरु
+    </div>
+    <div class="kv-actions">
+      <button onclick="toggleVerse(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyVerse(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="kv-verse-meaning"><strong>अर्थ:</strong> हे हनुमान, मैं आपको नमस्कार करता हूँ। मेरी सभी प्रकार से रक्षा करें, रक्षा करें।</div>
+  </div>
+
+  <div class="kv-verse">
+    <span class="kv-verse-num">श्लोक 2</span>
+    <div class="kv-verse-text">
+      पूर्व दिशा रक्ष मां, पश्चिम रक्ष मां ।<br>
+      उत्तर रक्ष मां, दक्षिण रक्ष मां ॥
+    </div>
+    <div class="kv-actions">
+      <button onclick="toggleVerse(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyVerse(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="kv-verse-meaning"><strong>अर्थ:</strong> पूर्व दिशा से मेरी रक्षा करें, पश्चिम से रक्षा करें, उत्तर से रक्षा करें, दक्षिण से रक्षा करें।</div>
+  </div>
+
+  <div class="kv-verse">
+    <span class="kv-verse-num">श्लोक 3</span>
+    <div class="kv-verse-text">
+      ऊर्ध्व रक्ष मां, अधो रक्ष मां ।<br>
+      सर्वतो रक्ष मां, सदा रक्ष मां ॥
+    </div>
+    <div class="kv-actions">
+      <button onclick="toggleVerse(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyVerse(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="kv-verse-meaning"><strong>अर्थ:</strong> ऊपर से रक्षा करें, नीचे से रक्षा करें, चारों ओर से रक्षा करें, सदा रक्षा करें।</div>
+  </div>
+
+  <div class="kv-verse">
+    <span class="kv-verse-num">श्लोक 4</span>
+    <div class="kv-verse-text">
+      सर्व रोगान् नाशय, सर्व पीड़ां हर ।<br>
+      सर्व शत्रून् नाशय, सर्व भयं हर ॥
+    </div>
+    <div class="kv-actions">
+      <button onclick="toggleVerse(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyVerse(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="kv-verse-meaning"><strong>अर्थ:</strong> सभी रोगों को नष्ट करें, सभी पीड़ाओं को हरें। सभी शत्रुओं को नष्ट करें, सभी भयों को हरें।</div>
+  </div>
+
+  <div class="kv-verse">
+    <span class="kv-verse-num">श्लोक 5</span>
+    <div class="kv-verse-text">
+      भूत प्रेत पिशाच, डाकिनी शाकिनी ।<br>
+      निकट न आवै, दूर भागै सब ॥
+    </div>
+    <div class="kv-actions">
+      <button onclick="toggleVerse(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyVerse(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="kv-verse-meaning"><strong>अर्थ:</strong> भूत, प्रेत, पिशाच, डाकिनी, शाकिनी — कोई भी बुरी शक्ति मेरे निकट न आए, सब दूर भाग जाएँ।</div>
+  </div>
+
+  <div class="kv-verse">
+    <span class="kv-verse-num">श्लोक 6</span>
+    <div class="kv-verse-text">
+      रक्ष रक्ष महावीर, रक्ष रक्ष हनुमान ।<br>
+      रक्ष रक्ष संकट मोचन, रक्ष रक्ष बजरंगबली ॥
+    </div>
+    <div class="kv-actions">
+      <button onclick="toggleVerse(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyVerse(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="kv-verse-meaning"><strong>अर्थ:</strong> हे महावीर, रक्षा करें, रक्षा करें। हे हनुमान, रक्षा करें। हे संकट मोचन, रक्षा करें। हे बजरंगबली, रक्षा करें।</div>
+  </div>
+
+  <div class="kv-verse">
+    <span class="kv-verse-num">श्लोक 7</span>
+    <div class="kv-verse-text">
+      ॐ हं हनुमते रुद्रात्मकाय,<br>
+      हुं फट् स्वाहा
+    </div>
+    <div class="kv-actions">
+      <button onclick="toggleVerse(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyVerse(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="kv-verse-meaning"><strong>अर्थ:</strong> यह बीज मंत्र है। रुद्र के अवतार हनुमान का आह्वान — "हुं फट्" से सभी बाधाओं का नाश।</div>
+  </div>
+
+  <div class="kv-verse">
+    <span class="kv-verse-num">श्लोक 8</span>
+    <div class="kv-verse-text">
+      रामदूत कृपा सिंधु, दीन बंधु दुख हरन ।<br>
+      तुम रक्षक काहू को डर ना ॥
+    </div>
+    <div class="kv-actions">
+      <button onclick="toggleVerse(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyVerse(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="kv-verse-meaning"><strong>अर्थ:</strong> हे रामदूत, कृपा के सागर, दीनों के बंधु, दुख हरने वाले! आप रक्षक हैं, किसी का डर नहीं।</div>
+  </div>
+
+  <div class="kv-verse">
+    <span class="kv-verse-num">श्लोक 9</span>
+    <div class="kv-verse-text">
+      असाध्य रोग नश्यन्तु, दुर्गम कार्य सिद्धयन्तु ।<br>
+      विघ्नाः नश्यन्तु, मनोरथाः सिद्धयन्तु ॥
+    </div>
+    <div class="kv-actions">
+      <button onclick="toggleVerse(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyVerse(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="kv-verse-meaning"><strong>अर्थ:</strong> असाध्य रोग नष्ट हों, दुर्गम कार्य सिद्ध हों। सभी विघ्न नष्ट हों, सभी मनोरथ सिद्ध हों।</div>
+  </div>
+
+  <div class="kv-verse">
+    <span class="kv-verse-num">श्लोक 10</span>
+    <div class="kv-verse-text">
+      शत्रु बुद्धि विनाशाय, दीर्घायुष्यं च देहि मे ।<br>
+      बलं बुद्धिं यशः कीर्तिं, देहि मे हनुमत् प्रभो ॥
+    </div>
+    <div class="kv-actions">
+      <button onclick="toggleVerse(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyVerse(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="kv-verse-meaning"><strong>अर्थ:</strong> शत्रुओं की बुद्धि का नाश करें, मुझे दीर्घायु दें। हे हनुमान प्रभु! मुझे बल, बुद्धि, यश और कीर्ति दें।</div>
+  </div>
+
+  <div class="kv-verse">
+    <span class="kv-verse-num">श्लोक 11</span>
+    <div class="kv-verse-text">
+      सर्व मंगल मांगल्ये, शिवे सर्वार्थ साधिके ।<br>
+      शरण्ये त्र्यम्बके गौरि, नारायणि नमोऽस्तु ते ॥
+    </div>
+    <div class="kv-actions">
+      <button onclick="toggleVerse(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyVerse(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="kv-verse-meaning"><strong>अर्थ:</strong> हे सर्व मंगल स्वरूपिणी, शिवा, सर्वार्थ साधिके, शरण देने वाली, त्र्यम्बके, गौरी, नारायणी — आपको नमस्कार।</div>
+  </div>
+
+  <div class="kv-verse">
+    <span class="kv-verse-num">श्लोक 12</span>
+    <div class="kv-verse-text">
+      हनुमान कवचं पुण्यं, यः पठेत् श्रद्धया नरः ।<br>
+      सर्व संकट निर्मुक्तः, सुखी भवति सर्वदा ॥
+    </div>
+    <div class="kv-actions">
+      <button onclick="toggleVerse(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyVerse(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="kv-verse-meaning"><strong>अर्थ:</strong> जो मनुष्य श्रद्धा से इस पवित्र हनुमान कवच का पाठ करता है, वह सभी संकटों से मुक्त होकर सदा सुखी रहता है।</div>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🪔</span> पाठ विधि</h2>
+  <div class="kv-info">
+    <h4><i class="fa-solid fa-list-check"></i> कैसे पढ़ें हनुमान कवच?</h4>
+    <ul>
+      <li><strong>स्नान:</strong> स्नान करके स्वच्छ लाल वस्त्र धारण करें</li>
+      <li><strong>समय:</strong> प्रातः 5-7 बजे — ब्रह्म मुहूर्त सर्वश्रेष्ठ</li>
+      <li><strong>दिशा:</strong> पूर्व दिशा की ओर मुख करें</li>
+      <li><strong>दीप:</strong> घी का दीपक जलाएँ, धूप करें</li>
+      <li><strong>भोग:</strong> बेसन के लड्डू, केला, गुड़-चना</li>
+      <li><strong>माला:</strong> लाल रुद्राक्ष या मूंगा माला</li>
+      <li><strong>विधि:</strong> पहले हनुमान जी का ध्यान करें, फिर कवच पढ़ें</li>
+      <li><strong>संख्या:</strong> 1 बार, 7 बार, या 21 बार</li>
+      <li><strong>अंत:</strong> हनुमान चालीसा और आरती करें</li>
+    </ul>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> हनुमान कवच के लाभ</h2>
+  <div class="kv-benefits">
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> सर्व रक्षा कवच</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> शत्रु नाश</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> रोग नाश</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> भूत-प्रेत रक्षा</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> तंत्र-मंत्र रक्षा</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> दुर्घटना रक्षा</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> यात्रा रक्षा</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> भय मुक्ति</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> मानसिक शांति</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> बल वृद्धि</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> बुद्धि वृद्धि</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> दीर्घायु</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> यश और कीर्ति</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> धन प्राप्ति</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> ग्रह शांति</span>
+    <span class="kv-benefit"><i class="fa-solid fa-check"></i> मोक्ष प्राप्ति</span>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान कवच कब पढ़ना चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <ul style="padding-left:20px;">
+          <li><strong>प्रातः 5-7 बजे</strong> — सर्वश्रेष्ठ</li>
+          <li><strong>मंगलवार और शनिवार</strong> — विशेष फलदायी</li>
+          <li><strong>यात्रा से पहले</strong> — अनिवार्य</li>
+          <li><strong>नए कार्य की शुरुआत</strong> — शुभ</li>
+          <li><strong>संकट के समय</strong> — तुरंत</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>कवच और चालीसा में क्या अंतर है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>चालीसा:</strong> हनुमान जी की स्तुति — भक्ति, गुणगान, और स्मरण।
+        <br><strong>कवच:</strong> रक्षा कवच — चारों दिशाओं से, सभी बाधाओं से, सभी शत्रुओं से रक्षा।
+        <br><br>कवच को <strong>"सुरक्षा कवच"</strong> माना जाता है। संकट में यह अचूक है।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या महिलाएँ हनुमान कवच पढ़ सकती हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>हाँ, बिल्कुल!</strong> महिलाएँ पढ़ सकती हैं। लेकिन <strong>मासिक धर्म</strong> के दौरान न पढ़ें। स्नान करके स्वच्छ वस्त्र पहनें।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>कितनी बार कवच पढ़ें?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <ul style="padding-left:20px;">
+          <li><strong>1 बार</strong> — नित्य पाठ</li>
+          <li><strong>7 बार</strong> — यात्रा से पहले</li>
+          <li><strong>21 बार</strong> — संकट में</li>
+          <li><strong>108 बार</strong> — महा संकट में</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या कवच घर पर पढ़ सकते हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>हाँ!</strong> घर के पूजा स्थल पर, पूर्व दिशा की ओर मुख करके, हनुमान जी की मूर्ति के सामने पढ़ें। घर पर पाठ पूर्ण फल देता है।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या कवच से शत्रु नष्ट होते हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>हनुमान कवच</strong> शत्रु की <strong>बुद्धि और षड्यंत्र</strong> नष्ट करता है — उनकी हानिकारक योजनाएँ विफल हो जाती हैं। शत्रु का <strong>मन</strong> शुद्ध हो जाता है या वे <strong>दूर</strong> हो जाते हैं। यह सुरक्षा कवच है, हिंसा नहीं।
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="11-bajrang-baan.html" class="cat-chip"><i class="fa-solid fa-bolt"></i> बजरंग बाण</a>
+    <a href="12-hanuman-ashtak.html" class="cat-chip"><i class="fa-solid fa-fire"></i> अष्टक</a>
+    <a href="13-hanuman-bahuk.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> बाहुक</a>
+    <a href="14-sankat-mochan.html" class="cat-chip"><i class="fa-solid fa-shield"></i> संकट मोचन</a>
+    <a href="15-dvadash-naam.html" class="cat-chip"><i class="fa-solid fa-list-ol"></i> द्वादश नाम</a>
+  </div>
+</div>
+
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+function toggleVerse(btn) {
+  const card = btn.closest('.kv-verse');
+  const meaning = card.querySelector('.kv-verse-meaning');
+  meaning.classList.toggle('show');
+  if (meaning.classList.contains('show')) {
+    btn.innerHTML = '<i class="fa-solid fa-book"></i> छिपाएँ';
+  } else {
+    btn.innerHTML = '<i class="fa-solid fa-book-open"></i> अर्थ';
+  }
+  if (navigator.vibrate) navigator.vibrate(15);
+}
+
+function copyVerse(btn) {
+  const card = btn.closest('.kv-verse');
+  const text = card.querySelector('.kv-verse-text')?.innerText || '';
+  copyMantra(text);
+}
+
+let allVisible = false;
+function toggleAllMeanings() {
+  allVisible = !allVisible;
+  document.querySelectorAll('.kv-verse-meaning').forEach(m => {
+    m.classList.toggle('show', allVisible);
+  });
+  document.querySelectorAll('.kv-actions button:first-child').forEach(btn => {
+    btn.innerHTML = allVisible
+      ? '<i class="fa-solid fa-book"></i> छिपाएँ'
+      : '<i class="fa-solid fa-book-open"></i> अर्थ';
+  });
+  const t = document.getElementById('toggleText');
+  if (t) t.textContent = allVisible ? 'सभी अर्थ छिपाएँ' : 'सभी अर्थ दिखाएँ';
+  if (navigator.vibrate) navigator.vibrate(20);
+}
+
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
