@@ -1,0 +1,666 @@
+/* ============================================
+   HANUMAN SECTION — COMMON STYLES
+============================================ */
+:root{
+  --maroon:#7A2E2E;
+  --maroon-dark:#3B0A0A;
+  --gold:#D4AF37;
+  --gold-light:#F4D160;
+  --gold-deep:#B8860B;
+  --saffron:#FF6B35;
+  --deep:#3B0A0A;
+  --bg:#FFF8F0;
+  --bg-alt:#FDF3E7;
+  --card-bg:#FFFFFF;
+  --ink:#2B1414;
+  --ink-soft:#5C3A3A;
+  --ink-light:#8B6F6F;
+  --border:#EAD9C0;
+  --radius:18px;
+  --shadow:0 4px 20px rgba(122,46,46,.08);
+  --shadow-lg:0 12px 40px rgba(122,46,46,.15);
+  --transition:all .3s cubic-bezier(.4,0,.2,1);
+}
+body.dark{
+  --bg:#0F0505;
+  --bg-alt:#170A0A;
+  --card-bg:#1E0E0E;
+  --ink:#F5E6D3;
+  --ink-soft:#D4B8A8;
+  --ink-light:#9A7E6E;
+  --border:#3A1F1F;
+  --shadow:0 4px 20px rgba(0,0,0,.5);
+  --shadow-lg:0 12px 40px rgba(0,0,0,.7);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Hind',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  overflow-x:hidden;
+  padding-bottom:80px;
+  transition:background .4s,color .4s;
+  font-size:15px;
+}
+button{font-family:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+
+/* Progress */
+.progress-bar{
+  position:fixed;top:0;left:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--saffron));
+  z-index:9999;width:0%;
+  transition:width .1s linear;
+  box-shadow:0 0 12px var(--gold);
+}
+
+/* Header */
+.app-header{
+  position:sticky;top:0;z-index:500;
+  background:linear-gradient(135deg,#7A2E2E,#3B0A0A);
+  color:#fff;
+  padding:10px 14px;
+  display:flex;align-items:center;gap:10px;
+  box-shadow:0 4px 24px rgba(0,0,0,.35);
+  border-bottom:2px solid var(--gold);
+}
+.icon-btn{
+  width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.2);
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;font-size:16px;
+  transition:var(--transition);flex-shrink:0;
+}
+.icon-btn:hover,.icon-btn:active{background:rgba(255,255,255,.28);transform:scale(.94)}
+.header-title{flex:1;text-align:center;min-width:0}
+.header-title .eyebrow{font-size:10.5px;opacity:.8;letter-spacing:1.5px;text-transform:uppercase}
+.header-title h1{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:19px;font-weight:600;line-height:1.15;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+/* Diya Row */
+.diya-row{
+  display:flex;justify-content:center;gap:10px;
+  padding:10px 8px 6px;
+  background:linear-gradient(180deg,rgba(212,175,55,.12),transparent);
+}
+.diya-row span{
+  width:9px;height:9px;border-radius:50%;
+  background:radial-gradient(circle,#FFD966,#D4AF37);
+  box-shadow:0 0 12px var(--gold);
+  animation:flicker 1.4s infinite alternate;
+}
+.diya-row span:nth-child(2){animation-delay:.15s}
+.diya-row span:nth-child(3){animation-delay:.3s}
+.diya-row span:nth-child(4){animation-delay:.45s}
+.diya-row span:nth-child(5){animation-delay:.6s}
+.diya-row span:nth-child(6){animation-delay:.75s}
+.diya-row span:nth-child(7){animation-delay:.9s}
+@keyframes flicker{
+  from{opacity:.35;transform:scale(.75)}
+  to{opacity:1;transform:scale(1.25)}
+}
+
+main{max-width:720px;margin:0 auto;padding:0 14px}
+
+/* Hero */
+.devta-hero{
+  position:relative;
+  text-align:center;
+  padding:30px 20px 26px;
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(212,175,55,.3),transparent 65%),
+    linear-gradient(135deg,rgba(122,46,46,.18),rgba(255,107,53,.1));
+  border-radius:var(--radius);
+  margin:16px 0;
+  border:1px solid var(--border);
+  overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.devta-hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(212,175,55,.18),transparent 40%),
+    radial-gradient(circle at 80% 80%,rgba(255,107,53,.15),transparent 40%);
+  animation:pulseGlow 4s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes pulseGlow{
+  0%,100%{opacity:.6;transform:scale(1)}
+  50%{opacity:1;transform:scale(1.05)}
+}
+.hero-glow-ring{
+  position:absolute;top:50%;left:50%;
+  width:220px;height:220px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:2px dashed rgba(212,175,55,.35);
+  animation:spinSlow 25s linear infinite;
+  pointer-events:none;
+}
+@keyframes spinSlow{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.hanuman-icon{
+  font-size:110px;
+  display:inline-block;
+  position:relative;
+  z-index:2;
+  filter:drop-shadow(0 0 28px rgba(212,175,55,.9));
+  animation:floatIcon 3.5s ease-in-out infinite;
+}
+@keyframes floatIcon{
+  0%,100%{transform:translateY(0) rotate(-3deg) scale(1)}
+  50%{transform:translateY(-12px) rotate(3deg) scale(1.05)}
+}
+.devta-hero .name{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:38px;color:var(--maroon);
+  margin-top:6px;position:relative;z-index:2;
+  text-shadow:0 2px 20px rgba(212,175,55,.5);
+}
+body.dark .devta-hero .name{color:var(--gold-light)}
+.devta-hero .subtitle{
+  font-size:12.5px;color:var(--ink-soft);
+  margin-top:8px;letter-spacing:2px;position:relative;z-index:2;
+  text-transform:uppercase;font-weight:500;
+}
+.devta-hero .tagline{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:15px;color:var(--maroon);
+  margin-top:12px;position:relative;z-index:2;
+  font-style:italic;opacity:.85;
+}
+body.dark .devta-hero .tagline{color:var(--gold-light)}
+.jai-ram-btn{
+  margin-top:16px;
+  padding:11px 26px;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;border:none;border-radius:30px;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:16px;font-weight:600;
+  cursor:pointer;position:relative;z-index:2;
+  box-shadow:0 6px 20px rgba(122,46,46,.45);
+  transition:var(--transition);
+}
+.jai-ram-btn:hover{transform:translateY(-2px)}
+.jai-ram-btn:active{transform:scale(.95)}
+.jai-ram-count{
+  display:block;font-size:11px;opacity:.9;margin-top:3px;
+  font-family:'Hind',sans-serif;font-weight:400;
+}
+
+/* Info Pills */
+.quick-info-strip{
+  display:flex;gap:8px;overflow-x:auto;
+  padding:4px 0 14px;
+  scrollbar-width:none;
+}
+.quick-info-strip::-webkit-scrollbar{display:none}
+.info-pill{
+  flex-shrink:0;
+  padding:8px 14px;
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:30px;
+  font-size:12px;
+  color:var(--maroon);
+  font-weight:600;
+  white-space:nowrap;
+}
+body.dark .info-pill{color:var(--gold-light)}
+.info-pill i{margin-right:5px;color:var(--gold)}
+
+/* Quick Actions */
+.quick-actions{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:8px;
+  margin-bottom:16px;
+}
+.qa-btn{
+  background:var(--card-bg);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:13px 6px;
+  text-align:center;
+  cursor:pointer;
+  transition:var(--transition);
+  box-shadow:var(--shadow);
+  color:var(--ink);
+}
+.qa-btn:hover{transform:translateY(-3px);border-color:var(--gold)}
+.qa-btn:active{transform:scale(.94)}
+.qa-btn i{font-size:22px;color:var(--maroon);display:block;margin-bottom:5px}
+body.dark .qa-btn i{color:var(--gold-light)}
+.qa-btn span{font-size:10.5px;font-weight:600;line-height:1.15;display:block}
+
+/* Emergency */
+.emergency-btn{
+  width:100%;padding:18px;
+  background:linear-gradient(135deg,#FF6B35,#7A2E2E);
+  color:#fff;border:none;border-radius:16px;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:18px;font-weight:700;
+  cursor:pointer;
+  box-shadow:0 6px 24px rgba(255,107,53,.4);
+  transition:var(--transition);
+  margin-bottom:16px;
+}
+.emergency-btn:hover{transform:translateY(-2px)}
+.emergency-btn:active{transform:scale(.97)}
+
+/* Category Nav */
+.cat-nav{
+  display:flex;gap:8px;overflow-x:auto;
+  padding:4px 0 14px;
+  scrollbar-width:none;
+  flex-wrap:wrap;
+}
+.cat-nav::-webkit-scrollbar{display:none}
+.cat-chip{
+  flex-shrink:0;
+  padding:9px 16px;
+  background:var(--card-bg);
+  border:1.5px solid var(--border);
+  border-radius:30px;
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--maroon);
+  cursor:pointer;
+  transition:var(--transition);
+  white-space:nowrap;
+  display:flex;align-items:center;gap:6px;
+  text-decoration:none;
+}
+body.dark .cat-chip{color:var(--gold-light)}
+.cat-chip:hover{border-color:var(--gold);transform:translateY(-2px)}
+.cat-chip.active{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;border-color:transparent;
+  box-shadow:0 4px 16px rgba(122,46,46,.35);
+}
+.cat-chip i{font-size:14px}
+
+/* Sections */
+.devta-section{
+  background:var(--card-bg);
+  border-radius:var(--radius);
+  padding:20px 18px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+  margin-bottom:16px;
+  animation:fadeUp .5s ease both;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.devta-section h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:21px;color:var(--maroon);
+  margin-bottom:14px;
+  display:flex;align-items:center;gap:10px;
+  border-bottom:2px solid var(--gold);
+  padding-bottom:10px;
+}
+body.dark .devta-section h2{color:var(--gold-light)}
+.devta-section h2 .sec-icon{font-size:24px;flex-shrink:0}
+.devta-section h3{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:17px;color:var(--maroon);
+  margin:18px 0 10px;
+  padding-left:10px;
+  border-left:3px solid var(--gold);
+}
+body.dark .devta-section h3{color:var(--gold-light)}
+.devta-section h4{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:15.5px;color:var(--maroon);
+  margin:12px 0 6px;
+}
+body.dark .devta-section h4{color:var(--gold-light)}
+.devta-section p{
+  font-size:14.5px;line-height:1.9;color:var(--ink-soft);
+  margin-bottom:12px;
+}
+.devta-section p strong{color:var(--maroon);font-weight:600}
+body.dark .devta-section p strong{color:var(--gold-light)}
+.devta-section ul,.devta-section ol{padding-left:22px;margin:10px 0}
+.devta-section li{
+  font-size:14px;line-height:1.9;color:var(--ink-soft);
+  margin-bottom:8px;
+}
+.devta-section li strong{color:var(--maroon)}
+body.dark .devta-section li strong{color:var(--gold-light)}
+
+/* Info Grid */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.info-item{
+  background:var(--bg-alt);padding:12px 14px;border-radius:12px;
+  border:1px solid var(--border);
+}
+.info-item .lbl{
+  font-size:10px;color:var(--ink-light);
+  text-transform:uppercase;letter-spacing:.8px;font-weight:500;
+}
+.info-item .val{
+  font-weight:600;color:var(--maroon);margin-top:3px;font-size:13.5px;
+  line-height:1.4;
+}
+body.dark .info-item .val{color:var(--gold-light)}
+
+/* Quote Card */
+.quote-card{
+  background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(255,107,53,.1));
+  border-radius:16px;padding:24px 20px;
+  text-align:center;margin:12px 0;
+  border:1px solid var(--gold);
+  position:relative;
+}
+.quote-text{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:17.5px;color:var(--maroon);
+  line-height:1.9;font-style:italic;
+}
+body.dark .quote-text{color:var(--gold-light)}
+.quote-author{
+  font-size:12px;color:var(--ink-light);
+  margin-top:12px;font-weight:500;
+}
+
+/* Mantra Box */
+.mantra-box{
+  background:linear-gradient(135deg,rgba(212,175,55,.14),rgba(122,46,46,.06));
+  border-left:4px solid var(--gold);
+  padding:18px 16px;
+  border-radius:12px;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:18px;text-align:center;
+  margin:12px 0;line-height:2;
+  color:var(--maroon);font-weight:600;
+  position:relative;
+}
+body.dark .mantra-box{color:var(--gold-light)}
+.mantra-box small{
+  display:block;font-family:'Hind',sans-serif;
+  font-size:12px;color:var(--ink-soft);
+  font-weight:400;margin-top:10px;font-style:italic;
+}
+.copy-mantra{
+  position:absolute;top:10px;right:10px;
+  background:rgba(122,46,46,.1);border:none;
+  color:var(--maroon);width:30px;height:30px;border-radius:50%;
+  cursor:pointer;font-size:12px;
+  display:flex;align-items:center;justify-content:center;
+}
+.copy-mantra:hover{background:var(--maroon);color:#fff}
+body.dark .copy-mantra{color:var(--gold-light);background:rgba(212,175,55,.15)}
+
+/* Accordion */
+.accordion-item{border-bottom:1px solid var(--border)}
+.accordion-item:last-child{border-bottom:none}
+.accordion-head{
+  padding:14px 0;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  font-weight:600;font-size:14.5px;color:var(--maroon);
+  font-family:'Tiro Devanagari Hindi',serif;
+  gap:10px;
+}
+body.dark .accordion-head{color:var(--gold-light)}
+.accordion-head i{transition:transform .35s;color:var(--gold);flex-shrink:0}
+.accordion-item.open .accordion-head i{transform:rotate(180deg)}
+.accordion-body{
+  max-height:0;overflow:hidden;
+  transition:max-height .55s cubic-bezier(.4,0,.2,1);
+  font-size:14px;color:var(--ink-soft);line-height:1.9;
+}
+.accordion-item.open .accordion-body{max-height:8000px;padding-bottom:14px}
+
+/* 108 Names Grid */
+.names-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:7px;margin-top:12px;
+}
+.name-chip{
+  padding:10px 8px;
+  background:var(--bg-alt);border-radius:10px;
+  font-size:12.5px;color:var(--maroon);
+  font-weight:600;text-align:center;
+  border:1px solid var(--border);
+  cursor:pointer;line-height:1.3;
+}
+.name-chip:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+.name-chip .num{
+  font-size:9px;opacity:.55;display:block;margin-bottom:2px;
+}
+
+/* Puja Step */
+.puja-step{
+  display:flex;gap:14px;padding:14px 0;
+  border-bottom:1px dashed var(--border);
+}
+.puja-step:last-child{border-bottom:none}
+.puja-num{
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:15px;flex-shrink:0;
+}
+.puja-content{flex:1}
+.puja-content strong{
+  display:block;color:var(--maroon);
+  font-size:14.5px;margin-bottom:4px;
+  font-family:'Tiro Devanagari Hindi',serif;
+}
+body.dark .puja-content strong{color:var(--gold-light)}
+.puja-content p{font-size:13px;line-height:1.7;margin:0}
+
+/* Verse Line */
+.verse-line{
+  padding:6px 10px;border-radius:8px;
+  transition:var(--transition);
+  cursor:pointer;display:block;line-height:2.1;
+}
+.verse-line:hover{background:rgba(212,175,55,.15)}
+.verse-line.highlight{
+  background:linear-gradient(90deg,rgba(212,175,55,.3),rgba(255,107,53,.15));
+  color:var(--maroon);font-weight:600;
+  transform:translateX(4px);
+  box-shadow:-3px 0 0 var(--gold);
+}
+body.dark .verse-line.highlight{color:var(--gold-light)}
+
+/* Chalisa Controls */
+.chalisa-controls{
+  display:flex;gap:10px;justify-content:center;align-items:center;
+  padding:14px;background:var(--bg-alt);
+  border-radius:14px;margin-bottom:14px;
+  border:1px solid var(--border);
+  position:sticky;top:110px;z-index:50;
+}
+.chalisa-controls button{
+  width:46px;height:46px;border-radius:50%;
+  background:var(--card-bg);border:1px solid var(--border);
+  color:var(--maroon);font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+}
+body.dark .chalisa-controls button{color:var(--gold-light)}
+.chalisa-controls button.play-btn{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;width:60px;height:60px;font-size:22px;
+}
+
+/* Mala Counter */
+.mala-counter{
+  text-align:center;padding:24px 16px;
+  background:radial-gradient(circle,rgba(212,175,55,.18),transparent 70%);
+  border-radius:16px;border:2px dashed var(--gold);
+  margin:12px 0;
+}
+.mala-circle{
+  width:180px;height:180px;border-radius:50%;
+  background:conic-gradient(var(--maroon) var(--progress,0%), var(--border) 0%);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+  position:relative;
+  transition:background .3s;
+  box-shadow:0 0 30px rgba(212,175,55,.25);
+}
+.mala-circle::before{
+  content:'';position:absolute;inset:8px;border-radius:50%;
+  background:var(--card-bg);
+}
+.mala-inner{position:relative;z-index:2;text-align:center}
+.mala-count{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:44px;color:var(--maroon);font-weight:700;line-height:1;
+}
+body.dark .mala-count{color:var(--gold-light)}
+.mala-target{font-size:13px;color:var(--ink-light);margin-top:2px}
+.mala-tap{
+  width:90px;height:90px;border-radius:50%;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;border:none;font-size:34px;
+  cursor:pointer;box-shadow:0 8px 24px rgba(122,46,46,.5);
+  transition:var(--transition);
+  margin:10px auto;display:block;
+}
+.mala-tap:active{transform:scale(.88)}
+.mala-btns{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.mala-btns button{
+  padding:9px 18px;border-radius:20px;
+  border:1px solid var(--border);background:var(--bg);
+  color:var(--maroon);font-size:12.5px;font-weight:600;
+}
+body.dark .mala-btns button{color:var(--gold-light)}
+
+/* Share */
+.share-btn{
+  margin-top:12px;width:100%;padding:15px;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;border:none;border-radius:14px;
+  font-size:15px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+
+/* Floating Hanuman */
+.floating-hanuman{
+  position:fixed;bottom:100px;left:16px;
+  width:60px;height:60px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold),var(--saffron));
+  color:#fff;border:2px solid #fff;
+  font-size:28px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  box-shadow:0 8px 24px rgba(212,175,55,.65);
+  z-index:90;
+  animation:floatIcon 3.5s ease-in-out infinite;
+}
+.floating-hanuman::after{
+  content:'';position:absolute;inset:-6px;border-radius:50%;
+  border:2px solid rgba(212,175,55,.4);
+  animation:pulseRing 2s infinite;
+}
+@keyframes pulseRing{
+  0%{transform:scale(1);opacity:1}
+  100%{transform:scale(1.4);opacity:0}
+}
+
+/* Bottom Nav */
+.bottom-nav{
+  position:fixed;bottom:0;left:0;right:0;z-index:100;
+  background:var(--card-bg);
+  border-top:1px solid var(--border);
+  display:flex;justify-content:space-around;
+  padding:8px 0 max(12px,env(safe-area-inset-bottom));
+  box-shadow:0 -4px 24px rgba(0,0,0,.1);
+}
+.nav-link{
+  flex:1;text-align:center;
+  color:var(--ink-light);font-size:10px;
+  transition:var(--transition);
+  padding:4px 0;
+}
+.nav-link i{font-size:20px;display:block;margin-bottom:3px}
+.nav-link p{margin:0;font-weight:500}
+.nav-link.active{color:var(--maroon)}
+body.dark .nav-link.active{color:var(--gold-light)}
+
+/* Modal */
+.modal-overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.75);
+  z-index:1000;
+  display:none;align-items:center;justify-content:center;
+  padding:20px;
+  backdrop-filter:blur(6px);
+}
+.modal-overlay.show{display:flex;animation:fadeUp .3s ease}
+.modal-box{
+  background:var(--card-bg);
+  border-radius:22px;
+  max-width:440px;width:100%;
+  max-height:85vh;overflow-y:auto;
+  padding:28px 22px;
+  border:2px solid var(--gold);
+  position:relative;
+}
+.modal-box h3{
+  font-family:'Tiro Devanagari Hindi',serif;
+  color:var(--maroon);font-size:22px;
+  margin-bottom:16px;text-align:center;
+}
+body.dark .modal-box h3{color:var(--gold-light)}
+.modal-close{
+  position:absolute;top:14px;right:14px;
+  width:34px;height:34px;border-radius:50%;
+  background:var(--bg-alt);border:none;
+  color:var(--maroon);font-size:14px;
+  display:flex;align-items:center;justify-content:center;
+}
+body.dark .modal-close{color:var(--gold-light)}
+
+/* Toast */
+.toast{
+  position:fixed;bottom:110px;left:50%;
+  transform:translateX(-50%) translateY(120px);
+  background:var(--maroon);color:#fff;
+  padding:13px 26px;border-radius:30px;
+  font-size:13.5px;font-weight:600;
+  z-index:2000;opacity:0;
+  transition:all .4s;
+  box-shadow:0 8px 28px rgba(0,0,0,.4);
+  pointer-events:none;max-width:90vw;text-align:center;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Back Top */
+.back-top{
+  position:fixed;bottom:100px;right:16px;
+  width:48px;height:48px;border-radius:50%;
+  background:var(--maroon);color:#fff;border:none;
+  cursor:pointer;display:none;
+  align-items:center;justify-content:center;
+  font-size:18px;
+  box-shadow:0 6px 20px rgba(122,46,46,.5);
+  z-index:90;transition:var(--transition);
+}
+.back-top.show{display:flex;animation:fadeUp .3s ease}
+
+/* Responsive */
+@media(max-width:420px){
+  .hanuman-icon{font-size:88px}
+  .devta-hero .name{font-size:28px}
+  .devta-section h2{font-size:18px}
+  .mantra-box{font-size:15.5px;padding:16px 12px}
+  .mala-circle{width:150px;height:150px}
+  .mala-count{font-size:36px}
+  .names-grid{grid-template-columns:1fr 1fr}
+  .info-grid{grid-template-columns:1fr}
+}
+@media(max-width:340px){
+  .quick-actions{grid-template-columns:repeat(2,1fr)}
+}
