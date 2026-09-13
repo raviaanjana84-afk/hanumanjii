@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>धन्यवाद — हनुमान जी सेक्शन | Thank You</title>
+<meta name="description" content="हनुमान जी सेक्शन के लिए धन्यवाद — जय श्री राम!" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+.thanks-hero{
+  width:100%;padding:50px 20px 40px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.5), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.25), rgba(255,107,53,.18));
+  border-radius:var(--radius);text-align:center;margin:16px 0;
+  border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.thanks-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.2), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.thanks-hero .thanks-emoji{
+  font-size:110px;display:block;margin-bottom:14px;
+  filter:drop-shadow(0 0 30px rgba(212,175,55,.9));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;z-index:2;
+}
+.thanks-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:34px;color:var(--maroon);margin-bottom:8px;
+  position:relative;z-index:2;
+  text-shadow:0 2px 20px rgba(212,175,55,.4);
+}
+body.dark .thanks-hero h2{color:var(--gold-light)}
+.thanks-hero .thanks-sub{
+  font-size:14px;color:var(--ink-soft);letter-spacing:2px;
+  position:relative;z-index:2;font-weight:500;
+}
+.thanks-hero .thanks-jai{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:20px;color:var(--maroon);
+  margin-top:18px;position:relative;z-index:2;
+  font-style:italic;
+}
+body.dark .thanks-hero .thanks-jai{color:var(--gold-light)}
+
+.thanks-message{
+  background:var(--card-bg);border-radius:18px;
+  padding:28px 22px;margin-bottom:16px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-lg);
+  text-align:center;
+}
+.thanks-message .msg-icon{
+  font-size:52px;display:block;margin-bottom:14px;
+}
+.thanks-message h3{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:22px;color:var(--maroon);margin-bottom:12px;
+}
+body.dark .thanks-message h3{color:var(--gold-light)}
+.thanks-message p{
+  font-size:14.5px;color:var(--ink-soft);
+  line-height:1.9;margin-bottom:10px;
+}
+.thanks-message p strong{color:var(--maroon)}
+body.dark .thanks-message p strong{color:var(--gold-light)}
+
+.thanks-verse{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:17px;color:var(--maroon);
+  line-height:2;padding:20px;
+  background:linear-gradient(135deg,rgba(212,175,55,.15),rgba(255,107,53,.08));
+  border-radius:14px;border-left:4px solid var(--gold);
+  margin:16px 0;font-style:italic;
+}
+body.dark .thanks-verse{color:var(--gold-light)}
+
+.thanks-actions{
+  display:flex;flex-direction:column;gap:10px;
+  margin-top:20px;
+}
+.thanks-btn{
+  padding:14px;border-radius:14px;
+  font-family:inherit;font-size:15px;font-weight:600;
+  cursor:pointer;transition:var(--transition);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  text-decoration:none;
+}
+.thanks-btn.primary{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;
+  box-shadow:0 6px 20px rgba(122,46,46,.4);
+}
+.thanks-btn.primary:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(122,46,46,.5)}
+.thanks-btn.secondary{
+  background:var(--bg-alt);color:var(--maroon);
+  border:1px solid var(--border);
+}
+body.dark .thanks-btn.secondary{color:var(--gold-light)}
+.thanks-btn.secondary:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+
+.thanks-footer{
+  text-align:center;padding:24px 16px;
+  color:var(--ink-light);font-size:13px;
+  line-height:1.8;
+}
+.thanks-footer .footer-om{
+  font-size:24px;color:var(--gold);
+  display:block;margin-bottom:8px;
+}
+.thanks-footer strong{color:var(--maroon)}
+body.dark .thanks-footer strong{color:var(--gold-light)}
+
+.thanks-flowers{
+  display:flex;justify-content:center;gap:16px;
+  font-size:36px;margin:20px 0;
+  animation:floatIcon 3s ease-in-out infinite;
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>धन्यवाद</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<div class="thanks-hero">
+  <span class="thanks-emoji">🙏</span>
+  <h2>धन्यवाद</h2>
+  <div class="thanks-sub">आपकी भक्ति के लिए</div>
+  <div class="thanks-jai">"जय श्री राम"</div>
+</div>
+
+<div class="thanks-flowers">
+  <span>🌸</span>
+  <span>🌺</span>
+  <span>🌼</span>
+</div>
+
+<div class="thanks-message">
+  <span class="msg-icon">💝</span>
+  <h3>आपका हृदय से स्वागत है</h3>
+  <p>आपने इस <strong>हनुमान जी सेक्शन</strong> को पूरा पढ़ा — यह हमारे लिए <strong>अत्यंत सौभाग्य</strong> की बात है।</p>
+  <p>हम आशा करते हैं कि इस सेक्शन से आपको <strong>हनुमान जी के जीवन, उनकी कथाओं, उनके मंत्रों, और उनकी भक्ति</strong> का संपूर्ण ज्ञान मिला होगा।</p>
+  <p>यदि इससे आपका जीवन थोड़ा भी <strong>बेहतर, शांत, और भक्ति से भरा</strong> हुआ है — तो हमें इससे बड़ी कोई खुशी नहीं।</p>
+
+  <div class="thanks-verse">
+    "जय हनुमान ज्ञान गुन सागर ।<br>
+    जय कपीस तिहुँ लोक उजागर ॥"
+  </div>
+
+  <p><strong>हनुमान जी की कृपा आप पर सदा बनी रहे 🙏</strong></p>
+</div>
+
+<div class="thanks-message">
+  <span class="msg-icon">🌟</span>
+  <h3>कृपया शेयर करें</h3>
+  <p>यदि यह सेक्शन आपको <strong>उपयोगी लगा</strong>, तो कृपया इसे अपने <strong>मित्रों, परिवार, और अन्य भक्तों</strong> के साथ शेयर करें।</p>
+  <p>हनुमान जी की कृपा का <strong>प्रसार करना</strong> भी एक सेवा है। जितने लोगों तक यह पहुँचेगा, उतना ही पुण्य मिलेगा।</p>
+
+  <div class="thanks-actions">
+    <button class="thanks-btn primary" onclick="sharePage()">
+      <i class="fa-solid fa-share-nodes"></i> यह सेक्शन शेयर करें
+    </button>
+    <a href="../hanuman.html" class="thanks-btn secondary">
+      <i class="fa-solid fa-om"></i> हनुमान जी होम पर जाएँ
+    </a>
+    <a href="../../index.html" class="thanks-btn secondary">
+      <i class="fa-solid fa-house"></i> मुख्य होम पर जाएँ
+    </a>
+  </div>
+</div>
+
+<div class="thanks-message">
+  <span class="msg-icon">🕉️</span>
+  <h3>हनुमान जी की जय</h3>
+  <p>अंत में, हम हनुमान जी से प्रार्थना करते हैं —</p>
+
+  <div class="thanks-verse">
+    हे हनुमान, हे संकट मोचन,<br>
+    हम सब भक्तों पर कृपा करें ।<br>
+    हमारी भूलों को क्षमा करें,<br>
+    हमें बल, बुद्धि, और भक्ति दें ॥
+  </div>
+
+  <p style="font-family:'Tiro Devanagari Hindi',serif;font-size:18px;color:var(--maroon);margin-top:16px;">
+    <strong>जय जय हनुमान गोसाईं ।<br>
+    कृपा करहु गुरुदेव की नाईं ॥</strong>
+  </p>
+</div>
+
+<div class="thanks-footer">
+  <span class="footer-om">🕉️</span>
+  <p><strong>सनातन ज्ञान कोश</strong></p>
+  <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
+  <p style="margin-top:14px;">सभी कंटेंट पौराणिक स्रोतों पर आधारित है</p>
+  <p style="margin-top:8px;font-size:14px;">
+    <strong>🙏 जय श्री राम · जय हनुमान 🙏</strong>
+  </p>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> दोबारा पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="21-mala.html" class="cat-chip"><i class="fa-solid fa-list-ol"></i> जप माला</a>
+    <a href="40-chola-vidhi.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> चोला विधि</a>
+    <a href="85-30day-plan.html" class="cat-chip"><i class="fa-solid fa-calendar"></i> 30 दिन योजना</a>
+    <a href="86-about.html" class="cat-chip"><i class="fa-solid fa-info-circle"></i> इस सेक्शन के बारे में</a>
+  </div>
+</div>
+
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+</body>
+</html>
