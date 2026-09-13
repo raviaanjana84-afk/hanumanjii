@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान और शनि देव — कथा | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी और शनि देव की कथा — शनि देव का अहंकार, हनुमान जी से युद्ध, बंदी और शनि दोष निवारण। पूरी कथा हिंदी में।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.shani-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(40,40,60,.5), transparent 65%),
+    linear-gradient(135deg, rgba(30,30,50,.35), rgba(122,46,46,.2));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.shani-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(80,80,120,.2), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.shani-hero .shani-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 30px rgba(80,80,140,.9));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.shani-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .shani-hero h2 { color: var(--gold-light); }
+.shani-hero .shani-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.shani-hero .shani-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.shani-hero .shani-meta span { display: flex; align-items: center; gap: 5px; }
+.shani-hero .shani-meta i { color: var(--gold); }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(80,80,140,.1);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #4A4A6A;
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+.katha-block .mantra {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.05));
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,.3);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .katha-block .mantra { color: var(--gold-light); }
+
+/* Moral List */
+.moral-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.moral-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.moral-list li i {
+  color: var(--gold);
+  font-size: 14px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Chapter marker */
+.chapter {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .shani-hero .shani-emoji { font-size: 70px; }
+  .shani-hero h2 { font-size: 23px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="30-katha.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान कथाएँ</span>
+    <h1>हनुमान और शनि देव</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="shani-hero">
+  <span class="shani-emoji">🪐</span>
+  <h2>हनुमान और शनि देव</h2>
+  <div class="shani-sub">Shani Dev • Bandi • Vardaan</div>
+  <div class="shani-meta">
+    <span><i class="fa-solid fa-book-open"></i> 4 अध्याय</span>
+    <span><i class="fa-solid fa-clock"></i> 6 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> विस्तृत</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> कथा का सार</h2>
+  <p>यह कथा हनुमान जी और शनि देव के बीच हुए युद्ध की है। शनि देव अपने अहंकार में यह मानते थे कि उनसे बड़ा कोई नहीं। उन्होंने हनुमान जी को कष्ट देने का प्रयास किया, लेकिन हनुमान जी ने उन्हें पराजित करके बंदी बना लिया। तब शनि देव ने क्षमा मांगी और वचन दिया कि वे हनुमान जी के भक्तों को कभी कष्ट नहीं देंगे।</p>
+  <p>यह कथा बताती है कि कैसे अहंकार का अंत होता है और भक्ति से सब कुछ संभव है। पढ़ें पूरी कथा — 4 अध्यायों में।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">स्थान</div><div class="val">हनुमान जी का आश्रम</div></div>
+    <div class="info-item"><div class="lbl">मुख्य पात्र</div><div class="val">हनुमान, शनि देव</div></div>
+    <div class="info-item"><div class="lbl">कारण</div><div class="val">शनि देव का अहंकार</div></div>
+    <div class="info-item"><div class="lbl">परिणाम</div><div class="val">शनि देव बंदी</div></div>
+    <div class="info-item"><div class="lbl">वचन</div><div class="val">भक्तों को न सताना</div></div>
+    <div class="info-item"><div class="lbl">शिक्षा</div><div class="val">अहंकार का नाश</div></div>
+  </div>
+</div>
+
+<!-- ========== अध्याय 1 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 1</span>
+  <h3>👑 शनि देव का अहंकार</h3>
+  <p>शनि देव नवग्रहों में सबसे शक्तिशाली माने जाते हैं। वे अपने अहंकार में यह मानते थे कि उनसे बड़ा कोई नहीं। जिस पर उनकी कृपा होती, वह राजा बन जाता; जिस पर उनका कोप होता, वह भिखारी।</p>
+  <p>एक दिन शनि देव ने अपनी शक्ति पर गर्व करते हुए कहा — "मैं तीनों लोकों में सबसे शक्तिशाली हूँ। मुझसे कोई नहीं जीत सकता।" यह बात हनुमान जी तक पहुँची।</p>
+  <p class="highlight">हनुमान जी मुस्कुराए और बोले — "शनि देव, आपकी शक्ति सीमित है। जो भगवान की भक्ति में लीन है, उस पर आपका कोई प्रभाव नहीं पड़ता।" शनि देव को यह बात अच्छी नहीं लगी। उन्होंने हनुमान जी को कष्ट देने का निश्चय किया।</p>
+</div>
+
+<!-- ========== अध्याय 2 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 2</span>
+  <h3>⚔️ शनि देव का आक्रमण</h3>
+  <p>शनि देव ने हनुमान जी के आश्रम में प्रवेश किया। उन्होंने अपनी दृष्टि हनुमान जी पर डाली, लेकिन हनुमान जी पर कोई प्रभाव नहीं पड़ा। हनुमान जी श्रीराम के ध्यान में लीन थे।</p>
+  <p>शनि देव ने अपनी सारी शक्ति लगा दी, लेकिन हनुमान जी अडिग रहे। तब शनि देव ने हनुमान जी पर आक्रमण कर दिया। हनुमान जी ने अपनी पूंछ से शनि देव को लपेट लिया और उन्हें भूमि पर गिरा दिया।</p>
+  <p class="highlight">हनुमान जी ने शनि देव को बंदी बना लिया। उन्होंने कहा — "हे शनि देव, आप अपनी शक्ति पर गर्व करते हैं, लेकिन भक्ति के आगे आपकी शक्ति कुछ भी नहीं।"</p>
+  <p>शनि देव ने हनुमान जी से क्षमा मांगी — "हे हनुमान, मुझे क्षमा करें। मैंने अपने अहंकार में आपका अपमान किया। मैं आपके भक्तों को कभी कष्ट नहीं दूँगा।"</p>
+</div>
+
+<!-- ========== अध्याय 3 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 3</span>
+  <h3>🤝 शनि देव का वचन</h3>
+  <p>हनुमान जी ने शनि देव को छोड़ दिया और कहा — "हे शनि देव, आप ग्रहों में श्रेष्ठ हैं। लेकिन आपको अपनी शक्ति का दुरुपयोग नहीं करना चाहिए। जो भक्त मेरी शरण में आता है, उसे आप कभी कष्ट नहीं देंगे।"</p>
+  <p>शनि देव ने हाथ जोड़कर कहा — "हे हनुमान, आज से मैं आपके भक्तों को कभी कष्ट नहीं दूँगा। जो भी श्रद्धा से आपकी पूजा करेगा, उस पर मेरी कृपा बनी रहेगी।"</p>
+  <p class="highlight">तभी से शनिवार को हनुमान जी की पूजा करने वाले भक्तों पर शनि देव की कृपा बनी रहती है। शनि दोष, मंगल दोष और राहु-केतु के प्रभाव भी शांत होते हैं।</p>
+  <p>यह कथा बताती है कि भक्ति के आगे कोई शक्ति नहीं टिक सकती। हनुमान जी की भक्ति और शक्ति से शनि देव भी पराजित हुए।</p>
+  <p class="mantra">ॐ शं शनैश्चराय नमः<br><small>शनि देव और हनुमान जी का स्मरण करें</small></p>
+</div>
+
+<!-- ========== अध्याय 4 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 4</span>
+  <h3>🪐 शनि दोष निवारण</h3>
+  <p>शनि दोष से पीड़ित भक्तों को हनुमान जी की पूजा अवश्य करनी चाहिए। शनिवार को हनुमान चालीसा का 7 बार पाठ करने से शनि दोष शांत होता है।</p>
+  <p>इसके अलावा निम्न उपाय भी करने चाहिए — काली चींटी को आटा-गुड़ खिलाना, पीपल के पेड़ पर सरसों के तेल का दीपक जलाना, गरीबों को काले तिल, लोहा और कंबल दान करना।</p>
+  <p class="highlight">शनि देव की कृपा प्राप्त करने के लिए हनुमान जी की शरण में जाना सर्वोत्तम उपाय है। हनुमान जी की कृपा से शनि देव भी शांत हो जाते हैं।</p>
+  <p>जो भक्त श्रद्धा से हनुमान जी की पूजा करता है, उसके सभी ग्रह दोष शांत होते हैं। हनुमान जी को "संकट मोचन" कहा जाता है — वे अपने भक्तों के सभी संकट दूर करते हैं।</p>
+  <p class="mantra">ॐ हं हनुमते रुद्रात्मकाय हुं फट्<br><small>हनुमान जी की कृपा से शनि दोष शांत होता है</small></p>
+</div>
+
+<!-- ========== शिक्षा ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> कथा से शिक्षा</h2>
+  <ul class="moral-list">
+    <li><i class="fa-solid fa-star"></i> <strong>अहंकार का नाश:</strong> शनि देव का अहंकार हनुमान जी ने तोड़ा — अहंकार का अंत निश्चित है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>भक्ति की शक्ति:</strong> हनुमान जी की भक्ति के आगे शनि देव भी पराजित हुए — भक्ति सबसे बड़ी शक्ति है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>क्षमा:</strong> हनुमान जी ने शनि देव को क्षमा किया — क्षमा वीरों का आभूषण है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>वचन का पालन:</strong> शनि देव ने वचन दिया कि भक्तों को कष्ट नहीं देंगे — वचन का पालन सच्चे व्यक्ति का लक्षण है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>शरणागति:</strong> शनि दोष से मुक्ति के लिए हनुमान जी की शरण में जाना — भगवान की शरण में जाने से सभी संकट दूर होते हैं।</li>
+  </ul>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>शनि देव ने हनुमान जी को कष्ट क्यों देना चाहा?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">शनि देव अपने अहंकार में यह मानते थे कि उनसे बड़ा कोई नहीं। जब हनुमान जी ने कहा कि भक्ति के आगे उनकी शक्ति कुछ नहीं, तो शनि देव को यह बात अच्छी नहीं लगी। इसलिए उन्होंने हनुमान जी को कष्ट देने का निश्चय किया।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी ने शनि देव को कैसे पराजित किया?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी ने अपनी पूंछ से शनि देव को लपेट लिया और उन्हें भूमि पर गिरा दिया। उन्होंने शनि देव को बंदी बना लिया। शनि देव ने हनुमान जी से क्षमा मांगी।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>शनि देव ने हनुमान जी को क्या वचन दिया?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">शनि देव ने वचन दिया — "आज से मैं आपके भक्तों को कभी कष्ट नहीं दूँगा। जो भी श्रद्धा से आपकी पूजा करेगा, उस पर मेरी कृपा बनी रहेगी।"</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>शनि दोष निवारण के लिए क्या करें?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">शनिवार को हनुमान चालीसा का <strong>7 बार पाठ</strong> करें। काली चींटी को आटा-गुड़ खिलाएं। पीपल के पेड़ पर सरसों के तेल का दीपक जलाएं। गरीबों को काले तिल, लोहा और कंबल दान करें।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>इस कथा से हमें क्या सीख मिलती है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">इस कथा से सीख मिलती है कि <strong>अहंकार का अंत निश्चित है</strong>, <strong>भक्ति सबसे बड़ी शक्ति है</strong>, और <strong>क्षमा वीरों का आभूषण है</strong>।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> सभी कथाएँ</a>
+    <a href="30j-panchmukhi.html" class="cat-chip"><i class="fa-solid fa-arrow-left"></i> पंचमुखी हनुमान</a>
+    <a href="30l-hanuman-aur-kaal.html" class="cat-chip"><i class="fa-solid fa-arrow-right"></i> हनुमान और काल</a>
+    <a href="42-vrat-katha.html" class="cat-chip"><i class="fa-solid fa-calendar"></i> व्रत कथा</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह कथा शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
