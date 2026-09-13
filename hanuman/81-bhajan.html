@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान भजन संग्रह — 20 भजन | Hanuman Bhajan Collection</title>
+<meta name="description" content="हनुमान जी के 20 प्रसिद्ध भजन — संपूर्ण बोल, कीर्तन, और स्तुति। हर भजन कॉपी करें और गाएँ।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+.bhajan-hero{
+  width:100%;padding:34px 20px 28px;
+  background:radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius:var(--radius);text-align:center;margin:16px 0;
+  border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.bhajan-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.bhajan-hero .bhajan-emoji{
+  font-size:90px;display:block;margin-bottom:10px;
+  filter:drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;z-index:2;
+}
+.bhajan-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:28px;color:var(--maroon);margin-bottom:6px;
+  position:relative;z-index:2;
+}
+body.dark .bhajan-hero h2{color:var(--gold-light)}
+.bhajan-hero .bhajan-sub{
+  font-size:12.5px;color:var(--ink-soft);letter-spacing:2px;
+  text-transform:uppercase;position:relative;z-index:2;
+}
+.bhajan-hero .bhajan-meta{
+  display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+  margin-top:14px;font-size:11.5px;color:var(--ink-soft);
+  position:relative;z-index:2;
+}
+.bhajan-hero .bhajan-meta span{display:flex;align-items:center;gap:5px}
+.bhajan-hero .bhajan-meta i{color:var(--gold)}
+
+.bhajan-search{
+  position:sticky;top:62px;z-index:60;
+  background:var(--bg);padding:10px 0;margin-bottom:12px;
+}
+.bhajan-search .search-bar{
+  display:flex;align-items:center;gap:10px;
+  background:var(--card-bg);border:1.5px solid var(--border);
+  border-radius:30px;padding:10px 16px;box-shadow:var(--shadow);
+  transition:var(--transition);
+}
+.bhajan-search .search-bar:focus-within{
+  border-color:var(--gold);
+  box-shadow:0 0 0 4px rgba(212,175,55,.15);
+}
+.bhajan-search .search-bar i{color:var(--gold);font-size:15px}
+.bhajan-search .search-bar input{
+  flex:1;border:none;outline:none;background:transparent;
+  font-family:inherit;font-size:14px;color:var(--ink);
+}
+
+.bhajan-cat-nav{
+  display:flex;gap:8px;overflow-x:auto;
+  padding:4px 0 14px;scrollbar-width:none;
+}
+.bhajan-cat-nav::-webkit-scrollbar{display:none}
+.bhajan-cat-chip{
+  flex-shrink:0;padding:9px 16px;
+  background:var(--card-bg);border:1.5px solid var(--border);
+  border-radius:30px;font-size:12.5px;font-weight:600;
+  color:var(--maroon);cursor:pointer;transition:var(--transition);
+  white-space:nowrap;display:flex;align-items:center;gap:6px;
+}
+body.dark .bhajan-cat-chip{color:var(--gold-light)}
+.bhajan-cat-chip:hover{border-color:var(--gold);transform:translateY(-2px)}
+.bhajan-cat-chip.active{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;border-color:transparent;
+  box-shadow:0 4px 16px rgba(122,46,46,.35);
+}
+
+.bhajan-card{
+  background:var(--card-bg);border-radius:16px;
+  padding:18px 16px;margin-bottom:14px;
+  border:1px solid var(--border);
+  transition:var(--transition);
+  position:relative;
+}
+.bhajan-card::before{
+  content:'';position:absolute;top:0;left:0;
+  width:5px;height:100%;
+  background:linear-gradient(180deg,var(--gold),var(--saffron));
+}
+.bhajan-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 28px rgba(122,46,46,.15);
+  border-color:var(--gold);
+}
+.bhajan-head{
+  display:flex;justify-content:space-between;
+  align-items:flex-start;gap:10px;margin-bottom:12px;
+}
+.bhajan-title{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:17px;color:var(--maroon);font-weight:700;
+  line-height:1.4;flex:1;
+}
+body.dark .bhajan-title{color:var(--gold-light)}
+.bhajan-badge{
+  font-size:10.5px;padding:4px 10px;
+  background:rgba(212,175,55,.2);
+  color:var(--maroon);border-radius:20px;
+  font-weight:700;flex-shrink:0;white-space:nowrap;
+}
+body.dark .bhajan-badge{color:var(--gold-light)}
+
+.bhajan-preview{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:14.5px;color:var(--maroon);
+  line-height:2;text-align:center;
+  padding:14px;background:rgba(212,175,55,.08);
+  border-radius:10px;margin-bottom:12px;
+  border-left:3px solid var(--gold);
+}
+body.dark .bhajan-preview{color:var(--gold-light)}
+.bhajan-preview em{
+  display:block;font-size:11px;font-style:normal;
+  font-weight:600;margin-top:8px;letter-spacing:1px;
+  color:var(--gold);
+}
+
+.bhajan-full{display:none;margin-top:12px}
+.bhajan-full.show{display:block;animation:fadeUp .3s ease}
+.bhajan-lyrics-full{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:14px;color:var(--maroon);
+  line-height:2.2;text-align:center;
+  padding:20px 14px;
+  background:rgba(212,175,55,.08);
+  border-radius:12px;border-left:4px solid var(--gold);
+  max-height:600px;overflow-y:auto;
+}
+body.dark .bhajan-lyrics-full{color:var(--gold-light)}
+.bhajan-lyrics-full::-webkit-scrollbar{width:5px}
+.bhajan-lyrics-full::-webkit-scrollbar-track{background:rgba(212,175,55,.1);border-radius:5px}
+.bhajan-lyrics-full::-webkit-scrollbar-thumb{background:var(--gold);border-radius:5px}
+
+.bhajan-actions{
+  display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+}
+.bhajan-actions button{
+  padding:10px 16px;border-radius:20px;
+  border:1px solid var(--border);background:var(--bg-alt);
+  color:var(--maroon);font-size:12px;font-weight:600;
+  cursor:pointer;transition:var(--transition);
+  display:flex;align-items:center;gap:6px;font-family:inherit;
+  flex:1;justify-content:center;min-width:120px;
+}
+body.dark .bhajan-actions button{color:var(--gold-light)}
+.bhajan-actions button:hover{
+  background:var(--maroon);color:#fff;border-color:var(--maroon);
+  transform:translateY(-2px);
+}
+.bhajan-actions button i{font-size:11px}
+.bhajan-actions button.expand-btn{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;border-color:transparent;
+  box-shadow:0 4px 14px rgba(122,46,46,.3);
+}
+.bhajan-actions button.expand-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 20px rgba(122,46,46,.4);
+}
+
+.no-results{
+  text-align:center;padding:40px 20px;
+  color:var(--ink-light);font-size:14px;display:none;
+}
+.no-results i{
+  font-size:48px;color:var(--gold);
+  display:block;margin-bottom:12px;opacity:.5;
+}
+
+.bhajan-info{
+  background:linear-gradient(135deg, rgba(212,175,55,.14), rgba(122,46,46,.06));
+  border-radius:14px;padding:16px 18px;
+  border-left:4px solid var(--gold);margin:14px 0;
+}
+.bhajan-info h4{
+  font-family:'Tiro Devanagari Hindi',serif;font-size:16px;
+  color:var(--maroon);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+body.dark .bhajan-info h4{color:var(--gold-light)}
+.bhajan-info ul{padding-left:20px;margin:6px 0}
+.bhajan-info li{
+  font-size:13.5px;line-height:1.85;color:var(--ink-soft);margin-bottom:6px;
+}
+.bhajan-info li strong{color:var(--maroon)}
+body.dark .bhajan-info li strong{color:var(--gold-light)}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>भजन संग्रह</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<div class="bhajan-hero">
+  <span class="bhajan-emoji">🎵</span>
+  <h2>भजन संग्रह</h2>
+  <div class="bhajan-sub">कीर्तन · स्तुति · भक्ति</div>
+  <div class="bhajan-meta">
+    <span><i class="fa-solid fa-list-ol"></i> 20 भजन</span>
+    <span><i class="fa-solid fa-clock"></i> ~90 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> पूरे बोल</span>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> भजन के बारे में</h2>
+  <p>हनुमान जी के भजन और कीर्तन <strong>भक्ति का सर्वोच्च रूप</strong> हैं। भजन गाने से मन शुद्ध होता है, हृदय में प्रेम उत्पन्न होता है, और हनुमान जी की विशेष कृपा प्राप्त होती है।</p>
+  <p>यहाँ <strong>20 पूर्ण भजन</strong> संकलित हैं — पारंपरिक, आरती, और स्तुति शैली में। हर भजन के <strong>पूरे बोल</strong> दिए गए हैं।</p>
+</div>
+
+<!-- Search -->
+<div class="bhajan-search">
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="bhajanSearch" placeholder="भजन खोजें..." />
+  </div>
+</div>
+
+<!-- Category chips -->
+<div class="bhajan-cat-nav">
+  <button class="bhajan-cat-chip active" data-cat="all"><i class="fa-solid fa-border-all"></i> सभी</button>
+  <button class="bhajan-cat-chip" data-cat="aarti"><i class="fa-solid fa-fire"></i> आरती</button>
+  <button class="bhajan-cat-chip" data-cat="kirtan"><i class="fa-solid fa-om"></i> कीर्तन</button>
+  <button class="bhajan-cat-chip" data-cat="stuti"><i class="fa-solid fa-hands-praying"></i> स्तुति</button>
+  <button class="bhajan-cat-chip" data-cat="chalisa"><i class="fa-solid fa-book-open"></i> चालीसा</button>
+</div>
+
+<div id="bhajanList">
+
+<!-- ============ BHAJAN 1 ============ -->
+<div class="bhajan-card" data-cat="kirtan">
+  <div class="bhajan-head">
+    <div class="bhajan-title">1. जय हनुमान ज्ञान गुन सागर</div>
+    <span class="bhajan-badge">44 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    जय हनुमान ज्ञान गुन सागर ।<br>
+    जय कपीस तिहुँ लोक उजागर ॥<br>
+    राम दूत अतुलित बल धामा ।<br>
+    अंजनि-पुत्र पवनसुत नामा ॥
+    <em>...44 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      जय हनुमान ज्ञान गुन सागर ।<br>
+      जय कपीस तिहुँ लोक उजागर ॥<br><br>
+      राम दूत अतुलित बल धामा ।<br>
+      अंजनि-पुत्र पवनसुत नामा ॥<br><br>
+      महाबीर बिक्रम बजरंगी ।<br>
+      कुमति निवार सुमति के संगी ॥<br><br>
+      कंचन बरन बिराज सुबेसा ।<br>
+      कानन कुंडल कुंद बर बेसा ॥<br><br>
+      हाथ बज्र औ ध्वजा बिराजै ।<br>
+      काँधे मूँज जनेऊ साजै ॥<br><br>
+      संकर सुवन केसरीनंदन ।<br>
+      तेज प्रताप महा जग बंदन ॥<br><br>
+      बिद्यावान गुनी अति चातुर ।<br>
+      राम काज करिबे को आतुर ॥<br><br>
+      प्रभु चरित्र सुनिबे को रसिया ।<br>
+      राम लखन सीता मन बसिया ॥<br><br>
+      सूक्ष्म रूप धरि सियहिं दिखावा ।<br>
+      बिकट रूप धरि लंक जरावा ॥<br><br>
+      भीम रूप धरि असुर सँहारे ।<br>
+      रामचंद्र के काज सँवारे ॥<br><br>
+      लाय सजीवन लखन जियाये ।<br>
+      श्रीरघुबीर हरषि उर लाये ॥<br><br>
+      रघुपति कीन्ही बहुत बड़ाई ।<br>
+      तुम मम प्रिय भरतहि सम भाई ॥<br><br>
+      सहस बदन तुम्हरो जस गावैं ।<br>
+      अस कहि श्रीपति कंठ लगावैं ॥<br><br>
+      सनकादिक ब्रह्मादि मुनीसा ।<br>
+      नारद सारद सहित अहीसा ॥<br><br>
+      जम कुबेर दिगपाल जहाँ ते ।<br>
+      कबि कोबिद कहि सके कहाँ ते ॥<br><br>
+      तुम उपकार सुग्रीवहिं कीन्हा ।<br>
+      राम मिलाय राज पद दीन्हा ॥<br><br>
+      तुम्हरो मंत्र बिभीषन माना ।<br>
+      लंकेस्वर भए सब जग जाना ॥<br><br>
+      जुग सहस्र जोजन पर भानू ।<br>
+      लील्यो ताहि मधुर फल जानू ॥<br><br>
+      प्रभु मुद्रिका मेलि मुख माहीं ।<br>
+      जलधि लांघि गये अचरज नाहीं ॥<br><br>
+      दुर्गम काज जगत के जेते ।<br>
+      सुगम अनुग्रह तुम्हरे तेते ॥<br><br>
+      राम दुआरे तुम रखवारे ।<br>
+      होत न आज्ञा बिनु पैसारे ॥<br><br>
+      सब सुख लहै तुम्हारी सरना ।<br>
+      तुम रक्षक काहू को डर ना ॥<br><br>
+      आपन तेज सम्हारो आपै ।<br>
+      तीनों लोक हाँक तें काँपै ॥<br><br>
+      भूत पिसाच निकट नहिं आवै ।<br>
+      महाबीर जब नाम सुनावै ॥<br><br>
+      नासै रोग हरै सब पीरा ।<br>
+      जपत निरंतर हनुमत बीरा ॥<br><br>
+      संकट तें हनुमान छुड़ावै ।<br>
+      मन क्रम बचन ध्यान जो लावै ॥<br><br>
+      सब पर राम तपस्वी राजा ।<br>
+      तिन के काज सकल तुम साजा ॥<br><br>
+      और मनोरथ जो कोई लावै ।<br>
+      सोइ अमित जीवन फल पावै ॥<br><br>
+      चारों जुग परताप तुम्हारा ।<br>
+      है परसिद्ध जगत उजियारा ॥<br><br>
+      साधु-संत के तुम रखवारे ।<br>
+      असुर निकंदन राम दुलारे ॥<br><br>
+      अष्ट सिद्धि नौ निधि के दाता ।<br>
+      अस बर दीन जानकी माता ॥<br><br>
+      राम रसायन तुम्हरे पासा ।<br>
+      सदा रहो रघुपति के दासा ॥<br><br>
+      तुम्हरे भजन राम को पावै ।<br>
+      जनम-जनम के दुख बिसरावै ॥<br><br>
+      अंत काल रघुबर पुर जाई ।<br>
+      जहाँ जन्म हरि-भक्त कहाई ॥<br><br>
+      और देवता चित्त न धरई ।<br>
+      हनुमत सेइ सर्ब सुख करई ॥<br><br>
+      संकट कटै मिटै सब पीरा ।<br>
+      जो सुमिरै हनुमत बलबीरा ॥<br><br>
+      जय जय जय हनुमान गोसाईं ।<br>
+      कृपा करहु गुरुदेव की नाईं ॥<br><br>
+      जो सत बार पाठ कर कोई ।<br>
+      छूटहि बंदि महा सुख होई ॥<br><br>
+      जो यह पढ़ै हनुमान चालीसा ।<br>
+      होय सिद्धि साखी गौरीसा ॥<br><br>
+      तुलसीदास सदा हरि चेरा ।<br>
+      कीजै नाथ हृदय महँ डेरा ॥<br><br>
+      पवनतनय संकट हरन, मंगल मूरति रूप ।<br>
+      राम लखन सीता सहित, हृदय बसहु सुर भूप ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 2 ============ -->
+<div class="bhajan-card" data-cat="aarti">
+  <div class="bhajan-head">
+    <div class="bhajan-title">2. आरती कीजै हनुमान लला की</div>
+    <span class="bhajan-badge">22 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    आरती कीजै हनुमान लला की ।<br>
+    दुष्ट दलन रघुनाथ कला की ॥<br>
+    जाके बल से गिरिवर काँपे ।<br>
+    रोग दोष जाके निकट न झाँपे ॥
+    <em>...22 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      आरती कीजै हनुमान लला की ।<br>
+      दुष्ट दलन रघुनाथ कला की ॥<br><br>
+      जाके बल से गिरिवर काँपे ।<br>
+      रोग दोष जाके निकट न झाँपे ॥<br><br>
+      अंजनि पुत्र महा बलदाई ।<br>
+      संतन के प्रभु सदा सहाई ॥<br><br>
+      दे बीरा रघुनाथ पठाए ।<br>
+      लंका जारि सिय सुधि लाए ॥<br><br>
+      लंका सो कोट समुद्र सी खाई ।<br>
+      जात पवनसुत बार न लाई ॥<br><br>
+      लंका जारि असुर संहारे ।<br>
+      सियारामजी के काज सँवारे ॥<br><br>
+      लक्ष्मण मूर्छित पड़े सकारे ।<br>
+      आनि सजीवन प्राण उबारे ॥<br><br>
+      पैठि पताल तोरि जम कारे ।<br>
+      अहिरावन की छाती विदारे ॥<br><br>
+      भुजा बिकट अति भीम प्रचंडा ।<br>
+      नख अग्र बज्र सम दंडा ॥<br><br>
+      कल्की ब्रह्मा गावैं गुण कीरा ।<br>
+      कबि कोबिद करैं कलि कीरा ॥<br><br>
+      जय जय जय हनुमान गोसाईं ।<br>
+      कृपा करहु गुरुदेव की नाईं ॥<br><br>
+      जो सत बार पाठ कर कोई ।<br>
+      छूटहि बंदि महा सुख होई ॥<br><br>
+      जो यह पढ़ै हनुमान चालीसा ।<br>
+      होय सिद्धि साखी गौरीसा ॥<br><br>
+      तुलसीदास सदा हरि चेरा ।<br>
+      कीजै नाथ हृदय महँ डेरा ॥<br><br>
+      पवनतनय संकट हरन, मंगल मूरति रूप ।<br>
+      राम लखन सीता सहित, हृदय बसहु सुर भूप ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 3 ============ -->
+<div class="bhajan-card" data-cat="kirtan">
+  <div class="bhajan-head">
+    <div class="bhajan-title">3. संकट मोचन हनुमान</div>
+    <span class="bhajan-badge">18 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    संकट मोचन हनुमान, असुर निकंदन राम दुलारे ।<br>
+    प्रभु चरित्र सुनिबे को रसिया,<br>
+    राम लखन सीता मन बसिया ॥
+    <em>...18 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      संकट मोचन हनुमान, असुर निकंदन राम दुलारे ।<br>
+      प्रभु चरित्र सुनिबे को रसिया, राम लखन सीता मन बसिया ॥<br><br>
+      सूक्ष्म रूप धरि सियहिं दिखावा, बिकट रूप धरि लंक जरावा ।<br>
+      भीम रूप धरि असुर सँहारे, रामचंद्र के काज सँवारे ॥<br><br>
+      लाय सजीवन लखन जियाये, श्रीरघुबीर हरषि उर लाये ।<br>
+      रघुपति कीन्ही बहुत बड़ाई, तुम मम प्रिय भरतहि सम भाई ॥<br><br>
+      सहस बदन तुम्हरो जस गावैं, अस कहि श्रीपति कंठ लगावैं ।<br>
+      सनकादिक ब्रह्मादि मुनीसा, नारद सारद सहित अहीसा ॥<br><br>
+      जम कुबेर दिगपाल जहाँ ते, कबि कोबिद कहि सके कहाँ ते ।<br>
+      तुम उपकार सुग्रीवहिं कीन्हा, राम मिलाय राज पद दीन्हा ॥<br><br>
+      तुम्हरो मंत्र बिभीषन माना, लंकेस्वर भए सब जग जाना ।<br>
+      जुग सहस्र जोजन पर भानू, लील्यो ताहि मधुर फल जानू ॥<br><br>
+      प्रभु मुद्रिका मेलि मुख माहीं, जलधि लांघि गये अचरज नाहीं ।<br>
+      दुर्गम काज जगत के जेते, सुगम अनुग्रह तुम्हरे तेते ॥<br><br>
+      राम दुआरे तुम रखवारे, होत न आज्ञा बिनु पैसारे ।<br>
+      सब सुख लहै तुम्हारी सरना, तुम रक्षक काहू को डर ना ॥<br><br>
+      आपन तेज सम्हारो आपै, तीनों लोक हाँक तें काँपै ।<br>
+      भूत पिसाच निकट नहिं आवै, महाबीर जब नाम सुनावै ॥<br><br>
+      नासै रोग हरै सब पीरा, जपत निरंतर हनुमत बीरा ।<br>
+      संकट तें हनुमान छुड़ावै, मन क्रम बचन ध्यान जो लावै ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 4 ============ -->
+<div class="bhajan-card" data-cat="kirtan">
+  <div class="bhajan-head">
+    <div class="bhajan-title">4. बजरंग बली मेरे</div>
+    <span class="bhajan-badge">18 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    बजरंग बली मेरे, तुम हो संकट हारी ।<br>
+    तुम्हरे भरोसे, मैं हूँ भव सागर तारी ॥<br>
+    जय जय हनुमान, जय जय हनुमान ।<br>
+    संकट मोचन, दुख भंजन, जय जय हनुमान ॥
+    <em>...18 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      बजरंग बली मेरे, तुम हो संकट हारी ।<br>
+      तुम्हरे भरोसे, मैं हूँ भव सागर तारी ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      संकट मोचन, दुख भंजन, जय जय हनुमान ॥<br><br>
+      तुम मेरे प्रभु, तुम मेरे जान ।<br>
+      तुम हो मेरे रक्षक, तुम हो मेरे प्राण ॥<br><br>
+      बल बुद्धि विद्या, तुम्हरे ही हाथ ।<br>
+      तुम्हरे कृपा से, मिले सब साथ ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      संकट मोचन, दुख भंजन, जय जय हनुमान ॥<br><br>
+      राम दूत तुम, राम भक्त तुम ।<br>
+      महावीर तुम, बजरंगबली तुम ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      संकट मोचन, दुख भंजन, जय जय हनुमान ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 5 ============ -->
+<div class="bhajan-card" data-cat="aarti">
+  <div class="bhajan-head">
+    <div class="bhajan-title">5. हनुमान जी की आरती</div>
+    <span class="bhajan-badge">20 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    जय हनुमान ज्ञान गुन सागर ।<br>
+    जय कपीस तिहुँ लोक उजागर ॥<br>
+    राम दूत अतुलित बल धामा ।<br>
+    अंजनि-पुत्र पवनसुत नामा ॥
+    <em>...20 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      जय हनुमान ज्ञान गुन सागर ।<br>
+      जय कपीस तिहुँ लोक उजागर ॥<br><br>
+      राम दूत अतुलित बल धामा ।<br>
+      अंजनि-पुत्र पवनसुत नामा ॥<br><br>
+      महाबीर बिक्रम बजरंगी ।<br>
+      कुमति निवार सुमति के संगी ॥<br><br>
+      कंचन बरन बिराज सुबेसा ।<br>
+      कानन कुंडल कुंद बर बेसा ॥<br><br>
+      हाथ बज्र औ ध्वजा बिराजै ।<br>
+      काँधे मूँज जनेऊ साजै ॥<br><br>
+      संकर सुवन केसरीनंदन ।<br>
+      तेज प्रताप महा जग बंदन ॥<br><br>
+      बिद्यावान गुनी अति चातुर ।<br>
+      राम काज करिबे को आतुर ॥<br><br>
+      प्रभु चरित्र सुनिबे को रसिया ।<br>
+      राम लखन सीता मन बसिया ॥<br><br>
+      सूक्ष्म रूप धरि सियहिं दिखावा ।<br>
+      बिकट रूप धरि लंक जरावा ॥<br><br>
+      भीम रूप धरि असुर सँहारे ।<br>
+      रामचंद्र के काज सँवारे ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 6 ============ -->
+<div class="bhajan-card" data-cat="stuti">
+  <div class="bhajan-head">
+    <div class="bhajan-title">6. अतुलित बलधामं (ध्यान श्लोक)</div>
+    <span class="bhajan-badge">4 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    अतुलित बलधामं हेमशैलाभदेहं ।<br>
+    दनुजवनकृशानुं ज्ञानिनामग्रगण्यम् ।<br>
+    सकलगुणनिधानं वानराणामधीशं ।<br>
+    रघुपतिप्रियभक्तं वातजातं नमामि ॥
+  </div>
+  <div class="bhajan-actions">
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 7 ============ -->
+<div class="bhajan-card" data-cat="stuti">
+  <div class="bhajan-head">
+    <div class="bhajan-title">7. मनोजवं मारुततुल्यवेगं</div>
+    <span class="bhajan-badge">4 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    मनोजवं मारुततुल्यवेगं ।<br>
+    जितेन्द्रियं बुद्धिमतां वरिष्ठम् ।<br>
+    वातात्मजं वानरयूथमुख्यं ।<br>
+    श्रीरामदूतं शरणं प्रपद्ये ॥
+  </div>
+  <div class="bhajan-actions">
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 8 ============ -->
+<div class="bhajan-card" data-cat="kirtan">
+  <div class="bhajan-head">
+    <div class="bhajan-title">8. जय जय हनुमान गोसाईं</div>
+    <span class="bhajan-badge">16 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    जय जय जय हनुमान गोसाईं ।<br>
+    कृपा करहु गुरुदेव की नाईं ॥<br>
+    जो सत बार पाठ कर कोई ।<br>
+    छूटहि बंदि महा सुख होई ॥
+    <em>...16 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      जय जय जय हनुमान गोसाईं ।<br>
+      कृपा करहु गुरुदेव की नाईं ॥<br><br>
+      जो सत बार पाठ कर कोई ।<br>
+      छूटहि बंदि महा सुख होई ॥<br><br>
+      जो यह पढ़ै हनुमान चालीसा ।<br>
+      होय सिद्धि साखी गौरीसा ॥<br><br>
+      तुलसीदास सदा हरि चेरा ।<br>
+      कीजै नाथ हृदय महँ डेरा ॥<br><br>
+      पवनतनय संकट हरन, मंगल मूरति रूप ।<br>
+      राम लखन सीता सहित, हृदय बसहु सुर भूप ॥<br><br>
+      हनुमान जी की जय, संकट मोचन की जय ।<br>
+      बजरंग बली की जय, महावीर की जय ॥<br><br>
+      जय जय जय हनुमान गोसाईं ।<br>
+      कृपा करहु गुरुदेव की नाईं ॥<br><br>
+      हनुमान जी की जय, राम भक्त की जय ।<br>
+      बजरंग बली की जय, महावीर की जय ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 9 ============ -->
+<div class="bhajan-card" data-cat="chalisa">
+  <div class="bhajan-head">
+    <div class="bhajan-title">9. हनुमान चालीसा (भजन रूप)</div>
+    <span class="bhajan-badge">44 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    जय हनुमान ज्ञान गुन सागर ।<br>
+    जय कपीस तिहुँ लोक उजागर ॥<br>
+    राम दूत अतुलित बल धामा ।<br>
+    अंजनि-पुत्र पवनसुत नामा ॥
+    <em>...पूरा चालीसा</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      जय हनुमान ज्ञान गुन सागर ।<br>
+      जय कपीस तिहुँ लोक उजागर ॥<br><br>
+      राम दूत अतुलित बल धामा ।<br>
+      अंजनि-पुत्र पवनसुत नामा ॥<br><br>
+      महाबीर बिक्रम बजरंगी ।<br>
+      कुमति निवार सुमति के संगी ॥<br><br>
+      कंचन बरन बिराज सुबेसा ।<br>
+      कानन कुंडल कुंद बर बेसा ॥<br><br>
+      हाथ बज्र औ ध्वजा बिराजै ।<br>
+      काँधे मूँज जनेऊ साजै ॥<br><br>
+      संकर सुवन केसरीनंदन ।<br>
+      तेज प्रताप महा जग बंदन ॥<br><br>
+      बिद्यावान गुनी अति चातुर ।<br>
+      राम काज करिबे को आतुर ॥<br><br>
+      प्रभु चरित्र सुनिबे को रसिया ।<br>
+      राम लखन सीता मन बसिया ॥<br><br>
+      सूक्ष्म रूप धरि सियहिं दिखावा ।<br>
+      बिकट रूप धरि लंक जरावा ॥<br><br>
+      भीम रूप धरि असुर सँहारे ।<br>
+      रामचंद्र के काज सँवारे ॥<br><br>
+      लाय सजीवन लखन जियाये ।<br>
+      श्रीरघुबीर हरषि उर लाये ॥<br><br>
+      रघुपति कीन्ही बहुत बड़ाई ।<br>
+      तुम मम प्रिय भरतहि सम भाई ॥<br><br>
+      सहस बदन तुम्हरो जस गावैं ।<br>
+      अस कहि श्रीपति कंठ लगावैं ॥<br><br>
+      सनकादिक ब्रह्मादि मुनीसा ।<br>
+      नारद सारद सहित अहीसा ॥<br><br>
+      जम कुबेर दिगपाल जहाँ ते ।<br>
+      कबि कोबिद कहि सके कहाँ ते ॥<br><br>
+      तुम उपकार सुग्रीवहिं कीन्हा ।<br>
+      राम मिलाय राज पद दीन्हा ॥<br><br>
+      तुम्हरो मंत्र बिभीषन माना ।<br>
+      लंकेस्वर भए सब जग जाना ॥<br><br>
+      जुग सहस्र जोजन पर भानू ।<br>
+      लील्यो ताहि मधुर फल जानू ॥<br><br>
+      प्रभु मुद्रिका मेलि मुख माहीं ।<br>
+      जलधि लांघि गये अचरज नाहीं ॥<br><br>
+      दुर्गम काज जगत के जेते ।<br>
+      सुगम अनुग्रह तुम्हरे तेते ॥<br><br>
+      राम दुआरे तुम रखवारे ।<br>
+      होत न आज्ञा बिनु पैसारे ॥<br><br>
+      सब सुख लहै तुम्हारी सरना ।<br>
+      तुम रक्षक काहू को डर ना ॥<br><br>
+      आपन तेज सम्हारो आपै ।<br>
+      तीनों लोक हाँक तें काँपै ॥<br><br>
+      भूत पिसाच निकट नहिं आवै ।<br>
+      महाबीर जब नाम सुनावै ॥<br><br>
+      नासै रोग हरै सब पीरा ।<br>
+      जपत निरंतर हनुमत बीरा ॥<br><br>
+      संकट तें हनुमान छुड़ावै ।<br>
+      मन क्रम बचन ध्यान जो लावै ॥<br><br>
+      सब पर राम तपस्वी राजा ।<br>
+      तिन के काज सकल तुम साजा ॥<br><br>
+      और मनोरथ जो कोई लावै ।<br>
+      सोइ अमित जीवन फल पावै ॥<br><br>
+      चारों जुग परताप तुम्हारा ।<br>
+      है परसिद्ध जगत उजियारा ॥<br><br>
+      साधु-संत के तुम रखवारे ।<br>
+      असुर निकंदन राम दुलारे ॥<br><br>
+      अष्ट सिद्धि नौ निधि के दाता ।<br>
+      अस बर दीन जानकी माता ॥<br><br>
+      राम रसायन तुम्हरे पासा ।<br>
+      सदा रहो रघुपति के दासा ॥<br><br>
+      तुम्हरे भजन राम को पावै ।<br>
+      जनम-जनम के दुख बिसरावै ॥<br><br>
+      अंत काल रघुबर पुर जाई ।<br>
+      जहाँ जन्म हरि-भक्त कहाई ॥<br><br>
+      और देवता चित्त न धरई ।<br>
+      हनुमत सेइ सर्ब सुख करई ॥<br><br>
+      संकट कटै मिटै सब पीरा ।<br>
+      जो सुमिरै हनुमत बलबीरा ॥<br><br>
+      जय जय जय हनुमान गोसाईं ।<br>
+      कृपा करहु गुरुदेव की नाईं ॥<br><br>
+      जो सत बार पाठ कर कोई ।<br>
+      छूटहि बंदि महा सुख होई ॥<br><br>
+      जो यह पढ़ै हनुमान चालीसा ।<br>
+      होय सिद्धि साखी गौरीसा ॥<br><br>
+      तुलसीदास सदा हरि चेरा ।<br>
+      कीजै नाथ हृदय महँ डेरा ॥<br><br>
+      पवनतनय संकट हरन, मंगल मूरति रूप ।<br>
+      राम लखन सीता सहित, हृदय बसहु सुर भूप ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 10 ============ -->
+<div class="bhajan-card" data-cat="kirtan">
+  <div class="bhajan-head">
+    <div class="bhajan-title">10. राम नाम की महिमा</div>
+    <span class="bhajan-badge">14 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    राम नाम जपो, हनुमान भजो ।<br>
+    संकट सब मिट जाएंगे, दुख सब हर जाएंगे ॥<br>
+    श्री राम जय राम जय जय राम ।<br>
+    हनुमान की जय, महावीर की जय ॥
+    <em>...14 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      राम नाम जपो, हनुमान भजो ।<br>
+      संकट सब मिट जाएंगे, दुख सब हर जाएंगे ॥<br><br>
+      श्री राम जय राम जय जय राम ।<br>
+      हनुमान की जय, महावीर की जय ॥<br><br>
+      राम नाम की महिमा, अपरंपार है ।<br>
+      जो भी जपे, वो भव पार है ॥<br><br>
+      श्री राम जय राम जय जय राम ।<br>
+      हनुमान की जय, महावीर की जय ॥<br><br>
+      हनुमान जी का नाम, सदा सुखदाई ।<br>
+      जो भी जपे, उसकी लाज बचाई ॥<br><br>
+      श्री राम जय राम जय जय राम ।<br>
+      हनुमान की जय, महावीर की जय ॥<br><br>
+      राम नाम जपो, हनुमान भजो ।<br>
+      संकट सब मिट जाएंगे, दुख सब हर जाएंगे ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 11 ============ -->
+<div class="bhajan-card" data-cat="kirtan">
+  <div class="bhajan-head">
+    <div class="bhajan-title">11. हनुमान जी की महिमा</div>
+    <span class="bhajan-badge">16 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    जय हनुमान, जय हनुमान, जय हनुमान ।<br>
+    संकट हरो, दुख हरो, जय हनुमान ॥<br>
+    तुम मेरे प्रभु, तुम मेरे जान ।<br>
+    बजरंग बली, तुम हो बलवान ॥
+    <em>...16 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      जय हनुमान, जय हनुमान, जय हनुमान ।<br>
+      संकट हरो, दुख हरो, जय हनुमान ॥<br><br>
+      तुम मेरे प्रभु, तुम मेरे जान ।<br>
+      बजरंग बली, तुम हो बलवान ॥<br><br>
+      तुम्हरे भरोसे, मैं हूँ जग में ।<br>
+      तुम हो मेरे, हर दम साथ में ॥<br><br>
+      जय हनुमान, जय हनुमान, जय हनुमान ।<br>
+      संकट हरो, दुख हरो, जय हनुमान ॥<br><br>
+      राम दूत तुम, महावीर तुम ।<br>
+      बजरंगबली, बलवीर तुम ॥<br><br>
+      जय हनुमान, जय हनुमान, जय हनुमान ।<br>
+      संकट हरो, दुख हरो, जय हनुमान ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      संकट मोचन, दुख भंजन, जय जय हनुमान ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 12 ============ -->
+<div class="bhajan-card" data-cat="kirtan">
+  <div class="bhajan-head">
+    <div class="bhajan-title">12. हनुमान जी का दरबार</div>
+    <span class="bhajan-badge">12 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    हनुमान जी का दरबार, सबसे न्यारा है ।<br>
+    जो भी आता है, वो सुख पाता है ॥<br>
+    जय जय हनुमान, जय जय हनुमान ।<br>
+    संकट मोचन, दुख भंजन, जय जय हनुमान ॥
+    <em>...12 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      हनुमान जी का दरबार, सबसे न्यारा है ।<br>
+      जो भी आता है, वो सुख पाता है ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      संकट मोचन, दुख भंजन, जय जय हनुमान ॥<br><br>
+      हनुमान जी की कृपा, अपरंपार है ।<br>
+      भक्तों की रक्षा, उनका अधिकार है ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      संकट मोचन, दुख भंजन, जय जय हनुमान ॥<br><br>
+      हनुमान जी का दरबार, सबसे न्यारा है ।<br>
+      जो भी आता है, वो सुख पाता है ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 13 ============ -->
+<div class="bhajan-card" data-cat="kirtan">
+  <div class="bhajan-head">
+    <div class="bhajan-title">13. पवनपुत्र हनुमान</div>
+    <span class="bhajan-badge">14 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    पवनपुत्र हनुमान, बलवान महावीर ।<br>
+    तुम्हरे भरोसे, सब कुछ है मेरा ॥<br>
+    जय जय हनुमान, जय जय हनुमान ।<br>
+    राम दूत, संकट मोचन, जय जय हनुमान ॥
+    <em>...14 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      पवनपुत्र हनुमान, बलवान महावीर ।<br>
+      तुम्हरे भरोसे, सब कुछ है मेरा ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      राम दूत, संकट मोचन, जय जय हनुमान ॥<br><br>
+      अंजनी के लाल, केसरी नंदन ।<br>
+      राम भक्त तुम, बलवीर सुंदर ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      राम दूत, संकट मोचन, जय जय हनुमान ॥<br><br>
+      तुम्हरे भजन से, राम मिलते हैं ।<br>
+      जन्म-जन्म के दुख, दूर होते हैं ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      राम दूत, संकट मोचन, जय जय हनुमान ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 14 ============ -->
+<div class="bhajan-card" data-cat="stuti">
+  <div class="bhajan-head">
+    <div class="bhajan-title">14. बुद्धिर्बलं यशो धैर्यं</div>
+    <span class="bhajan-badge">4 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    बुद्धिर्बलं यशो धैर्यं ।<br>
+    निर्भयत्वमरोगता ।<br>
+    अजाड्यं वाक्पटुत्वं च ।<br>
+    हनुमत्स्मरणाद्भवेत् ॥
+  </div>
+  <div class="bhajan-actions">
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 15 ============ -->
+<div class="bhajan-card" data-cat="kirtan">
+  <div class="bhajan-head">
+    <div class="bhajan-title">15. हनुमान जी की जय</div>
+    <span class="bhajan-badge">12 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    हनुमान जी की जय, संकट मोचन की जय ।<br>
+    बजरंग बली की जय, महावीर की जय ॥<br>
+    जय जय जय हनुमान, जय जय जय हनुमान ।<br>
+    राम भक्त की जय, राम दूत की जय ॥
+    <em>...12 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      हनुमान जी की जय, संकट मोचन की जय ।<br>
+      बजरंग बली की जय, महावीर की जय ॥<br><br>
+      जय जय जय हनुमान, जय जय जय हनुमान ।<br>
+      राम भक्त की जय, राम दूत की जय ॥<br><br>
+      पवनपुत्र की जय, अंजनी सुत की जय ।<br>
+      केसरी नंदन की जय, बलवीर की जय ॥<br><br>
+      जय जय जय हनुमान, जय जय जय हनुमान ।<br>
+      राम भक्त की जय, राम दूत की जय ॥<br><br>
+      हनुमान जी की जय, संकट मोचन की जय ।<br>
+      बजरंग बली की जय, महावीर की जय ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 16 ============ -->
+<div class="bhajan-card" data-cat="kirtan">
+  <div class="bhajan-head">
+    <div class="bhajan-title">16. अंजनी के लाल</div>
+    <span class="bhajan-badge">12 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    अंजनी के लाल, तुम हो बलवान ।<br>
+    संकट हरो, दुख हरो, देहु वरदान ॥<br>
+    जय जय हनुमान, जय जय हनुमान ।<br>
+    बजरंग बली, तुम हो महान ॥
+    <em>...12 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      अंजनी के लाल, तुम हो बलवान ।<br>
+      संकट हरो, दुख हरो, देहु वरदान ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      बजरंग बली, तुम हो महान ॥<br><br>
+      केसरी के पुत्र, पवन के बल ।<br>
+      राम के भक्त, सबके प्रतिपाल ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      बजरंग बली, तुम हो महान ॥<br><br>
+      अंजनी के लाल, तुम हो बलवान ।<br>
+      संकट हरो, दुख हरो, देहु वरदान ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 17 ============ -->
+<div class="bhajan-card" data-cat="kirtan">
+  <div class="bhajan-head">
+    <div class="bhajan-title">17. लंका दहन वीर</div>
+    <span class="bhajan-badge">12 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    लंका दहन वीर, हनुमान महावीर ।<br>
+    तुमने जलाई लंका, दिखलाई शक्ति ॥<br>
+    जय जय हनुमान, जय जय हनुमान ।<br>
+    संकट मोचन, दुख भंजन, जय जय हनुमान ॥
+    <em>...12 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      लंका दहन वीर, हनुमान महावीर ।<br>
+      तुमने जलाई लंका, दिखलाई शक्ति ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      संकट मोचन, दुख भंजन, जय जय हनुमान ॥<br><br>
+      रावण की लंका, तुमने जलाई ।<br>
+      सीता माता की, खबर लाई ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      संकट मोचन, दुख भंजन, जय जय हनुमान ॥<br><br>
+      लंका दहन वीर, हनुमान महावीर ।<br>
+      तुमने जलाई लंका, दिखलाई शक्ति ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 18 ============ -->
+<div class="bhajan-card" data-cat="kirtan">
+  <div class="bhajan-head">
+    <div class="bhajan-title">18. हनुमान जी का चोला</div>
+    <span class="bhajan-badge">12 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    हनुमान जी का चोला, सिंदूरी रंग ला ।<br>
+    चढ़ाने से मिले, सुख अपार ला ॥<br>
+    जय जय हनुमान, जय जय हनुमान ।<br>
+    संकट मोचन, दुख भंजन, जय जय हनुमान ॥
+    <em>...12 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      हनुमान जी का चोला, सिंदूरी रंग ला ।<br>
+      चढ़ाने से मिले, सुख अपार ला ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      संकट मोचन, दुख भंजन, जय जय हनुमान ॥<br><br>
+      सिंदूर चढ़ाओ, तेल लगाओ ।<br>
+      हनुमान जी को, प्रसन्न कराओ ॥<br><br>
+      जय जय हनुमान, जय जय हनुमान ।<br>
+      संकट मोचन, दुख भंजन, जय जय हनुमान ॥<br><br>
+      हनुमान जी का चोला, सिंदूरी रंग ला ।<br>
+      चढ़ाने से मिले, सुख अपार ला ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 19 ============ -->
+<div class="bhajan-card" data-cat="kirtan">
+  <div class="bhajan-head">
+    <div class="bhajan-title">19. बालाजी की महिमा</div>
+    <span class="bhajan-badge">12 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    बालाजी की महिमा, अपरंपार है ।<br>
+    भक्तों की रक्षा, उनका अधिकार है ॥<br>
+    जय जय बालाजी, जय जय हनुमान ।<br>
+    संकट मोचन, दुख भंजन, जय जय हनुमान ॥
+    <em>...12 पंक्तियाँ</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      बालाजी की महिमा, अपरंपार है ।<br>
+      भक्तों की रक्षा, उनका अधिकार है ॥<br><br>
+      जय जय बालाजी, जय जय हनुमान ।<br>
+      संकट मोचन, दुख भंजन, जय जय हनुमान ॥<br><br>
+      सालासर के बालाजी, मेहंदीपुर के बालाजी ।<br>
+      सबके संकट हरते, हैं दयालु जी ॥<br><br>
+      जय जय बालाजी, जय जय हनुमान ।<br>
+      संकट मोचन, दुख भंजन, जय जय हनुमान ॥<br><br>
+      बालाजी की महिमा, अपरंपार है ।<br>
+      भक्तों की रक्षा, उनका अधिकार है ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+<!-- ============ BHAJAN 20 ============ -->
+<div class="bhajan-card" data-cat="chalisa">
+  <div class="bhajan-head">
+    <div class="bhajan-title">20. हनुमान चालीसा (Modern भजन)</div>
+    <span class="bhajan-badge">44 पंक्तियाँ</span>
+  </div>
+  <div class="bhajan-preview">
+    जय हनुमान ज्ञान गुन सागर ।<br>
+    जय कपीस तिहुँ लोक उजागर ॥<br>
+    राम दूत अतुलित बल धामा ।<br>
+    अंजनि-पुत्र पवनसुत नामा ॥
+    <em>...पूरा चालीसा</em>
+  </div>
+  <div class="bhajan-full">
+    <div class="bhajan-lyrics-full">
+      जय हनुमान ज्ञान गुन सागर ।<br>
+      जय कपीस तिहुँ लोक उजागर ॥<br><br>
+      राम दूत अतुलित बल धामा ।<br>
+      अंजनि-पुत्र पवनसुत नामा ॥<br><br>
+      महाबीर बिक्रम बजरंगी ।<br>
+      कुमति निवार सुमति के संगी ॥<br><br>
+      कंचन बरन बिराज सुबेसा ।<br>
+      कानन कुंडल कुंद बर बेसा ॥<br><br>
+      हाथ बज्र औ ध्वजा बिराजै ।<br>
+      काँधे मूँज जनेऊ साजै ॥<br><br>
+      संकर सुवन केसरीनंदन ।<br>
+      तेज प्रताप महा जग बंदन ॥<br><br>
+      बिद्यावान गुनी अति चातुर ।<br>
+      राम काज करिबे को आतुर ॥<br><br>
+      प्रभु चरित्र सुनिबे को रसिया ।<br>
+      राम लखन सीता मन बसिया ॥<br><br>
+      सूक्ष्म रूप धरि सियहिं दिखावा ।<br>
+      बिकट रूप धरि लंक जरावा ॥<br><br>
+      भीम रूप धरि असुर सँहारे ।<br>
+      रामचंद्र के काज सँवारे ॥<br><br>
+      लाय सजीवन लखन जियाये ।<br>
+      श्रीरघुबीर हरषि उर लाये ॥<br><br>
+      रघुपति कीन्ही बहुत बड़ाई ।<br>
+      तुम मम प्रिय भरतहि सम भाई ॥<br><br>
+      सहस बदन तुम्हरो जस गावैं ।<br>
+      अस कहि श्रीपति कंठ लगावैं ॥<br><br>
+      सनकादिक ब्रह्मादि मुनीसा ।<br>
+      नारद सारद सहित अहीसा ॥<br><br>
+      जम कुबेर दिगपाल जहाँ ते ।<br>
+      कबि कोबिद कहि सके कहाँ ते ॥<br><br>
+      तुम उपकार सुग्रीवहिं कीन्हा ।<br>
+      राम मिलाय राज पद दीन्हा ॥<br><br>
+      तुम्हरो मंत्र बिभीषन माना ।<br>
+      लंकेस्वर भए सब जग जाना ॥<br><br>
+      जुग सहस्र जोजन पर भानू ।<br>
+      लील्यो ताहि मधुर फल जानू ॥<br><br>
+      प्रभु मुद्रिका मेलि मुख माहीं ।<br>
+      जलधि लांघि गये अचरज नाहीं ॥<br><br>
+      दुर्गम काज जगत के जेते ।<br>
+      सुगम अनुग्रह तुम्हरे तेते ॥<br><br>
+      राम दुआरे तुम रखवारे ।<br>
+      होत न आज्ञा बिनु पैसारे ॥<br><br>
+      सब सुख लहै तुम्हारी सरना ।<br>
+      तुम रक्षक काहू को डर ना ॥<br><br>
+      आपन तेज सम्हारो आपै ।<br>
+      तीनों लोक हाँक तें काँपै ॥<br><br>
+      भूत पिसाच निकट नहिं आवै ।<br>
+      महाबीर जब नाम सुनावै ॥<br><br>
+      नासै रोग हरै सब पीरा ।<br>
+      जपत निरंतर हनुमत बीरा ॥<br><br>
+      संकट तें हनुमान छुड़ावै ।<br>
+      मन क्रम बचन ध्यान जो लावै ॥<br><br>
+      सब पर राम तपस्वी राजा ।<br>
+      तिन के काज सकल तुम साजा ॥<br><br>
+      और मनोरथ जो कोई लावै ।<br>
+      सोइ अमित जीवन फल पावै ॥<br><br>
+      चारों जुग परताप तुम्हारा ।<br>
+      है परसिद्ध जगत उजियारा ॥<br><br>
+      साधु-संत के तुम रखवारे ।<br>
+      असुर निकंदन राम दुलारे ॥<br><br>
+      अष्ट सिद्धि नौ निधि के दाता ।<br>
+      अस बर दीन जानकी माता ॥<br><br>
+      राम रसायन तुम्हरे पासा ।<br>
+      सदा रहो रघुपति के दासा ॥<br><br>
+      तुम्हरे भजन राम को पावै ।<br>
+      जनम-जनम के दुख बिसरावै ॥<br><br>
+      अंत काल रघुबर पुर जाई ।<br>
+      जहाँ जन्म हरि-भक्त कहाई ॥<br><br>
+      और देवता चित्त न धरई ।<br>
+      हनुमत सेइ सर्ब सुख करई ॥<br><br>
+      संकट कटै मिटै सब पीरा ।<br>
+      जो सुमिरै हनुमत बलबीरा ॥<br><br>
+      जय जय जय हनुमान गोसाईं ।<br>
+      कृपा करहु गुरुदेव की नाईं ॥<br><br>
+      जो सत बार पाठ कर कोई ।<br>
+      छूटहि बंदि महा सुख होई ॥<br><br>
+      जो यह पढ़ै हनुमान चालीसा ।<br>
+      होय सिद्धि साखी गौरीसा ॥<br><br>
+      तुलसीदास सदा हरि चेरा ।<br>
+      कीजै नाथ हृदय महँ डेरा ॥<br><br>
+      पवनतनय संकट हरन, मंगल मूरति रूप ।<br>
+      राम लखन सीता सहित, हृदय बसहु सुर भूप ॥
+    </div>
+  </div>
+  <div class="bhajan-actions">
+    <button class="expand-btn" onclick="toggleBhajan(this)"><i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें</button>
+    <button onclick="copyBhajanCard(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+  </div>
+</div>
+
+</div>
+
+<div class="no-results" id="noResults">
+  <i class="fa-solid fa-music"></i>
+  कोई भजन नहीं मिला। दूसरा शब्द खोजें।
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">📿</span> भजन गाने के लाभ</h2>
+  <div class="bhajan-info">
+    <h4><i class="fa-solid fa-star"></i> भजन के फायदे</h4>
+    <ul>
+      <li><strong>मानसिक शांति:</strong> मन को शांति मिलती है</li>
+      <li><strong>भक्ति वृद्धि:</strong> हृदय में प्रेम और भक्ति बढ़ती है</li>
+      <li><strong>तनाव मुक्ति:</strong> दैनिक तनाव दूर होता है</li>
+      <li><strong>आत्मिक उन्नति:</strong> आत्मा को शांति और उन्नति मिलती है</li>
+      <li><strong>हनुमान कृपा:</strong> हनुमान जी की विशेष कृपा प्राप्त होती है</li>
+      <li><strong>सकारात्मक ऊर्जा:</strong> घर में सकारात्मक ऊर्जा का संचार होता है</li>
+    </ul>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="43-aarti.html" class="cat-chip"><i class="fa-solid fa-fire"></i> आरती</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="21-mala.html" class="cat-chip"><i class="fa-solid fa-list-ol"></i> जप माला</a>
+    <a href="80-quiz.html" class="cat-chip"><i class="fa-solid fa-circle-question"></i> क्विज</a>
+    <a href="84-faq.html" class="cat-chip"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+  </div>
+</div>
+
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+function toggleBhajan(btn) {
+  const card = btn.closest('.bhajan-card');
+  const full = card.querySelector('.bhajan-full');
+  if (!full) return;
+  if (full.classList.contains('show')) {
+    full.classList.remove('show');
+    btn.innerHTML = '<i class="fa-solid fa-book-open"></i> पूरा भजन पढ़ें';
+  } else {
+    full.classList.add('show');
+    btn.innerHTML = '<i class="fa-solid fa-chevron-up"></i> छोटा करें';
+    setTimeout(() => {
+      full.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+    }, 100);
+  }
+  if (navigator.vibrate) navigator.vibrate(15);
+}
+
+function copyBhajanCard(btn) {
+  const card = btn.closest('.bhajan-card');
+  const full = card.querySelector('.bhajan-lyrics-full');
+  const preview = card.querySelector('.bhajan-preview');
+  let text = '';
+  if (full) {
+    text = full.innerText;
+  } else if (preview) {
+    text = preview.innerText.replace(/\.\.\..*$/m, '').trim();
+  }
+  if (!text) return;
+  const title = card.querySelector('.bhajan-title')?.innerText || '';
+  const fullText = title + '\n\n' + text;
+  if (typeof copyMantra === 'function') {
+    copyMantra(fullText);
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = fullText;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch(e) {}
+    document.body.removeChild(ta);
+    if (typeof showToast === 'function') showToast('भजन कॉपी हो गया 🎵');
+  }
+  if (navigator.vibrate) navigator.vibrate(20);
+}
+
+document.getElementById('bhajanSearch')?.addEventListener('input', (e) => {
+  const q = e.target.value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.bhajan-card');
+  let visible = 0;
+  cards.forEach(c => {
+    const match = !q || c.textContent.toLowerCase().includes(q);
+    c.style.display = match ? 'block' : 'none';
+    if (match) visible++;
+  });
+  document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+  document.querySelectorAll('.bhajan-cat-chip').forEach(c => c.classList.remove('active'));
+  document.querySelector('.bhajan-cat-chip[data-cat="all"]').classList.add('active');
+});
+
+document.querySelectorAll('.bhajan-cat-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.bhajan-cat-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    const cat = chip.dataset.cat;
+    let visible = 0;
+    document.querySelectorAll('.bhajan-card').forEach(card => {
+      const match = cat === 'all' || card.dataset.cat === cat;
+      card.style.display = match ? 'block' : 'none';
+      if (match) visible++;
+    });
+    document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+    if (cat !== 'all') {
+      const s = document.getElementById('bhajanSearch');
+      if (s) s.value = '';
+    }
+  });
+});
+</script>
+</body>
+</html>
