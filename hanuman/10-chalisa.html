@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान चालीसा — अर्थ सहित संपूर्ण | Hanuman Chalisa with Meaning</title>
+<meta name="description" content="हनुमान चालीसा — 40 चौपाइयाँ + 2 दोहे, हर पंक्ति का हिंदी और अंग्रेजी अर्थ, ऑडियो, verse-by-verse highlight, और नित्य पाठ की विधि।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* Chalisa page specific */
+.chalisa-hero{
+  width:100%;
+  padding:32px 20px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.35), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.2), rgba(255,107,53,.12));
+  border-radius:var(--radius);
+  text-align:center;
+  margin:16px 0;
+  border:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.chalisa-hero .ch-emoji{
+  font-size:80px;
+  display:block;
+  margin-bottom:8px;
+  filter:drop-shadow(0 0 24px rgba(212,175,55,.8));
+  animation:floatIcon 3.5s ease-in-out infinite;
+}
+.chalisa-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:26px;
+  color:var(--maroon);
+  margin-bottom:4px;
+}
+body.dark .chalisa-hero h2{color:var(--gold-light)}
+.chalisa-hero .ch-sub{
+  font-size:12px;
+  color:var(--ink-soft);
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+.chalisa-hero .ch-meta{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  font-size:11.5px;
+  color:var(--ink-soft);
+  margin-top:12px;
+}
+.chalisa-hero .ch-meta span{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+.chalisa-hero .ch-meta i{color:var(--gold)}
+
+/* Sticky controls */
+.chalisa-controls-sticky{
+  position:sticky;
+  top:66px;
+  z-index:60;
+  background:var(--bg);
+  padding:10px 0;
+  margin:0 -4px 12px;
+}
+
+.chalisa-controls{
+  display:flex;gap:10px;justify-content:center;align-items:center;
+  padding:12px;
+  background:linear-gradient(135deg, rgba(212,175,55,.14), rgba(122,46,46,.06));
+  border-radius:14px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+.chalisa-controls button{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--card-bg);border:1px solid var(--border);
+  color:var(--maroon);font-size:15px;
+  display:flex;align-items:center;justify-content:center;
+  transition:var(--transition);
+  cursor:pointer;
+}
+body.dark .chalisa-controls button{color:var(--gold-light)}
+.chalisa-controls button:hover{transform:scale(1.05);border-color:var(--gold)}
+.chalisa-controls button:active{transform:scale(.92)}
+.chalisa-controls button.play-btn{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;width:58px;height:58px;font-size:20px;
+  box-shadow:0 6px 20px rgba(122,46,46,.4);
+}
+.chalisa-controls .verse-counter{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:14px;
+  color:var(--maroon);
+  font-weight:600;
+  min-width:60px;
+  text-align:center;
+}
+body.dark .chalisa-controls .verse-counter{color:var(--gold-light)}
+
+.progress-line{
+  height:4px;
+  background:var(--border);
+  border-radius:4px;
+  margin-top:10px;
+  overflow:hidden;
+}
+.progress-line .fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--gold),var(--saffron));
+  transition:width .3s;
+  border-radius:4px;
+}
+
+/* Section group header */
+.section-group{
+  margin:20px 0 14px;
+  text-align:center;
+}
+.section-group .sg-label{
+  display:inline-block;
+  padding:6px 20px;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;
+  border-radius:30px;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:13.5px;
+  font-weight:600;
+  letter-spacing:.5px;
+  box-shadow:0 4px 14px rgba(122,46,46,.3);
+}
+
+/* Verse block */
+.verse-block{
+  background:var(--card-bg);
+  border-radius:14px;
+  padding:16px 14px;
+  margin-bottom:12px;
+  border:1px solid var(--border);
+  transition:var(--transition);
+  position:relative;
+  cursor:pointer;
+}
+.verse-block:hover{border-color:var(--gold)}
+.verse-block.active{
+  border-color:var(--gold);
+  background:linear-gradient(135deg, rgba(212,175,55,.12), rgba(122,46,46,.06));
+  box-shadow:0 0 0 3px rgba(212,175,55,.15);
+}
+.verse-block .v-number{
+  position:absolute;
+  top:12px;
+  right:14px;
+  font-size:11px;
+  color:var(--ink-light);
+  font-family:'Hind',sans-serif;
+  font-weight:600;
+}
+.verse-block .v-text{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:17px;
+  color:var(--maroon);
+  line-height:2.05;
+  font-weight:600;
+  text-align:center;
+  margin-bottom:12px;
+}
+body.dark .verse-block .v-text{color:var(--gold-light)}
+.verse-block .v-text .word{
+  transition:var(--transition);
+  cursor:pointer;
+  padding:1px 2px;
+  border-radius:4px;
+}
+.verse-block .v-text .word:hover{
+  background:rgba(212,175,55,.3);
+  color:var(--maroon);
+}
+body.dark .verse-block .v-text .word:hover{color:#fff}
+
+/* Meaning toggle */
+.meaning-toggle{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:8px;
+}
+.meaning-toggle button{
+  padding:6px 14px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  background:var(--bg);
+  color:var(--maroon);
+  font-size:11.5px;
+  font-weight:600;
+  cursor:pointer;
+  transition:var(--transition);
+}
+body.dark .meaning-toggle button{color:var(--gold-light)}
+.meaning-toggle button.active{
+  background:var(--maroon);
+  color:#fff;
+  border-color:var(--maroon);
+}
+.meaning-content{
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px dashed var(--border);
+  display:none;
+}
+.meaning-content.show{display:block;animation:fadeUp .3s ease}
+.meaning-content .m-hindi{
+  font-family:'Hind',sans-serif;
+  font-size:14px;
+  color:var(--ink-soft);
+  line-height:1.9;
+  margin-bottom:10px;
+}
+.meaning-content .m-hindi strong{color:var(--maroon)}
+body.dark .meaning-content .m-hindi strong{color:var(--gold-light)}
+.meaning-content .m-english{
+  font-family:'Hind',sans-serif;
+  font-size:13px;
+  color:var(--ink-light);
+  line-height:1.8;
+  font-style:italic;
+  padding:10px 12px;
+  background:var(--bg-alt);
+  border-radius:8px;
+  border-left:3px solid var(--gold);
+}
+.meaning-content .m-translit{
+  font-size:12.5px;
+  color:var(--ink-light);
+  font-style:italic;
+  margin-bottom:8px;
+  padding:6px 10px;
+  background:rgba(212,175,55,.08);
+  border-radius:6px;
+  text-align:center;
+}
+
+/* Audio btn */
+.audio-btn{
+  position:absolute;
+  top:10px;
+  left:10px;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  border:none;
+  background:rgba(212,175,55,.2);
+  color:var(--maroon);
+  font-size:12px;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:var(--transition);
+}
+body.dark .audio-btn{color:var(--gold-light)}
+.audio-btn:hover{background:var(--gold);color:#fff;transform:scale(1.1)}
+.audio-btn.playing{background:var(--maroon);color:#fff;animation:pulseAudio 1.2s infinite}
+@keyframes pulseAudio{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+}
+
+/* Quote section */
+.path-vidhi-box{
+  background:linear-gradient(135deg, rgba(212,175,55,.14), rgba(122,46,46,.06));
+  border-radius:14px;
+  padding:18px;
+  border-left:4px solid var(--gold);
+  margin:16px 0;
+}
+.path-vidhi-box h3{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:17px;
+  color:var(--maroon);
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+body.dark .path-vidhi-box h3{color:var(--gold-light)}
+.path-vidhi-box ul{padding-left:20px}
+.path-vidhi-box li{
+  font-size:13.5px;
+  line-height:1.85;
+  color:var(--ink-soft);
+  margin-bottom:7px;
+}
+.path-vidhi-box li strong{color:var(--maroon)}
+body.dark .path-vidhi-box li strong{color:var(--gold-light)}
+
+/* Benefits grid */
+.benefits-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+  margin-top:12px;
+}
+@media(min-width:480px){.benefits-grid{grid-template-columns:1fr 1fr}}
+.benefit-card{
+  background:var(--bg-alt);
+  padding:12px 14px;
+  border-radius:12px;
+  border-left:3px solid var(--gold);
+  transition:var(--transition);
+}
+.benefit-card:hover{transform:translateX(4px)}
+.benefit-card h4{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:14px;
+  color:var(--maroon);
+  margin-bottom:4px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+body.dark .benefit-card h4{color:var(--gold-light)}
+.benefit-card p{
+  font-size:12.5px;
+  color:var(--ink-soft);
+  line-height:1.6;
+  margin:0;
+}
+
+/* Audio element */
+#chalisaAudio{display:none}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>हनुमान चालीसा</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<div class="chalisa-hero">
+  <span class="ch-emoji">📜</span>
+  <h2>हनुमान चालीसा</h2>
+  <div class="ch-sub">गोस्वामी तुलसीदास कृत</div>
+  <div class="ch-meta">
+    <span><i class="fa-solid fa-list-ol"></i> 40 चौपाई + 2 दोहे</span>
+    <span><i class="fa-solid fa-clock"></i> ~7 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> अर्थ सहित</span>
+  </div>
+</div>
+
+<!-- ===== STICKY CONTROLS ===== -->
+<div class="chalisa-controls-sticky">
+  <div class="chalisa-controls">
+    <button onclick="prevVerse()" aria-label="पिछली पंक्ति"><i class="fa-solid fa-backward"></i></button>
+    <button class="play-btn" onclick="togglePlay()" aria-label="चलाएँ">
+      <i class="fa-solid fa-play" id="playIcon"></i>
+    </button>
+    <button onclick="nextVerse()" aria-label="अगली पंक्ति"><i class="fa-solid fa-forward"></i></button>
+    <div class="verse-counter" id="verseCounter">1 / 42</div>
+    <button onclick="toggleAllMeanings()" aria-label="सभी अर्थ" title="सभी अर्थ दिखाएँ/छिपाएँ">
+      <i class="fa-solid fa-book"></i>
+    </button>
+  </div>
+  <div class="progress-line">
+    <div class="fill" id="progressFill"></div>
+  </div>
+</div>
+
+<!-- ===== INTRO ===== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> हनुमान चालीसा के बारे में</h2>
+  <p><strong>हनुमान चालीसा</strong> गोस्वामी <strong>तुलसीदास</strong> जी द्वारा रचित एक अत्यंत प्रसिद्ध स्तोत्र है। इसमें <strong>40 चौपाइयाँ</strong> और <strong>2 दोहे</strong> हैं। यह <strong>अवधी भाषा</strong> में लिखी गई है।</p>
+  <p>ऐसा माना जाता है कि तुलसीदास जी ने इसे <strong>वाराणसी के प्रसिद्ध संकट मोचन मंदिर</strong> में रचा था। यह पाठ सभी संकटों को हरने वाला, रोग नाशक, और भय मुक्ति देने वाला है।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">रचयिता</div><div class="val">गोस्वामी तुलसीदास</div></div>
+    <div class="info-item"><div class="lbl">भाषा</div><div class="val">अवधी</div></div>
+    <div class="info-item"><div class="lbl">छंद</div><div class="val">चौपाई + दोहा</div></div>
+    <div class="info-item"><div class="lbl">चौपाई</div><div class="val">40</div></div>
+    <div class="info-item"><div class="lbl">दोहे</div><div class="val">2 (आरंभ + अंत)</div></div>
+    <div class="info-item"><div class="lbl">कुल पंक्तियाँ</div><div class="val">44</div></div>
+    <div class="info-item"><div class="lbl">पाठ समय</div><div class="val">~7 मिनट</div></div>
+    <div class="info-item"><div class="lbl">प्रिय दिन</div><div class="val">मंगल, शनि</div></div>
+  </div>
+</div>
+
+<!-- ============================================
+     CHALISA VERSES
+============================================ -->
+
+<!-- ===== DOHA 1 ===== -->
+<div class="section-group">
+  <span class="sg-label">🔸 आरंभिक दोहा</span>
+</div>
+
+<div class="verse-block" data-verse="0">
+  <button class="audio-btn" onclick="playVerseAudio(0, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">दोहा 1</span>
+  <div class="v-text">
+    श्रीगुरु चरन सरोज रज, निज मनु मुकुरु सुधारि ।<br>
+    बरनउँ रघुबर बिमल जसु, जो दायकु फल चारि ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">śrīguru carana saroja raja, nija manu mukuru sudhāri ।<br>baranauṃ raghubara bimala jasu, jo dāyaku phala cāri ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> श्री गुरु के चरण-कमलों की धूलि से अपने मन रूपी दर्पण को स्वच्छ करके, मैं श्री रघुवीर (श्री राम) के निर्मल यश का वर्णन करता हूँ, जो चारों फल (धर्म, अर्थ, काम, मोक्ष) देने वाला है।</div>
+    <div class="m-english"><strong>Meaning:</strong> Cleansing the mirror of my mind with the dust of my Guru's lotus feet, I describe the pure glory of Shri Raghuvir (Shri Ram), which bestows the four fruits of life (dharma, artha, kama, moksha).</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="1">
+  <button class="audio-btn" onclick="playVerseAudio(1, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">दोहा 2</span>
+  <div class="v-text">
+    बुद्धिहीन तनु जानिके, सुमिरौं पवन-कुमार ।<br>
+    बल बुधि बिद्या देहु मोहिं, हरहु कलेस बिकार ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">buddhihīna tanu jānike, sumirauṃ pavana-kumāra ।<br>bala budhi bidyā dehu mohiṃ, harahu kalesa bikāra ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> हे पवन-कुमार (हनुमान जी)! मुझे बुद्धिहीन (मूर्ख) जानकर आपका स्मरण करता हूँ। मुझे बल, बुद्धि और विद्या दीजिए, और मेरे सभी क्लेशों तथा दोषों को हर लीजिए।</div>
+    <div class="m-english"><strong>Meaning:</strong> Knowing myself to be devoid of intelligence, I remember you, O Son of the Wind. Grant me strength, wisdom, and knowledge, and remove all my afflictions and flaws.</div>
+  </div>
+</div>
+
+<!-- ===== CHAUPAI 1-10 ===== -->
+<div class="section-group">
+  <span class="sg-label">🔸 चौपाई 1-10</span>
+</div>
+
+<div class="verse-block" data-verse="2">
+  <button class="audio-btn" onclick="playVerseAudio(2, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 1</span>
+  <div class="v-text">
+    जय हनुमान ज्ञान गुन सागर ।<br>
+    जय कपीस तिहुँ लोक उजागर ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">jaya hanumāna jñāna guna sāgara ।<br>jaya kapīsa tihuṃ loka ujāgara ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> हे हनुमान! आपकी जय हो, आप ज्ञान और गुणों के सागर हैं। हे कपीश (वानरों के स्वामी)! आपकी जय हो, आप तीनों लोकों को प्रकाशित करने वाले हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> Victory to Hanuman, who is an ocean of wisdom and virtues. Victory to the Lord of monkeys, who illuminates all three worlds.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="3">
+  <button class="audio-btn" onclick="playVerseAudio(3, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 2</span>
+  <div class="v-text">
+    राम दूत अतुलित बल धामा ।<br>
+    अंजनि-पुत्र पवनसुत नामा ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">rāma dūta atulita bala dhāmā ।<br>añjani-putra pavanasuta nāmā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आप श्री राम के दूत हैं, अतुलनीय बल के धाम हैं। आप अंजना के पुत्र हैं, और पवनसुत नाम से जाने जाते हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> You are the messenger of Lord Ram, the abode of incomparable strength. You are the son of Anjani and are known by the name Pavanputra (Son of Wind).</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="4">
+  <button class="audio-btn" onclick="playVerseAudio(4, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 3</span>
+  <div class="v-text">
+    महाबीर बिक्रम बजरंगी ।<br>
+    कुमति निवार सुमति के संगी ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">mahābīra bikrama bajaraṃgī ।<br>kumati nivāra sumati ke saṃgī ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आप महावीर हैं, पराक्रमी हैं, वज्र के समान शरीर वाले (बजरंगी) हैं। आप कुमति (बुरी बुद्धि) को दूर करने वाले और सुमति (अच्छी बुद्धि) के साथी हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> You are the great warrior, valiant, and possess a body hard as a thunderbolt (Bajrangi). You remove evil intellect and are a companion of good wisdom.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="5">
+  <button class="audio-btn" onclick="playVerseAudio(5, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 4</span>
+  <div class="v-text">
+    कंचन बरन बिराज सुबेसा ।<br>
+    कानन कुंडल कुंद बर बेसा ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">kaṃcana barana birāja subesā ।<br>kānana kuṃḍala kuṃda bara besā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आपका वर्ण स्वर्ण के समान (कंचन बरन) है, आप सुंदर वेश में विराजमान हैं। कानों में कुंडल और चमेली के फूलों जैसी सुंदर सजावट है।</div>
+    <div class="m-english"><strong>Meaning:</strong> Your complexion shines like gold, you are adorned in beautiful attire. You wear earrings and are decorated with jasmine-like ornaments.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="6">
+  <button class="audio-btn" onclick="playVerseAudio(6, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 5</span>
+  <div class="v-text">
+    हाथ बज्र औ ध्वजा बिराजै ।<br>
+    काँधे मूँज जनेऊ साजै ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">hātha bajra au dhvajā birājai ।<br>kāṃdhe mūṃja janeū sājai ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आपके हाथों में वज्र और ध्वजा सुशोभित है, कंधे पर मूंज का जनेऊ सुशोभित हो रहा है।</div>
+    <div class="m-english"><strong>Meaning:</strong> In your hands shine the thunderbolt and banner; on your shoulder is adorned the sacred thread made of munja grass.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="7">
+  <button class="audio-btn" onclick="playVerseAudio(7, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 6</span>
+  <div class="v-text">
+    संकर सुवन केसरीनंदन ।<br>
+    तेज प्रताप महा जग बंदन ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">saṃkara suvana kesarīnandana ।<br>teja pratāpa mahā jaga baṃdana ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आप शंकर (शिव) के अंश से उत्पन्न हुए हैं, केसरी के पुत्र हैं। आपके तेज और प्रताप की संपूर्ण जगत वंदना करता है।</div>
+    <div class="m-english"><strong>Meaning:</strong> You are born of Shankar (Shiva), the son of Kesari. Your radiance and valor are praised by the whole world.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="8">
+  <button class="audio-btn" onclick="playVerseAudio(8, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 7</span>
+  <div class="v-text">
+    बिद्यावान गुनी अति चातुर ।<br>
+    राम काज करिबे को आतुर ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">bidyāvāna gunī ati cātura ।<br>rāma kāja karibe ko ātura ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आप विद्यावान, गुणी और अत्यंत चतुर हैं। आप श्री राम के कार्य करने के लिए सदा आतुर रहते हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> You are learned, virtuous, and extremely clever. You are always eager to do the work of Lord Ram.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="9">
+  <button class="audio-btn" onclick="playVerseAudio(9, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 8</span>
+  <div class="v-text">
+    प्रभु चरित्र सुनिबे को रसिया ।<br>
+    राम लखन सीता मन बसिया ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">prabhu caritra sunibe ko rasiyā ।<br>rāma lakhana sītā mana basiyā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आप श्री राम के चरित्र को सुनने में आनंद लेते हैं। श्री राम, लक्ष्मण और सीता आपके मन में बसते हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> You delight in listening to the deeds of the Lord. Ram, Lakshman, and Sita reside in your heart.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="10">
+  <button class="audio-btn" onclick="playVerseAudio(10, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 9</span>
+  <div class="v-text">
+    सूक्ष्म रूप धरि सियहिं दिखावा ।<br>
+    बिकट रूप धरि लंक जरावा ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">sūkṣma rūpa dhari siyahiṃ dikhāvā ।<br>bikaṭa rūpa dhari laṃka jarāvā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आपने सूक्ष्म रूप धारण करके माता सीता को दर्शन दिए, और विकट (भयंकर) रूप धारण करके लंका को जलाया।</div>
+    <div class="m-english"><strong>Meaning:</strong> Assuming a subtle form, you revealed yourself to Mother Sita; assuming a terrifying form, you burned Lanka.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="11">
+  <button class="audio-btn" onclick="playVerseAudio(11, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 10</span>
+  <div class="v-text">
+    भीम रूप धरि असुर सँहारे ।<br>
+    रामचंद्र के काज सँवारे ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">bhīma rūpa dhari asura saṃhāre ।<br>rāmacandra ke kāja saṃvāre ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आपने भीम (विशाल) रूप धारण करके असुरों का संहार किया, और श्री रामचंद्र के सभी कार्यों को सफल बनाया।</div>
+    <div class="m-english"><strong>Meaning:</strong> Assuming a gigantic form, you destroyed demons and accomplished all the tasks of Lord Ramchandra.</div>
+  </div>
+</div>
+
+<!-- ===== CHAUPAI 11-20 ===== -->
+<div class="section-group">
+  <span class="sg-label">🔸 चौपाई 11-20</span>
+</div>
+
+<div class="verse-block" data-verse="12">
+  <button class="audio-btn" onclick="playVerseAudio(12, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 11</span>
+  <div class="v-text">
+    लाय सजीवन लखन जियाये ।<br>
+    श्रीरघुबीर हरषि उर लाये ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">lāya sajīvana lakhana jiyāye ।<br>śrīraghubīra haraṣi ura lāye ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आप संजीवनी बूटी लाए और लक्ष्मण जी को जीवित किया। श्री रघुवीर (राम) ने प्रसन्न होकर आपको हृदय से लगा लिया।</div>
+    <div class="m-english"><strong>Meaning:</strong> You brought the Sanjeevani herb and revived Lakshman. Shri Raghuvir (Ram) joyfully embraced you to his heart.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="13">
+  <button class="audio-btn" onclick="playVerseAudio(13, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 12</span>
+  <div class="v-text">
+    रघुपति कीन्ही बहुत बड़ाई ।<br>
+    तुम मम प्रिय भरतहि सम भाई ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">raghupati kīnhī bahuta baḍāī ।<br>tuma mama priya bharatahi sama bhāī ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> रघुपति (राम) ने आपकी बहुत प्रशंसा की और कहा — "तुम मेरे प्रिय भरत के समान भाई हो।"</div>
+    <div class="m-english"><strong>Meaning:</strong> Raghupati (Ram) praised you greatly and said — "You are as dear to me as my brother Bharat."</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="14">
+  <button class="audio-btn" onclick="playVerseAudio(14, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 13</span>
+  <div class="v-text">
+    सहस बदन तुम्हरो जस गावैं ।<br>
+    अस कहि श्रीपति कंठ लगावैं ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">sahasa badana tumharo jasa gāvaiṃ ।<br>asa kahi śrīpati kaṃṭha lagāvaiṃ ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> शेषनाग (हज़ार मुख वाले) भी आपकी कीर्ति गाते हैं — ऐसा कहकर श्रीपति (राम) आपको गले लगाते हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> Even Sheshnag (thousand-mouthed) sings your glory — saying this, Shripati (Ram) embraces you.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="15">
+  <button class="audio-btn" onclick="playVerseAudio(15, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 14</span>
+  <div class="v-text">
+    सनकादिक ब्रह्मादि मुनीसा ।<br>
+    नारद सारद सहित अहीसा ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">sanakādika brahmādi munīsā ।<br>nārada sārada sahita ahīsā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> सनकादिक ऋषि, ब्रह्मा आदि मुनीश्वर, नारद जी, सरस्वती जी और शेषनाग — सभी आपका यश गाते हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> Sanakadi sages, Brahma and other great sages, Narada, Saraswati, and Sheshnag — all sing your glory.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="16">
+  <button class="audio-btn" onclick="playVerseAudio(16, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 15</span>
+  <div class="v-text">
+    जम कुबेर दिगपाल जहाँ ते ।<br>
+    कबि कोबिद कहि सके कहाँ ते ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">jama kubera digapāla jahāṃ te ।<br>kabi kobida kahi sake kahāṃ te ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> यमराज, कुबेर, दिक्पाल — सभी आपके गुण गाते हैं। कवि और विद्वान भी आपकी महिमा का पूर्ण वर्णन नहीं कर सकते।</div>
+    <div class="m-english"><strong>Meaning:</strong> Yama, Kubera, the guardians of directions — all sing your virtues. Poets and scholars cannot fully describe your glory.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="17">
+  <button class="audio-btn" onclick="playVerseAudio(17, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 16</span>
+  <div class="v-text">
+    तुम उपकार सुग्रीवहिं कीन्हा ।<br>
+    राम मिलाय राज पद दीन्हा ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">tuma upakāra sugrīvahi kīnhā ।<br>rāma milāya rāja pada dīnhā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आपने सुग्रीव पर बहुत उपकार किया। आपने उन्हें श्री राम से मिलाया और राज पद दिलाया।</div>
+    <div class="m-english"><strong>Meaning:</strong> You did a great favor to Sugriva. You united him with Lord Ram and helped him attain the throne.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="18">
+  <button class="audio-btn" onclick="playVerseAudio(18, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 17</span>
+  <div class="v-text">
+    तुम्हरो मंत्र बिभीषन माना ।<br>
+    लंकेस्वर भए सब जग जाना ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">tumharo maṃtra bibhīṣana mānā ।<br>laṃkesvara bhae saba jaga jānā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आपकी सलाह विभीषण ने मानी और वे लंकेश्वर (लंका के राजा) बने — यह सब जगत जानता है।</div>
+    <div class="m-english"><strong>Meaning:</strong> Vibhishana accepted your advice and became the king of Lanka — the whole world knows this.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="19">
+  <button class="audio-btn" onclick="playVerseAudio(19, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 18</span>
+  <div class="v-text">
+    जुग सहस्र जोजन पर भानू ।<br>
+    लील्यो ताहि मधुर फल जानू ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">juga sahasra jojana para bhānū ।<br>līlyo tāhi madhura phala jānū ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> सूर्य देव हज़ार योजन दूर हैं, फिर भी आपने उन्हें मीठा फल जानकर निगल लिया था।</div>
+    <div class="m-english"><strong>Meaning:</strong> The Sun is thousands of yojanas away, yet you swallowed it, thinking it to be a sweet fruit.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="20">
+  <button class="audio-btn" onclick="playVerseAudio(20, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 19</span>
+  <div class="v-text">
+    प्रभु मुद्रिका मेलि मुख माहीं ।<br>
+    जलधि लांघि गये अचरज नाहीं ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">prabhu mudrikā meli mukha māhīṃ ।<br>jaladhi lāṃghi gaye acaraja nāhīṃ ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> श्री राम की मुद्रिका मुख में रखकर आप समुद्र को लाँघ गए — इसमें कोई आश्चर्य नहीं है।</div>
+    <div class="m-english"><strong>Meaning:</strong> Placing Lord Ram's ring in your mouth, you crossed the ocean — this is no wonder for you.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="21">
+  <button class="audio-btn" onclick="playVerseAudio(21, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 20</span>
+  <div class="v-text">
+    दुर्गम काज जगत के जेते ।<br>
+    सुगम अनुग्रह तुम्हरे तेते ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">durgama kāja jagata ke jete ।<br>sugama anugraha tumhare tete ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> संसार के जितने भी कठिन कार्य हैं, वे सब आपकी कृपा से सुगम हो जाते हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> All the difficult tasks in the world become easy by your grace.</div>
+  </div>
+</div>
+
+<!-- ===== CHAUPAI 21-30 ===== -->
+<div class="section-group">
+  <span class="sg-label">🔸 चौपाई 21-30</span>
+</div>
+
+<div class="verse-block" data-verse="22">
+  <button class="audio-btn" onclick="playVerseAudio(22, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 21</span>
+  <div class="v-text">
+    राम दुआरे तुम रखवारे ।<br>
+    होत न आज्ञा बिनु पैसारे ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">rāma duāre tuma rakhavāre ।<br>hota na ājñā binu paisāre ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आप श्री राम के द्वार के रखवारे हैं। आपकी आज्ञा के बिना किसी को प्रवेश नहीं मिलता।</div>
+    <div class="m-english"><strong>Meaning:</strong> You are the guardian of Lord Ram's door. Without your permission, no one can enter.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="23">
+  <button class="audio-btn" onclick="playVerseAudio(23, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 22</span>
+  <div class="v-text">
+    सब सुख लहै तुम्हारी सरना ।<br>
+    तुम रक्षक काहू को डर ना ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">saba sukha lahai tumhārī saranā ।<br>tuma rakṣaka kāhū ko ḍara nā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आपकी शरण में आने वाले को सभी सुख प्राप्त होते हैं। जब आप रक्षक हैं, तो किसी का डर नहीं रहता।</div>
+    <div class="m-english"><strong>Meaning:</strong> Those who take refuge in you attain all happiness. When you are the protector, there is no fear from anyone.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="24">
+  <button class="audio-btn" onclick="playVerseAudio(24, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 23</span>
+  <div class="v-text">
+    आपन तेज सम्हारो आपै ।<br>
+    तीनों लोक हाँक तें काँपै ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">āpana teja samhāro āpai ।<br>tīnoṃ loka hāṃka teṃ kāṃpai ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आप अपने तेज को स्वयं संभाल सकते हैं। आपकी गर्जना से तीनों लोक काँप उठते हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> You alone can control your own radiance. All three worlds tremble at your roar.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="25">
+  <button class="audio-btn" onclick="playVerseAudio(25, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 24</span>
+  <div class="v-text">
+    भूत पिसाच निकट नहिं आवै ।<br>
+    महाबीर जब नाम सुनावै ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">bhūta pisāca nikaṭa nahiṃ āvai ।<br>mahābīra jaba nāma sunāvai ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> जब महावीर हनुमान का नाम सुना जाता है, तो भूत-पिशाच निकट नहीं आते।</div>
+    <div class="m-english"><strong>Meaning:</strong> When the name of Mahavira (Hanuman) is heard, ghosts and evil spirits do not come near.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="26">
+  <button class="audio-btn" onclick="playVerseAudio(26, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 25</span>
+  <div class="v-text">
+    नासै रोग हरै सब पीरा ।<br>
+    जपत निरंतर हनुमत बीरा ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">nāsai roga harai saba pīrā ।<br>japata niraṃtara hanumata bīrā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> हनुमान जी का निरंतर जप करने से सभी रोग नष्ट होते हैं और सभी पीड़ाएँ दूर होती हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> By constantly chanting the name of brave Hanuman, all diseases are destroyed and all pains are removed.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="27">
+  <button class="audio-btn" onclick="playVerseAudio(27, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 26</span>
+  <div class="v-text">
+    संकट तें हनुमान छुड़ावै ।<br>
+    मन क्रम बचन ध्यान जो लावै ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">saṃkaṭa teṃ hanumāna chuḍāvai ।<br>mana krama bacana dhyāna jo lāvai ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> जो मन, कर्म और वचन से हनुमान जी का ध्यान करता है, उसे हनुमान जी सभी संकटों से छुड़ा लेते हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> Whoever meditates on Hanuman with mind, action, and speech — Hanuman frees them from all troubles.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="28">
+  <button class="audio-btn" onclick="playVerseAudio(28, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 27</span>
+  <div class="v-text">
+    सब पर राम तपस्वी राजा ।<br>
+    तिन के काज सकल तुम साजा ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">saba para rāma tapasvī rājā ।<br>tina ke kāja sakala tuma sājā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> तपस्वी राजा श्री राम सबके स्वामी हैं, और उनके सभी कार्यों को आपने ही सफल बनाया।</div>
+    <div class="m-english"><strong>Meaning:</strong> The ascetic king Ram is the lord of all, and you accomplished all his tasks.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="29">
+  <button class="audio-btn" onclick="playVerseAudio(29, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 28</span>
+  <div class="v-text">
+    और मनोरथ जो कोई लावै ।<br>
+    सोइ अमित जीवन फल पावै ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">aura manoratha jo koī lāvai ।<br>soi amita jīvana phala pāvai ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> जो कोई भी अपनी मनोकामना लेकर आता है, उसे अमित (असीम) जीवन फल प्राप्त होता है।</div>
+    <div class="m-english"><strong>Meaning:</strong> Whoever comes with a wish receives unlimited fruits of life.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="30">
+  <button class="audio-btn" onclick="playVerseAudio(30, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 29</span>
+  <div class="v-text">
+    चारों जुग परताप तुम्हारा ।<br>
+    है परसिद्ध जगत उजियारा ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">cāroṃ juga paratāpa tumhārā ।<br>hai parasiddha jagata ujiyārā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> चारों युगों में आपका प्रताप है। आपकी कीर्ति संपूर्ण जगत में प्रसिद्ध है, जो जगत को प्रकाशित करती है।</div>
+    <div class="m-english"><strong>Meaning:</strong> Your glory exists in all four ages. Your fame is renowned throughout the world, illuminating it.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="31">
+  <button class="audio-btn" onclick="playVerseAudio(31, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 30</span>
+  <div class="v-text">
+    साधु-संत के तुम रखवारे ।<br>
+    असुर निकंदन राम दुलारे ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">sādhu-saṃta ke tuma rakhavāre ।<br>asura nikaṃdana rāma dulāre ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आप साधु-संतों के रखवारे हैं, असुरों का नाश करने वाले हैं, और श्री राम के दुलारे हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> You are the protector of saints, the destroyer of demons, and the beloved of Lord Ram.</div>
+  </div>
+</div>
+
+<!-- ===== CHAUPAI 31-40 ===== -->
+<div class="section-group">
+  <span class="sg-label">🔸 चौपाई 31-40</span>
+</div>
+
+<div class="verse-block" data-verse="32">
+  <button class="audio-btn" onclick="playVerseAudio(32, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 31</span>
+  <div class="v-text">
+    अष्ट सिद्धि नौ निधि के दाता ।<br>
+    अस बर दीन जानकी माता ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">aṣṭa siddhi nau nidhi ke dātā ।<br>asa bara dīna jānakī mātā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आप आठ सिद्धियों और नौ निधियों के दाता हैं — यह वरदान आपको माता जानकी (सीता) ने दिया था।</div>
+    <div class="m-english"><strong>Meaning:</strong> You are the giver of the eight siddhis and nine nidhis — this boon was granted to you by Mother Janaki (Sita).</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="33">
+  <button class="audio-btn" onclick="playVerseAudio(33, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 32</span>
+  <div class="v-text">
+    राम रसायन तुम्हरे पासा ।<br>
+    सदा रहो रघुपति के दासा ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">rāma rasāyana tumhare pāsā ।<br>sadā raho raghupati ke dāsā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> राम नाम रूपी रसायन आपके पास है। आप सदा रघुपति (राम) के दास बने रहते हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> The elixir of Ram's name is with you. You always remain the servant of Raghupati (Ram).</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="34">
+  <button class="audio-btn" onclick="playVerseAudio(34, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 33</span>
+  <div class="v-text">
+    तुम्हरे भजन राम को पावै ।<br>
+    जनम-जनम के दुख बिसरावै ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">tumhare bhajana rāma ko pāvai ।<br>janama-janama ke dukha bisarāvai ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> आपका भजन करने से भक्त को श्री राम की प्राप्ति होती है और जन्म-जन्म के दुख भुला दिए जाते हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> By worshipping you, the devotee attains Lord Ram and forgets the sorrows of many lifetimes.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="35">
+  <button class="audio-btn" onclick="playVerseAudio(35, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 34</span>
+  <div class="v-text">
+    अंत काल रघुबर पुर जाई ।<br>
+    जहाँ जन्म हरि-भक्त कहाई ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">aṃta kāla raghubara pura jāī ।<br>jahāṃ janma hari-bhakta kahāī ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> अंत समय में वे रघुवर (राम) के परम धाम को जाते हैं, जहाँ जन्म लेने पर वे हरि-भक्त कहलाते हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> At the end of life, they go to the supreme abode of Raghuvir (Ram), where they are born as devotees of Hari.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="36">
+  <button class="audio-btn" onclick="playVerseAudio(36, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 35</span>
+  <div class="v-text">
+    और देवता चित्त न धरई ।<br>
+    हनुमत सेइ सर्ब सुख करई ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">aura devatā citta na dharaī ।<br>hanumata sei sarba sukha karaī ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> अन्य देवताओं का चित्त में ध्यान न धरकर, केवल हनुमान जी की सेवा करने से सभी सुख प्राप्त होते हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> Without meditating on other deities, serving Hanuman alone grants all happiness.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="37">
+  <button class="audio-btn" onclick="playVerseAudio(37, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 36</span>
+  <div class="v-text">
+    संकट कटै मिटै सब पीरा ।<br>
+    जो सुमिरै हनुमत बलबीरा ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">saṃkaṭa kaṭai miṭai saba pīrā ।<br>jo sumirai hanumata balabīrā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> जो बलवीर हनुमान का स्मरण करता है, उसके सभी संकट कट जाते हैं और सभी पीड़ाएँ मिट जाती हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> Whoever remembers the mighty Hanuman — all their troubles end and all their pains are removed.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="38">
+  <button class="audio-btn" onclick="playVerseAudio(38, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 37</span>
+  <div class="v-text">
+    जय जय जय हनुमान गोसाईं ।<br>
+    कृपा करहु गुरुदेव की नाईं ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">jaya jaya jaya hanumāna gosāīṃ ।<br>kṛpā karahu gurudeva kī nāīṃ ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> हे हनुमान गोसाईं! आपकी जय हो, जय हो, जय हो। गुरुदेव की तरह मुझ पर कृपा कीजिए।</div>
+    <div class="m-english"><strong>Meaning:</strong> Victory, victory, victory to Hanuman Gosain! Please shower your grace upon me like a Guru.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="39">
+  <button class="audio-btn" onclick="playVerseAudio(39, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 38</span>
+  <div class="v-text">
+    जो सत बार पाठ कर कोई ।<br>
+    छूटहि बंदि महा सुख होई ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">jo sata bāra pāṭha kara koī ।<br>chūṭahi baṃdi mahā sukha hoī ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> जो कोई सौ बार इसका पाठ करता है, वह बंदी (बंधन) से छूट जाता है और उसे महान सुख प्राप्त होता है।</div>
+    <div class="m-english"><strong>Meaning:</strong> Whoever recites this a hundred times is freed from bondage and attains great happiness.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="40">
+  <button class="audio-btn" onclick="playVerseAudio(40, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 39</span>
+  <div class="v-text">
+    जो यह पढ़ै हनुमान चालीसा ।<br>
+    होय सिद्धि साखी गौरीसा ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">jo yaha paḍhai hanumāna cālīsā ।<br>hoya siddhi sākhī gaurīsā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> जो इस हनुमान चालीसा को पढ़ता है, उसे सिद्धि प्राप्त होती है — इसके साक्षी स्वयं गौरीसा (शिव) हैं।</div>
+    <div class="m-english"><strong>Meaning:</strong> Whoever reads this Hanuman Chalisa attains success — Gaurisa (Shiva) himself is the witness.</div>
+  </div>
+</div>
+
+<div class="verse-block" data-verse="41">
+  <button class="audio-btn" onclick="playVerseAudio(41, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">चौपाई 40</span>
+  <div class="v-text">
+    तुलसीदास सदा हरि चेरा ।<br>
+    कीजै नाथ हृदय महँ डेरा ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">tulasīdāsa sadā hari cerā ।<br>kījai nātha hṛdaya mahaṃ ḍerā ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> तुलसीदास सदा हरि (राम) का दास है। हे नाथ! मेरे हृदय में निवास कीजिए।</div>
+    <div class="m-english"><strong>Meaning:</strong> Tulsidas is always a servant of Hari (Ram). O Lord! Please reside in my heart.</div>
+  </div>
+</div>
+
+<!-- ===== DOHA END ===== -->
+<div class="section-group">
+  <span class="sg-label">🔸 अंतिम दोहा</span>
+</div>
+
+<div class="verse-block" data-verse="42">
+  <button class="audio-btn" onclick="playVerseAudio(42, event)"><i class="fa-solid fa-volume-high"></i></button>
+  <span class="v-number">दोहा 3</span>
+  <div class="v-text">
+    पवनतनय संकट हरन, मंगल मूरति रूप ।<br>
+    राम लखन सीता सहित, हृदय बसहु सुर भूप ॥
+  </div>
+  <div class="meaning-toggle">
+    <button onclick="toggleMeaning(this)" class="active">हिंदी अर्थ</button>
+    <button onclick="toggleMeaning(this)">English</button>
+  </div>
+  <div class="meaning-content show">
+    <div class="m-translit">pavanatanaya saṃkaṭa harana, maṃgala mūrati rūpa ।<br>rāma lakhana sītā sahita, hṛdaya basahu sura bhūpa ॥</div>
+    <div class="m-hindi"><strong>अर्थ:</strong> हे पवनपुत्र! आप संकट हरने वाले और मंगलमूर्ति हैं। श्री राम, लक्ष्मण और सीता के साथ मेरे हृदय में निवास कीजिए।</div>
+    <div class="m-english"><strong>Meaning:</strong> O Son of the Wind! You are the remover of troubles and the embodiment of auspiciousness. Please reside in my heart along with Ram, Lakshman, and Sita.</div>
+  </div>
+</div>
+
+<!-- ============================================
+     PATH VIDHI
+============================================ -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🪔</span> पाठ विधि — कैसे पढ़ें?</h2>
+
+  <div class="path-vidhi-box">
+    <h3><i class="fa-solid fa-list-check"></i> चालीसा पाठ की विधि</h3>
+    <ul>
+      <li><strong>स्नान:</strong> सुबह स्नान करके स्वच्छ वस्त्र धारण करें</li>
+      <li><strong>दिशा:</strong> पूर्व दिशा की ओर मुख करके बैठें</li>
+      <li><strong>दीप:</strong> घी का दीपक और धूप जलाएँ</li>
+      <li><strong>आसन:</strong> लाल या पीले रंग का आसन उपयोग करें</li>
+      <li><strong>माला:</strong> लाल रुद्राक्ष या मूंगे की माला लें</li>
+      <li><strong>आरंभ:</strong> गणेश और गुरु का ध्यान करें, फिर हनुमान जी का ध्यान करें</li>
+      <li><strong>पाठ:</strong> ध्यान से, सही उच्चारण के साथ पूरा पाठ करें</li>
+      <li><strong>संख्या:</strong> नियमित 1 बार, विशेष दिनों पर 7, 21, या 108 बार</li>
+      <li><strong>अंत:</strong> हनुमान आरती करें, प्रसाद वितरित करें</li>
+      <li><strong>विशेष दिन:</strong> मंगलवार, शनिवार — विशेष फलदायी</li>
+    </ul>
+  </div>
+
+  <h3>कितनी बार पढ़ें?</h3>
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <h4>🌟 1 बार</h4>
+      <p>दैनिक पाठ — नियमित आशीर्वाद</p>
+    </div>
+    <div class="benefit-card">
+      <h4>🔥 7 बार</h4>
+      <p>मंगल/शनि — विशेष लाभ, कार्य सिद्धि</p>
+    </div>
+    <div class="benefit-card">
+      <h4>⚡ 21 बार</h4>
+      <p>बड़ी समस्याओं में — शत्रु नाश, रोग नाश</p>
+    </div>
+    <div class="benefit-card">
+      <h4>🏆 108 बार</h4>
+      <p>महा-संकट में — जीवन परिवर्तन</p>
+    </div>
+    <div class="benefit-card">
+      <h4>💯 100 बार</h4>
+      <p>बंदी छुड़ाई — बंदन मुक्ति, बड़ा फल</p>
+    </div>
+    <div class="benefit-card">
+      <h4>📿 नित्य</h4>
+      <p>सदा पाठ — सब सुख की प्राप्ति</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     BENEFITS
+============================================ -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> चालीसा पाठ के लाभ</h2>
+
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <h4>🔥 संकट मोचन</h4>
+      <p>सभी संकटों से छुटकारा — हनुमान जी सब संकट हरते हैं</p>
+    </div>
+    <div class="benefit-card">
+      <h4>💪 बल प्राप्ति</h4>
+      <p>शारीरिक, मानसिक और आत्मिक बल में वृद्धि</p>
+    </div>
+    <div class="benefit-card">
+      <h4>🧠 बुद्धि वृद्धि</h4>
+      <p>बुद्धि और विवेक में वृद्धि, एकाग्रता बढ़ती है</p>
+    </div>
+    <div class="benefit-card">
+      <h4>💊 रोग नाश</h4>
+      <p>सभी प्रकार के रोगों में लाभ, स्वास्थ्य में सुधार</p>
+    </div>
+    <div class="benefit-card">
+      <h4>🛡️ शत्रु नाश</h4>
+      <p>शत्रुओं और बाधाओं से रक्षा</p>
+    </div>
+    <div class="benefit-card">
+      <h4>😨 भय मुक्ति</h4>
+      <p>भूत-प्रेत, बुरी शक्तियों से रक्षा</p>
+    </div>
+    <div class="benefit-card">
+      <h4>💰 धन प्राप्ति</h4>
+      <p>आर्थिक उन्नति और समृद्धि</p>
+    </div>
+    <div class="benefit-card">
+      <h4>👨‍👩‍👧 संतान सुख</h4>
+      <p>संतान प्राप्ति और उन्नति</p>
+    </div>
+    <div class="benefit-card">
+      <h4>📚 विद्या प्राप्ति</h4>
+      <p>विद्यार्थियों के लिए विशेष लाभ</p>
+    </div>
+    <div class="benefit-card">
+      <h4>💍 विवाह बाधा</h4>
+      <p>विवाह में आने वाली बाधाएँ दूर</p>
+    </div>
+    <div class="benefit-card">
+      <h4>🌟 ग्रह शांति</h4>
+      <p>शनि, मंगल, राहु-केतु दोष निवारण</p>
+    </div>
+    <div class="benefit-card">
+      <h4>🙏 राम कृपा</h4>
+      <p>राम भक्ति की प्राप्ति और मोक्ष</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     QUICK LINKS
+============================================ -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="11-bajrang-baan.html" class="cat-chip"><i class="fa-solid fa-bolt"></i> बजरंग बाण</a>
+    <a href="12-hanuman-ashtak.html" class="cat-chip"><i class="fa-solid fa-fire"></i> हनुमान अष्टक</a>
+    <a href="13-hanuman-bahuk.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> हनुमान बाहुक</a>
+    <a href="14-sankat-mochan.html" class="cat-chip"><i class="fa-solid fa-shield"></i> संकट मोचन</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="21-mala.html" class="cat-chip"><i class="fa-solid fa-list-ol"></i> जप माला</a>
+    <a href="40-chola-vidhi.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> चोला विधि</a>
+    <a href="43-aarti.html" class="cat-chip"><i class="fa-solid fa-music"></i> आरती</a>
+  </div>
+</div>
+
+<!-- ===== SHARE ===== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Audio element -->
+<audio id="chalisaAudio" preload="none"></audio>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link active"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+/* ============================================
+   CHALISA PLAYER
+============================================ */
+const verseBlocks = document.querySelectorAll('.verse-block');
+const totalVerses = verseBlocks.length;
+let currentVerse = 0;
+let isPlaying = false;
+let autoScrollTimer = null;
+const playIcon = document.getElementById('playIcon');
+const verseCounter = document.getElementById('verseCounter');
+const progressFill = document.getElementById('progressFill');
+const audioEl = document.getElementById('chalisaAudio');
+
+/* Update counter + progress */
+function updateCounter() {
+  if (verseCounter) verseCounter.textContent = (currentVerse + 1) + ' / ' + totalVerses;
+  if (progressFill) {
+    const p = ((currentVerse + 1) / totalVerses) * 100;
+    progressFill.style.width = p + '%';
+  }
+}
+
+/* Scroll to verse */
+function goToVerse(index) {
+  if (index < 0) index = totalVerses - 1;
+  if (index >= totalVerses) index = 0;
+  currentVerse = index;
+
+  verseBlocks.forEach((b, i) => {
+    b.classList.toggle('active', i === currentVerse);
+  });
+
+  verseBlocks[currentVerse].scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+
+  updateCounter();
+}
+
+/* Next / Prev */
+function nextVerse() {
+  goToVerse(currentVerse + 1);
+}
+function prevVerse() {
+  goToVerse(currentVerse - 1);
+}
+
+/* Play / Pause (auto-advance) */
+function togglePlay() {
+  isPlaying = !isPlaying;
+  playIcon.className = isPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+
+  if (isPlaying) {
+    showToast('🔊 चालीसा पाठ मोड प्रारंभ');
+    goToVerse(0);
+    autoScrollTimer = setInterval(() => {
+      if (currentVerse >= totalVerses - 1) {
+        togglePlay();
+        showToast('🙏 चालीसा पूर्ण हुई — जय हनुमान');
+        return;
+      }
+      nextVerse();
+    }, 6000);
+  } else {
+    clearInterval(autoScrollTimer);
+    autoScrollTimer = null;
+    showToast('⏸ पाठ रोका गया');
+  }
+}
+
+/* Click on verse block → activate */
+verseBlocks.forEach((block, i) => {
+  block.addEventListener('click', (e) => {
+    if (e.target.closest('.audio-btn') || e.target.closest('.meaning-toggle') || e.target.closest('button')) {
+      return;
+    }
+    goToVerse(i);
+    if (navigator.vibrate) navigator.vibrate(15);
+  });
+});
+
+/* ============================================
+   MEANING TOGGLE
+============================================ */
+function toggleMeaning(btn) {
+  const block = btn.closest('.verse-block');
+  const buttons = block.querySelectorAll('.meaning-toggle button');
+  buttons.forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const content = block.querySelector('.meaning-content');
+  const label = btn.textContent.trim();
+  const hindiDiv = content.querySelector('.m-hindi');
+  const engDiv = content.querySelector('.m-english');
+  const translitDiv = content.querySelector('.m-translit');
+
+  content.classList.add('show');
+
+  if (label === 'English') {
+    hindiDiv.style.display = 'none';
+    engDiv.style.display = 'block';
+    if (translitDiv) translitDiv.style.display = 'block';
+  } else {
+    hindiDiv.style.display = 'block';
+    engDiv.style.display = 'none';
+    if (translitDiv) translitDiv.style.display = 'block';
+  }
+}
+
+/* ============================================
+   TOGGLE ALL MEANINGS
+============================================ */
+let allMeaningsVisible = true;
+function toggleAllMeanings() {
+  allMeaningsVisible = !allMeaningsVisible;
+  document.querySelectorAll('.meaning-content').forEach(m => {
+    m.classList.toggle('show', allMeaningsVisible);
+  });
+  showToast(allMeaningsVisible ? '📖 सभी अर्थ दिख रहे हैं' : '📕 सभी अर्थ छिप गए');
+}
+
+/* ============================================
+   PLAY VERSE AUDIO (placeholder)
+============================================ */
+function playVerseAudio(index, event) {
+  if (event) event.stopPropagation();
+
+  // Placeholder audio — replace src with actual files
+  // Example: audioEl.src = 'assets/audio/chalisa-verse-' + index + '.mp3';
+  // audioEl.play();
+
+  showToast('🔊 ऑडियो जल्द उपलब्ध होगा (verse ' + (index + 1) + ')');
+  if (navigator.vibrate) navigator.vibrate(30);
+
+  // Visual feedback
+  const btn = event.currentTarget;
+  btn.classList.add('playing');
+  btn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+  setTimeout(() => {
+    btn.classList.remove('playing');
+    btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+  }, 2000);
+}
+
+/* ============================================
+   KEYBOARD SHORTCUTS
+============================================ */
+document.addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  if (e.key === 'ArrowRight') nextVerse();
+  if (e.key === 'ArrowLeft') prevVerse();
+  if (e.key === ' ') { e.preventDefault(); togglePlay(); }
+});
+
+/* ============================================
+   INIT
+============================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  updateCounter();
+  if (verseBlocks[0]) verseBlocks[0].classList.add('active');
+});
+</script>
+</body>
+</html>
