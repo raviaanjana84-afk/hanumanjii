@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान और काल — हनुमान जी की कथा | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी और काल पुरुष की कथा — काल का आगमन, हनुमान जी से युद्ध, काल पर विजय और अमरत्व की प्राप्ति। पूरी कथा हिंदी में।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.kaal-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(60,60,80,.5), transparent 65%),
+    linear-gradient(135deg, rgba(40,40,60,.35), rgba(122,46,46,.2));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.kaal-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(100,100,140,.18), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.kaal-hero .kaal-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 30px rgba(100,100,160,.9));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.kaal-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .kaal-hero h2 { color: var(--gold-light); }
+.kaal-hero .kaal-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.kaal-hero .kaal-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.kaal-hero .kaal-meta span { display: flex; align-items: center; gap: 5px; }
+.kaal-hero .kaal-meta i { color: var(--gold); }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(100,100,140,.1);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #4A4A6A;
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+.katha-block .mantra {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.05));
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,.3);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .katha-block .mantra { color: var(--gold-light); }
+
+/* Moral List */
+.moral-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.moral-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.moral-list li i {
+  color: var(--gold);
+  font-size: 14px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Chapter marker */
+.chapter {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .kaal-hero .kaal-emoji { font-size: 70px; }
+  .kaal-hero h2 { font-size: 23px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="30-katha.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान कथाएँ</span>
+    <h1>हनुमान और काल</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="kaal-hero">
+  <span class="kaal-emoji">⏳</span>
+  <h2>हनुमान और काल</h2>
+  <div class="kaal-sub">Kaal Purush • Amarत्व</div>
+  <div class="kaal-meta">
+    <span><i class="fa-solid fa-book-open"></i> 4 अध्याय</span>
+    <span><i class="fa-solid fa-clock"></i> 5 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> विस्तृत</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> कथा का सार</h2>
+  <p>यह कथा हनुमान जी और काल पुरुष के बीच हुए युद्ध की है। काल पुरुष (मृत्यु के देवता) हनुमान जी को लेने आए थे, लेकिन हनुमान जी ने उन्हें पराजित किया। इसके बाद हनुमान जी को अमरत्व का वरदान प्राप्त हुआ।</p>
+  <p>यह कथा बताती है कि भक्ति और शक्ति के आगे काल भी पराजित होता है। पढ़ें पूरी कथा — 4 अध्यायों में।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">मुख्य पात्र</div><div class="val">हनुमान, काल पुरुष</div></div>
+    <div class="info-item"><div class="lbl">विषय</div><div class="val">काल पर विजय</div></div>
+    <div class="info-item"><div class="lbl">परिणाम</div><div class="val">अमरत्व वरदान</div></div>
+    <div class="info-item"><div class="lbl">मुख्य गुण</div><div class="val">भक्ति, शक्ति</div></div>
+    <div class="info-item"><div class="lbl">शिक्षा</div><div class="val">काल से ऊपर भक्ति</div></div>
+    <div class="info-item"><div class="lbl">महत्व</div><div class="val">अमरत्व प्राप्ति</div></div>
+  </div>
+</div>
+
+<!-- ========== अध्याय 1 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 1</span>
+  <h3>⏰ काल पुरुष का आगमन</h3>
+  <p>एक समय की बात है, जब हनुमान जी श्रीराम के राज्याभिषेक के बाद अयोध्या में निवास कर रहे थे। वे सदा श्रीराम के ध्यान में लीन रहते और उनकी सेवा करते।</p>
+  <p>तभी एक दिन ब्रह्मा जी के आदेश से <strong>काल पुरुष</strong> (मृत्यु के देवता) हनुमान जी को लेने आए। वे हनुमान जी के पास पहुँचे और बोले — "हे हनुमान, आपका समय पूर्ण हो चुका है। मैं आपको लेने आया हूँ।"</p>
+  <p class="highlight">हनुमान जी मुस्कुराए और बोले — "हे काल पुरुष, मैं तो श्रीराम का दास हूँ। मेरा जीवन उनकी सेवा में समर्पित है। जब तक श्रीराम चाहेंगे, तब तक मैं इस पृथ्वी पर रहूँगा।"</p>
+  <p>काल पुरुष को यह बात अच्छी नहीं लगी। उन्होंने कहा — "हे हनुमान, मैं काल हूँ। मुझसे कोई नहीं बच सकता। आपको मेरे साथ चलना होगा।" हनुमान जी ने विनम्रता से कहा — "यदि आप मुझे ले जा सकते हैं, तो प्रयास कीजिए।"</p>
+</div>
+
+<!-- ========== अध्याय 2 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 2</span>
+  <h3>⚔️ हनुमान जी और काल पुरुष का युद्ध</h3>
+  <p>काल पुरुष ने अपनी शक्ति का प्रयोग किया। उन्होंने हनुमान जी पर काल का फंदा डाला, लेकिन हनुमान जी उससे बच गए। काल पुरुष ने अपनी माया से अनेक रूप धारण किए, लेकिन हनुमान जी अडिग रहे।</p>
+  <p>तब हनुमान जी ने अपनी पूंछ से काल पुरुष को लपेट लिया और उन्हें भूमि पर गिरा दिया। काल पुरुष ने अपनी सारी शक्ति लगा दी, लेकिन हनुमान जी के आगे वे पराजित हो गए।</p>
+  <p class="highlight">हनुमान जी ने कहा — "हे काल पुरुष, आप समय के स्वामी हैं, लेकिन भक्ति के आगे समय भी झुक जाता है। जो भगवान की शरण में है, उस पर काल का कोई प्रभाव नहीं पड़ता।"</p>
+  <p>काल पुरुष ने हनुमान जी से क्षमा मांगी और ब्रह्मा जी के पास लौट गए। उन्होंने ब्रह्मा जी को बताया — "हे ब्रह्मा, हनुमान जी को काल भी नहीं छू सकता। वे अमर हैं।"</p>
+  <p class="mantra">ॐ हं हनुमते रुद्रात्मकाय हुं फट्<br><small>हनुमान जी की शक्ति का स्मरण करें</small></p>
+</div>
+
+<!-- ========== अध्याय 3 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 3</span>
+  <h3>🌟 ब्रह्मा जी का वरदान — अमरत्व</h3>
+  <p>ब्रह्मा जी ने काल पुरुष की बात सुनी और हनुमान जी के पास पहुँचे। उन्होंने हनुमान जी से कहा — "हे हनुमान, आपने काल को भी पराजित कर दिया। आप सचमुच अमर हैं।"</p>
+  <p>ब्रह्मा जी ने हनुमान जी को <strong>अमरत्व का वरदान</strong> दिया। उन्होंने कहा — "हे हनुमान, आप कलियुग के अंत तक इस पृथ्वी पर रहेंगे। जो भी श्रद्धा से आपका स्मरण करेगा, उसे काल का भय नहीं सताएगा।"</p>
+  <p class="highlight">तभी से हनुमान जी को <strong>"चिरंजीवी"</strong> कहा जाता है। वे आठ चिरंजीवियों में से एक हैं। वे कलियुग के अंत तक पृथ्वी पर रहेंगे और भक्तों की रक्षा करेंगे।</p>
+  <p>हनुमान जी ने ब्रह्मा जी को प्रणाम किया और कहा — "हे ब्रह्मा, यह सब श्रीराम की कृपा है। मैं तो केवल उनका सेवक हूँ।"</p>
+</div>
+
+<!-- ========== अध्याय 4 ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🕉️</span> अध्याय 4 — चिरंजीवी हनुमान</h2>
+  <div class="katha-block" style="margin-top:12px">
+    <p><strong>चिरंजीवी</strong> का अर्थ है — जो सदा जीवित रहे। हिंदू धर्म में आठ चिरंजीवी माने जाते हैं — अश्वत्थामा, बलि, व्यास, हनुमान, विभीषण, कृपाचार्य, परशुराम और मार्कंडेय। इनमें हनुमान जी सबसे प्रमुख हैं।</p>
+    <p>हनुमान जी को अमरत्व का वरदान मिला क्योंकि उन्होंने काल को पराजित किया। वे कलियुग के अंत तक पृथ्वी पर रहेंगे और भक्तों की रक्षा करेंगे।</p>
+    <p class="highlight">हनुमान जी की अमरत्व की कथा बताती है कि भक्ति और शक्ति के आगे काल भी पराजित होता है। जो भक्त श्रद्धा से हनुमान जी का स्मरण करता है, उसे काल का भय नहीं सताता।</p>
+    <p>हनुमान जी को <strong>"संकट मोचन"</strong> कहा जाता है। वे अपने भक्तों के सभी संकट दूर करते हैं — रोग, शोक, भय, काल और ग्रह दोष। जो भी श्रद्धा से उनकी पूजा करता है, उसके सभी संकट दूर होते हैं।</p>
+    <p class="mantra">ॐ श्री हनुमते नमः<br><small>चिरंजीवी हनुमान का स्मरण करें</small></p>
+  </div>
+</div>
+
+<!-- ========== शिक्षा ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> कथा से शिक्षा</h2>
+  <ul class="moral-list">
+    <li><i class="fa-solid fa-star"></i> <strong>भक्ति की शक्ति:</strong> हनुमान जी की भक्ति के आगे काल भी पराजित हुआ — भक्ति सबसे बड़ी शक्ति है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>अमरत्व:</strong> हनुमान जी को अमरत्व का वरदान मिला — भक्ति से अमरत्व प्राप्त होता है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>विनम्रता:</strong> हनुमान जी ने सारा श्रेय श्रीराम को दिया — विनम्रता सबसे बड़ा आभूषण है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>काल का भय नहीं:</strong> हनुमान जी की शरण में आने वाले को काल का भय नहीं सताता — भगवान की शरण में सभी संकट दूर होते हैं।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>सेवा भाव:</strong> हनुमान जी ने श्रीराम की सेवा में अपना जीवन समर्पित किया — सेवा भाव से ही भगवान प्रसन्न होते हैं।</li>
+  </ul>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>काल पुरुष कौन हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner"><strong>काल पुरुष</strong> मृत्यु के देवता हैं। वे समय के स्वामी हैं और हर प्राणी के जीवन का अंत करते हैं। लेकिन हनुमान जी ने उन्हें भी पराजित कर दिया।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी ने काल पुरुष को कैसे पराजित किया?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी ने अपनी पूंछ से काल पुरुष को लपेट लिया और उन्हें भूमि पर गिरा दिया। काल पुरुष ने अपनी सारी शक्ति लगा दी, लेकिन हनुमान जी के आगे वे पराजित हो गए।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी को अमरत्व का वरदान किसने दिया?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner"><strong>ब्रह्मा जी</strong> ने हनुमान जी को अमरत्व का वरदान दिया। उन्होंने कहा — "हे हनुमान, आप कलियुग के अंत तक इस पृथ्वी पर रहेंगे।"</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>चिरंजीवी कौन-कौन हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हिंदू धर्म में <strong>आठ चिरंजीवी</strong> माने जाते हैं — अश्वत्थामा, बलि, व्यास, हनुमान, विभीषण, कृपाचार्य, परशुराम और मार्कंडेय। इनमें हनुमान जी सबसे प्रमुख हैं।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>इस कथा से हमें क्या सीख मिलती है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">इस कथा से सीख मिलती है कि <strong>भक्ति सबसे बड़ी शक्ति है</strong>, <strong>भक्ति से अमरत्व प्राप्त होता है</strong>, और <strong>भगवान की शरण में सभी संकट दूर होते हैं</strong>।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> सभी कथाएँ</a>
+    <a href="30k-shani-dev.html" class="cat-chip"><i class="fa-solid fa-arrow-left"></i> हनुमान और शनि देव</a>
+    <a href="30m-chola-katha.html" class="cat-chip"><i class="fa-solid fa-arrow-right"></i> चोला चढ़ाने की कथा</a>
+    <a href="30j-panchmukhi.html" class="cat-chip"><i class="fa-solid fa-paw"></i> पंचमुखी हनुमान</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह कथा शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
