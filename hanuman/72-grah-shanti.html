@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>ग्रह शांति — हनुमान जी के उपाय | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी के उपायों से ग्रह शांति — शनि, मंगल, राहु-केतु, कालसर्प दोष निवारण, मंत्र, विधि और लाभ। संपूर्ण जानकारी।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.grah-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(63,81,181,.45), transparent 65%),
+    linear-gradient(135deg, rgba(48,63,159,.28), rgba(122,46,46,.18));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.grah-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(63,81,181,.2), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.grah-hero .grah-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 30px rgba(63,81,181,.9));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.grah-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .grah-hero h2 { color: var(--gold-light); }
+.grah-hero .grah-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.grah-hero .grah-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.grah-hero .grah-meta span { display: flex; align-items: center; gap: 5px; }
+.grah-hero .grah-meta i { color: var(--gold); }
+
+/* Tabs */
+.grah-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 2px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.grah-tabs::-webkit-scrollbar { display: none; }
+.grah-tab {
+  flex-shrink: 0;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: all .3s ease;
+  font-family: 'Hind', sans-serif;
+  border-radius: 8px 8px 0 0;
+  white-space: nowrap;
+}
+.grah-tab:hover { background: rgba(212,175,55,.06); }
+.grah-tab.active {
+  color: var(--maroon);
+  border-bottom-color: var(--maroon);
+  background: rgba(212,175,55,.08);
+}
+body.dark .grah-tab.active { color: var(--gold-light); border-bottom-color: var(--gold); }
+.grah-panel { display: none; }
+.grah-panel.active { display: block; animation: fadeIn .4s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(63,81,181,.1);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #3F51B5;
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+.katha-block .mantra {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.05));
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,.3);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .katha-block .mantra { color: var(--gold-light); }
+
+/* Steps */
+.vidhi-step {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.vidhi-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+.vidhi-content { flex: 1; }
+.vidhi-content strong {
+  display: block;
+  font-size: 14px;
+  color: var(--maroon);
+  margin-bottom: 3px;
+}
+body.dark .vidhi-content strong { color: var(--gold-light); }
+.vidhi-content p {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Benefits */
+.grah-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.grah-benefit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, rgba(212,175,55,.12), rgba(212,175,55,.05));
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 20px;
+  font-size: 12.5px;
+  color: var(--maroon);
+  transition: all .25s ease;
+}
+.grah-benefit:hover {
+  background: rgba(212,175,55,.2);
+  transform: translateY(-2px);
+}
+body.dark .grah-benefit { color: var(--gold-light); }
+.grah-benefit i { color: var(--gold); font-size: 11px; }
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .grah-hero .grah-emoji { font-size: 70px; }
+  .grah-hero h2 { font-size: 23px; }
+  .grah-tab { font-size: 12px; padding: 10px 12px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>ग्रह शांति</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="grah-hero">
+  <span class="grah-emoji">🌟</span>
+  <h2>ग्रह शांति</h2>
+  <div class="grah-sub">Grah Shanti • Hanuman Upay</div>
+  <div class="grah-meta">
+    <span><i class="fa-solid fa-star"></i> 4 ग्रह दोष</span>
+    <span><i class="fa-solid fa-clock"></i> 15 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> उपाय सहित</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> ग्रह शांति का महत्व</h2>
+  <p>ज्योतिष शास्त्र में ग्रहों का विशेष महत्व है। शनि, मंगल, राहु-केतु और कालसर्प दोष से जीवन में अनेक समस्याएँ आती हैं — आर्थिक तंगी, रोग, शत्रु बाधा, पारिवारिक कलह आदि।</p>
+  <p>हनुमान जी को "संकट मोचन" कहा जाता है। उनकी पूजा से सभी ग्रह दोष शांत होते हैं। विशेष रूप से शनि दोष और मंगल दोष के लिए हनुमान जी की पूजा सर्वोत्तम मानी जाती है।</p>
+  <p>यहाँ <strong>4 प्रमुख ग्रह दोषों</strong> के निवारण के उपाय दिए गए हैं — लक्षण, मंत्र, विधि और लाभ सहित।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">शनि दोष</div><div class="val">शनिवार</div></div>
+    <div class="info-item"><div class="lbl">मंगल दोष</div><div class="val">मंगलवार</div></div>
+    <div class="info-item"><div class="lbl">राहु-केतु</div><div class="val">बुधवार</div></div>
+    <div class="info-item"><div class="lbl">कालसर्प</div><div class="val">नागपंचमी</div></div>
+    <div class="info-item"><div class="lbl">मंत्र</div><div class="val">108 बार जप</div></div>
+    <div class="info-item"><div class="lbl">लाभ</div><div class="val">ग्रह शांति</div></div>
+  </div>
+</div>
+
+<!-- ========== TABS ========== -->
+<div class="grah-tabs">
+  <button class="grah-tab active" onclick="switchTab('shani')">🪐 शनि दोष</button>
+  <button class="grah-tab" onclick="switchTab('mangal')">🔴 मंगल दोष</button>
+  <button class="grah-tab" onclick="switchTab('rahuketu')">🐍 राहु-केतु</button>
+  <button class="grah-tab" onclick="switchTab('kaalsarp')">🌀 कालसर्प</button>
+</div>
+
+<!-- ========== SHANI PANEL ========== -->
+<div class="grah-panel active" id="panel-shani">
+
+  <div class="katha-block">
+    <h3>🪐 शनि दोष के लक्षण</h3>
+    <p>शनि दोष से पीड़ित व्यक्ति के जीवन में निम्न लक्षण दिखाई देते हैं:</p>
+    <ul style="list-style:none;padding:0;margin:12px 0;">
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> कार्यों में बार-बार बाधा आना</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> आर्थिक तंगी, धन का अपव्यय</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> स्वास्थ्य समस्या, पुरानी बीमारी</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> पारिवारिक कलह, मानसिक अशांति</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> शत्रु बाधा, बदनामी</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> विवाह में देरी, संतान समस्या</li>
+    </ul>
+  </div>
+
+  <div class="katha-block">
+    <h3>🪔 निवारण विधि</h3>
+    <div class="vidhi-step">
+      <div class="vidhi-num">1</div>
+      <div class="vidhi-content">
+        <strong>शनिवार का व्रत</strong>
+        <p>शनिवार को हनुमान जी का व्रत रखें। काले वस्त्र पहनें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">2</div>
+      <div class="vidhi-content">
+        <strong>चालीसा पाठ</strong>
+        <p>हनुमान चालीसा का 7 बार पाठ करें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">3</div>
+      <div class="vidhi-content">
+        <strong>मंत्र जप</strong>
+        <p>"ॐ हं हनुमते रुद्रात्मकाय हुं फट्" और "ॐ शं शनैश्चराय नमः" का 108 बार जप करें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">4</div>
+      <div class="vidhi-content">
+        <strong>दान</strong>
+        <p>गरीबों को काले तिल, लोहा, कंबल और उड़द दाल दान करें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">5</div>
+      <div class="vidhi-content">
+        <strong>काली चींटी</strong>
+        <p>काली चींटी को आटा-गुड़ खिलाएं।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">6</div>
+      <div class="vidhi-content">
+        <strong>पीपल सेवा</strong>
+        <p>पीपल के पेड़ पर सरसों के तेल का दीपक जलाएं।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">7</div>
+      <div class="vidhi-content">
+        <strong>बजरंग बाण</strong>
+        <p>बजरंग बाण का पाठ करें।</p>
+      </div>
+    </div>
+    <p class="mantra">ॐ शं शनैश्चराय नमः<br><small>शनि दोष निवारण मंत्र — 108 बार</small></p>
+  </div>
+
+  <div class="katha-block">
+    <h3>🌺 लाभ</h3>
+    <div class="grah-benefits">
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> शनि दोष शांति</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> कार्य सिद्धि</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> आर्थिक समृद्धि</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> रोग निवारण</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> पारिवारिक सुख</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> शत्रु नाश</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== MANGAL PANEL ========== -->
+<div class="grah-panel" id="panel-mangal">
+
+  <div class="katha-block">
+    <h3>🔴 मंगल दोष के लक्षण</h3>
+    <p>मंगल दोष से पीड़ित व्यक्ति के जीवन में निम्न लक्षण दिखाई देते हैं:</p>
+    <ul style="list-style:none;padding:0;margin:12px 0;">
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> विवाह में बाधा, देरी</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> क्रोध, अधिक गुस्सा</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> रक्त विकार, चोट</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> दुर्घटना की संभावना</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> पारिवारिक कलह</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> शत्रु बाधा</li>
+    </ul>
+  </div>
+
+  <div class="katha-block">
+    <h3>🪔 निवारण विधि</h3>
+    <div class="vidhi-step">
+      <div class="vidhi-num">1</div>
+      <div class="vidhi-content">
+        <strong>मंगलवार का व्रत</strong>
+        <p>मंगलवार को हनुमान जी का व्रत रखें। लाल वस्त्र पहनें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">2</div>
+      <div class="vidhi-content">
+        <strong>चालीसा पाठ</strong>
+        <p>हनुमान चालीसा का 7 बार पाठ करें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">3</div>
+      <div class="vidhi-content">
+        <strong>मंत्र जप</strong>
+        <p>"ॐ अं अंगारकाय नमः" का 108 बार जप करें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">4</div>
+      <div class="vidhi-content">
+        <strong>दान</strong>
+        <p>लाल मसूर, तांबा, लाल वस्त्र दान करें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">5</div>
+      <div class="vidhi-content">
+        <strong>हनुमान पूजा</strong>
+        <p>हनुमान जी को सिंदूर और लाल पुष्प अर्पित करें।</p>
+      </div>
+    </div>
+    <p class="mantra">ॐ अं अंगारकाय नमः<br><small>मंगल दोष निवारण मंत्र — 108 बार</small></p>
+  </div>
+
+  <div class="katha-block">
+    <h3>🌺 लाभ</h3>
+    <div class="grah-benefits">
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> मंगल दोष शांति</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> विवाह में सफलता</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> क्रोध शांति</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> आरोग्य प्राप्ति</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> पारिवारिक सुख</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> शत्रु नाश</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== RAHU-KETU PANEL ========== -->
+<div class="grah-panel" id="panel-rahuketu">
+
+  <div class="katha-block">
+    <h3>🐍 राहु-केतु दोष के लक्षण</h3>
+    <p>राहु-केतु दोष से पीड़ित व्यक्ति के जीवन में निम्न लक्षण दिखाई देते हैं:</p>
+    <ul style="list-style:none;padding:0;margin:12px 0;">
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> मानसिक अशांति, भ्रम</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> दुर्घटना की संभावना</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> अचानक धन हानि</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> स्वप्न दोष, नींद न आना</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> शत्रु बाधा</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> पारिवारिक कलह</li>
+    </ul>
+  </div>
+
+  <div class="katha-block">
+    <h3>🪔 निवारण विधि</h3>
+    <div class="vidhi-step">
+      <div class="vidhi-num">1</div>
+      <div class="vidhi-content">
+        <strong>हनुमान पूजा</strong>
+        <p>हनुमान जी की विधिपूर्वक पूजा करें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">2</div>
+      <div class="vidhi-content">
+        <strong>मंत्र जप</strong>
+        <p>"ॐ रां राहवे नमः" और "ॐ कें केतवे नमः" का 108 बार जप करें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">3</div>
+      <div class="vidhi-content">
+        <strong>दान</strong>
+        <p>काले और सफेद तिल, उड़द दाल दान करें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">4</div>
+      <div class="vidhi-content">
+        <strong>बजरंग बाण</strong>
+        <p>बजरंग बाण का पाठ करें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">5</div>
+      <div class="vidhi-content">
+        <strong>हनुमान चालीसा</strong>
+        <p>हनुमान चालीसा का पाठ करें।</p>
+      </div>
+    </div>
+    <p class="mantra">ॐ रां राहवे नमः — 108 बार<br>ॐ कें केतवे नमः — 108 बार<br><small>राहु-केतु दोष निवारण मंत्र</small></p>
+  </div>
+
+  <div class="katha-block">
+    <h3>🌺 लाभ</h3>
+    <div class="grah-benefits">
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> राहु दोष शांति</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> केतु दोष शांति</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> मानसिक शांति</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> दुर्घटना से रक्षा</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> आर्थिक समृद्धि</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> शत्रु नाश</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== KAALSARP PANEL ========== -->
+<div class="grah-panel" id="panel-kaalsarp">
+
+  <div class="katha-block">
+    <h3>🌀 कालसर्प दोष के लक्षण</h3>
+    <p>कालसर्प दोष से पीड़ित व्यक्ति के जीवन में निम्न लक्षण दिखाई देते हैं:</p>
+    <ul style="list-style:none;padding:0;margin:12px 0;">
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> जीवन में निरंतर संकट</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> स्वास्थ्य समस्या</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> आर्थिक तंगी</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> विवाह में बाधा</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> संतान समस्या</li>
+      <li style="display:flex;gap:8px;padding:8px 0;color:var(--ink-soft);font-size:13.5px;"><i class="fa-solid fa-circle" style="color:var(--gold);font-size:8px;margin-top:6px;"></i> पारिवारिक कलह</li>
+    </ul>
+  </div>
+
+  <div class="katha-block">
+    <h3>🪔 निवारण विधि</h3>
+    <div class="vidhi-step">
+      <div class="vidhi-num">1</div>
+      <div class="vidhi-content">
+        <strong>कालसर्प पूजा</strong>
+        <p>नाग-पंचमी या श्रावण मास में कालसर्प दोष पूजा कराएं।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">2</div>
+      <div class="vidhi-content">
+        <strong>हनुमान पूजा</strong>
+        <p>हनुमान जी की विशेष पूजा करें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">3</div>
+      <div class="vidhi-content">
+        <strong>बजरंग बाण</strong>
+        <p>बजरंग बाण का 108 बार पाठ करें।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">4</div>
+      <div class="vidhi-content">
+        <strong>नाग पूजा</strong>
+        <p>नाग-नागिन की मूर्ति पर दूध चढ़ाएं।</p>
+      </div>
+    </div>
+    <div class="vidhi-step">
+      <div class="vidhi-num">5</div>
+      <div class="vidhi-content">
+        <strong>मंत्र जप</strong>
+        <p>"ॐ हं हनुमते रुद्रात्मकाय हुं फट्" का 108 बार जप करें।</p>
+      </div>
+    </div>
+    <p class="mantra">ॐ हं हनुमते रुद्रात्मकाय हुं फट्<br><small>कालसर्प दोष निवारण मंत्र — 108 बार</small></p>
+  </div>
+
+  <div class="katha-block">
+    <h3>🌺 लाभ</h3>
+    <div class="grah-benefits">
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> कालसर्प दोष शांति</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> संकटों से मुक्ति</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> आरोग्य प्राप्ति</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> आर्थिक समृद्धि</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> विवाह में सफलता</span>
+      <span class="grah-benefit"><i class="fa-solid fa-check"></i> संतान सुख</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== सामान्य उपाय ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌟</span> सभी ग्रहों के लिए सामान्य उपाय</h2>
+  <ul class="moral-list" style="list-style:none;padding:0;">
+    <li style="display:flex;gap:10px;padding:10px 12px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;font-size:13.5px;color:var(--ink-soft);line-height:1.65;">
+      <i class="fa-solid fa-star" style="color:var(--gold);margin-top:3px;flex-shrink:0;"></i>
+      प्रतिदिन हनुमान चालीसा का पाठ करें
+    </li>
+    <li style="display:flex;gap:10px;padding:10px 12px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;font-size:13.5px;color:var(--ink-soft);line-height:1.65;">
+      <i class="fa-solid fa-star" style="color:var(--gold);margin-top:3px;flex-shrink:0;"></i>
+      मंगलवार और शनिवार को विशेष पूजा करें
+    </li>
+    <li style="display:flex;gap:10px;padding:10px 12px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;font-size:13.5px;color:var(--ink-soft);line-height:1.65;">
+      <i class="fa-solid fa-star" style="color:var(--gold);margin-top:3px;flex-shrink:0;"></i>
+      हनुमान जी को सिंदूर, तेल और लाल पुष्प अर्पित करें
+    </li>
+    <li style="display:flex;gap:10px;padding:10px 12px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;font-size:13.5px;color:var(--ink-soft);line-height:1.65;">
+      <i class="fa-solid fa-star" style="color:var(--gold);margin-top:3px;flex-shrink:0;"></i>
+      "ॐ हं हनुमते रुद्रात्मकाय हुं फट्" का 108 बार जप करें
+    </li>
+    <li style="display:flex;gap:10px;padding:10px 12px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;font-size:13.5px;color:var(--ink-soft);line-height:1.65;">
+      <i class="fa-solid fa-star" style="color:var(--gold);margin-top:3px;flex-shrink:0;"></i>
+      गरीबों को अन्न-वस्त्र दान करें
+    </li>
+    <li style="display:flex;gap:10px;padding:10px 12px;background:var(--card-bg);border:1px solid var(--border);border-radius:10px;margin-bottom:8px;font-size:13.5px;color:var(--ink-soft);line-height:1.65;">
+      <i class="fa-solid fa-star" style="color:var(--gold);margin-top:3px;flex-shrink:0;"></i>
+      हनुमान जी के मंदिर में जाकर दर्शन करें
+    </li>
+  </ul>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>ग्रह शांति क्यों आवश्यक है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">ग्रह दोष से जीवन में अनेक समस्याएँ आती हैं — आर्थिक तंगी, रोग, शत्रु बाधा, पारिवारिक कलह आदि। ग्रह शांति से ये समस्याएँ दूर होती हैं और जीवन में सुख-शांति आती है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी की पूजा से कौन-कौन से ग्रह दोष शांत होते हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी की पूजा से <strong>शनि दोष, मंगल दोष, राहु-केतु दोष और कालसर्प दोष</strong> शांत होते हैं। हनुमान जी को "संकट मोचन" कहा जाता है — वे सभी ग्रह दोषों को दूर करते हैं।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>शनि दोष निवारण का सबसे सरल उपाय क्या है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">शनिवार को हनुमान चालीसा का 7 बार पाठ करें। "ॐ शं शनैश्चराय नमः" का 108 बार जप करें। काली चींटी को आटा-गुड़ खिलाएं। गरीबों को काले तिल, लोहा और कंबल दान करें।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>मंगल दोष निवारण के लिए क्या करें?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">मंगलवार को हनुमान जी की पूजा करें। "ॐ अं अंगारकाय नमः" का 108 बार जप करें। लाल मसूर, लाल वस्त्र और तांबा दान करें। हनुमान चालीसा का पाठ करें।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>कालसर्प दोष निवारण कैसे करें?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">नाग-पंचमी या श्रावण मास में कालसर्प दोष पूजा कराएं। बजरंग बाण का 108 बार पाठ करें। नाग-नागिन की मूर्ति पर दूध चढ़ाएं। हनुमान जी की विशेष पूजा करें।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>ग्रह शांति में कितना समय लगता है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">ग्रह शांति के लिए <strong>21 दिन से 1 वर्ष</strong> तक का समय लग सकता है। नियमित रूप से पूजा और मंत्र जप करने से शीघ्र फल मिलता है। श्रद्धा और विश्वास सबसे महत्वपूर्ण हैं।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> कथाएँ</a>
+    <a href="30k-shani-dev.html" class="cat-chip"><i class="fa-solid fa-planet-ringed"></i> हनुमान और शनि देव</a>
+    <a href="70-life-lessons.html" class="cat-chip"><i class="fa-solid fa-lightbulb"></i> जीवन सीख</a>
+    <a href="71-problems.html" class="cat-chip"><i class="fa-solid fa-circle-question"></i> समस्याओं का समाधान</a>
+    <a href="42-vrat-katha.html" class="cat-chip"><i class="fa-solid fa-calendar"></i> व्रत कथा</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.grah-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.grah-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector('.grah-tab[onclick*="' + tab + '"]').classList.add('active');
+  document.getElementById('panel-' + tab).classList.add('active');
+}
+</script>
+</body>
+</html>
