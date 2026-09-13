@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>30 दिन की साधना योजना — हनुमान जी | 30 Day Sadhana Plan</title>
+<meta name="description" content="हनुमान जी की 30 दिन की साधना योजना — दैनिक पूजा, जप, पाठ और ध्यान। Progress tracker सहित।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+.plan-hero{
+  width:100%;padding:34px 20px 28px;
+  background:radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius:var(--radius);text-align:center;margin:16px 0;
+  border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.plan-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.plan-hero .plan-emoji{
+  font-size:90px;display:block;margin-bottom:10px;
+  filter:drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;z-index:2;
+}
+.plan-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:28px;color:var(--maroon);margin-bottom:6px;
+  position:relative;z-index:2;
+}
+body.dark .plan-hero h2{color:var(--gold-light)}
+.plan-hero .plan-sub{
+  font-size:12.5px;color:var(--ink-soft);letter-spacing:2px;
+  text-transform:uppercase;position:relative;z-index:2;
+}
+
+/* Progress */
+.plan-progress-wrap{
+  background:var(--card-bg);border-radius:16px;padding:20px;
+  margin-bottom:16px;border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+.plan-progress-num{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:42px;font-weight:700;color:var(--maroon);line-height:1;
+}
+body.dark .plan-progress-num{color:var(--gold-light)}
+.plan-progress-label{
+  font-size:12px;color:var(--ink-light);margin-top:4px;
+  text-transform:uppercase;letter-spacing:1px;
+}
+.plan-progress-bar{
+  height:10px;background:var(--border);border-radius:10px;
+  overflow:hidden;margin-top:14px;
+}
+.plan-progress-bar .fill{
+  height:100%;width:0%;
+  background:linear-gradient(90deg,var(--gold),var(--saffron));
+  transition:width .5s;border-radius:10px;
+}
+.plan-progress-btns{
+  display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap;
+}
+.plan-progress-btns button{
+  padding:8px 16px;border-radius:20px;
+  border:1px solid var(--border);background:var(--bg-alt);
+  color:var(--maroon);font-size:12px;font-weight:600;
+  cursor:pointer;transition:var(--transition);
+  display:flex;align-items:center;gap:5px;font-family:inherit;
+}
+body.dark .plan-progress-btns button{color:var(--gold-light)}
+.plan-progress-btns button:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+
+/* Day card */
+.plan-days{
+  display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:20px;
+}
+@media(min-width:600px){.plan-days{grid-template-columns:1fr 1fr}}
+
+.day-card{
+  background:var(--card-bg);border-radius:14px;
+  padding:14px;border:1px solid var(--border);
+  transition:var(--transition);position:relative;overflow:hidden;
+  display:flex;gap:12px;
+}
+.day-card::before{
+  content:'';position:absolute;top:0;left:0;
+  width:4px;height:100%;
+  background:linear-gradient(180deg,var(--gold),var(--saffron));
+}
+.day-card:hover{border-color:var(--gold);transform:translateX(4px)}
+.day-card.done{background:linear-gradient(135deg,rgba(212,175,55,.14),rgba(255,107,53,.06))}
+
+.day-num{
+  width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-weight:700;font-size:15px;flex-shrink:0;
+  box-shadow:0 3px 10px rgba(122,46,46,.3);
+}
+.day-card.done .day-num{background:linear-gradient(135deg,#2E7D32,#43A047)}
+
+.day-content{flex:1;min-width:0}
+.day-content h4{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:14px;color:var(--maroon);
+  margin-bottom:4px;font-weight:700;
+}
+body.dark .day-content h4{color:var(--gold-light)}
+.day-content p{
+  font-size:12px;color:var(--ink-soft);
+  line-height:1.6;margin-bottom:8px;
+}
+.day-tasks{
+  display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px;
+}
+.day-task{
+  font-size:10.5px;padding:3px 9px;
+  background:rgba(212,175,55,.15);
+  color:var(--maroon);border-radius:12px;
+  font-weight:600;
+}
+body.dark .day-task{color:var(--gold-light)}
+.day-check{
+  padding:6px 14px;border-radius:20px;
+  border:1px solid var(--border);background:var(--bg-alt);
+  color:var(--maroon);font-size:11.5px;font-weight:600;
+  cursor:pointer;transition:var(--transition);
+  display:inline-flex;align-items:center;gap:5px;font-family:inherit;
+}
+body.dark .day-check{color:var(--gold-light)}
+.day-check:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+.day-card.done .day-check{background:#2E7D32;color:#fff;border-color:#2E7D32}
+
+/* Phases */
+.phase-section{
+  background:linear-gradient(135deg, rgba(212,175,55,.14), rgba(122,46,46,.06));
+  border-radius:14px;padding:16px 18px;
+  border-left:4px solid var(--gold);margin:14px 0;
+}
+.phase-section h4{
+  font-family:'Tiro Devanagari Hindi',serif;font-size:16px;
+  color:var(--maroon);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+body.dark .phase-section h4{color:var(--gold-light)}
+.phase-section ul{padding-left:20px;margin:6px 0}
+.phase-section li{
+  font-size:13.5px;line-height:1.85;color:var(--ink-soft);margin-bottom:6px;
+}
+.phase-section li strong{color:var(--maroon)}
+body.dark .phase-section li strong{color:var(--gold-light)}
+
+/* Completion celebration */
+.celebration-modal{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.85);
+  z-index:2000;display:none;
+  align-items:center;justify-content:center;
+  padding:20px;
+  backdrop-filter:blur(8px);
+}
+.celebration-modal.show{display:flex;animation:fadeUp .4s ease}
+.celebration-box{
+  background:var(--card-bg);
+  border-radius:24px;padding:32px 24px;
+  max-width:380px;width:100%;text-align:center;
+  border:3px solid var(--gold);
+  position:relative;overflow:hidden;
+}
+.celebration-box .c-emoji{
+  font-size:80px;display:block;margin-bottom:12px;
+  animation:floatIcon 1.5s ease-in-out infinite;
+}
+.celebration-box h3{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:24px;color:var(--maroon);margin-bottom:10px;
+}
+body.dark .celebration-box h3{color:var(--gold-light)}
+.celebration-box p{
+  font-size:14px;color:var(--ink-soft);
+  line-height:1.7;margin-bottom:16px;
+}
+.celebration-box .c-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.celebration-box .c-btn{
+  padding:11px 22px;border-radius:30px;
+  border:none;font-size:13.5px;font-weight:600;
+  cursor:pointer;transition:var(--transition);font-family:inherit;
+}
+.celebration-box .c-btn.primary{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;box-shadow:0 6px 20px rgba(122,46,46,.4);
+}
+.celebration-box .c-btn.secondary{
+  background:var(--bg-alt);color:var(--maroon);
+  border:1px solid var(--border);
+}
+body.dark .celebration-box .c-btn.secondary{color:var(--gold-light)}
+
+/* Confetti */
+.confetti{
+  position:fixed;width:10px;height:10px;
+  top:-20px;z-index:3000;pointer-events:none;
+  animation:confettiFall 3s linear forwards;
+}
+@keyframes confettiFall{
+  0%{transform:translateY(0) rotate(0);opacity:1}
+  100%{transform:translateY(100vh) rotate(720deg);opacity:0}
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>30 दिन की साधना</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<div class="plan-hero">
+  <span class="plan-emoji">📅</span>
+  <h2>30 दिन की साधना योजना</h2>
+  <div class="plan-sub">जप · पाठ · ध्यान · भक्ति</div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> साधना योजना के बारे में</h2>
+  <p>यह <strong>30 दिन की साधना योजना</strong> हनुमान जी की विशेष कृपा प्राप्त करने के लिए बनाई गई है। इसमें <strong>दैनिक जप, पाठ, ध्यान और भक्ति</strong> के कार्य दिए गए हैं।</p>
+  <p>हर दिन का एक <strong>विशेष लक्ष्य</strong> है — जो आपको धीरे-धीरे हनुमान जी के करीब ले जाएगा। आप हर दिन के कार्य को <strong>पूरा करके टिक करें</strong> — आपकी प्रगति <strong>localStorage</strong> में save होती है।</p>
+  <p><strong>नियम:</strong> प्रतिदिन स्नान करके, स्वच्छ वस्त्र पहनकर, पूर्व दिशा में मुख करके साधना करें। भक्ति भाव सर्वोपरि है।</p>
+</div>
+
+<!-- Progress -->
+<div class="plan-progress-wrap">
+  <div class="plan-progress-num"><span id="doneCount">0</span> / 30</div>
+  <div class="plan-progress-label">दिन पूर्ण</div>
+  <div class="plan-progress-bar">
+    <div class="fill" id="progressFill"></div>
+  </div>
+  <div class="plan-progress-btns">
+    <button onclick="resetPlan()"><i class="fa-solid fa-rotate-left"></i> रीसेट</button>
+    <button onclick="scrollToDays()"><i class="fa-solid fa-arrow-down"></i> दिन देखें</button>
+  </div>
+</div>
+
+<!-- Phases -->
+<div class="phase-section">
+  <h4><i class="fa-solid fa-layer-group"></i> साधना के 3 चरण</h4>
+  <ul>
+    <li><strong>चरण 1 (दिन 1-10):</strong> बुनियाद — जप और चालीसा पाठ</li>
+    <li><strong>चरण 2 (दिन 11-20):</strong> गहन साधना — बजरंग बाण, अष्टक, ध्यान</li>
+    <li><strong>चरण 3 (दिन 21-30):</strong> पूर्ण साधना — सभी पाठ, हवन, दान</li>
+  </ul>
+</div>
+
+<!-- Day cards -->
+<div class="plan-days" id="planDays">
+  <!-- JS will populate -->
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> साधना के लाभ</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> हनुमान कृपा</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> संकट मोचन</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> बल वृद्धि</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> बुद्धि वृद्धि</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> रोग नाश</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> शत्रु नाश</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> भय मुक्ति</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> धन प्राप्ति</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> पारिवारिक सुख</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> मानसिक शांति</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> आत्मिक उन्नति</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> मोक्ष प्राप्ति</span>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="11-bajrang-baan.html" class="cat-chip"><i class="fa-solid fa-bolt"></i> बजरंग बाण</a>
+    <a href="21-mala.html" class="cat-chip"><i class="fa-solid fa-om"></i> जप माला</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-fire"></i> पूजा विधि</a>
+    <a href="42-vrat-katha.html" class="cat-chip"><i class="fa-solid fa-calendar"></i> व्रत कथा</a>
+    <a href="84-faq.html" class="cat-chip"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+  </div>
+</div>
+
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Celebration -->
+<div class="celebration-modal" id="celebrationModal">
+  <div class="celebration-box">
+    <span class="c-emoji">🏆</span>
+    <h3>बधाई हो!</h3>
+    <p>आपने 30 दिन की साधना पूर्ण कर ली। हनुमान जी की विशेष कृपा आप पर बनी रहे 🙏</p>
+    <div class="c-btns">
+      <button class="c-btn primary" onclick="closeCelebration()">धन्यवाद</button>
+      <button class="c-btn secondary" onclick="resetPlan()">फिर से शुरू</button>
+    </div>
+  </div>
+</div>
+
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+/* ========== 30 DAY PLAN DATA ========== */
+const PLAN_DAYS = [
+  // Phase 1
+  { d: 1, title: 'शुभारंभ', tasks: ['स्नान', 'हनुमान जी का ध्यान', '108 जप'], desc: 'पहले दिन केवल 108 बार "ॐ श्री हनुमते नमः" जपें।' },
+  { d: 2, title: 'चालीसा पाठ', tasks: ['स्नान', '1 चालीसा', '108 जप'], desc: 'एक बार हनुमान चालीसा पढ़ें।' },
+  { d: 3, title: 'सिंदूर अर्पण', tasks: ['स्नान', 'सिंदूर चढ़ाएँ', '1 चालीसा'], desc: 'हनुमान जी को सिंदूर और तेल चढ़ाएँ।' },
+  { d: 4, title: '3 चालीसा', tasks: ['स्नान', '3 चालीसा', '108 जप'], desc: 'आज 3 बार हनुमान चालीसा पढ़ें।' },
+  { d: 5, title: 'मंगलवार व्रत', tasks: ['व्रत', '1 चालीसा', 'आरती'], desc: 'यदि मंगलवार है तो व्रत रखें।' },
+  { d: 6, title: 'बजरंग बाण', tasks: ['स्नान', 'बजरंग बाण', '108 जप'], desc: 'बजरंग बाण का पाठ करें।' },
+  { d: 7, title: 'प्रथम सप्ताह', tasks: ['स्नान', '7 चालीसा', 'ध्यान'], desc: 'प्रथम सप्ताह पूर्ण — 7 चालीसा पढ़ें।' },
+  { d: 8, title: 'हनुमान अष्टक', tasks: ['स्नान', 'अष्टक', '108 जप'], desc: 'हनुमान अष्टक का पाठ करें।' },
+  { d: 9, title: 'हनुमान बाहुक', tasks: ['स्नान', 'बाहुक', 'ध्यान'], desc: 'हनुमान बाहुक के कुछ छंद पढ़ें।' },
+  { d: 10, title: 'चरण 1 पूर्ण', tasks: ['स्नान', '1 चालीसा', 'आरती'], desc: 'चरण 1 पूर्ण — कृतज्ञता व्यक्त करें।' },
+  // Phase 2
+  { d: 11, title: 'गहन साधना', tasks: ['स्नान', '11 जप माला', 'ध्यान'], desc: '11 माला (1188 जप) करें।' },
+  { d: 12, title: 'बजरंग बाण × 7', tasks: ['स्नान', '7 बजरंग बाण', 'आरती'], desc: 'बजरंग बाण 7 बार पढ़ें।' },
+  { d: 13, title: 'शनिवार व्रत', tasks: ['व्रत', 'चालीसा', 'शनि मंत्र'], desc: 'यदि शनिवार है तो व्रत रखें।' },
+  { d: 14, title: 'दूसरा सप्ताह', tasks: ['स्नान', '14 चालीसा', 'ध्यान'], desc: 'दूसरा सप्ताह पूर्ण — 14 चालीसा पढ़ें।' },
+  { d: 15, title: 'हनुमान कवच', tasks: ['स्नान', 'कवच', '108 जप'], desc: 'हनुमान कवच का पाठ करें।' },
+  { d: 16, title: 'द्वादश नाम', tasks: ['स्नान', '12 नाम', 'ध्यान'], desc: 'द्वादश नाम स्तोत्र का पाठ करें।' },
+  { d: 17, title: '21 चालीसा', tasks: ['स्नान', '21 चालीसा', 'आरती'], desc: 'एक दिन में 21 चालीसा पढ़ें।' },
+  { d: 18, title: 'मंत्र साधना', tasks: ['स्नान', '1008 जप', 'ध्यान'], desc: '1008 बार मूल मंत्र जपें।' },
+  { d: 19, title: 'पंचमुखी पूजा', tasks: ['स्नान', 'पंचमुखी मंत्र', '108 जप'], desc: 'पंचमुखी हनुमान की पूजा करें।' },
+  { d: 20, title: 'चरण 2 पूर्ण', tasks: ['स्नान', '1 चालीसा', 'आरती'], desc: 'चरण 2 पूर्ण — हनुमान जी को धन्यवाद।' },
+  // Phase 3
+  { d: 21, title: 'पूर्ण साधना', tasks: ['स्नान', 'सभी पाठ', 'ध्यान'], desc: 'चालीसा + बजरंग बाण + अष्टक पढ़ें।' },
+  { d: 22, title: 'हवन', tasks: ['स्नान', 'हवन', 'आरती'], desc: 'घर पर हवन करें (यदि संभव हो)।' },
+  { d: 23, title: 'दान', tasks: ['स्नान', 'दान', 'चालीसा'], desc: 'गरीबों को दान करें।' },
+  { d: 24, title: 'सुंदरकांड', tasks: ['स्नान', 'सुंदरकांड', 'आरती'], desc: 'सुंदरकांड का पाठ करें।' },
+  { d: 25, title: '24 घंटे जप', tasks: ['निरंतर जप', 'ध्यान', 'आरती'], desc: 'जितना संभव हो जप करें।' },
+  { d: 26, title: 'तीर्थ दर्शन', tasks: ['मंदिर जाएँ', 'दर्शन', 'आरती'], desc: 'नज़दीकी हनुमान मंदिर जाएँ।' },
+  { d: 27, title: 'विशेष पूजा', tasks: ['स्नान', 'चोला', 'आरती'], desc: 'हनुमान जी को चोला चढ़ाएँ।' },
+  { d: 28, title: '28 चालीसा', tasks: ['स्नान', '28 चालीसा', 'ध्यान'], desc: '28 चालीसा पढ़ें।' },
+  { d: 29, title: 'मनोकामना', tasks: ['स्नान', '108 जप', 'प्रार्थना'], desc: 'अपनी मनोकामना हनुमान जी को बताएँ।' },
+  { d: 30, title: 'साधना पूर्ण', tasks: ['स्नान', 'सभी पाठ', 'आरती'], desc: '30 दिन की साधना पूर्ण — हनुमान जी को धन्यवाद!' }
+];
+
+const STORAGE_KEY = 'hanuman30DayPlan';
+let doneDays = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+
+function renderDays() {
+  const container = document.getElementById('planDays');
+  if (!container) return;
+  container.innerHTML = '';
+  PLAN_DAYS.forEach(day => {
+    const isDone = doneDays.includes(day.d);
+    const card = document.createElement('div');
+    card.className = 'day-card' + (isDone ? ' done' : '');
+    card.innerHTML = `
+      <div class="day-num">${isDone ? '✓' : day.d}</div>
+      <div class="day-content">
+        <h4>दिन ${day.d} — ${day.title}</h4>
+        <p>${day.desc}</p>
+        <div class="day-tasks">
+          ${day.tasks.map(t => `<span class="day-task">${t}</span>`).join('')}
+        </div>
+        <button class="day-check" onclick="toggleDay(${day.d})">
+          <i class="fa-solid fa-${isDone ? 'check-circle' : 'circle'}"></i>
+          ${isDone ? 'पूर्ण' : 'पूर्ण करें'}
+        </button>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+  updateProgress();
+}
+
+function toggleDay(dayNum) {
+  if (doneDays.includes(dayNum)) {
+    doneDays = doneDays.filter(d => d !== dayNum);
+  } else {
+    doneDays.push(dayNum);
+    if (navigator.vibrate) navigator.vibrate(30);
+  }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(doneDays));
+  renderDays();
+
+  if (doneDays.length === 30) {
+    showCelebration();
+  }
+}
+
+function updateProgress() {
+  const count = doneDays.length;
+  const countEl = document.getElementById('doneCount');
+  const fillEl = document.getElementById('progressFill');
+  if (countEl) countEl.textContent = count;
+  if (fillEl) fillEl.style.width = (count / 30 * 100) + '%';
+}
+
+function resetPlan() {
+  if (!confirm('क्या आप साधना रीसेट करना चाहते हैं?')) return;
+  doneDays = [];
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(doneDays));
+  renderDays();
+  closeCelebration();
+  showToast('🔄 साधना रीसेट हो गई');
+}
+
+function showCelebration() {
+  document.getElementById('celebrationModal').classList.add('show');
+  launchConfetti();
+  if (navigator.vibrate) navigator.vibrate([100, 50, 100, 50, 300]);
+}
+
+function closeCelebration() {
+  document.getElementById('celebrationModal').classList.remove('show');
+}
+
+function launchConfetti() {
+  const colors = ['#D4AF37', '#FF6B35', '#7A2E2E', '#F4D160', '#FF8C5A'];
+  for (let i = 0; i < 60; i++) {
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random() * 100 + '%';
+    c.style.background = colors[Math.floor(Math.random() * colors.length)];
+    c.style.animationDelay = Math.random() * 0.5 + 's';
+    c.style.animationDuration = (2 + Math.random() * 2) + 's';
+    c.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 5000);
+  }
+}
+
+function scrollToDays() {
+  document.getElementById('planDays')?.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+document.addEventListener('DOMContentLoaded', renderDays);
+</script>
+</body>
+</html>
