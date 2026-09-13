@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान कथाएँ — संपूर्ण संग्रह | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी की 13 अमर कथाएँ — जन्म, बाल लीला, राम मिलन, लंका दहन, संजीवनी, अहिरावण वध और अन्य। पूर्ण कथा हिंदी में।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.katha-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.katha-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.katha-hero .katha-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.katha-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .katha-hero h2 { color: var(--gold-light); }
+.katha-hero .katha-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.katha-hero .katha-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.katha-hero .katha-meta span { display: flex; align-items: center; gap: 5px; }
+.katha-hero .katha-meta i { color: var(--gold); }
+
+/* Stats */
+.katha-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+}
+.stat-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.stat-item .num {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--maroon);
+  font-family: 'Tiro Devanagari Hindi', serif;
+}
+body.dark .stat-item .num { color: var(--gold-light); }
+.stat-item .lbl {
+  font-size: 10.5px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2px;
+}
+
+/* Category Chips */
+.cat-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.cat-chip {
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  font-family: 'Hind', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: all .25s ease;
+}
+.cat-chip:hover {
+  border-color: var(--gold);
+  color: var(--maroon);
+}
+.cat-chip.active {
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  border-color: transparent;
+}
+
+/* Katha Cards */
+.katha-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+.katha-card {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: all .3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.katha-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--maroon), var(--gold), var(--saffron));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s ease;
+}
+.katha-card:hover::before { transform: scaleX(1); }
+.katha-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 8px 28px rgba(212,175,55,.18);
+}
+.katha-card .kc-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.katha-card .kc-emoji {
+  font-size: 42px;
+  filter: drop-shadow(0 0 12px rgba(212,175,55,.5));
+  flex-shrink: 0;
+  transition: transform .3s ease;
+}
+.katha-card:hover .kc-emoji { transform: scale(1.1) rotate(-5deg); }
+.katha-card .kc-info { flex: 1; min-width: 0; }
+.katha-card .kc-title {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 17px;
+  color: var(--maroon);
+  margin: 0 0 3px;
+  line-height: 1.3;
+}
+body.dark .katha-card .kc-title { color: var(--gold-light); }
+.katha-card .kc-badge {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(212,175,55,.15);
+  color: var(--maroon);
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+body.dark .katha-card .kc-badge { color: var(--gold-light); }
+.katha-card .kc-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin: 0 0 12px;
+}
+.katha-card .kc-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.katha-card .kc-foot .kc-time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.katha-card .kc-foot .kc-arrow {
+  color: var(--gold);
+  transition: transform .3s ease;
+}
+.katha-card:hover .kc-foot .kc-arrow { transform: translateX(4px); }
+
+/* Featured Card */
+.katha-card.featured {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(212,175,55,.1), rgba(122,46,46,.05));
+  border-color: rgba(212,175,55,.4);
+}
+.katha-card.featured .kc-emoji { font-size: 56px; }
+
+/* No Result */
+.no-result {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+.no-result.show { display: block; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .katha-hero .katha-emoji { font-size: 70px; }
+  .katha-hero h2 { font-size: 23px; }
+  .katha-grid { grid-template-columns: 1fr; }
+  .katha-card .kc-emoji { font-size: 36px; }
+  .katha-card.featured .kc-emoji { font-size: 46px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>हनुमान कथाएँ</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="katha-hero">
+  <span class="katha-emoji">📖</span>
+  <h2>हनुमान कथाएँ</h2>
+  <div class="katha-sub">13 Amar Kathayen</div>
+  <div class="katha-meta">
+    <span><i class="fa-solid fa-book-open"></i> 13 कथाएँ</span>
+    <span><i class="fa-solid fa-clock"></i> 2 घंटे</span>
+    <span><i class="fa-solid fa-language"></i> विस्तृत</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> कथाओं का महत्व</h2>
+  <p>हनुमान जी की कथाएँ केवल मनोरंजन नहीं हैं — ये जीवन जीने की कला सिखाती हैं। बाल लीला से लेकर लंका दहन तक, हर कथा में भक्ति, साहस, विवेक और समर्पण का संदेश छिपा है।</p>
+  <p>इन कथाओं को पढ़ने और सुनने से मन को शक्ति मिलती है, भय दूर होता है और जीवन में सकारात्मक ऊर्जा का संचार होता है। विशेष रूप से बच्चों को ये कथाएँ सुनानी चाहिए — इससे उनमें संस्कार और आत्मविश्वास विकसित होता है।</p>
+  <p>यहाँ हनुमान जी की <strong>13 अमर कथाएँ</strong> दी गई हैं — जन्म से लेकर चोला चढ़ाने तक की पूरी यात्रा।</p>
+</div>
+
+<!-- ========== STATS ========== -->
+<div class="katha-stats">
+  <div class="stat-item"><div class="num">13</div><div class="lbl">कथाएँ</div></div>
+  <div class="stat-item"><div class="num">6</div><div class="lbl">श्रेणियाँ</div></div>
+  <div class="stat-item"><div class="num">2घं</div><div class="lbl">पढ़ने का समय</div></div>
+</div>
+
+<!-- ========== CATEGORY CHIPS ========== -->
+<div class="cat-chips" id="catChips">
+  <button class="cat-chip active" data-cat="all" onclick="filterCat(this)">सभी</button>
+  <button class="cat-chip" data-cat="janm" onclick="filterCat(this)">जन्म</button>
+  <button class="cat-chip" data-cat="bal" onclick="filterCat(this)">बाल लीला</button>
+  <button class="cat-chip" data-cat="ram" onclick="filterCat(this)">राम काल</button>
+  <button class="cat-chip" data-cat="yuddh" onclick="filterCat(this)">युद्ध</button>
+  <button class="cat-chip" data-cat="vishesh" onclick="filterCat(this)">विशेष</button>
+</div>
+
+<!-- ========== KATHA GRID ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌟</span> सभी कथाएँ</h2>
+
+  <div class="katha-grid" id="kathaGrid">
+
+    <!-- Featured: जन्म कथा -->
+    <a href="30a-janm.html" class="katha-card featured" data-cat="janm">
+      <div class="kc-top">
+        <span class="kc-emoji">🌟</span>
+        <div class="kc-info">
+          <h3 class="kc-title">जन्म कथा</h3>
+          <span class="kc-badge">मुख्य कथा</span>
+        </div>
+      </div>
+      <p class="kc-desc">अंजनी माता और केसरी के पुत्र के रूप में हनुमान जी का जन्म। पवन देव ने कैसे दिया आशीर्वाद, और कैसे हुआ रुद्रावतार का प्राकट्य — पढ़ें पूरी कथा।</p>
+      <div class="kc-foot">
+        <span class="kc-time"><i class="fa-solid fa-clock"></i> 8 मिनट</span>
+        <span class="kc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- बाल लीला -->
+    <a href="30b-bal-lila.html" class="katha-card" data-cat="bal">
+      <div class="kc-top">
+        <span class="kc-emoji">👶</span>
+        <div class="kc-info">
+          <h3 class="kc-title">बाल लीला</h3>
+          <span class="kc-badge">बाल लीला</span>
+        </div>
+      </div>
+      <p class="kc-desc">बाल हनुमान की शरारतें — सूर्य को फल समझकर निगलना, इंद्र का वज्र प्रहार, और पवन देव का कोप।</p>
+      <div class="kc-foot">
+        <span class="kc-time"><i class="fa-solid fa-clock"></i> 6 मिनट</span>
+        <span class="kc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- सूर्य देव प्रसंग -->
+    <a href="30c-surya-dev.html" class="katha-card" data-cat="bal">
+      <div class="kc-top">
+        <span class="kc-emoji">☀️</span>
+        <div class="kc-info">
+          <h3 class="kc-title">सूर्य देव प्रसंग</h3>
+          <span class="kc-badge">बाल लीला</span>
+        </div>
+      </div>
+      <p class="kc-desc">बाल हनुमान ने सूर्य को फल समझकर पकड़ लिया। इंद्र के वज्र से हनुमान जी का हनु (जबड़ा) टूटा — तभी से हनुमान नाम पड़ा।</p>
+      <div class="kc-foot">
+        <span class="kc-time"><i class="fa-solid fa-clock"></i> 5 मिनट</span>
+        <span class="kc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- राम मिलन -->
+    <a href="30d-ram-milan.html" class="katha-card" data-cat="ram">
+      <div class="kc-top">
+        <span class="kc-emoji">🏹</span>
+        <div class="kc-info">
+          <h3 class="kc-title">राम मिलन</h3>
+          <span class="kc-badge">राम काल</span>
+        </div>
+      </div>
+      <p class="kc-desc">सीता हरण के बाद श्रीराम वन में हनुमान जी से मिले। पहली भेंट, राम का परिचय, और भक्ति का अमर बंधन।</p>
+      <div class="kc-foot">
+        <span class="kc-time"><i class="fa-solid fa-clock"></i> 7 मिनट</span>
+        <span class="kc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- सुग्रीव मित्रता -->
+    <a href="30e-sugriva-mitra.html" class="katha-card" data-cat="ram">
+      <div class="kc-top">
+        <span class="kc-emoji">🤝</span>
+        <div class="kc-info">
+          <h3 class="kc-title">सुग्रीव मित्रता</h3>
+          <span class="kc-badge">राम काल</span>
+        </div>
+      </div>
+      <p class="kc-desc">हनुमान जी ने श्रीराम और सुग्रीव की मित्रता कराई। बालि वध की योजना, और किष्किंधा का राज्य।</p>
+      <div class="kc-foot">
+        <span class="kc-time"><i class="fa-solid fa-clock"></i> 6 मिनट</span>
+        <span class="kc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- लंका दहन -->
+    <a href="30f-lanka-dahan.html" class="katha-card" data-cat="yuddh">
+      <div class="kc-top">
+        <span class="kc-emoji">🔥</span>
+        <div class="kc-info">
+          <h3 class="kc-title">लंका दहन</h3>
+          <span class="kc-badge">युद्ध</span>
+        </div>
+      </div>
+      <p class="kc-desc">हनुमान जी ने अशोक वाटिका में सीता माता को खोजा। रावण की सभा में अपमान, पूंछ में आग, और लंका दहन।</p>
+      <div class="kc-foot">
+        <span class="kc-time"><i class="fa-solid fa-clock"></i> 9 मिनट</span>
+        <span class="kc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- संजीवनी बूटी -->
+    <a href="30g-sanjeevani.html" class="katha-card" data-cat="yuddh">
+      <div class="kc-top">
+        <span class="kc-emoji">🌿</span>
+        <div class="kc-info">
+          <h3 class="kc-title">संजीवनी बूटी</h3>
+          <span class="kc-badge">युद्ध</span>
+        </div>
+      </div>
+      <p class="kc-desc">लक्ष्मण मूर्छित हुए। हनुमान जी द्रोणगिरि पर्वत उठाकर लाए। संजीवनी बूटी से लक्ष्मण जीवित हुए।</p>
+      <div class="kc-foot">
+        <span class="kc-time"><i class="fa-solid fa-clock"></i> 7 मिनट</span>
+        <span class="kc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- अहिरावण वध -->
+    <a href="30h-ahiravan-vadh.html" class="katha-card" data-cat="yuddh">
+      <div class="kc-top">
+        <span class="kc-emoji">⚔️</span>
+        <div class="kc-info">
+          <h3 class="kc-title">अहिरावण वध</h3>
+          <span class="kc-badge">युद्ध</span>
+        </div>
+      </div>
+      <p class="kc-desc">अहिरावण ने श्रीराम और लक्ष्मण को पाताल लोक में बंदी बनाया। हनुमान जी ने पंचमुखी रूप धरकर वध किया।</p>
+      <div class="kc-foot">
+        <span class="kc-time"><i class="fa-solid fa-clock"></i> 8 मिनट</span>
+        <span class="kc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- भरत मिलन -->
+    <a href="30i-bharat-milan.html" class="katha-card" data-cat="ram">
+      <div class="kc-top">
+        <span class="kc-emoji">💝</span>
+        <div class="kc-info">
+          <h3 class="kc-title">भरत मिलन</h3>
+          <span class="kc-badge">राम काल</span>
+        </div>
+      </div>
+      <p class="kc-desc">भरत ने श्रीराम को वन में खोजा। हनुमान जी ने भरत और राम के बीच संदेश पहुँचाया।</p>
+      <div class="kc-foot">
+        <span class="kc-time"><i class="fa-solid fa-clock"></i> 5 मिनट</span>
+        <span class="kc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- पंचमुखी हनुमान -->
+    <a href="30j-panchmukhi.html" class="katha-card" data-cat="vishesh">
+      <div class="kc-top">
+        <span class="kc-emoji">🎭</span>
+        <div class="kc-info">
+          <h3 class="kc-title">पंचमुखी हनुमान</h3>
+          <span class="kc-badge">विशेष</span>
+        </div>
+      </div>
+      <p class="kc-desc">अहिरावण वध के लिए हनुमान जी ने पंचमुखी रूप धारण किया — हयग्रीव, नरसिंह, गरुड़, वराह और हनुमान।</p>
+      <div class="kc-foot">
+        <span class="kc-time"><i class="fa-solid fa-clock"></i> 6 मिनट</span>
+        <span class="kc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- हनुमान और शनि देव -->
+    <a href="30k-shani-dev.html" class="katha-card" data-cat="vishesh">
+      <div class="kc-top">
+        <span class="kc-emoji">🪐</span>
+        <div class="kc-info">
+          <h3 class="kc-title">हनुमान और शनि देव</h3>
+          <span class="kc-badge">विशेष</span>
+        </div>
+      </div>
+      <p class="kc-desc">शनि देव ने हनुमान जी को कष्ट देना चाहा। हनुमान जी ने शनि देव को बंदी बनाया और वचन लिया।</p>
+      <div class="kc-foot">
+        <span class="kc-time"><i class="fa-solid fa-clock"></i> 6 मिनट</span>
+        <span class="kc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- हनुमान और काल -->
+    <a href="30l-hanuman-aur-kaal.html" class="katha-card" data-cat="vishesh">
+      <div class="kc-top">
+        <span class="kc-emoji">⏳</span>
+        <div class="kc-info">
+          <h3 class="kc-title">हनुमान और काल</h3>
+          <span class="kc-badge">विशेष</span>
+        </div>
+      </div>
+      <p class="kc-desc">काल पुरुष हनुमान जी को लेने आए। हनुमान जी ने उन्हें पराजित किया और अमरत्व प्राप्त किया।</p>
+      <div class="kc-foot">
+        <span class="kc-time"><i class="fa-solid fa-clock"></i> 5 मिनट</span>
+        <span class="kc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+    <!-- चोला चढ़ाने की कथा -->
+    <a href="30m-chola-katha.html" class="katha-card" data-cat="vishesh">
+      <div class="kc-top">
+        <span class="kc-emoji">🧵</span>
+        <div class="kc-info">
+          <h3 class="kc-title">चोला चढ़ाने की कथा</h3>
+          <span class="kc-badge">विशेष</span>
+        </div>
+      </div>
+      <p class="kc-desc">सिंदूर और तेल से चोला चढ़ाने की परंपरा कैसे शुरू हुई — पढ़ें पूरी कथा।</p>
+      <div class="kc-foot">
+        <span class="kc-time"><i class="fa-solid fa-clock"></i> 5 मिनट</span>
+        <span class="kc-arrow">पढ़ें <i class="fa-solid fa-arrow-right"></i></span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="no-result" id="noResult">
+    <span style="font-size:50px;display:block;margin-bottom:10px;">🔍</span>
+    <p>इस श्रेणी में कोई कथा नहीं मिली।</p>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="11-bajrang-baan.html" class="cat-chip"><i class="fa-solid fa-bolt"></i> बजरंग बाण</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-om"></i> पूजा विधि</a>
+    <a href="42-vrat-katha.html" class="cat-chip"><i class="fa-solid fa-calendar"></i> व्रत कथा</a>
+    <a href="43-aarti.html" class="cat-chip"><i class="fa-solid fa-music"></i> आरती</a>
+    <a href="84-faq.html" class="cat-chip"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function filterCat(btn) {
+  document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  const cat = btn.dataset.cat;
+  const cards = document.querySelectorAll('#kathaGrid .katha-card');
+  let visible = 0;
+
+  cards.forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.style.display = '';
+      visible++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  document.getElementById('noResult').classList.toggle('show', visible === 0);
+}
+</script>
+</body>
+</html>
