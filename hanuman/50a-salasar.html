@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>सालासर बालाजी मंदिर — पूर्ण जानकारी | Sanatan Gyan Kosh</title>
+<meta name="description" content="सालासर बालाजी मंदिर, चूरू (राजस्थान) — इतिहास, कथा, दर्शन समय, आरती, कैसे पहुँचें और विशेषताएँ।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.salasar-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.45), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.25), rgba(255,107,53,.15));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.salasar-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(212,175,55,.18), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.salasar-hero .salasar-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 26px rgba(212,175,55,.9));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.salasar-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .salasar-hero h2 { color: var(--gold-light); }
+.salasar-hero .salasar-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.salasar-hero .salasar-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.salasar-hero .salasar-meta span { display: flex; align-items: center; gap: 5px; }
+.salasar-hero .salasar-meta i { color: var(--gold); }
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(212,175,55,.12);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid var(--gold);
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+
+/* Steps */
+.vidhi-step {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.vidhi-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+.vidhi-content { flex: 1; }
+.vidhi-content strong {
+  display: block;
+  font-size: 14px;
+  color: var(--maroon);
+  margin-bottom: 3px;
+}
+body.dark .vidhi-content strong { color: var(--gold-light); }
+.vidhi-content p {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Benefits */
+.temple-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.temple-benefit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: linear-gradient(135deg, rgba(212,175,55,.12), rgba(212,175,55,.05));
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 20px;
+  font-size: 12.5px;
+  color: var(--maroon);
+  transition: all .25s ease;
+}
+.temple-benefit:hover {
+  background: rgba(212,175,55,.2);
+  transform: translateY(-2px);
+}
+body.dark .temple-benefit { color: var(--gold-light); }
+.temple-benefit i { color: var(--gold); font-size: 11px; }
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .salasar-hero .salasar-emoji { font-size: 70px; }
+  .salasar-hero h2 { font-size: 23px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="50-temples.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🛕 हनुमान मंदिर</span>
+    <h1>सालासर बालाजी</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="salasar-hero">
+  <span class="salasar-emoji">🛕</span>
+  <h2>सालासर बालाजी मंदिर</h2>
+  <div class="salasar-sub">Churu • Rajasthan</div>
+  <div class="salasar-meta">
+    <span><i class="fa-solid fa-location-dot"></i> चूरू, राजस्थान</span>
+    <span><i class="fa-solid fa-clock"></i> 6 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> पूर्ण जानकारी</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> मंदिर का महत्व</h2>
+  <p>सालासर बालाजी मंदिर राजस्थान के चूरू जिले में स्थित हनुमान जी का अत्यंत प्रसिद्ध मंदिर है। यह मंदिर पूरे भारत में अपनी चमत्कारी शक्तियों के लिए जाना जाता है। मान्यता है कि यहाँ जो भी भक्त श्रद्धा से दर्शन करता है, उसकी सभी मनोकामनाएं पूर्ण होती हैं।</p>
+  <p>सालासर बालाजी की महिमा इतनी है कि दूर-दूर से भक्त यहाँ दर्शन के लिए आते हैं। मंगलवार और शनिवार को यहाँ विशेष भीड़ होती है। यहाँ हनुमान जी की स्वयंभू मूर्ति है।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">स्थान</div><div class="val">चूरू, राजस्थान</div></div>
+    <div class="info-item"><div class="lbl">देवता</div><div class="val">हनुमान जी</div></div>
+    <div class="info-item"><div class="lbl">दर्शन समय</div><div class="val">4 AM - 10 PM</div></div>
+    <div class="info-item"><div class="lbl">विशेष दिन</div><div class="val">मंगल/शनिवार</div></div>
+    <div class="info-item"><div class="lbl">स्थापना</div><div class="val">विक्रम सं. 1810</div></div>
+    <div class="info-item"><div class="lbl">मेला</div><div class="val">आषाढ़/श्रावण</div></div>
+  </div>
+</div>
+
+<!-- ========== इतिहास ========== -->
+<div class="katha-block">
+  <h3>📜 मंदिर का इतिहास</h3>
+  <p>सालासर बालाजी मंदिर का इतिहास अत्यंत रोचक है। मान्यता है कि विक्रम संवत 1810 में मोहनदास नामक एक भक्त को हनुमान जी की मूर्ति स्वप्न में मिली। उन्होंने उस मूर्ति को सालासर गाँव में स्थापित किया।</p>
+  <p>मोहनदास जी हनुमान जी के परम भक्त थे। वे प्रतिदिन हनुमान जी की पूजा करते थे। एक दिन उन्हें स्वप्न में हनुमान जी ने दर्शन दिए और कहा — "मेरी मूर्ति असली है, उसे ले जाओ और सालासर में स्थापित करो।"</p>
+  <p class="highlight">मोहनदास जी ने वह मूर्ति ली और सालासर गाँव में स्थापित की। तभी से यह मंदिर सालासर बालाजी मंदिर के नाम से प्रसिद्ध हो गया। यहाँ हनुमान जी की स्वयंभू मूर्ति है।</p>
+  <p>मंदिर का निर्माण कार्य समय-समय पर होता रहा। आज यह मंदिर भारत के सबसे प्रसिद्ध हनुमान मंदिरों में से एक है। यहाँ हर दिन हज़ारों भक्त दर्शन के लिए आते हैं।</p>
+</div>
+
+<!-- ========== कथा ========== -->
+<div class="katha-block">
+  <h3>📖 चमत्कारी कथा</h3>
+  <p>एक बार मोहनदास जी को स्वप्न में हनुमान जी ने दर्शन दिए। उन्होंने कहा — "मेरी मूर्ति असली है, उसे ले जाओ और सालासर में स्थापित करो।" मोहनदास जी ने वह मूर्ति ली और सालासर गाँव में स्थापित की।</p>
+  <p>जब मूर्ति स्थापित की गई, तो उस स्थान पर अद्भुत घटनाएँ होने लगीं। अनेक रोगी स्वस्थ हो गए, अनेक दुखी सुखी हो गए। धीरे-धीरे सालासर बालाजी की महिमा पूरे भारत में फैल गई।</p>
+  <p class="highlight">एक बार एक भक्त ने सालासर बालाजी से मनोकामना माँगी — "यदि मेरी मनोकामना पूर्ण होगी, तो मैं आपको सवा मन का चोला चढ़ाऊँगा।" उसकी मनोकामना पूर्ण हुई और उसने सवा मन का चोला चढ़ाया। तभी से सालासर में सवा मन का चोला चढ़ाने की परंपरा शुरू हुई।</p>
+  <p>आज भी सालासर बालाजी में सवा मन का चोला चढ़ाने की परंपरा प्रचलित है। जो भी भक्त श्रद्धा से चोला चढ़ाता है, उसकी सभी मनोकामनाएं पूर्ण होती हैं।</p>
+</div>
+
+<!-- ========== दर्शन और आरती समय ========== -->
+<div class="katha-block">
+  <h3>🕐 दर्शन और आरती समय</h3>
+  <div class="vidhi-step">
+    <div class="vidhi-num">1</div>
+    <div class="vidhi-content">
+      <strong>प्रातः आरती</strong>
+      <p>प्रातः 4:00 बजे — मंगला आरती</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">2</div>
+    <div class="vidhi-content">
+      <strong>श्रृंगार आरती</strong>
+      <p>प्रातः 7:00 बजे — श्रृंगार आरती</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">3</div>
+    <div class="vidhi-content">
+      <strong>भोग आरती</strong>
+      <p>दोपहर 12:00 बजे — भोग आरती</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">4</div>
+    <div class="vidhi-content">
+      <strong>संध्या आरती</strong>
+      <p>संध्या 7:00 बजे — संध्या आरती</p>
+    </div>
+  </div>
+  <div class="vidhi-step">
+    <div class="vidhi-num">5</div>
+    <div class="vidhi-content">
+      <strong>शयन आरती</strong>
+      <p>रात्रि 9:30 बजे — शयन आरती</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== कैसे पहुँचें ========== -->
+<div class="katha-block">
+  <h3>🚗 कैसे पहुँचें</h3>
+  <p><strong>वायु मार्ग:</strong> निकटतम हवाई अड्डा — जयपुर अंतर्राष्ट्रीय हवाई अड्डा (180 किमी)।</p>
+  <p><strong>रेल मार्ग:</strong> सालासर का अपना रेलवे स्टेशन है। दिल्ली, जयपुर, बीकानेर से सीधी ट्रेनें हैं।</p>
+  <p><strong>सड़क मार्ग:</strong> जयपुर से 180 किमी, दिल्ली से 380 किमी, बीकानेर से 170 किमी। दिल्ली-जयपुर हाईवे से सालासर के लिए मार्ग है।</p>
+  <p><strong>स्थानीय:</strong> सालासर बस स्टैंड से मंदिर 1 किमी दूर है। ऑटो और रिक्शा उपलब्ध हैं।</p>
+</div>
+
+<!-- ========== लाभ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> दर्शन के लाभ</h2>
+  <div class="temple-benefits">
+    <span class="temple-benefit"><i class="fa-solid fa-check"></i> मनोकामना पूर्ण</span>
+    <span class="temple-benefit"><i class="fa-solid fa-check"></i> रोग निवारण</span>
+    <span class="temple-benefit"><i class="fa-solid fa-check"></i> संकटों से मुक्ति</span>
+    <span class="temple-benefit"><i class="fa-solid fa-check"></i> आर्थिक समृद्धि</span>
+    <span class="temple-benefit"><i class="fa-solid fa-check"></i> शत्रु नाश</span>
+    <span class="temple-benefit"><i class="fa-solid fa-check"></i> संतान सुख</span>
+    <span class="temple-benefit"><i class="fa-solid fa-check"></i> पारिवारिक सुख</span>
+    <span class="temple-benefit"><i class="fa-solid fa-check"></i> मानसिक शांति</span>
+    <span class="temple-benefit"><i class="fa-solid fa-check"></i> बुरी नजर से रक्षा</span>
+    <span class="temple-benefit"><i class="fa-solid fa-check"></i> ग्रह दोष शांति</span>
+  </div>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>सालासर बालाजी कहाँ है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">सालासर बालाजी मंदिर <strong>राजस्थान</strong> के <strong>चूरू जिले</strong> में स्थित है। यह जयपुर से 180 किमी दूर है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>सालासर बालाजी में क्या विशेष है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">सालासर बालाजी में हनुमान जी की <strong>स्वयंभू मूर्ति</strong> है। यहाँ दर्शन मात्र से मनोकामना पूर्ण होती है। मंगलवार और शनिवार को विशेष भीड़ होती है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>सालासर बालाजी के दर्शन समय क्या हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">सालासर बालाजी के दर्शन <strong>प्रातः 4:00 बजे से रात्रि 10:00 बजे</strong> तक होते हैं। प्रातः 4:00 बजे मंगला आरती होती है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>सालासर बालाजी में चोला चढ़ाने की परंपरा क्या है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">सालासर बालाजी में <strong>सवा मन का चोला</strong> चढ़ाने की परंपरा है। जो भी भक्त श्रद्धा से चोला चढ़ाता है, उसकी सभी मनोकामनाएं पूर्ण होती हैं।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>सालासर बालाजी कैसे पहुँचें?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner"><strong>रेल मार्ग:</strong> सालासर का अपना रेलवे स्टेशन है। <strong>सड़क मार्ग:</strong> जयपुर से 180 किमी, दिल्ली से 380 किमी। <strong>वायु मार्ग:</strong> निकटतम हवाई अड्डा जयपुर (180 किमी)।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="50-temples.html" class="cat-chip"><i class="fa-solid fa-place-of-worship"></i> सभी मंदिर</a>
+    <a href="50b-mehandipur.html" class="cat-chip"><i class="fa-solid fa-arrow-right"></i> मेहंदीपुर बालाजी</a>
+    <a href="50c-ayodhya.html" class="cat-chip"><i class="fa-solid fa-arrow-right"></i> हनुमानगढ़ी</a>
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> कथाएँ</a>
+    <a href="40-chola-vidhi.html" class="cat-chip"><i class="fa-solid fa-scroll"></i> चोला विधि</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
