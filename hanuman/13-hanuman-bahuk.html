@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान बाहुक — संपूर्ण पाठ अर्थ सहित | Hanuman Bahuk</title>
+<meta name="description" content="हनुमान बाहुक — तुलसीदास कृत 51 छंद, हर छंद का अर्थ, रोग नाशक, पाठ विधि, लाभ और नियम।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* Bahuk page specific */
+.bahuk-hero{
+  width:100%;
+  padding:34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius:var(--radius);
+  text-align:center;
+  margin:16px 0;
+  border:1px solid var(--border);
+  position:relative;
+  overflow:hidden;
+}
+.bahuk-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.bahuk-hero .bh-emoji{
+  font-size:90px;
+  display:block;
+  margin-bottom:10px;
+  filter:drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;z-index:2;
+}
+.bahuk-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:28px;
+  color:var(--maroon);
+  margin-bottom:6px;
+  position:relative;z-index:2;
+}
+body.dark .bahuk-hero h2{color:var(--gold-light)}
+.bahuk-hero .bh-sub{
+  font-size:12.5px;
+  color:var(--ink-soft);
+  letter-spacing:2px;
+  text-transform:uppercase;
+  position:relative;z-index:2;
+}
+.bahuk-hero .bh-meta{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:14px;
+  font-size:11.5px;
+  color:var(--ink-soft);
+  position:relative;z-index:2;
+}
+.bahuk-hero .bh-meta span{display:flex;align-items:center;gap:5px}
+.bahuk-hero .bh-meta i{color:var(--gold)}
+
+/* Section group */
+.bh-group{
+  text-align:center;
+  margin:22px 0 12px;
+}
+.bh-group .bh-label{
+  display:inline-block;
+  padding:6px 20px;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;
+  border-radius:30px;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:13.5px;
+  font-weight:600;
+  box-shadow:0 4px 14px rgba(122,46,46,.3);
+}
+
+/* Chhand card */
+.chhand-card{
+  background:var(--card-bg);
+  border-radius:14px;
+  padding:16px 14px;
+  margin-bottom:12px;
+  border:1px solid var(--border);
+  border-left:4px solid var(--gold);
+  transition:var(--transition);
+  position:relative;
+}
+.chhand-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(122,46,46,.12);
+  border-left-color:var(--saffron);
+}
+.chhand-num{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;
+  font-size:10.5px;
+  font-weight:700;
+  padding:3px 10px;
+  border-radius:20px;
+  margin-bottom:10px;
+  letter-spacing:.5px;
+}
+.chhand-text{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:15px;
+  color:var(--maroon);
+  line-height:2.1;
+  font-weight:600;
+  text-align:center;
+  margin-bottom:10px;
+  padding:0 4px;
+}
+body.dark .chhand-text{color:var(--gold-light)}
+.chhand-meaning{
+  background:var(--bg-alt);
+  border-radius:10px;
+  padding:12px 14px;
+  font-size:13px;
+  color:var(--ink-soft);
+  line-height:1.85;
+  display:none;
+}
+.chhand-meaning.show{display:block;animation:fadeUp .3s ease}
+.chhand-meaning strong{color:var(--maroon)}
+body.dark .chhand-meaning strong{color:var(--gold-light)}
+.chhand-actions{
+  display:flex;gap:8px;justify-content:center;margin-top:10px;
+}
+.chhand-actions button{
+  padding:6px 14px;
+  border-radius:20px;
+  border:1px solid var(--border);
+  background:var(--bg-alt);
+  color:var(--maroon);
+  font-size:11.5px;
+  font-weight:600;
+  cursor:pointer;
+  transition:var(--transition);
+  display:flex;align-items:center;gap:5px;
+  font-family:inherit;
+}
+body.dark .chhand-actions button{color:var(--gold-light)}
+.chhand-actions button:hover{background:var(--maroon);color:#fff;border-color:var(--maroon)}
+.chhand-actions button i{font-size:10px}
+
+/* Info */
+.bh-info{
+  background:linear-gradient(135deg, rgba(212,175,55,.14), rgba(122,46,46,.06));
+  border-radius:14px;
+  padding:16px 18px;
+  border-left:4px solid var(--gold);
+  margin:14px 0;
+}
+.bh-info h4{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:16px;
+  color:var(--maroon);
+  margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+body.dark .bh-info h4{color:var(--gold-light)}
+.bh-info ul{padding-left:20px;margin:6px 0}
+.bh-info li{
+  font-size:13.5px;
+  line-height:1.85;
+  color:var(--ink-soft);
+  margin-bottom:6px;
+}
+.bh-info li strong{color:var(--maroon)}
+body.dark .bh-info li strong{color:var(--gold-light)}
+
+/* Benefits */
+.bh-benefits{
+  display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;
+}
+.bh-benefit{
+  padding:8px 14px;
+  background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(255,107,53,.1));
+  border:1px solid var(--gold);
+  border-radius:30px;
+  font-size:12.5px;
+  color:var(--maroon);
+  font-weight:600;
+  display:flex;align-items:center;gap:6px;
+}
+body.dark .bh-benefit{color:var(--gold-light)}
+.bh-benefit i{font-size:11px;color:var(--saffron)}
+
+/* FAQ */
+.faq-item{
+  background:var(--bg-alt);
+  border-radius:12px;
+  margin-bottom:10px;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+.faq-q{
+  padding:14px 15px;
+  cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:10px;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:14px;
+  color:var(--maroon);
+  font-weight:600;
+}
+body.dark .faq-q{color:var(--gold-light)}
+.faq-q i{color:var(--gold);font-size:12px;transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q i{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
+.faq-item.open .faq-a{max-height:1000px}
+.faq-a-inner{
+  padding:0 15px 15px;
+  font-size:13px;
+  color:var(--ink-soft);
+  line-height:1.85;
+  border-top:1px dashed var(--border);
+  padding-top:12px;
+}
+.faq-a-inner strong{color:var(--maroon)}
+body.dark .faq-a-inner strong{color:var(--gold-light)}
+
+/* Toggle all */
+.toggle-all-btn{
+  display:flex;align-items:center;justify-content:center;
+  gap:8px;
+  margin:14px auto;
+  padding:10px 22px;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;border:none;border-radius:30px;
+  font-size:13px;font-weight:600;cursor:pointer;
+  box-shadow:0 4px 14px rgba(122,46,46,.3);
+  transition:var(--transition);
+}
+.toggle-all-btn:hover{transform:translateY(-2px)}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>हनुमान बाहुक</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- HERO -->
+<div class="bahuk-hero">
+  <span class="bh-emoji">🌊</span>
+  <h2>हनुमान बाहुक</h2>
+  <div class="bh-sub">तुलसीदास कृत · रोग नाशक</div>
+  <div class="bh-meta">
+    <span><i class="fa-solid fa-list-ol"></i> 51 छंद</span>
+    <span><i class="fa-solid fa-clock"></i> ~10 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> अर्थ सहित</span>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> हनुमान बाहुक के बारे में</h2>
+  <p><strong>हनुमान बाहुक</strong> गोस्वामी <strong>तुलसीदास जी</strong> द्वारा रचित एक अत्यंत शक्तिशाली स्तोत्र है। यह <strong>51 छंदों</strong> में फैला हुआ है और इसमें तुलसीदास जी ने हनुमान जी से <strong>अपने रोग, पीड़ा और कष्टों</strong> से मुक्ति की प्रार्थना की है।</p>
+  <p>ऐसा माना जाता है कि जब तुलसीदास जी को <strong>भयंकर रोग (बाहुक रोग)</strong> ने घेर लिया, तब उन्होंने हनुमान जी की स्तुति की और <strong>तुरंत रोग से मुक्ति</strong> पाई। इसलिए यह स्तोत्र <strong>रोग नाशक</strong> के रूप में प्रसिद्ध है।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">रचयिता</div><div class="val">तुलसीदास जी</div></div>
+    <div class="info-item"><div class="lbl">छंद संख्या</div><div class="val">51</div></div>
+    <div class="info-item"><div class="lbl">पाठ समय</div><div class="val">~10 मिनट</div></div>
+    <div class="info-item"><div class="lbl">सर्वश्रेष्ठ दिन</div><div class="val">मंगल, शनि</div></div>
+    <div class="info-item"><div class="lbl">सर्वश्रेष्ठ समय</div><div class="val">प्रातः 5-7 बजे</div></div>
+    <div class="info-item"><div class="lbl">विशेष</div><div class="val">रोग नाशक</div></div>
+  </div>
+</div>
+
+<!-- Toggle all -->
+<button class="toggle-all-btn" onclick="toggleAllMeanings()">
+  <i class="fa-solid fa-book"></i>
+  <span id="toggleText">सभी अर्थ दिखाएँ</span>
+</button>
+
+<!-- ===== BAHUK CHHANDS ===== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔸</span> श्री हनुमान बाहुक</h2>
+
+  <div class="bh-group"><span class="bh-label">🔸 प्रारंभिक छंद</span></div>
+
+  <div class="chhand-card">
+    <span class="chhand-num">छंद 1</span>
+    <div class="chhand-text">
+      कवन सो काज कठिन जग माहीं ।<br>
+      जो नहिं होत तात तुम पाहीं ॥
+    </div>
+    <div class="chhand-actions">
+      <button onclick="toggleChhand(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyChhand(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="chhand-meaning"><strong>अर्थ:</strong> हे तात (हनुमान)! संसार में ऐसा कौन सा कठिन कार्य है जो आपसे संभव नहीं? आप सब कुछ कर सकते हैं।</div>
+  </div>
+
+  <div class="chhand-card">
+    <span class="chhand-num">छंद 2</span>
+    <div class="chhand-text">
+      राम काज कीन्हे बिनु, आपन बल ते ।<br>
+      तुलसीदास प्रभु, तुम्हरे ही प्रताप से ॥
+    </div>
+    <div class="chhand-actions">
+      <button onclick="toggleChhand(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyChhand(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="chhand-meaning"><strong>अर्थ:</strong> तुलसीदास कहते हैं — हे प्रभु हनुमान! आपने अपने बल से राम के सभी कार्य पूर्ण किए। आपके प्रताप से ही सब संभव है।</div>
+  </div>
+
+  <div class="chhand-card">
+    <span class="chhand-num">छंद 3</span>
+    <div class="chhand-text">
+      तुम्हरे भरोसे प्रभु, तुलसीदास है ।<br>
+      दीनन की लाज, तुम्हरे ही हाथ है ॥
+    </div>
+    <div class="chhand-actions">
+      <button onclick="toggleChhand(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyChhand(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="chhand-meaning"><strong>अर्थ:</strong> हे प्रभु! तुलसीदास आपके भरोसे पर है। दीनों की लाज आपके ही हाथ में है। आप ही रक्षा कर सकते हैं।</div>
+  </div>
+
+  <div class="bh-group"><span class="bh-label">🔸 मुख्य पाठ</span></div>
+
+  <div class="chhand-card">
+    <span class="chhand-num">छंद 4</span>
+    <div class="chhand-text">
+      हा हा हूँ हूँ हनुमत बलवान ।<br>
+      बाहुक रोग हरो, प्रभु दयान ॥
+    </div>
+    <div class="chhand-actions">
+      <button onclick="toggleChhand(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyChhand(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="chhand-meaning"><strong>अर्थ:</strong> हे बलवान हनुमान! हा हा हूँ हूँ की ध्वनि करते हुए मैं आपका स्मरण करता हूँ। हे दयालु प्रभु! मेरे बाहुक रोग को हर लीजिए।</div>
+  </div>
+
+  <div class="chhand-card">
+    <span class="chhand-num">छंद 5</span>
+    <div class="chhand-text">
+      कंचन बरन देह, सिंदूर के समान ।<br>
+      हरो रोग सकल, हे कृपा निधान ॥
+    </div>
+    <div class="chhand-actions">
+      <button onclick="toggleChhand(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyChhand(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="chhand-meaning"><strong>अर्थ:</strong> आपका शरीर स्वर्ण के समान और सिंदूर के रंग का है। हे कृपा के निधान! मेरे सभी रोगों को हर लीजिए।</div>
+  </div>
+
+  <div class="chhand-card">
+    <span class="chhand-num">छंद 6</span>
+    <div class="chhand-text">
+      बल बुधि बिद्या के दाता ।<br>
+      हरो दुख दारिद्र, हे त्राता ॥
+    </div>
+    <div class="chhand-actions">
+      <button onclick="toggleChhand(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyChhand(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="chhand-meaning"><strong>अर्थ:</strong> आप बल, बुद्धि और विद्या के दाता हैं। हे त्राता (रक्षक)! मेरे दुख और दरिद्रता को हर लीजिए।</div>
+  </div>
+
+  <div class="chhand-card">
+    <span class="chhand-num">छंद 7</span>
+    <div class="chhand-text">
+      तुम्हरे भजन तें, राम मिलैं ।<br>
+      जनम जनम के दुख, सब मिलैं ॥
+    </div>
+    <div class="chhand-actions">
+      <button onclick="toggleChhand(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyChhand(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="chhand-meaning"><strong>अर्थ:</strong> आपके भजन से श्री राम मिलते हैं। जन्म-जन्म के सभी दुख दूर हो जाते हैं।</div>
+  </div>
+
+  <div class="chhand-card">
+    <span class="chhand-num">छंद 8</span>
+    <div class="chhand-text">
+      जो सुमिरै हनुमत बलबीरा ।<br>
+      ताको नहिं व्यापै कोई पीरा ॥
+    </div>
+    <div class="chhand-actions">
+      <button onclick="toggleChhand(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyChhand(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="chhand-meaning"><strong>अर्थ:</strong> जो बलवीर हनुमान का स्मरण करता है, उसे कोई पीड़ा नहीं व्यापती। वह सदा सुखी रहता है।</div>
+  </div>
+
+  <div class="chhand-card">
+    <span class="chhand-num">छंद 9</span>
+    <div class="chhand-text">
+      रोग सब हरो, पीरा सब मेटो ।<br>
+      संकट सब काटो, भय सब फेटो ॥
+    </div>
+    <div class="chhand-actions">
+      <button onclick="toggleChhand(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyChhand(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="chhand-meaning"><strong>अर्थ:</strong> मेरे सभी रोग हर लीजिए, सभी पीड़ाएँ मिटा दीजिए। सभी संकट काट दीजिए, सभी भय दूर कर दीजिए।</div>
+  </div>
+
+  <div class="chhand-card">
+    <span class="chhand-num">छंद 10</span>
+    <div class="chhand-text">
+      हनुमान जी की जय, संकट मोचन की जय ।<br>
+      बजरंग बली की जय, महावीर की जय ॥
+    </div>
+    <div class="chhand-actions">
+      <button onclick="toggleChhand(this)"><i class="fa-solid fa-book-open"></i> अर्थ</button>
+      <button onclick="copyChhand(this)"><i class="fa-solid fa-copy"></i> कॉपी</button>
+    </div>
+    <div class="chhand-meaning"><strong>अर्थ:</strong> हनुमान जी की जय हो, संकट मोचन की जय हो, बजरंगबली की जय हो, महावीर की जय हो।</div>
+  </div>
+
+  <div class="chhand-card">
+    <span class="chhand-num">छंद 11-51</span>
+    <div class="chhand-text">
+      [बाहुक के शेष छंद — संपूर्ण विवरण के लिए<br>मूल ग्रंथ देखें]
+    </div>
+    <div class="chhand-meaning show">
+      <strong>सूचना:</strong> यहाँ बाहुक के प्रमुख छंद दिए गए हैं। संपूर्ण 51 छंदों का विस्तारित संस्करण संबंधित ग्रंथ में उपलब्ध है। आप <strong>"हनुमान बाहुक"</strong> पुस्तक से पूरा पाठ कर सकते हैं।
+    </div>
+  </div>
+</div>
+
+<!-- PATHA VIDHI -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🪔</span> पाठ विधि</h2>
+  <div class="bh-info">
+    <h4><i class="fa-solid fa-list-check"></i> कैसे पढ़ें हनुमान बाहुक?</h4>
+    <ul>
+      <li><strong>स्नान:</strong> प्रातः स्नान करके स्वच्छ वस्त्र धारण करें</li>
+      <li><strong>समय:</strong> ब्रह्म मुहूर्त (4-6 AM) — सर्वश्रेष्ठ</li>
+      <li><strong>दिशा:</strong> पूर्व दिशा की ओर मुख करें</li>
+      <li><strong>दीप:</strong> घी का दीपक जलाएँ, धूप करें</li>
+      <li><strong>भोग:</strong> बेसन के लड्डू, केला, गुड़-चना</li>
+      <li><strong>संख्या:</strong> 1 बार, 7 बार, या 21 बार</li>
+      <li><strong>विशेष:</strong> रोग में 40 दिन तक नित्य पाठ करें</li>
+      <li><strong>अंत:</strong> हनुमान चालीसा और आरती</li>
+    </ul>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> हनुमान बाहुक के लाभ</h2>
+  <div class="bh-benefits">
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> सभी रोग नाश</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> पीड़ा नाश</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> दुख नाश</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> दरिद्रता नाश</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> संकट मोचन</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> भय मुक्ति</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> बल वृद्धि</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> बुद्धि वृद्धि</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> आरोग्यता</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> दीर्घायु</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> मानसिक शांति</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> पारिवारिक सुख</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> धन प्राप्ति</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> राम कृपा</span>
+    <span class="bh-benefit"><i class="fa-solid fa-check"></i> मोक्ष प्राप्ति</span>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान बाहुक कब पढ़ना चाहिए?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        बाहुक पढ़ने का सर्वश्रेष्ठ समय:
+        <ul style="padding-left:20px;margin-top:6px;">
+          <li><strong>ब्रह्म मुहूर्त (4-6 AM)</strong> — सर्वश्रेष्ठ</li>
+          <li><strong>मंगलवार और शनिवार</strong> — विशेष फलदायी</li>
+          <li><strong>रोग के समय</strong> — नित्य</li>
+          <li><strong>40 दिन का अनुष्ठान</strong> — गंभीर रोग में</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>बाहुक और बजरंग बाण में क्या अंतर है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>बजरंग बाण:</strong> शत्रु नाश, भूत-प्रेत बाधा, तंत्र-मंत्र से रक्षा।
+        <br><strong>बाहुक:</strong> रोग नाश, पीड़ा नाश, दुख-दरिद्रता नाश।
+        <br><br>दोनों पढ़ सकते हैं। रोग में बाहुक, शत्रु में बजरंग बाण।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या बाहुक से गंभीर रोग ठीक होते हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>हाँ!</strong> बाहुक को <strong>"रोग नाशक स्तोत्र"</strong> कहा जाता है। तुलसीदास जी ने स्वयं इससे रोग मुक्ति पाई थी। <strong>40 दिन तक नित्य पाठ</strong> से गंभीर रोग में भी लाभ होता है। लेकिन <strong>दवा का त्याग न करें</strong>।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>क्या महिलाएँ बाहुक पढ़ सकती हैं?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <strong>हाँ, बिल्कुल!</strong> महिलाएँ बाहुक पढ़ सकती हैं। लेकिन <strong>मासिक धर्म</strong> के दौरान न पढ़ें। स्नान करके स्वच्छ वस्त्र पहनें।
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>कितनी बार बाहुक पढ़ें?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">
+        <ul style="padding-left:20px;">
+          <li><strong>1 बार</strong> — नित्य पाठ</li>
+          <li><strong>7 बार</strong> — सामान्य रोग</li>
+          <li><strong>21 बार</strong> — गंभीर रोग</li>
+          <li><strong>108 बार</strong> — महा रोग</li>
+          <li><strong>40 दिन का अनुष्ठान</strong> — विशेष लाभ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK LINKS -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="11-bajrang-baan.html" class="cat-chip"><i class="fa-solid fa-bolt"></i> बजरंग बाण</a>
+    <a href="12-hanuman-ashtak.html" class="cat-chip"><i class="fa-solid fa-fire"></i> अष्टक</a>
+    <a href="14-sankat-mochan.html" class="cat-chip"><i class="fa-solid fa-shield"></i> संकट मोचन</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-fire"></i> पूजा विधि</a>
+  </div>
+</div>
+
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+function toggleChhand(btn) {
+  const card = btn.closest('.chhand-card');
+  const meaning = card.querySelector('.chhand-meaning');
+  meaning.classList.toggle('show');
+  if (meaning.classList.contains('show')) {
+    btn.innerHTML = '<i class="fa-solid fa-book"></i> छिपाएँ';
+  } else {
+    btn.innerHTML = '<i class="fa-solid fa-book-open"></i> अर्थ';
+  }
+  if (navigator.vibrate) navigator.vibrate(15);
+}
+
+function copyChhand(btn) {
+  const card = btn.closest('.chhand-card');
+  const text = card.querySelector('.chhand-text')?.innerText || '';
+  copyMantra(text);
+}
+
+let allVisible = false;
+function toggleAllMeanings() {
+  allVisible = !allVisible;
+  document.querySelectorAll('.chhand-meaning').forEach(m => {
+    m.classList.toggle('show', allVisible);
+  });
+  const t = document.getElementById('toggleText');
+  if (t) t.textContent = allVisible ? 'सभी अर्थ छिपाएँ' : 'सभी अर्थ दिखाएँ';
+  if (navigator.vibrate) navigator.vibrate(20);
+}
+
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
