@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान जी क्विज — अपना ज्ञान परखें | Hanuman Quiz</title>
+<meta name="description" content="हनुमान जी के बारे में अपना ज्ञान परखें — इंटरैक्टिव क्विज, 5 श्रेणियाँ, स्कोर ट्रैकिंग और प्रमाण पत्र।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+.quiz-hero{
+  width:100%;padding:34px 20px 28px;
+  background:radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius:var(--radius);text-align:center;margin:16px 0;
+  border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.quiz-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.quiz-hero .quiz-emoji{
+  font-size:90px;display:block;margin-bottom:10px;
+  filter:drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;z-index:2;
+}
+.quiz-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:28px;color:var(--maroon);margin-bottom:6px;
+  position:relative;z-index:2;
+}
+body.dark .quiz-hero h2{color:var(--gold-light)}
+.quiz-hero .quiz-sub{
+  font-size:12.5px;color:var(--ink-soft);letter-spacing:2px;
+  text-transform:uppercase;position:relative;z-index:2;
+}
+
+/* Start screen */
+.quiz-start{
+  background:var(--card-bg);border-radius:16px;padding:24px 20px;
+  border:1px solid var(--border);text-align:center;
+  margin-bottom:16px;
+}
+.quiz-start h3{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:20px;color:var(--maroon);margin-bottom:12px;
+}
+body.dark .quiz-start h3{color:var(--gold-light)}
+.quiz-categories{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;
+}
+@media(max-width:400px){.quiz-categories{grid-template-columns:1fr}}
+.quiz-cat{
+  padding:14px;border-radius:12px;
+  background:var(--bg-alt);border:1.5px solid var(--border);
+  cursor:pointer;transition:var(--transition);
+  text-align:center;
+}
+.quiz-cat:hover{border-color:var(--gold);transform:translateY(-3px)}
+.quiz-cat.selected{
+  background:linear-gradient(135deg,rgba(212,175,55,.2),rgba(255,107,53,.1));
+  border-color:var(--gold);box-shadow:0 4px 14px rgba(212,175,55,.2);
+}
+.quiz-cat .cat-icon{font-size:28px;display:block;margin-bottom:6px}
+.quiz-cat .cat-name{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:14px;color:var(--maroon);font-weight:700;
+}
+body.dark .quiz-cat .cat-name{color:var(--gold-light)}
+.quiz-cat .cat-count{font-size:11px;color:var(--ink-light);margin-top:2px}
+
+.quiz-btn{
+  width:100%;padding:14px;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;border:none;border-radius:12px;
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:16px;font-weight:700;
+  cursor:pointer;transition:var(--transition);
+  box-shadow:0 6px 20px rgba(122,46,46,.35);
+  margin-top:10px;
+}
+.quiz-btn:hover{transform:translateY(-2px)}
+.quiz-btn:active{transform:scale(.97)}
+
+/* Question screen */
+.quiz-screen{display:none}
+.quiz-screen.active{display:block}
+.quiz-start.hidden{display:none}
+
+.quiz-header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 16px;background:var(--bg-alt);
+  border-radius:12px;margin-bottom:14px;
+  border:1px solid var(--border);
+}
+.quiz-progress{
+  font-size:13px;color:var(--maroon);font-weight:700;
+}
+body.dark .quiz-progress{color:var(--gold-light)}
+.quiz-score{
+  font-size:13px;color:var(--gold);font-weight:700;
+}
+.quiz-score i{margin-right:4px}
+
+.quiz-progress-bar{
+  height:6px;background:var(--border);border-radius:6px;
+  overflow:hidden;margin-bottom:16px;
+}
+.quiz-progress-bar .fill{
+  height:100%;width:0%;
+  background:linear-gradient(90deg,var(--gold),var(--saffron));
+  transition:width .4s;border-radius:6px;
+}
+
+.quiz-question{
+  background:var(--card-bg);border-radius:16px;
+  padding:22px 20px;border:1px solid var(--border);
+  margin-bottom:14px;
+  box-shadow:var(--shadow);
+}
+.quiz-question .q-num{
+  font-size:11px;color:var(--gold);font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;
+}
+.quiz-question .q-text{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:17px;color:var(--maroon);font-weight:600;
+  line-height:1.6;
+}
+body.dark .quiz-question .q-text{color:var(--gold-light)}
+
+.quiz-options{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.quiz-option{
+  padding:14px 16px;border-radius:12px;
+  background:var(--card-bg);border:1.5px solid var(--border);
+  cursor:pointer;transition:var(--transition);
+  font-size:14px;color:var(--ink);line-height:1.5;
+  display:flex;align-items:center;gap:10px;
+  font-family:inherit;text-align:left;
+}
+.quiz-option:hover{border-color:var(--gold);transform:translateX(4px)}
+.quiz-option:disabled{cursor:default;transform:none}
+.quiz-option .opt-letter{
+  width:28px;height:28px;border-radius:50%;
+  background:var(--bg-alt);color:var(--maroon);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:13px;flex-shrink:0;
+}
+.quiz-option.correct{
+  background:linear-gradient(135deg,rgba(46,125,50,.15),rgba(46,125,50,.05));
+  border-color:#2E7D32;
+}
+.quiz-option.correct .opt-letter{background:#2E7D32;color:#fff}
+.quiz-option.wrong{
+  background:linear-gradient(135deg,rgba(198,40,40,.12),rgba(198,40,40,.05));
+  border-color:#C62828;
+}
+.quiz-option.wrong .opt-letter{background:#C62828;color:#fff}
+
+.quiz-feedback{
+  padding:14px;border-radius:12px;margin-bottom:14px;
+  display:none;font-size:13.5px;line-height:1.7;
+}
+.quiz-feedback.show{display:block;animation:fadeUp .3s ease}
+.quiz-feedback.correct{
+  background:rgba(46,125,50,.12);
+  border-left:4px solid #2E7D32;
+  color:#1B5E20;
+}
+.quiz-feedback.wrong{
+  background:rgba(198,40,40,.1);
+  border-left:4px solid #C62828;
+  color:#B71C1C;
+}
+body.dark .quiz-feedback.correct{color:#A5D6A7}
+body.dark .quiz-feedback.wrong{color:#EF9A9A}
+
+/* Result screen */
+.result-screen{display:none}
+.result-screen.active{display:block}
+.result-box{
+  background:var(--card-bg);border-radius:20px;
+  padding:30px 24px;border:2px solid var(--gold);
+  text-align:center;
+  box-shadow:var(--shadow-lg);
+}
+.result-emoji{font-size:80px;display:block;margin-bottom:12px}
+.result-title{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:24px;color:var(--maroon);margin-bottom:8px;
+}
+body.dark .result-title{color:var(--gold-light)}
+.result-score{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:48px;font-weight:700;color:var(--gold);
+  margin:12px 0;
+}
+.result-message{
+  font-size:14px;color:var(--ink-soft);
+  line-height:1.7;margin-bottom:20px;
+}
+.result-stats{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:10px;margin:16px 0;
+}
+.result-stat{
+  background:var(--bg-alt);padding:12px 8px;
+  border-radius:10px;border:1px solid var(--border);
+}
+.result-stat .stat-num{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:20px;font-weight:700;color:var(--maroon);
+}
+body.dark .result-stat .stat-num{color:var(--gold-light)}
+.result-stat .stat-lbl{font-size:10.5px;color:var(--ink-light);margin-top:2px}
+
+.result-btns{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.result-btn{
+  padding:13px;border-radius:12px;
+  font-family:inherit;font-size:14px;font-weight:600;
+  cursor:pointer;transition:var(--transition);
+  border:none;
+}
+.result-btn.primary{
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;
+  box-shadow:0 6px 20px rgba(122,46,46,.35);
+}
+.result-btn.secondary{
+  background:var(--bg-alt);color:var(--maroon);
+  border:1px solid var(--border);
+}
+body.dark .result-btn.secondary{color:var(--gold-light)}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>क्विज</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- HERO -->
+<div class="quiz-hero">
+  <span class="quiz-emoji">🎯</span>
+  <h2>हनुमान जी क्विज</h2>
+  <div class="quiz-sub">अपना ज्ञान परखें</div>
+</div>
+
+<!-- START SCREEN -->
+<div class="quiz-start" id="startScreen">
+  <h3>श्रेणी चुनें</h3>
+  <p style="font-size:13.5px;color:var(--ink-soft);line-height:1.7;margin-bottom:14px;">
+    हर श्रेणी में 5 प्रश्न हैं। सभी का सही उत्तर दें और अपना ज्ञान परखें।
+  </p>
+
+  <div class="quiz-categories" id="categoriesGrid">
+    <!-- JS will populate -->
+  </div>
+
+  <button class="quiz-btn" onclick="startQuiz()">
+    <i class="fa-solid fa-play"></i> क्विज शुरू करें
+  </button>
+</div>
+
+<!-- QUESTION SCREEN -->
+<div class="quiz-screen" id="questionScreen">
+  <div class="quiz-header">
+    <div class="quiz-progress" id="quizProgress">प्रश्न 1 / 5</div>
+    <div class="quiz-score" id="quizScore"><i class="fa-solid fa-star"></i>0</div>
+  </div>
+
+  <div class="quiz-progress-bar">
+    <div class="fill" id="quizProgressFill"></div>
+  </div>
+
+  <div class="quiz-question">
+    <div class="q-num" id="qNum">प्रश्न 1</div>
+    <div class="q-text" id="qText">Loading...</div>
+  </div>
+
+  <div class="quiz-options" id="optionsBox">
+    <!-- Options -->
+  </div>
+
+  <div class="quiz-feedback" id="feedbackBox"></div>
+
+  <button class="quiz-btn" id="nextBtn" style="display:none;" onclick="nextQuestion()">
+    अगला प्रश्न <i class="fa-solid fa-arrow-right"></i>
+  </button>
+</div>
+
+<!-- RESULT SCREEN -->
+<div class="result-screen" id="resultScreen">
+  <div class="result-box">
+    <span class="result-emoji" id="resultEmoji">🎉</span>
+    <div class="result-title" id="resultTitle">बधाई हो!</div>
+    <div class="result-score" id="resultScore">5 / 5</div>
+    <div class="result-message" id="resultMessage">आपने क्विज पूरी कर ली।</div>
+
+    <div class="result-stats">
+      <div class="result-stat">
+        <div class="stat-num" id="statCorrect">0</div>
+        <div class="stat-lbl">सही</div>
+      </div>
+      <div class="result-stat">
+        <div class="stat-num" id="statWrong">0</div>
+        <div class="stat-lbl">गलत</div>
+      </div>
+      <div class="result-stat">
+        <div class="stat-num" id="statPercent">0%</div>
+        <div class="stat-lbl">स्कोर</div>
+      </div>
+    </div>
+
+    <div class="result-btns">
+      <button class="result-btn primary" onclick="retryQuiz()">
+        <i class="fa-solid fa-rotate-right"></i> फिर से खेलें
+      </button>
+      <button class="result-btn secondary" onclick="newCategory()">
+        <i class="fa-solid fa-layer-group"></i> दूसरी श्रेणी चुनें
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK LINKS -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="01-parichay.html" class="cat-chip"><i class="fa-solid fa-book"></i> परिचय</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="84-faq.html" class="cat-chip"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+  </div>
+</div>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+/* ========== QUIZ DATA ========== */
+const QUIZ_CATEGORIES = [
+  {
+    id: 'parichay',
+    icon: '📖',
+    name: 'परिचय',
+    questions: [
+      { q: 'हनुमान जी की माता का नाम क्या है?', options: ['अंजना देवी', 'कौशल्या', 'सुमित्रा', 'कैकेयी'], answer: 0, feedback: 'अंजना देवी हनुमान जी की माता थीं।' },
+      { q: 'हनुमान जी के पिता कौन थे?', options: ['सूर्यदेव', 'केसरी', 'दशरथ', 'सुग्रीव'], answer: 1, feedback: 'केसरी वानर राजा थे और हनुमान जी के पिता।' },
+      { q: 'हनुमान जी का जन्म कब हुआ था?', options: ['चैत्र पूर्णिमा', 'कार्तिक पूर्णिमा', 'श्रावण पूर्णिमा', 'आश्विन पूर्णिमा'], answer: 0, feedback: 'चैत्र मास की पूर्णिमा को हनुमान जी का जन्म हुआ।' },
+      { q: 'हनुमान जी को कौन सा रूप प्रिय है?', options: ['बाल रूप', 'वीर रूप', 'भक्त रूप', 'दिव्य रूप'], answer: 2, feedback: 'भक्त रूप — राम के चरणों में बैठे हुए।' },
+      { q: 'हनुमान जी किसके अवतार माने जाते हैं?', options: ['विष्णु', 'ब्रह्मा', 'रुद्र (शिव)', 'इंद्र'], answer: 2, feedback: 'हनुमान जी रुद्र (शिव) के 11वें अवतार माने जाते हैं।' }
+    ]
+  },
+  {
+    id: 'chalisa',
+    icon: '📜',
+    name: 'चालीसा',
+    questions: [
+      { q: 'हनुमान चालीसा के रचयिता कौन हैं?', options: ['कबीरदास', 'तुलसीदास', 'सूरदास', 'मीराबाई'], answer: 1, feedback: 'गोस्वामी तुलसीदास जी ने हनुमान चालीसा रची।' },
+      { q: 'हनुमान चालीसा में कितनी चौपाइयाँ हैं?', options: ['30', '35', '40', '44'], answer: 2, feedback: 'चालीसा में 40 चौपाइयाँ और 2 दोहे हैं।' },
+      { q: 'चालीसा की पहली चौपाई क्या है?', options: ['जय हनुमान ज्ञान गुन सागर', 'राम दूत अतुलित बल धामा', 'महाबीर बिक्रम बजरंगी', 'श्रीगुरु चरन सरोज रज'], answer: 0, feedback: '"जय हनुमान ज्ञान गुन सागर" पहली चौपाई है।' },
+      { q: 'चालीसा में हनुमान जी को क्या कहा गया है?', options: ['ज्ञान गुन सागर', 'राम दूत', 'संकट मोचन', 'ये सभी'], answer: 3, feedback: 'हनुमान जी को ज्ञान गुन सागर, राम दूत, संकट मोचन — सब कहा गया है।' },
+      { q: 'चालीसा के अंत में कौन सा दोहा है?', options: ['पवनतनय संकट हरन', 'बुद्धिहीन तनु जानिके', 'श्रीगुरु चरन सरोज रज', 'राम दूत अतुलित बल धामा'], answer: 0, feedback: '"पवनतनय संकट हरन" अंतिम दोहा है।' }
+    ]
+  },
+  {
+    id: 'katha',
+    icon: '📖',
+    name: 'कथाएँ',
+    questions: [
+      { q: 'हनुमान जी ने किसे फल समझकर पकड़ा था?', options: ['चंद्रमा', 'सूर्य', 'तारे', 'बादल'], answer: 1, feedback: 'बाल हनुमान ने सूर्य देव को मीठा फल समझकर पकड़ा।' },
+      { q: 'लंका दहन किसने किया था?', options: ['राम', 'लक्ष्मण', 'हनुमान', 'सुग्रीव'], answer: 2, feedback: 'हनुमान जी ने लंका दहन किया।' },
+      { q: 'संजीवनी बूटी किसके लिए लाई गई थी?', options: ['राम', 'लक्ष्मण', 'सीता', 'सुग्रीव'], answer: 1, feedback: 'लक्ष्मण जी के लिए संजीवनी बूटी लाई गई।' },
+      { q: 'हनुमान जी के गुरु कौन थे?', options: ['शिव', 'सूर्यदेव', 'वायु', 'केसरी'], answer: 1, feedback: 'सूर्यदेव हनुमान जी के गुरु थे।' },
+      { q: 'हनुमान जी को किसने वरदान दिया था?', options: ['सीता माता', 'राम', 'लक्ष्मण', 'दशरथ'], answer: 0, feedback: 'सीता माता ने हनुमान जी को अष्ट सिद्धि और नौ निधि का वरदान दिया।' }
+    ]
+  },
+  {
+    id: 'mantra',
+    icon: '🔱',
+    name: 'मंत्र',
+    questions: [
+      { q: 'हनुमान जी का मूल मंत्र क्या है?', options: ['ॐ नमः शिवाय', 'ॐ श्री हनुमते नमः', 'ॐ नमो भगवते वासुदेवाय', 'ॐ गं गणपतये नमः'], answer: 1, feedback: '"ॐ श्री हनुमते नमः" हनुमान जी का मूल मंत्र है।' },
+      { q: 'हनुमान बीज मंत्र क्या है?', options: ['ॐ हं हनुमते रुद्रात्मकाय हुं फट्', 'ॐ नमो भगवते', 'ॐ श्री राम', 'ॐ नमः शिवाय'], answer: 0, feedback: 'यह हनुमान जी का बीज मंत्र है।' },
+      { q: 'हनुमान गायत्री मंत्र में क्या कहा गया है?', options: ['ॐ आंजनेयाय विद्महे', 'ॐ हं हनुमते', 'ॐ श्री हनुमते', 'ॐ रामाय'], answer: 0, feedback: 'हनुमान गायत्री मंत्र "ॐ आंजनेयाय विद्महे" से शुरू होता है।' },
+      { q: 'संकट मोचन मंत्र कब जपें?', options: ['कभी नहीं', 'केवल सुबह', 'संकट के समय', 'केवल रात्रि'], answer: 2, feedback: 'संकट के समय यह मंत्र तुरंत प्रभावी होता है।' },
+      { q: 'मंत्र जप में कितनी माला जपनी चाहिए?', options: ['27', '54', '108', '1008'], answer: 2, feedback: 'सामान्यतः 108 जप की माला की जाती है।' }
+    ]
+  },
+  {
+    id: 'puja',
+    icon: '🪔',
+    name: 'पूजा',
+    questions: [
+      { q: 'हनुमान जी को कौन सा रंग प्रिय है?', options: ['हरा', 'लाल', 'नीला', 'सफेद'], answer: 1, feedback: 'लाल रंग हनुमान जी को अत्यंत प्रिय है।' },
+      { q: 'हनुमान जी को कौन सा भोग प्रिय है?', options: ['केला', 'बूंदी लड्डू', 'गुड़-चना', 'ये सभी'], answer: 3, feedback: 'बूंदी, केला और गुड़-चना — सब हनुमान जी को प्रिय हैं।' },
+      { q: 'हनुमान जी को क्या नहीं चढ़ाना चाहिए?', options: ['लाल फूल', 'तुलसी', 'सिंदूर', 'केला'], answer: 1, feedback: 'तुलसी हनुमान जी को अप्रिय है।' },
+      { q: 'हनुमान जी की कितनी प्रदक्षिणा करनी चाहिए?', options: ['1', '3', '7', '11'], answer: 2, feedback: '7 प्रदक्षिणा का विशेष महत्व है।' },
+      { q: 'मंगलवार और शनिवार में क्या विशेष है?', options: ['कोई नहीं', 'हनुमान जी के दिन', 'व्रत के दिन', 'त्योहार'], answer: 1, feedback: 'मंगलवार और शनिवार हनुमान जी के दिन माने जाते हैं।' }
+    ]
+  }
+];
+
+/* ========== QUIZ STATE ========== */
+let currentCategory = null;
+let currentQ = 0;
+let score = 0;
+let wrongCount = 0;
+let answered = false;
+let quizQuestions = [];
+
+/* ========== RENDER CATEGORIES ========== */
+function renderCategories() {
+  const grid = document.getElementById('categoriesGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  QUIZ_CATEGORIES.forEach(cat => {
+    const div = document.createElement('div');
+    div.className = 'quiz-cat';
+    div.dataset.id = cat.id;
+    div.innerHTML = `
+      <span class="cat-icon">${cat.icon}</span>
+      <div class="cat-name">${cat.name}</div>
+      <div class="cat-count">${cat.questions.length} प्रश्न</div>
+    `;
+    div.addEventListener('click', () => {
+      document.querySelectorAll('.quiz-cat').forEach(c => c.classList.remove('selected'));
+      div.classList.add('selected');
+      currentCategory = cat;
+    });
+    grid.appendChild(div);
+  });
+}
+
+/* ========== START QUIZ ========== */
+function startQuiz() {
+  if (!currentCategory) {
+    showToast('⚠️ पहले श्रेणी चुनें');
+    return;
+  }
+  quizQuestions = [...currentCategory.questions];
+  currentQ = 0;
+  score = 0;
+  wrongCount = 0;
+  answered = false;
+
+  document.getElementById('startScreen').classList.add('hidden');
+  document.getElementById('resultScreen').classList.remove('active');
+  document.getElementById('questionScreen').classList.add('active');
+
+  loadQuestion();
+}
+
+/* ========== LOAD QUESTION ========== */
+function loadQuestion() {
+  answered = false;
+  const q = quizQuestions[currentQ];
+
+  document.getElementById('qNum').textContent = 'प्रश्न ' + (currentQ + 1);
+  document.getElementById('qText').textContent = q.q;
+  document.getElementById('quizProgress').textContent = 'प्रश्न ' + (currentQ + 1) + ' / ' + quizQuestions.length;
+  document.getElementById('quizScore').innerHTML = '<i class="fa-solid fa-star"></i>' + score;
+
+  const progressFill = document.getElementById('quizProgressFill');
+  if (progressFill) progressFill.style.width = ((currentQ) / quizQuestions.length * 100) + '%';
+
+  const optionsBox = document.getElementById('optionsBox');
+  optionsBox.innerHTML = '';
+  const letters = ['A', 'B', 'C', 'D'];
+
+  q.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-option';
+    btn.innerHTML = `<span class="opt-letter">${letters[i]}</span><span>${opt}</span>`;
+    btn.addEventListener('click', () => selectAnswer(i));
+    optionsBox.appendChild(btn);
+  });
+
+  document.getElementById('feedbackBox').className = 'quiz-feedback';
+  document.getElementById('feedbackBox').innerHTML = '';
+  document.getElementById('nextBtn').style.display = 'none';
+}
+
+/* ========== SELECT ANSWER ========== */
+function selectAnswer(index) {
+  if (answered) return;
+  answered = true;
+
+  const q = quizQuestions[currentQ];
+  const options = document.querySelectorAll('.quiz-option');
+  const feedbackBox = document.getElementById('feedbackBox');
+
+  options.forEach((opt, i) => {
+    opt.disabled = true;
+    if (i === q.answer) opt.classList.add('correct');
+    if (i === index && i !== q.answer) opt.classList.add('wrong');
+  });
+
+  if (index === q.answer) {
+    score++;
+    feedbackBox.className = 'quiz-feedback show correct';
+    feedbackBox.innerHTML = '<strong>✅ सही उत्तर!</strong><br>' + q.feedback;
+    if (navigator.vibrate) navigator.vibrate(20);
+  } else {
+    wrongCount++;
+    feedbackBox.className = 'quiz-feedback show wrong';
+    feedbackBox.innerHTML = '<strong>❌ गलत उत्तर</strong><br>सही उत्तर: <strong>' + q.options[q.answer] + '</strong><br>' + q.feedback;
+    if (navigator.vibrate) navigator.vibrate([50, 30, 50]);
+  }
+
+  document.getElementById('quizScore').innerHTML = '<i class="fa-solid fa-star"></i>' + score;
+
+  const nextBtn = document.getElementById('nextBtn');
+  nextBtn.style.display = 'block';
+  if (currentQ === quizQuestions.length - 1) {
+    nextBtn.innerHTML = 'परिणाम देखें <i class="fa-solid fa-arrow-right"></i>';
+  } else {
+    nextBtn.innerHTML = 'अगला प्रश्न <i class="fa-solid fa-arrow-right"></i>';
+  }
+}
+
+/* ========== NEXT QUESTION ========== */
+function nextQuestion() {
+  currentQ++;
+  if (currentQ >= quizQuestions.length) {
+    showResult();
+    return;
+  }
+  loadQuestion();
+}
+
+/* ========== SHOW RESULT ========== */
+function showResult() {
+  document.getElementById('questionScreen').classList.remove('active');
+  document.getElementById('resultScreen').classList.add('active');
+
+  const total = quizQuestions.length;
+  const percent = Math.round((score / total) * 100);
+
+  document.getElementById('statCorrect').textContent = score;
+  document.getElementById('statWrong').textContent = wrongCount;
+  document.getElementById('statPercent').textContent = percent + '%';
+  document.getElementById('resultScore').textContent = score + ' / ' + total;
+
+  let emoji = '🎉', title = 'बधाई हो!', msg = 'आपने क्विज पूरी कर ली।';
+
+  if (percent === 100) {
+    emoji = '🏆'; title = 'अद्भुत!'; msg = 'आप हनुमान जी के सच्चे भक्त हैं! आपका ज्ञान उत्तम है।';
+  } else if (percent >= 80) {
+    emoji = '🌟'; title = 'बहुत बढ़िया!'; msg = 'आपका ज्ञान अच्छा है। थोड़ा और अभ्यास करें।';
+  } else if (percent >= 60) {
+    emoji = '👏'; title = 'अच्छा प्रयास!'; msg = 'आपने अच्छा किया। और अध्ययन करें।';
+  } else if (percent >= 40) {
+    emoji = '📚'; title = 'और सीखें'; msg = 'आपको और अध्ययन की आवश्यकता है। चालीसा, मंत्र पढ़ें।';
+  } else {
+    emoji = '🙏'; title = 'शुरुआत करें'; msg = 'चिंता न करें। हनुमान जी की कथाएँ पढ़ें और फिर प्रयास करें।';
+  }
+
+  document.getElementById('resultEmoji').textContent = emoji;
+  document.getElementById('resultTitle').textContent = title;
+  document.getElementById('resultMessage').textContent = msg;
+
+  if (percent >= 60 && navigator.vibrate) {
+    navigator.vibrate([100, 50, 100, 50, 200]);
+  }
+}
+
+/* ========== RETRY ========== */
+function retryQuiz() {
+  score = 0; wrongCount = 0; currentQ = 0;
+  document.getElementById('resultScreen').classList.remove('active');
+  document.getElementById('questionScreen').classList.add('active');
+  loadQuestion();
+}
+
+/* ========== NEW CATEGORY ========== */
+function newCategory() {
+  currentCategory = null;
+  document.getElementById('resultScreen').classList.remove('active');
+  document.getElementById('questionScreen').classList.remove('active');
+  document.getElementById('startScreen').classList.remove('hidden');
+  document.querySelectorAll('.quiz-cat').forEach(c => c.classList.remove('selected'));
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+/* ========== INIT ========== */
+document.addEventListener('DOMContentLoaded', renderCategories);
+</script>
+</body>
+</html>
