@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान जी के 108 नाम — अर्थ सहित | 108 Names of Hanuman</title>
+<meta name="description" content="हनुमान जी के 108 नाम — हर नाम का अर्थ, लाभ, जप विधि, और विशेष जानकारी।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+.n108-hero{
+  width:100%;padding:34px 20px 28px;
+  background:radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius:var(--radius);text-align:center;margin:16px 0;
+  border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.n108-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.n108-hero .n108-emoji{
+  font-size:90px;display:block;margin-bottom:10px;
+  filter:drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;z-index:2;
+}
+.n108-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:28px;color:var(--maroon);margin-bottom:6px;
+  position:relative;z-index:2;
+}
+body.dark .n108-hero h2{color:var(--gold-light)}
+.n108-hero .n108-sub{
+  font-size:12.5px;color:var(--ink-soft);letter-spacing:2px;
+  text-transform:uppercase;position:relative;z-index:2;
+}
+.n108-hero .n108-meta{
+  display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
+  margin-top:14px;font-size:11.5px;color:var(--ink-soft);
+  position:relative;z-index:2;
+}
+.n108-hero .n108-meta span{display:flex;align-items:center;gap:5px}
+.n108-hero .n108-meta i{color:var(--gold)}
+
+.n108-search{
+  position:sticky;top:62px;z-index:60;
+  background:var(--bg);padding:10px 0;margin-bottom:12px;
+}
+.n108-search .search-bar{
+  display:flex;align-items:center;gap:10px;
+  background:var(--card-bg);border:1.5px solid var(--border);
+  border-radius:30px;padding:10px 16px;box-shadow:var(--shadow);
+  transition:var(--transition);
+}
+.n108-search .search-bar:focus-within{
+  border-color:var(--gold);
+  box-shadow:0 0 0 4px rgba(212,175,55,.15);
+}
+.n108-search .search-bar i{color:var(--gold);font-size:15px}
+.n108-search .search-bar input{
+  flex:1;border:none;outline:none;background:transparent;
+  font-family:inherit;font-size:14px;color:var(--ink);
+}
+.n108-search .search-bar input::placeholder{color:var(--ink-light)}
+
+.n108-progress-wrap{
+  background:var(--card-bg);border-radius:12px;padding:12px 16px;
+  margin-bottom:14px;border:1px solid var(--border);
+}
+.n108-progress-info{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12.5px;color:var(--ink-soft);margin-bottom:8px;
+}
+.n108-progress-info strong{color:var(--maroon);font-size:14px}
+body.dark .n108-progress-info strong{color:var(--gold-light)}
+.n108-progress-bar{
+  height:8px;background:var(--border);border-radius:8px;
+  overflow:hidden;
+}
+.n108-progress-bar .fill{
+  height:100%;width:0%;
+  background:linear-gradient(90deg,var(--gold),var(--saffron));
+  transition:width .4s;border-radius:8px;
+}
+
+.n108-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px;
+}
+@media(min-width:600px){.n108-grid{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:360px){.n108-grid{grid-template-columns:1fr}}
+
+.n108-card{
+  background:var(--card-bg);border-radius:12px;
+  padding:12px 10px;border:1px solid var(--border);
+  cursor:pointer;transition:var(--transition);
+  position:relative;overflow:hidden;text-align:center;
+}
+.n108-card::before{
+  content:'';position:absolute;top:0;left:0;
+  width:3px;height:100%;
+  background:linear-gradient(180deg,var(--gold),var(--saffron));
+  transform:scaleY(0);transform-origin:top;transition:transform .3s;
+}
+.n108-card:hover::before{transform:scaleY(1)}
+.n108-card:hover{
+  transform:translateY(-3px);border-color:var(--gold);
+  box-shadow:0 8px 20px rgba(122,46,46,.12);
+}
+.n108-card:active{transform:scale(.96)}
+.n108-card.recited{
+  background:linear-gradient(135deg,rgba(212,175,55,.2),rgba(255,107,53,.1));
+  border-color:var(--gold);
+}
+.n108-card.recited::after{
+  content:'✓';position:absolute;top:6px;right:8px;
+  color:var(--gold);font-size:12px;font-weight:700;
+}
+.n108-num{
+  font-size:10px;color:var(--ink-light);font-weight:600;
+  letter-spacing:.5px;display:block;margin-bottom:2px;
+}
+.n108-name{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:14px;color:var(--maroon);font-weight:700;line-height:1.3;
+}
+body.dark .n108-name{color:var(--gold-light)}
+.n108-meaning-short{
+  font-size:10.5px;color:var(--ink-soft);
+  margin-top:3px;line-height:1.35;opacity:.85;
+}
+
+.name-detail-modal{
+  position:fixed;inset:0;background:rgba(0,0,0,.75);
+  z-index:1000;display:none;align-items:center;justify-content:center;
+  padding:20px;backdrop-filter:blur(6px);
+}
+.name-detail-modal.show{display:flex;animation:fadeUp .3s ease}
+.name-detail-box{
+  background:var(--card-bg);border-radius:22px;
+  max-width:440px;width:100%;max-height:85vh;overflow-y:auto;
+  padding:28px 22px;border:2px solid var(--gold);position:relative;
+}
+.name-detail-close{
+  position:absolute;top:14px;right:14px;
+  width:34px;height:34px;border-radius:50%;
+  background:var(--bg-alt);border:none;
+  color:var(--maroon);font-size:14px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+}
+body.dark .name-detail-close{color:var(--gold-light)}
+.name-detail-num{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;font-size:11px;font-weight:700;
+  padding:4px 14px;border-radius:20px;margin-bottom:10px;
+}
+.name-detail-title{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:26px;color:var(--maroon);margin-bottom:6px;text-align:center;
+}
+body.dark .name-detail-title{color:var(--gold-light)}
+.name-detail-mantra{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:16px;color:var(--maroon);
+  background:rgba(212,175,55,.14);padding:12px;border-radius:10px;
+  text-align:center;margin:12px 0;line-height:1.9;position:relative;
+}
+body.dark .name-detail-mantra{color:var(--gold-light)}
+.name-detail-copy{
+  position:absolute;top:8px;right:8px;
+  background:rgba(122,46,46,.1);border:none;color:var(--maroon);
+  width:28px;height:28px;border-radius:50%;
+  cursor:pointer;font-size:11px;
+  display:flex;align-items:center;justify-content:center;
+}
+.name-detail-copy:hover{background:var(--maroon);color:#fff}
+.name-detail-meaning{
+  font-size:14px;color:var(--ink-soft);line-height:1.9;
+  background:var(--bg-alt);padding:14px;border-radius:10px;
+  border-left:3px solid var(--gold);margin-bottom:12px;
+}
+.name-detail-meaning strong{color:var(--maroon)}
+body.dark .name-detail-meaning strong{color:var(--gold-light)}
+.name-detail-benefits{
+  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;
+}
+.name-detail-benefit{
+  font-size:11.5px;padding:5px 11px;
+  background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(255,107,53,.1));
+  border:1px solid var(--gold);border-radius:20px;
+  color:var(--maroon);font-weight:600;
+}
+body.dark .name-detail-benefit{color:var(--gold-light)}
+.name-detail-action{
+  width:100%;padding:12px;
+  background:linear-gradient(135deg,var(--maroon),var(--saffron));
+  color:#fff;border:none;border-radius:12px;
+  font-size:14px;font-weight:600;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-family:inherit;margin-bottom:8px;
+}
+.name-detail-action.secondary{
+  background:var(--bg-alt);color:var(--maroon);border:1px solid var(--border);
+}
+body.dark .name-detail-action.secondary{color:var(--gold-light)}
+
+.n108-info{
+  background:linear-gradient(135deg, rgba(212,175,55,.14), rgba(122,46,46,.06));
+  border-radius:14px;padding:16px 18px;
+  border-left:4px solid var(--gold);margin:14px 0;
+}
+.n108-info h4{
+  font-family:'Tiro Devanagari Hindi',serif;font-size:16px;
+  color:var(--maroon);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+body.dark .n108-info h4{color:var(--gold-light)}
+.n108-info ul{padding-left:20px;margin:6px 0}
+.n108-info li{
+  font-size:13.5px;line-height:1.85;color:var(--ink-soft);margin-bottom:6px;
+}
+.n108-info li strong{color:var(--maroon)}
+body.dark .n108-info li strong{color:var(--gold-light)}
+
+.no-results{
+  text-align:center;padding:40px 20px;
+  color:var(--ink-light);font-size:14px;display:none;
+}
+.no-results i{
+  font-size:48px;color:var(--gold);
+  display:block;margin-bottom:12px;opacity:.5;
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>108 नाम</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<div class="n108-hero">
+  <span class="n108-emoji">📛</span>
+  <h2>हनुमान जी के 108 नाम</h2>
+  <div class="n108-sub">अष्टोत्तर शतनाम</div>
+  <div class="n108-meta">
+    <span><i class="fa-solid fa-list-ol"></i> 108 नाम</span>
+    <span><i class="fa-solid fa-language"></i> अर्थ सहित</span>
+    <span><i class="fa-solid fa-hand-pointer"></i> टैप करें</span>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> 108 नाम के बारे में</h2>
+  <p><strong>हनुमान जी के 108 नाम</strong> (अष्टोत्तर शतनाम) में उनके सभी गुणों, कार्यों, शक्तियों और स्वरूपों का वर्णन है। "अष्टोत्तर शत" का अर्थ है <strong>108</strong>।</p>
+  <p>हर नाम का <strong>अलग अर्थ, अलग लाभ और अलग जप विधि</strong> है। इन नामों का नित्य जप करने से हनुमान जी की विशेष कृपा प्राप्त होती है।</p>
+  <p><strong>किसी भी नाम पर टैप करें</strong> — पूरा अर्थ, मंत्र, और लाभ देखें।</p>
+</div>
+
+<div class="n108-search">
+  <div class="search-bar">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="nameSearch" placeholder="नाम खोजें... (अंजनी, वायु, राम)" />
+  </div>
+</div>
+
+<div class="n108-progress-wrap">
+  <div class="n108-progress-info">
+    <span>जप प्रगति</span>
+    <span><strong id="recitedCount">0</strong> / 108</span>
+  </div>
+  <div class="n108-progress-bar">
+    <div class="fill" id="progressFill"></div>
+  </div>
+</div>
+
+<div class="n108-grid" id="namesGrid"></div>
+
+<div class="no-results" id="noResults">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  कोई नाम नहीं मिला। दूसरा शब्द खोजें।
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🪔</span> जप विधि</h2>
+  <div class="n108-info">
+    <h4><i class="fa-solid fa-list-check"></i> 108 नाम जप कैसे करें?</h4>
+    <ul>
+      <li><strong>स्नान:</strong> स्नान करके स्वच्छ वस्त्र धारण करें</li>
+      <li><strong>समय:</strong> प्रातः 5-7 बजे — ब्रह्म मुहूर्त</li>
+      <li><strong>दिशा:</strong> पूर्व दिशा की ओर मुख करें</li>
+      <li><strong>माला:</strong> लाल रुद्राक्ष या मूंगा माला</li>
+      <li><strong>विधि:</strong> हर नाम पर "ॐ [नाम] नमः" जपें</li>
+      <li><strong>संख्या:</strong> हर नाम 108 बार, या पूरे 108 नाम 1 बार</li>
+      <li><strong>अंत:</strong> हनुमान चालीसा और आरती करें</li>
+    </ul>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> 108 नाम जप के लाभ</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> सर्व मनोकामना</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> संकट मोचन</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> रोग नाश</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> शत्रु नाश</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> भय मुक्ति</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> बल वृद्धि</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> बुद्धि वृद्धि</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> यश और कीर्ति</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> धन प्राप्ति</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> संतान सुख</span>
+    <span class="cat-chip"><i class="fa-solid fa-check"></i> मोक्ष</span>
+  </div>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="01-parichay.html" class="cat-chip"><i class="fa-solid fa-book"></i> परिचय</a>
+    <a href="15-dvadash-naam.html" class="cat-chip"><i class="fa-solid fa-list-ol"></i> द्वादश नाम</a>
+    <a href="17-stuti.html" class="cat-chip"><i class="fa-solid fa-hands-praying"></i> स्तुति</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="21-mala.html" class="cat-chip"><i class="fa-solid fa-list-ol"></i> जप माला</a>
+  </div>
+</div>
+
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<div class="name-detail-modal" id="nameDetailModal">
+  <div class="name-detail-box">
+    <button class="name-detail-close" onclick="closeNameDetail()">✕</button>
+    <span class="name-detail-num" id="detailNum">नाम 1</span>
+    <h3 class="name-detail-title" id="detailTitle">हनुमान</h3>
+    <div class="name-detail-mantra">
+      <span id="detailMantra">ॐ हनुमानाय नमः</span>
+      <button class="name-detail-copy" onclick="copyDetailMantra()"><i class="fa-solid fa-copy"></i></button>
+    </div>
+    <div class="name-detail-meaning" id="detailMeaning"></div>
+    <div class="name-detail-benefits" id="detailBenefits"></div>
+    <button class="name-detail-action" onclick="markRecited()">
+      <i class="fa-solid fa-check"></i> जप पूर्ण करें
+    </button>
+    <button class="name-detail-action secondary" onclick="closeNameDetail()">
+      <i class="fa-solid fa-arrow-left"></i> वापस
+    </button>
+  </div>
+</div>
+
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+<script>
+/* ===== 108 NAMES DATA (EXACTLY 108) ===== */
+const NAMES_108 = [
+  {n:'हनुमान', m:'ज्ञान और सम्मान वाले', b:['बुद्धि वृद्धि','सम्मान']},
+  {n:'अंजनीसुत', m:'अंजना के पुत्र', b:['माता का आशीर्वाद','संतान सुख']},
+  {n:'वायुपुत्र', m:'वायु के पुत्र', b:['श्वास रोग','ऊर्जा']},
+  {n:'महावीर', m:'महान वीर', b:['साहस','वीरता']},
+  {n:'बजरंगबली', m:'वज्र के समान बल', b:['शारीरिक बल','रोग नाश']},
+  {n:'संकटमोचन', m:'संकट हरने वाले', b:['संकट मोचन','भय मुक्ति']},
+  {n:'रामदूत', m:'राम के दूत', b:['राम भक्ति','मोक्ष']},
+  {n:'बालाजी', m:'बाल रूप के स्वामी', b:['बालकों की रक्षा','संतान']},
+  {n:'पवनसुत', m:'पवन के पुत्र', b:['गति','शक्ति']},
+  {n:'केसरीनंदन', m:'केसरी के पुत्र', b:['पिता का आशीर्वाद','वीरता']},
+  {n:'अंजनेय', m:'अंजना के पुत्र', b:['गुरु कृपा','सेवा']},
+  {n:'रुद्रात्मक', m:'रुद्र के अवतार', b:['शिव कृपा','मोक्ष']},
+  {n:'सुग्रीवसखा', m:'सुग्रीव के मित्र', b:['मित्रता','सहयोग']},
+  {n:'सीताशोकविनाशक', m:'सीता के शोक को मिटाने वाले', b:['शोक नाश','आशा']},
+  {n:'लंकादहन', m:'लंका जलाने वाले', b:['शत्रु नाश','विजय']},
+  {n:'अक्षयकुमारहंता', m:'अक्षय कुमार को मारने वाले', b:['शत्रु संहार','रक्षा']},
+  {n:'सौर्य', m:'सूर्य के समान तेजस्वी', b:['तेज','यश']},
+  {n:'मारुतात्मज', m:'वायु के पुत्र', b:['शक्ति','गति']},
+  {n:'वज्रदेह', m:'वज्र जैसे शरीर वाले', b:['शारीरिक बल','रक्षा']},
+  {n:'हरिभक्त', m:'हरि के भक्त', b:['भक्ति','मोक्ष']},
+  {n:'रामभक्त', m:'राम के भक्त', b:['भक्ति','प्रेम']},
+  {n:'सीतान्वेषक', m:'सीता को खोजने वाले', b:['खोज','सफलता']},
+  {n:'अतुलबल', m:'अतुलनीय बल वाले', b:['बल','सामर्थ्य']},
+  {n:'महाबली', m:'महान बलशाली', b:['वीरता','शक्ति']},
+  {n:'गदाधर', m:'गदा धारण करने वाले', b:['शक्ति','रक्षा']},
+  {n:'दंडधर', m:'दंड धारण करने वाले', b:['न्याय','दंड']},
+  {n:'धूम्र', m:'धुएँ के समान रंग वाले', b:['तेज','शक्ति']},
+  {n:'कपीश', m:'वानरों के स्वामी', b:['नेतृत्व','सम्मान']},
+  {n:'वानरेश', m:'वानरों के राजा', b:['राज्य','नेतृत्व']},
+  {n:'सिंहनाद', m:'सिंह जैसी गर्जना वाले', b:['भय मुक्ति','साहस']},
+  {n:'लंकाविदारक', m:'लंका को फाड़ने वाले', b:['शत्रु नाश','विजय']},
+  {n:'अहिरावणारि', m:'अहिरावण के शत्रु', b:['शत्रु नाश','रक्षा']},
+  {n:'महारुद्र', m:'महान रुद्र', b:['शिव कृपा','शक्ति']},
+  {n:'चंड', m:'प्रचंड', b:['शक्ति','वीरता']},
+  {n:'प्रचंड', m:'अत्यंत प्रचंड', b:['शक्ति','सामर्थ्य']},
+  {n:'विक्रम', m:'पराक्रमी', b:['पराक्रम','विजय']},
+  {n:'बुद्धिमान', m:'बुद्धि वाले', b:['बुद्धि','विवेक']},
+  {n:'चतुर', m:'चतुर', b:['चतुराई','कुशलता']},
+  {n:'विद्यावान', m:'विद्या से युक्त', b:['विद्या','ज्ञान']},
+  {n:'गुणी', m:'गुणों से भरे', b:['गुण','सद्गुण']},
+  {n:'सागरलंघन', m:'सागर लाँघने वाले', b:['साहस','सफलता']},
+  {n:'पर्वताकार', m:'पर्वत के समान विशाल', b:['विशालता','शक्ति']},
+  {n:'दिव्य', m:'दिव्य स्वरूप वाले', b:['दिव्यता','तेज']},
+  {n:'अचल', m:'अचल', b:['स्थिरता','धैर्य']},
+  {n:'अटल', m:'अटल', b:['दृढ़ता','निश्चय']},
+  {n:'सत्य', m:'सत्य स्वरूप', b:['सत्य','धर्म']},
+  {n:'दृढ़', m:'दृढ़', b:['दृढ़ता','संकल्प']},
+  {n:'वीर', m:'वीर', b:['वीरता','साहस']},
+  {n:'शूर', m:'शूरवीर', b:['शौर्य','पराक्रम']},
+  {n:'रणप्रिय', m:'युद्ध प्रिय', b:['विजय','साहस']},
+  {n:'युद्धवीर', m:'युद्ध में वीर', b:['विजय','रक्षा']},
+  {n:'जय', m:'विजयी', b:['विजय','सफलता']},
+  {n:'अजय', m:'अजेय', b:['अजेयता','रक्षा']},
+  {n:'विजय', m:'विजय दिलाने वाले', b:['विजय','सफलता']},
+  {n:'संग्राम', m:'संग्राम के स्वामी', b:['विजय','साहस']},
+  {n:'प्रहार', m:'प्रहार करने वाले', b:['शत्रु नाश','बल']},
+  {n:'उद्धार', m:'उद्धार करने वाले', b:['उद्धार','मुक्ति']},
+  {n:'तारक', m:'तारने वाले', b:['मोक्ष','मुक्ति']},
+  {n:'पार', m:'पार लगाने वाले', b:['सफलता','मोक्ष']},
+  {n:'भव', m:'भव से मुक्त करने वाले', b:['मोक्ष','मुक्ति']},
+  {n:'अभय', m:'अभय देने वाले', b:['निर्भयता','रक्षा']},
+  {n:'निर्भय', m:'निडर', b:['साहस','निर्भयता']},
+  {n:'साहसी', m:'साहसी', b:['साहस','आत्मविश्वास']},
+  {n:'प्रतापी', m:'प्रतापी', b:['प्रताप','यश']},
+  {n:'तेजस्वी', m:'तेजस्वी', b:['तेज','यश']},
+  {n:'ओजस्वी', m:'ओजस्वी', b:['ओज','शक्ति']},
+  {n:'वर्चस्वी', m:'वर्चस्व वाले', b:['प्रभाव','यश']},
+  {n:'कांतिमान', m:'कांति वाले', b:['सौंदर्य','तेज']},
+  {n:'श्रीमान', m:'श्री से युक्त', b:['समृद्धि','श्री']},
+  {n:'भाग्यवान', m:'भाग्यशाली', b:['भाग्य','समृद्धि']},
+  {n:'कीर्तिमान', m:'कीर्ति वाले', b:['कीर्ति','यश']},
+  {n:'यशस्वी', m:'यशस्वी', b:['यश','कीर्ति']},
+  {n:'सुंदर', m:'सुंदर', b:['सौंदर्य','आकर्षण']},
+  {n:'रूपवान', m:'रूपवान', b:['रूप','सौंदर्य']},
+  {n:'लावण्य', m:'लावण्यमय', b:['आकर्षण','सौंदर्य']},
+  {n:'सौम्य', m:'सौम्य', b:['शांति','सौम्यता']},
+  {n:'शांत', m:'शांत', b:['शांति','धैर्य']},
+  {n:'क्रोधनाशक', m:'क्रोध नाश करने वाले', b:['क्रोध नाश','शांति']},
+  {n:'दयालु', m:'दयालु', b:['दया','करुणा']},
+  {n:'करुणासागर', m:'करुणा के सागर', b:['करुणा','दया']},
+  {n:'भक्तवत्सल', m:'भक्तों से प्रेम करने वाले', b:['भक्ति','प्रेम']},
+  {n:'प्रेम', m:'प्रेम स्वरूप', b:['प्रेम','भक्ति']},
+  {n:'प्रीति', m:'प्रीति वाले', b:['प्रीति','स्नेह']},
+  {n:'श्रद्धा', m:'श्रद्धा स्वरूप', b:['श्रद्धा','भक्ति']},
+  {n:'भक्ति', m:'भक्ति स्वरूप', b:['भक्ति','प्रेम']},
+  {n:'सेवा', m:'सेवा के स्वामी', b:['सेवा','समर्पण']},
+  {n:'समर्पण', m:'समर्पण के देवता', b:['समर्पण','निष्ठा']},
+  {n:'निष्ठा', m:'निष्ठा वाले', b:['निष्ठा','विश्वास']},
+  {n:'धैर्य', m:'धैर्यवान', b:['धैर्य','सहनशीलता']},
+  {n:'सहनशील', m:'सहनशील', b:['सहनशीलता','धैर्य']},
+  {n:'क्षमाशील', m:'क्षमाशील', b:['क्षमा','दया']},
+  {n:'संयम', m:'संयमी', b:['संयम','नियंत्रण']},
+  {n:'नियम', m:'नियम के पालक', b:['नियम','अनुशासन']},
+  {n:'व्रत', m:'व्रतधारी', b:['व्रत','निष्ठा']},
+  {n:'तप', m:'तपस्वी', b:['तप','साधना']},
+  {n:'ज्ञान', m:'ज्ञान के सागर', b:['ज्ञान','बुद्धि']},
+  {n:'वैराग्य', m:'वैराग्य वाले', b:['वैराग्य','मुक्ति']},
+  {n:'मुक्ति', m:'मुक्ति देने वाले', b:['मोक्ष','मुक्ति']},
+  {n:'सिद्धि', m:'सिद्धि के दाता', b:['सिद्धि','सफलता']},
+  {n:'निधि', m:'निधियों के स्वामी', b:['समृद्धि','धन']},
+  {n:'सुख', m:'सुख के दाता', b:['सुख','आनंद']},
+  {n:'आनंद', m:'आनंद स्वरूप', b:['आनंद','प्रसन्नता']},
+  {n:'शांति', m:'शांति के दाता', b:['शांति','मानसिक सुख']},
+  {n:'कल्याण', m:'कल्याण करने वाले', b:['कल्याण','समृद्धि']},
+  {n:'अंजनीगर्भसंभूत', m:'अंजना के गर्भ से प्रकट', b:['जन्म कथा','माता कृपा']},
+  {n:'वायुतनय', m:'वायु के पुत्र', b:['गति','शक्ति']},
+  {n:'रामेष्ट', m:'राम के प्रिय', b:['राम कृपा','भक्ति']},
+  {n:'फाल्गुनसखा', m:'फाल्गुन (अर्जुन) के मित्र', b:['मित्रता','सहयोग']}
+];
+
+let recited = JSON.parse(localStorage.getItem('recited108') || '[]');
+let currentDetailIndex = -1;
+
+function renderGrid() {
+  const grid = document.getElementById('namesGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  NAMES_108.forEach((item, i) => {
+    const card = document.createElement('div');
+    card.className = 'n108-card' + (recited.includes(i) ? ' recited' : '');
+    card.dataset.index = i;
+    card.dataset.name = item.n.toLowerCase();
+    card.innerHTML = `
+      <span class="n108-num">${i + 1}</span>
+      <div class="n108-name">${item.n}</div>
+      <div class="n108-meaning-short">${item.m}</div>
+    `;
+    card.addEventListener('click', () => openNameDetail(i));
+    grid.appendChild(card);
+  });
+  updateProgress();
+}
+
+function updateProgress() {
+  const countEl = document.getElementById('recitedCount');
+  const fillEl = document.getElementById('progressFill');
+  if (countEl) countEl.textContent = recited.length;
+  if (fillEl) fillEl.style.width = (recited.length / 108 * 100) + '%';
+}
+
+function openNameDetail(i) {
+  currentDetailIndex = i;
+  const item = NAMES_108[i];
+  document.getElementById('detailNum').textContent = 'नाम ' + (i + 1);
+  document.getElementById('detailTitle').textContent = item.n;
+  document.getElementById('detailMantra').textContent = 'ॐ ' + item.n + ' नमः';
+  document.getElementById('detailMeaning').innerHTML = '<strong>अर्थ:</strong> ' + item.m;
+  const benefits = document.getElementById('detailBenefits');
+  benefits.innerHTML = '';
+  item.b.forEach(b => {
+    const span = document.createElement('span');
+    span.className = 'name-detail-benefit';
+    span.textContent = b;
+    benefits.appendChild(span);
+  });
+  document.getElementById('nameDetailModal').classList.add('show');
+  if (navigator.vibrate) navigator.vibrate(20);
+}
+
+function closeNameDetail() {
+  document.getElementById('nameDetailModal').classList.remove('show');
+}
+
+function copyDetailMantra() {
+  if (currentDetailIndex < 0) return;
+  copyMantra('ॐ ' + NAMES_108[currentDetailIndex].n + ' नमः');
+}
+
+function markRecited() {
+  if (currentDetailIndex < 0) return;
+  if (!recited.includes(currentDetailIndex)) {
+    recited.push(currentDetailIndex);
+    localStorage.setItem('recited108', JSON.stringify(recited));
+    showToast('🎉 जप पूर्ण — ' + NAMES_108[currentDetailIndex].n);
+    renderGrid();
+  }
+  closeNameDetail();
+}
+
+document.getElementById('nameSearch')?.addEventListener('input', (e) => {
+  const q = e.target.value.toLowerCase().trim();
+  const cards = document.querySelectorAll('.n108-card');
+  let visible = 0;
+  cards.forEach(c => {
+    const match = !q || c.textContent.toLowerCase().includes(q);
+    c.style.display = match ? 'block' : 'none';
+    if (match) visible++;
+  });
+  document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+});
+
+document.getElementById('nameDetailModal')?.addEventListener('click', (e) => {
+  if (e.target.id === 'nameDetailModal') closeNameDetail();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeNameDetail();
+});
+
+document.addEventListener('DOMContentLoaded', renderGrid);
+</script>
+</body>
+</html>
