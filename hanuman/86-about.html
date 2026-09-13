@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान जी सेक्शन — परिचय | About Hanuman Section</title>
+<meta name="description" content="हनुमान जी सेक्शन के बारे में — उद्देश्य, स्रोत, विषय-सूची, और धन्यवाद।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+.about-hero{
+  width:100%;padding:34px 20px 28px;
+  background:radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius:var(--radius);text-align:center;margin:16px 0;
+  border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.about-hero::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation:pulseGlow 4s infinite;
+}
+.about-hero .about-emoji{
+  font-size:90px;display:block;margin-bottom:10px;
+  filter:drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation:floatIcon 3.5s ease-in-out infinite;
+  position:relative;z-index:2;
+}
+.about-hero h2{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:28px;color:var(--maroon);margin-bottom:6px;
+  position:relative;z-index:2;
+}
+body.dark .about-hero h2{color:var(--gold-light)}
+.about-hero .about-sub{
+  font-size:12.5px;color:var(--ink-soft);letter-spacing:2px;
+  text-transform:uppercase;position:relative;z-index:2;
+}
+
+.about-section{
+  background:var(--card-bg);border-radius:16px;
+  padding:22px 20px;margin-bottom:16px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+.about-section h3{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:19px;color:var(--maroon);
+  margin-bottom:14px;display:flex;
+  align-items:center;gap:10px;
+  border-bottom:2px solid var(--gold);
+  padding-bottom:8px;
+}
+body.dark .about-section h3{color:var(--gold-light)}
+.about-section p{
+  font-size:14.5px;color:var(--ink-soft);
+  line-height:1.9;margin-bottom:12px;
+}
+.about-section p strong{color:var(--maroon)}
+body.dark .about-section p strong{color:var(--gold-light)}
+
+.about-stats{
+  display:grid;grid-template-columns:1fr 1fr 1fr;
+  gap:10px;margin:14px 0;
+}
+@media(max-width:480px){.about-stats{grid-template-columns:1fr 1fr}}
+.about-stat{
+  background:linear-gradient(135deg,rgba(212,175,55,.14),rgba(122,46,46,.06));
+  border-radius:12px;padding:16px 10px;
+  text-align:center;border:1px solid var(--border);
+}
+.about-stat .stat-num{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:28px;font-weight:700;color:var(--maroon);
+  line-height:1;
+}
+body.dark .about-stat .stat-num{color:var(--gold-light)}
+.about-stat .stat-lbl{
+  font-size:11px;color:var(--ink-light);
+  margin-top:6px;font-weight:600;
+}
+
+.about-list{
+  list-style:none;padding:0;margin:10px 0;
+}
+.about-list li{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:10px 0;
+  border-bottom:1px dashed var(--border);
+  font-size:13.5px;color:var(--ink-soft);
+  line-height:1.7;
+}
+.about-list li:last-child{border-bottom:none}
+.about-list li i{
+  color:var(--gold);font-size:13px;
+  margin-top:3px;flex-shrink:0;
+}
+.about-list li strong{color:var(--maroon)}
+body.dark .about-list li strong{color:var(--gold-light)}
+
+.about-toc{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:8px;margin:10px 0;
+}
+@media(max-width:480px){.about-toc{grid-template-columns:1fr}}
+.about-toc-item{
+  padding:10px 12px;background:var(--bg-alt);
+  border-radius:10px;border:1px solid var(--border);
+  font-size:13px;color:var(--maroon);
+  font-weight:600;text-decoration:none;
+  transition:var(--transition);
+  display:flex;align-items:center;gap:8px;
+}
+body.dark .about-toc-item{color:var(--gold-light)}
+.about-toc-item:hover{background:var(--maroon);color:#fff;border-color:var(--maroon);transform:translateY(-2px)}
+.about-toc-item .toc-num{
+  font-size:10.5px;opacity:.6;
+  font-weight:700;flex-shrink:0;
+}
+
+.about-source{
+  padding:12px 14px;
+  background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(122,46,46,.04));
+  border-left:3px solid var(--gold);
+  border-radius:8px;margin:10px 0;
+  font-size:13px;color:var(--ink-soft);
+  line-height:1.7;
+}
+.about-source strong{color:var(--maroon)}
+body.dark .about-source strong{color:var(--gold-light)}
+
+.about-credit{
+  text-align:center;padding:20px;
+  background:linear-gradient(135deg,rgba(212,175,55,.1),rgba(255,107,53,.06));
+  border-radius:14px;border:1px solid var(--gold);
+  margin:14px 0;
+}
+.about-credit .credit-emoji{font-size:40px;display:block;margin-bottom:8px}
+.about-credit h4{
+  font-family:'Tiro Devanagari Hindi',serif;
+  font-size:18px;color:var(--maroon);margin-bottom:8px;
+}
+body.dark .about-credit h4{color:var(--gold-light)}
+.about-credit p{
+  font-size:13px;color:var(--ink-soft);
+  line-height:1.7;margin:0;
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="app-header">
+  <a href="../hanuman.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>इस सेक्शन के बारे में</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<div class="about-hero">
+  <span class="about-emoji">🕉️</span>
+  <h2>हनुमान जी सेक्शन</h2>
+  <div class="about-sub">संपूर्ण ज्ञान · भक्ति · साधना</div>
+</div>
+
+<div class="about-section">
+  <h3><span>🎯</span> हमारा उद्देश्य</h3>
+  <p>यह <strong>हनुमान जी सेक्शन</strong> हर हिंदू भक्त के लिए <strong>संपूर्ण ज्ञान का भंडार</strong> है। यहाँ हनुमान जी से जुड़ी <strong>हर जानकारी</strong> एक ही स्थान पर उपलब्ध है — परिचय, स्तोत्र, मंत्र, कथाएँ, पूजा विधि, चोला विधि, मंदिर, त्योहार, और जीवन-ज्ञान।</p>
+  <p>हमारा उद्देश्य है — <strong>हर भक्त को हनुमान जी के करीब लाना</strong>, उनकी भक्ति को गहरा करना, और उन्हें सही ज्ञान प्रदान करना। यह सब <strong>पूर्णतः निःशुल्क</strong> है — क्योंकि भक्ति का कोई मूल्य नहीं।</p>
+  <p>हम चाहते हैं कि जो भी इस सेक्शन को खोले, उसे <strong>हनुमान जी के जीवन का सार</strong> मिल जाए — और उसका जीवन <strong>धन्य</strong> हो जाए।</p>
+
+  <div class="about-stats">
+    <div class="about-stat">
+      <div class="stat-num">55+</div>
+      <div class="stat-lbl">कुल पेज</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-num">30+</div>
+      <div class="stat-lbl">मंत्र</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-num">108</div>
+      <div class="stat-lbl">नाम</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-num">13+</div>
+      <div class="stat-lbl">कथाएँ</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-num">25+</div>
+      <div class="stat-lbl">मंदिर</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-num">365+</div>
+      <div class="stat-lbl">विचार</div>
+    </div>
+  </div>
+</div>
+
+<div class="about-section">
+  <h3><span>📚</span> विषय-सूची</h3>
+  <p>इस सेक्शन में निम्नलिखित विषय शामिल हैं:</p>
+
+  <div class="about-toc">
+    <a href="01-parichay.html" class="about-toc-item">
+      <span class="toc-num">01</span> परिचय
+    </a>
+    <a href="02-swroop.html" class="about-toc-item">
+      <span class="toc-num">02</span> स्वरूप वर्णन
+    </a>
+    <a href="03-janm-katha.html" class="about-toc-item">
+      <span class="toc-num">03</span> जन्म कथा
+    </a>
+    <a href="10-chalisa.html" class="about-toc-item">
+      <span class="toc-num">10</span> हनुमान चालीसा
+    </a>
+    <a href="11-bajrang-baan.html" class="about-toc-item">
+      <span class="toc-num">11</span> बजरंग बाण
+    </a>
+    <a href="12-hanuman-ashtak.html" class="about-toc-item">
+      <span class="toc-num">12</span> हनुमान अष्टक
+    </a>
+    <a href="20-mantras.html" class="about-toc-item">
+      <span class="toc-num">20</span> 30+ मंत्र
+    </a>
+    <a href="21-mala.html" class="about-toc-item">
+      <span class="toc-num">21</span> डिजिटल जप माला
+    </a>
+    <a href="22-108-names.html" class="about-toc-item">
+      <span class="toc-num">22</span> 108 नाम
+    </a>
+    <a href="30-katha.html" class="about-toc-item">
+      <span class="toc-num">30</span> हनुमान कथाएँ
+    </a>
+    <a href="40-chola-vidhi.html" class="about-toc-item">
+      <span class="toc-num">40</span> चोला विधि
+    </a>
+    <a href="41-puja-vidhi.html" class="about-toc-item">
+      <span class="toc-num">41</span> पूजा विधि
+    </a>
+    <a href="50-temples.html" class="about-toc-item">
+      <span class="toc-num">50</span> मंदिर
+    </a>
+    <a href="60-festivals.html" class="about-toc-item">
+      <span class="toc-num">60</span> त्योहार
+    </a>
+    <a href="70-life-lessons.html" class="about-toc-item">
+      <span class="toc-num">70</span> जीवन सीख
+    </a>
+    <a href="84-faq.html" class="about-toc-item">
+      <span class="toc-num">84</span> FAQ
+    </a>
+  </div>
+</div>
+
+<div class="about-section">
+  <h3><span>📖</span> हमारे स्रोत</h3>
+  <p>इस सेक्शन की सामग्री निम्नलिखित <strong>प्रामाणिक स्रोतों</strong> से संकलित की गई है:</p>
+
+  <ul class="about-list">
+    <li><i class="fa-solid fa-book"></i> <span><strong>रामायण</strong> — वाल्मीकि रामायण, रामचरितमानस</span></li>
+    <li><i class="fa-solid fa-book"></i> <span><strong>शिव पुराण</strong> — हनुमान जी के जन्म की कथा</span></li>
+    <li><i class="fa-solid fa-book"></i> <span><strong>पद्म पुराण</strong> — द्वादश नाम स्तोत्र</span></li>
+    <li><i class="fa-solid fa-book"></i> <span><strong>हनुमान चालीसा</strong> — गोस्वामी तुलसीदास कृत</span></li>
+    <li><i class="fa-solid fa-book"></i> <span><strong>बजरंग बाण</strong> — तुलसीदास कृत</span></li>
+    <li><i class="fa-solid fa-book"></i> <span><strong>हनुमान अष्टक</strong> — तुलसीदास कृत</span></li>
+    <li><i class="fa-solid fa-book"></i> <span><strong>हनुमान बाहुक</strong> — तुलसीदास कृत</span></li>
+    <li><i class="fa-solid fa-book"></i> <span><strong>अन्य पौराणिक ग्रंथ</strong> — विभिन्न स्तोत्र और कथाएँ</span></li>
+  </ul>
+</div>
+
+<div class="about-section">
+  <h3><span>🙏</span> धन्यवाद</h3>
+  <p>इस सेक्शन को बनाने में जिनका योगदान रहा:</p>
+
+  <ul class="about-list">
+    <li><i class="fa-solid fa-heart"></i> <span><strong>हनुमान जी</strong> — जिनकी कृपा से यह सब संभव हुआ</span></li>
+    <li><i class="fa-solid fa-heart"></i> <span><strong>गोस्वामी तुलसीदास</strong> — जिनकी रचनाओं से यह संग्रह समृद्ध हुआ</span></li>
+    <li><i class="fa-solid fa-heart"></i> <span><strong>सभी भक्त</strong> — जिनकी प्रेरणा से यह सेक्शन बना</span></li>
+    <li><i class="fa-solid fa-heart"></i> <span><strong>पौराणिक ग्रंथ</strong> — जो ज्ञान के स्रोत हैं</span></li>
+  </ul>
+
+  <div class="about-credit">
+    <span class="credit-emoji">🕉️</span>
+    <h4>जय श्री राम</h4>
+    <p>"सब सुख लहै तुम्हारी सरना ।<br>तुम रक्षक काहू को डर ना ॥"</p>
+  </div>
+</div>
+
+<div class="about-section">
+  <h3><span>⚠️</span> अस्वीकरण</h3>
+  <p>इस सेक्शन की सामग्री <strong>पौराणिक स्रोतों</strong> पर आधारित है। किसी भी विवाद या भिन्न मत के मामले में, कृपया <strong>अपने गुरु या विद्वान</strong> से परामर्श करें।</p>
+  <p>यह सेक्शन <strong>किसी भी व्यक्ति, समुदाय या धर्म</strong> का अपमान नहीं करता। सभी के प्रति सम्मान है।</p>
+  <p><strong>चिकित्सा सलाह नहीं:</strong> यहाँ दी गई जानकारी केवल आध्यात्मिक है। स्वास्थ्य समस्याओं के लिए डॉक्टर से मिलें।</p>
+</div>
+
+<div class="about-section">
+  <h3><span>💡</span> सुझाव या प्रतिक्रिया</h3>
+  <p>यदि आपके पास कोई <strong>सुझाव, सुधार या प्रतिक्रिया</strong> है, तो कृपया हमें बताएँ। हम आपकी राय का स्वागत करते हैं।</p>
+  <p>यदि आप और <strong>जानकारी जोड़ना</strong> चाहते हैं, तो भी हमें बताएँ।</p>
+
+  <button class="share-btn" onclick="sharePage()" style="margin-top:12px;">
+    <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+  </button>
+</div>
+
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> तेज़ लिंक</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="01-parichay.html" class="cat-chip"><i class="fa-solid fa-book"></i> परिचय</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="20-mantras.html" class="cat-chip"><i class="fa-solid fa-om"></i> मंत्र</a>
+    <a href="84-faq.html" class="cat-chip"><i class="fa-solid fa-circle-question"></i> FAQ</a>
+    <a href="87-thanks.html" class="cat-chip"><i class="fa-solid fa-heart"></i> धन्यवाद</a>
+  </div>
+</div>
+
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
+</button>
+
+</main>
+
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="common.js"></script>
+</body>
+</html>
