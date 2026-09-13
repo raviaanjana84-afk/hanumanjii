@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>राम मिलन — हनुमान जी की कथा | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी और श्रीराम का पहला मिलन — ऋष्यमूक पर्वत पर भेंट, परिचय और भक्ति का अमर बंधन। पूरी कथा हिंदी में।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link rel="stylesheet" href="common.css" />
+<style>
+/* ========== PAGE SPECIFIC STYLES ========== */
+.ram-hero {
+  width: 100%;
+  padding: 34px 20px 28px;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(212,175,55,.4), transparent 65%),
+    linear-gradient(135deg, rgba(122,46,46,.22), rgba(255,107,53,.14));
+  border-radius: var(--radius);
+  text-align: center;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.ram-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(212,175,55,.15), transparent 70%);
+  animation: pulseGlow 4s infinite;
+}
+.ram-hero .ram-emoji {
+  font-size: 90px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 26px rgba(212,175,55,.85));
+  animation: floatIcon 3.5s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+.ram-hero h2 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 28px;
+  color: var(--maroon);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+body.dark .ram-hero h2 { color: var(--gold-light); }
+.ram-hero .ram-sub {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 2;
+}
+.ram-hero .ram-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 2;
+}
+.ram-hero .ram-meta span { display: flex; align-items: center; gap: 5px; }
+.ram-hero .ram-meta i { color: var(--gold); }
+
+/* Katha Content */
+.katha-block {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+.katha-block h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 20px;
+  color: var(--maroon);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body.dark .katha-block h3 { color: var(--gold-light); }
+.katha-block p {
+  font-size: 14.5px;
+  line-height: 1.9;
+  color: var(--ink-soft);
+  margin-bottom: 12px;
+  text-align: justify;
+}
+.katha-block p:last-child { margin-bottom: 0; }
+.katha-block .highlight {
+  background: rgba(212,175,55,.12);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid var(--gold);
+  font-style: italic;
+  color: var(--maroon);
+  margin: 12px 0;
+}
+body.dark .katha-block .highlight { color: var(--gold-light); }
+.katha-block .mantra {
+  display: block;
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(212,175,55,.15), rgba(212,175,55,.05));
+  border-radius: 8px;
+  border: 1px solid rgba(212,175,55,.3);
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  text-align: center;
+  line-height: 1.8;
+}
+body.dark .katha-block .mantra { color: var(--gold-light); }
+
+/* Moral List */
+.moral-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.moral-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+.moral-list li i {
+  color: var(--gold);
+  font-size: 14px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* FAQ */
+.faq-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  transition: background .25s ease;
+}
+.faq-q:hover { background: rgba(212,175,55,.06); }
+.faq-q i {
+  transition: transform .3s ease;
+  color: var(--gold);
+  font-size: 12px;
+}
+.faq-item.open .faq-q i { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; }
+.faq-a-inner {
+  padding: 0 16px 14px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.info-item {
+  padding: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+.info-item .lbl {
+  font-size: 11px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.info-item .val {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--maroon);
+}
+body.dark .info-item .val { color: var(--gold-light); }
+
+/* Chapter marker */
+.chapter {
+  display: inline-block;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--maroon), var(--saffron));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: 10px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .ram-hero .ram-emoji { font-size: 70px; }
+  .ram-hero h2 { font-size: 23px; }
+  .katha-block { padding: 16px; }
+  .katha-block h3 { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Header -->
+<header class="app-header">
+  <a href="30-katha.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान कथाएँ</span>
+    <h1>राम मिलन</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- Diya Row -->
+<div class="diya-row">
+  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<main>
+
+<!-- ========== HERO ========== -->
+<div class="ram-hero">
+  <span class="ram-emoji">🏹</span>
+  <h2>राम मिलन</h2>
+  <div class="ram-sub">First Meeting • Eternal Bond</div>
+  <div class="ram-meta">
+    <span><i class="fa-solid fa-book-open"></i> 4 अध्याय</span>
+    <span><i class="fa-solid fa-clock"></i> 7 मिनट</span>
+    <span><i class="fa-solid fa-language"></i> विस्तृत</span>
+  </div>
+</div>
+
+<!-- ========== INTRO ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">📖</span> कथा का सार</h2>
+  <p>यह वह ऐतिहासिक क्षण है जब हनुमान जी और श्रीराम का पहला मिलन हुआ। सीता हरण के बाद श्रीराम और लक्ष्मण सीता की खोज में ऋष्यमूक पर्वत के पास पहुँचे। वहाँ हनुमान जी से उनकी भेंट हुई — यह भेंट भक्ति और भगवान के अमर बंधन की शुरुआत थी।</p>
+  <p>यह कथा बताती है कि कैसे एक वानर ने अपनी बुद्धि और विनम्रता से भगवान का हृदय जीत लिया। पढ़ें पूरी कथा — 4 अध्यायों में।</p>
+
+  <div class="info-grid">
+    <div class="info-item"><div class="lbl">स्थान</div><div class="val">ऋष्यमूक पर्वत</div></div>
+    <div class="info-item"><div class="lbl">समय</div><div class="val">सीता हरण के बाद</div></div>
+    <div class="info-item"><div class="lbl">पात्र</div><div class="val">राम, लक्ष्मण, हनुमान</div></div>
+    <div class="info-item"><div class="lbl">परिणाम</div><div class="val">अमर भक्ति बंधन</div></div>
+    <div class="info-item"><div class="lbl">मुख्य गुण</div><div class="val">विनम्रता, बुद्धि</div></div>
+    <div class="info-item"><div class="lbl">शिक्षा</div><div class="val">भक्ति और समर्पण</div></div>
+  </div>
+</div>
+
+<!-- ========== अध्याय 1 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 1</span>
+  <h3>🔍 सीता की खोज में</h3>
+  <p>रावण ने सीता माता का हरण कर लिया था। श्रीराम और लक्ष्मण सीता की खोज में वन-वन भटक रहे थे। उन्होंने अनेक ऋषि-मुनियों से मिलकर सीता का पता पूछा, लेकिन कोई सुराग नहीं मिला।</p>
+  <p>एक दिन वे ऋष्यमूक पर्वत के पास पहुँचे। यह वह स्थान था जहाँ सुग्रीव अपने भाई बालि के डर से छिपकर रहते थे। श्रीराम और लक्ष्मण को देखकर सुग्रीव भयभीत हो गए।</p>
+  <p class="highlight">सुग्रीव ने सोचा — "ये दोनों धनुर्धर कहीं बालि के भेजे हुए तो नहीं हैं?" उन्होंने हनुमान जी को बुलाया और कहा — "हे हनुमान, तुम बुद्धिमान हो। जाओ और उन दोनों का पता लगाओ कि वे कौन हैं और क्यों आए हैं।"</p>
+  <p>हनुमान जी ने विनम्रता से सिर झुकाया और कहा — "मैं जाकर उनका परिचय प्राप्त करता हूँ।" यही क्षण था जब भक्त और भगवान की भेंट होने वाली थी।</p>
+</div>
+
+<!-- ========== अध्याय 2 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 2</span>
+  <h3>🧘 हनुमान जी का विनम्र परिचय</h3>
+  <p>हनुमान जी ने ब्राह्मण का वेश धारण किया और श्रीराम के पास पहुँचे। उन्होंने हाथ जोड़कर विनम्रता से कहा — "हे महाराज, आप कौन हैं? इस वन में क्यों भटक रहे हैं?"</p>
+  <p>श्रीराम ने मुस्कुराते हुए कहा — "हम अयोध्या के राजा दशरथ के पुत्र हैं। मैं राम और यह मेरे छोटे भाई लक्ष्मण हैं। मेरी पत्नी सीता का रावण ने हरण कर लिया है। हम उन्हें खोज रहे हैं।"</p>
+  <p class="highlight">हनुमान जी का हृदय श्रीराम को देखते ही भक्ति से भर गया। उन्होंने सोचा — "यह मेरे भगवान हैं! इनके दर्शन से मेरा जीवन सफल हो गया।" उनकी आँखों से प्रेम के आँसू बहने लगे।</p>
+  <p>हनुमान जी ने श्रीराम को प्रणाम किया और कहा — "हे रघुनंदन, मैं सुग्रीव का मंत्री हनुमान हूँ। सुग्रीव आपके मित्र बनना चाहते हैं। वे सीता माता की खोज में आपकी सहायता कर सकते हैं।"</p>
+  <p class="mantra">श्री राम जय राम जय जय राम<br><small>हनुमान जी के हृदय में राम का वास</small></p>
+</div>
+
+<!-- ========== अध्याय 3 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 3</span>
+  <h3>🤝 श्रीराम और सुग्रीव की मित्रता</h3>
+  <p>हनुमान जी श्रीराम और लक्ष्मण को सुग्रीव के पास ले गए। सुग्रीव ने श्रीराम को देखकर अपना परिचय दिया और अपनी व्यथा सुनाई — "मेरे बड़े भाई बालि ने मुझे राज्य से निकाल दिया है। वे मेरी पत्नी को भी छीन लेना चाहते हैं।"</p>
+  <p>श्रीराम ने सुग्रीव की बात ध्यान से सुनी और कहा — "हे सुग्रीव, मैं तुम्हारी सहायता करूँगा। तुम्हारे भाई बालि का वध करके तुम्हें राज्य दिलाऊँगा। बदले में तुम मुझे सीता की खोज में सहायता करो।"</p>
+  <p class="highlight">अग्नि को साक्षी मानकर श्रीराम और सुग्रीव ने मित्रता का व्रत लिया। हनुमान जी इस मित्रता के सेतु बने। उन्होंने कहा — "हे प्रभु, मैं सदा आपकी सेवा में रहूँगा। आपका कार्य मेरा कार्य है।"</p>
+  <p>श्रीराम ने हनुमान जी को हृदय से लगाया और कहा — "हे हनुमान, तुम मेरे प्रिय भरत के समान हो। तुम्हारी भक्ति और बुद्धि अद्वितीय है।"</p>
+</div>
+
+<!-- ========== अध्याय 4 ========== -->
+<div class="katha-block">
+  <span class="chapter">अध्याय 4</span>
+  <h3>🌟 भक्ति का अमर बंधन</h3>
+  <p>इस मिलन के बाद हनुमान जी और श्रीराम का बंधन अमर हो गया। हनुमान जी ने श्रीराम की सेवा में अपना जीवन समर्पित कर दिया। उन्होंने सीता की खोज में अहम भूमिका निभाई।</p>
+  <p>हनुमान जी ने सुग्रीव के मंत्री के रूप में वानर सेना को संगठित किया। उन्होंने सीता माता का पता लगाया, लंका जाकर उनसे भेंट की, और श्रीराम का संदेश पहुँचाया।</p>
+  <p class="highlight">श्रीराम ने हनुमान जी की भक्ति से प्रसन्न होकर उन्हें वरदान दिया — "हे हनुमान, तुम मेरे प्रिय भक्त हो। जहाँ तुम्हारी भक्ति होगी, वहाँ मैं सदा उपस्थित रहूँगा।"</p>
+  <p>यही कारण है कि हनुमान जी को "राम दूत" कहा जाता है। उनकी भक्ति आज भी भक्तों को प्रेरणा देती है। जो भी श्रद्धा से हनुमान जी की पूजा करता है, उसे श्रीराम की कृपा अवश्य मिलती है।</p>
+  <p class="mantra">ॐ श्री हनुमते नमः<br><small>हनुमान जी की भक्ति का स्मरण करें</small></p>
+</div>
+
+<!-- ========== शिक्षा ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌺</span> कथा से शिक्षा</h2>
+  <ul class="moral-list">
+    <li><i class="fa-solid fa-star"></i> <strong>विनम्रता की शक्ति:</strong> हनुमान जी ने विनम्रता से श्रीराम का हृदय जीता — विनम्रता सबसे बड़ा आभूषण है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>बुद्धि का प्रयोग:</strong> हनुमान जी ने बुद्धि से श्रीराम का परिचय प्राप्त किया — बुद्धि से हर समस्या का समाधान मिलता है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>भक्ति का बंधन:</strong> हनुमान जी की भक्ति ने उन्हें श्रीराम के निकट पहुँचाया — भक्ति से भगवान प्रसन्न होते हैं।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>समर्पण:</strong> हनुमान जी ने श्रीराम की सेवा में अपना जीवन समर्पित कर दिया — समर्पण से ही सच्ची भक्ति प्रकट होती है।</li>
+    <li><i class="fa-solid fa-star"></i> <strong>मित्रता का महत्व:</strong> श्रीराम और सुग्रीव की मित्रता से दोनों को लाभ हुआ — सच्ची मित्रता जीवन को बदल देती है।</li>
+  </ul>
+</div>
+
+<!-- ========== FAQ ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">❓</span> अक्सर पूछे जाने वाले प्रश्न</h2>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी और श्रीराम की पहली भेंट कहाँ हुई?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी और श्रीराम की पहली भेंट <strong>ऋष्यमूक पर्वत</strong> के पास हुई। यह वह स्थान था जहाँ सुग्रीव अपने भाई बालि के डर से छिपकर रहते थे।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी ने श्रीराम को कैसे पहचाना?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी ने ब्राह्मण का वेश धारण करके श्रीराम से परिचय प्राप्त किया। जब श्रीराम ने अपना परिचय दिया, तो हनुमान जी का हृदय भक्ति से भर गया। उन्होंने श्रीराम को अपने भगवान के रूप में पहचान लिया।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>श्रीराम और सुग्रीव की मित्रता कैसे हुई?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी श्रीराम और सुग्रीव के बीच सेतु बने। श्रीराम ने सुग्रीव को बालि वध का वचन दिया और सुग्रीव ने सीता की खोज में सहायता का वचन दिया। अग्नि को साक्षी मानकर दोनों ने मित्रता की।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>हनुमान जी को "राम दूत" क्यों कहा जाता है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">हनुमान जी ने श्रीराम की सेवा में अपना जीवन समर्पित कर दिया। उन्होंने सीता माता का पता लगाया, लंका जाकर उनसे भेंट की, और श्रीराम का संदेश पहुँचाया। इसलिए उन्हें <strong>"राम दूत"</strong> कहा जाता है।</div>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">
+      <span>इस कथा से हमें क्या सीख मिलती है?</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+    <div class="faq-a">
+      <div class="faq-a-inner">इस कथा से सीख मिलती है कि <strong>विनम्रता और बुद्धि से भगवान का हृदय जीता जा सकता है</strong>, <strong>सच्ची भक्ति से भगवान प्रसन्न होते हैं</strong>, और <strong>समर्पण से ही सच्ची भक्ति प्रकट होती है</strong>।</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ========== QUICK LINKS ========== -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🔗</span> आगे पढ़ें</h2>
+  <div class="cat-nav" style="flex-wrap:wrap;padding:0">
+    <a href="30-katha.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> सभी कथाएँ</a>
+    <a href="30c-surya-dev.html" class="cat-chip"><i class="fa-solid fa-arrow-left"></i> सूर्य देव प्रसंग</a>
+    <a href="30e-sugriva-mitra.html" class="cat-chip"><i class="fa-solid fa-arrow-right"></i> सुग्रीव मित्रता</a>
+    <a href="10-chalisa.html" class="cat-chip"><i class="fa-solid fa-book-open"></i> चालीसा</a>
+    <a href="41-puja-vidhi.html" class="cat-chip"><i class="fa-solid fa-om"></i> पूजा विधि</a>
+  </div>
+</div>
+
+<!-- ========== SHARE ========== -->
+<button class="share-btn" onclick="sharePage()">
+  <i class="fa-solid fa-share-nodes"></i> यह कथा शेयर करें
+</button>
+
+</main>
+
+<!-- Floating Hanuman -->
+<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+
+<!-- Sankat Modal -->
+<div class="modal-overlay" id="sankatModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
+    <h3>🚨 संकट मोचन</h3>
+    <div class="mantra-box">
+      ॐ श्री हनुमते नमः,<br>संकट मोचनाय नमः
+      <small>हे हनुमान, संकट हरने वाले, मैं आपको नमस्कार करता हूँ।</small>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">कॉपी हो गया 🙏</div>
+
+<!-- Bottom Nav -->
+<nav class="bottom-nav">
+  <a href="../../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="../hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<!-- Scripts -->
+<script src="common.js"></script>
+<script>
+/* ========== PAGE SPECIFIC SCRIPT ========== */
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+</body>
+</html>
