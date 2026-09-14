@@ -456,6 +456,100 @@ body.dark .quote-text{color:var(--gold-light)}
   font-size:13px;font-weight:600;
 }
 
+/* ============================================
+   MY WEBSITES SECTION
+============================================ */
+.websites-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.website-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+.website-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 4px; height: 100%;
+  background: linear-gradient(180deg, #4285F4, #34A853, #FBBC05, #EA4335);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .3s;
+}
+.website-card:hover::before { transform: scaleY(1); }
+.website-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 28px rgba(122,46,46,.18);
+}
+.website-card:active { transform: scale(.98); }
+
+.site-icon {
+  font-size: 26px;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+.site-body { flex: 1; min-width: 0; }
+.site-body h3 {
+  font-family: 'Tiro Devanagari Hindi', serif;
+  font-size: 16px;
+  color: var(--maroon);
+  margin-bottom: 3px;
+  line-height: 1.3;
+}
+body.dark .site-body h3 { color: var(--gold-light); }
+.site-body p {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin: 0 0 4px;
+  line-height: 1.4;
+}
+.site-tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 8px;
+  background: rgba(212,175,55,.2);
+  color: var(--maroon);
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+body.dark .site-tag { color: var(--gold-light); }
+
+.site-arrow {
+  color: var(--gold);
+  font-size: 14px;
+  opacity: .5;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.website-card:hover .site-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
 /* Share */
 .share-btn{
   margin-top:12px;width:100%;padding:15px;
@@ -620,7 +714,7 @@ body.dark .mantra-box{color:var(--gold-light)}
 
 <!-- Header -->
 <header class="app-header">
-  <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <a href="index.html" class="icon-btn"><i class="fa-solid fa-om"></i></a>
   <div class="header-title">
     <span class="eyebrow">🕉️ हनुमान जी</span>
     <h1>हनुमान जी</h1>
@@ -1006,6 +1100,47 @@ body.dark .mantra-box{color:var(--gold-light)}
   </a>
 </div>
 
+<!-- ============================================
+     MY OTHER WEBSITES
+============================================ -->
+<div class="devta-section">
+  <h2><span class="sec-icon">🌐</span> मेरी अन्य वेबसाइट्स</h2>
+  <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:14px;">
+    मेरी अन्य सेवाएँ और वेबसाइट्स भी देखें 🙏
+  </p>
+
+  <div class="websites-grid">
+
+    <!-- Acharya Ji Website -->
+    <a href="https://acharya-simhastha-seva.vercel.app/" target="_blank" rel="noopener" class="website-card">
+      <div class="site-icon" style="background:linear-gradient(135deg,#FF6B35,#7A2E2E);color:#fff;">🕉️</div>
+      <div class="site-body">
+        <h3>आचार्य हर्ष शर्मा</h3>
+        <p>उज्जैन में हवन-पूजन बुकिंग · पंडित जी से बात करें</p>
+        <span class="site-tag">हवन · पूजन · सेवा</span>
+      </div>
+      <i class="fa-solid fa-arrow-up-right-from-square site-arrow"></i>
+    </a>
+
+    <!-- Sanatan Gyan Kosh -->
+    <a href="https://project-nu-ten-68.vercel.app/" target="_blank" rel="noopener" class="website-card">
+      <div class="site-icon" style="background:linear-gradient(135deg,#D4AF37,#7A2E2E);color:#fff;">📖</div>
+      <div class="site-body">
+        <h3>सनातन ज्ञान कोश</h3>
+        <p>हर देवता · हर मंत्र · हर कथा की संपूर्ण जानकारी</p>
+        <span class="site-tag">धर्म · ज्ञान · आत्मा</span>
+      </div>
+      <i class="fa-solid fa-arrow-up-right-from-square site-arrow"></i>
+    </a>
+
+  </div>
+
+  <p style="text-align:center;font-size:12px;color:var(--ink-light);margin-top:14px;">
+    <i class="fa-solid fa-heart" style="color:var(--saffron);"></i>
+    सभी सेवाएँ सनातन धर्म के प्रचार हेतु
+  </p>
+</div>
+
 <!-- ===== SHARE ===== -->
 <button class="share-btn" onclick="sharePage()">
   <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
@@ -1030,7 +1165,7 @@ body.dark .mantra-box{color:var(--gold-light)}
 <!-- Bottom Nav -->
 <nav class="bottom-nav">
   <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
-  <a href="hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="index.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
   <a href="hanuman/21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
   <a href="hanuman/10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
   <a href="hanuman/84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
