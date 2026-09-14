@@ -1,10 +1,27 @@
 /* ============================================
-   HANUMAN SECTION — COMMON JS
-   With Jai Shri Ram Voice on Click
+   GOOGLE ANALYTICS
 ============================================ */
+(function() {
+  const GA_ID = 'G-HEY8JL8HDX';
+  
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+  document.head.appendChild(script);
+  
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', GA_ID, {
+    'anonymize_ip': true
+  });
+  
+  window.gtag = gtag;
+})();
+
 
 /* ============================================
-   JAI SHRI RAM — AUDIO ON CLICK
+   JAI SHRI RAM — VOICE ON CLICK
 ============================================ */
 (function() {
   'use strict';
