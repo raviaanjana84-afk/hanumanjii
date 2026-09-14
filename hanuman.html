@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>हनुमान जी — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
+<meta name="description" content="हनुमान जी का संपूर्ण ज्ञान — परिचय, चालीसा, बजरंग बाण, अष्टक, बाहुक, 108 नाम, मंत्र, कथा, चोला विधि, पूजा विधि, मंदिर, त्योहार, भजन, और जीवन-ज्ञान।" />
+<meta name="theme-color" content="#7A2E2E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+/* ============================================
+   SAME CSS AS index.html
+   (Copy the entire <style> block from index.html)
+============================================ */
+</style>
+</head>
+<body>
+
+<!-- Same body content as index.html -->
+
+<!-- BUT: Back button should work -->
+<header class="app-header">
+  <a href="index.html" class="icon-btn"><i class="fa-solid fa-om"></i></a>
+  <div class="header-title">
+    <span class="eyebrow">🕉️ हनुमान जी</span>
+    <h1>हनुमान जी</h1>
+  </div>
+  <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
+</header>
+
+<!-- ... same content ... -->
+
+<!-- BOTTOM NAV (PURANA — with "होम" and "हनुमान") -->
+<nav class="bottom-nav">
+  <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
+  <a href="hanuman/21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
+  <a href="hanuman/10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
+  <a href="hanuman/84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
+</nav>
+
+<script src="hanuman/common.js"></script>
+<script>
+document.querySelectorAll('.cat-chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    const cat = chip.dataset.cat;
+    document.querySelectorAll('.hub-card').forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+const searchInput = document.getElementById('hubSearch');
+if (searchInput) {
+  searchInput.addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase().trim();
+    document.querySelectorAll('.hub-card').forEach(card => {
+      const text = card.textContent.toLowerCase();
+      if (!q || text.includes(q)) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+}
+</script>
+</body>
+</html>
