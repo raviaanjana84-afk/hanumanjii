@@ -620,9 +620,9 @@ body.dark .mantra-box{color:var(--gold-light)}
 
 <!-- Header -->
 <header class="app-header">
-  <a href="../index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
+  <a href="index.html" class="icon-btn"><i class="fa-solid fa-arrow-left"></i></a>
   <div class="header-title">
-    <span class="eyebrow">🕉️ देवता ज्ञान</span>
+    <span class="eyebrow">🕉️ हनुमान जी</span>
     <h1>हनुमान जी</h1>
   </div>
   <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
@@ -728,7 +728,7 @@ body.dark .mantra-box{color:var(--gold-light)}
     <div class="card-icon">📜</div>
     <div class="card-body">
       <h3>हनुमान चालीसा</h3>
-      <p>40 चौपाइयाँ · अर्थ सहित · ऑडियो सहित</p>
+      <p>40 चौपाइयाँ · अर्थ सहित</p>
       <span class="card-meta">Complete · 44 verses</span>
     </div>
   </a>
@@ -738,7 +738,7 @@ body.dark .mantra-box{color:var(--gold-light)}
     <div class="card-body">
       <h3>बजरंग बाण</h3>
       <p>संकट में अचूक उपाय — पूरा पाठ</p>
-      <span class="card-meta">Complete · Audio</span>
+      <span class="card-meta">Complete</span>
     </div>
   </a>
 
@@ -877,7 +877,7 @@ body.dark .mantra-box{color:var(--gold-light)}
     <div class="card-body">
       <h3>आरती संग्रह</h3>
       <p>सभी आरती + भजन</p>
-      <span class="card-meta">Audio</span>
+      <span class="card-meta">Lyrics</span>
     </div>
   </a>
 
@@ -947,7 +947,6 @@ body.dark .mantra-box{color:var(--gold-light)}
     </div>
   </a>
 
-
   <a href="hanuman/83-quotes.html" class="hub-card" data-cat="gyan">
     <div class="card-icon">💬</div>
     <div class="card-body">
@@ -1013,7 +1012,7 @@ body.dark .mantra-box{color:var(--gold-light)}
 </button>
 
 <footer class="footer">
-  <p>🕉️ सनातन ज्ञान कोश</p>
+  <p>🕉️ हनुमान जी</p>
   <p>हर हिंदू के लिए मुफ्त ज्ञान का भंडार</p>
   <p class="footer-small">सभी कंटेंट पौराणिक स्रोतों पर आधारित है · 🙏 जय श्री राम</p>
 </footer>
@@ -1030,7 +1029,7 @@ body.dark .mantra-box{color:var(--gold-light)}
 
 <!-- Bottom Nav -->
 <nav class="bottom-nav">
-  <a href="../index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
+  <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
   <a href="hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
   <a href="hanuman/21-mala.html" class="nav-link"><i class="fa-solid fa-om"></i><p>माला</p></a>
   <a href="hanuman/10-chalisa.html" class="nav-link"><i class="fa-solid fa-book-open"></i><p>चालीसा</p></a>
@@ -1056,159 +1055,14 @@ body.dark .mantra-box{color:var(--gold-light)}
 <!-- Toast -->
 <div class="toast" id="toast">मंत्र कॉपी हो गया 🙏</div>
 
+<!-- ===== SCRIPTS ===== -->
+<script src="hanuman/common.js"></script>
 <script>
 /* ============================================
-   DARK MODE
+   HANUMAN HUB — PAGE SPECIFIC SCRIPTS
 ============================================ */
-const DARK_KEY = 'hanuman-dark';
-const darkToggle = document.getElementById('darkToggle');
-if (localStorage.getItem(DARK_KEY) === 'true') {
-  document.body.classList.add('dark');
-  darkToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-}
-darkToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  const isDark = document.body.classList.contains('dark');
-  darkToggle.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
-  localStorage.setItem(DARK_KEY, isDark);
-});
 
-/* ============================================
-   PROGRESS BAR + BACK TO TOP
-============================================ */
-const progressBar = document.getElementById('progressBar');
-const backTopBtn = document.getElementById('backTop');
-let ticking = false;
-window.addEventListener('scroll', () => {
-  if (!ticking) {
-    requestAnimationFrame(() => {
-      const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const s = h > 0 ? (window.scrollY / h) * 100 : 0;
-      progressBar.style.width = s + '%';
-      if (backTopBtn) {
-        if (window.scrollY > 400) backTopBtn.classList.add('show');
-        else backTopBtn.classList.remove('show');
-      }
-      ticking = false;
-    });
-    ticking = true;
-  }
-}, {passive:true});
-
-/* ============================================
-   JAI RAM COUNTER
-============================================ */
-const JAI_KEY = 'jaiRamCount';
-let jaiRamCount = parseInt(localStorage.getItem(JAI_KEY) || '0', 10);
-const jaiEl = document.getElementById('jaiRamCount');
-if (jaiEl) jaiEl.textContent = jaiRamCount + ' बार';
-
-function chantJaiRam() {
-  jaiRamCount++;
-  localStorage.setItem(JAI_KEY, jaiRamCount);
-  if (jaiEl) jaiEl.textContent = jaiRamCount + ' बार';
-  if (navigator.vibrate) navigator.vibrate(20);
-  if (jaiRamCount % 108 === 0) {
-    showToast('🎉 बधाई! ' + jaiRamCount + ' बार जय श्री राम 🙏');
-  }
-}
-
-/* ============================================
-   TOAST
-============================================ */
-let toastTimeout;
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  if (!t) return;
-  t.textContent = msg;
-  t.classList.add('show');
-  clearTimeout(toastTimeout);
-  toastTimeout = setTimeout(() => t.classList.remove('show'), 2200);
-}
-
-/* ============================================
-   MODAL
-============================================ */
-function openSankatModal() {
-  document.getElementById('sankatModal')?.classList.add('show');
-  if (navigator.vibrate) navigator.vibrate(50);
-}
-function closeModal(id) {
-  document.getElementById(id)?.classList.remove('show');
-}
-document.getElementById('sankatModal')?.addEventListener('click', (e) => {
-  if (e.target.id === 'sankatModal') closeModal('sankatModal');
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal('sankatModal');
-});
-
-/* ============================================
-   DAILY QUOTE
-============================================ */
-const QUOTES = [
-  'जय हनुमान ज्ञान गुन सागर ।<br>जय कपीस तिहुँ लोक उजागर ॥',
-  'राम दूत अतुलित बल धामा ।<br>अंजनि-पुत्र पवनसुत नामा ॥',
-  'महाबीर बिक्रम बजरंगी ।<br>कुमति निवार सुमति के संगी ॥',
-  'संकर सुवन केसरीनंदन ।<br>तेज प्रताप महा जग बंदन ॥',
-  'बिद्यावान गुनी अति चातुर ।<br>राम काज करिबे को आतुर ॥',
-  'सब सुख लहै तुम्हारी सरना ।<br>तुम रक्षक काहू को डर ना ॥',
-  'नासै रोग हरै सब पीरा ।<br>जपत निरंतर हनुमत बीरा ॥',
-  'संकट तें हनुमान छुड़ावै ।<br>मन क्रम बचन ध्यान जो लावै ॥',
-  'दुर्गम काज जगत के जेते ।<br>सुगम अनुग्रह तुम्हरे तेते ॥',
-  'अष्ट सिद्धि नौ निधि के दाता ।<br>अस बर दीन जानकी माता ॥'
-];
-const quoteEl = document.getElementById('dailyQuote');
-if (quoteEl) {
-  const dayIndex = new Date().getDate() % QUOTES.length;
-  quoteEl.innerHTML = QUOTES[dayIndex];
-}
-
-/* ============================================
-   SHARE
-============================================ */
-function sharePage() {
-  const shareData = {
-    title: 'हनुमान जी — संपूर्ण ज्ञान',
-    text: 'हनुमान जी का संपूर्ण ज्ञान — परिचय, कथा, मंत्र, चालीसा, आरती, बजरंग बाण और बहुत कुछ।',
-    url: window.location.href
-  };
-  if (navigator.share) {
-    navigator.share(shareData).catch(() => {});
-  } else {
-    copyText(window.location.href);
-    showToast('लिंक कॉपी हो गया 📋');
-  }
-}
-
-/* ============================================
-   COPY TEXT
-============================================ */
-function copyText(text) {
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(text);
-  } else {
-    const ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand('copy'); } catch(e) {}
-    document.body.removeChild(ta);
-  }
-}
-
-/* ============================================
-   SCROLL TOP
-============================================ */
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-/* ============================================
-   CATEGORY FILTER
-============================================ */
+/* ===== CATEGORY FILTER ===== */
 document.querySelectorAll('.cat-chip').forEach(chip => {
   chip.addEventListener('click', () => {
     document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
@@ -1224,9 +1078,7 @@ document.querySelectorAll('.cat-chip').forEach(chip => {
   });
 });
 
-/* ============================================
-   SEARCH
-============================================ */
+/* ===== SEARCH ===== */
 const searchInput = document.getElementById('hubSearch');
 if (searchInput) {
   searchInput.addEventListener('input', (e) => {
@@ -1237,13 +1089,6 @@ if (searchInput) {
     });
   });
 }
-
-/* ============================================
-   SERVICE WORKER (optional PWA)
-============================================ */
-// if ('serviceWorker' in navigator && location.protocol === 'https:') {
-//   navigator.serviceWorker.register('sw.js').catch(()=>{});
-// }
 </script>
 </body>
 </html>
