@@ -3,21 +3,97 @@
 ============================================ */
 (function() {
   const GA_ID = 'G-HEY8JL8HDX';
-  
   const script = document.createElement('script');
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
   document.head.appendChild(script);
-  
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', GA_ID, {
-    'anonymize_ip': true
-  });
-  
+  gtag('config', GA_ID, { 'anonymize_ip': true });
   window.gtag = gtag;
 })();
+
+
+/* ============================================
+   PWA SERVICE WORKER REGISTRATION
+============================================ */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then((reg) => console.log('✅ SW registered:', reg.scope))
+      .catch((err) => console.log('❌ SW failed:', err));
+  });
+}
+
+
+/* ============================================
+   PWA INSTALL PROMPT
+============================================ */
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  showInstallButton();
+});
+
+function showInstallButton() {
+  // Check if already dismissed
+  if (localStorage.getItem('pwa-install-dismissed') === 'true') return;
+  
+  // Create install banner
+  const banner = document.createElement('div');
+  banner.id = 'pwa-install-banner';
+  banner.style.cssText = `
+    position: fixed;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #7A2E2E, #FF6B35);
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 30px;
+    box-shadow: 0 8px 28px rgba(0,0,0,.4);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Hind', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    max-width: 90vw;
+    animation: slideUp .5s ease;
+  `;
+  banner.innerHTML = `
+    <span style="font-size:24px;">📱</span>
+    <span style="flex:1;">ऐप इंस्टॉल करें</span>
+    <button id="pwa-install-btn" style="background:#fff;color:#7A2E2E;border:none;padding:8px 16px;border-radius:20px;font-weight:700;cursor:pointer;font-size:13px;">इंस्टॉल</button>
+    <button id="pwa-dismiss-btn" style="background:transparent;color:#fff;border:none;font-size:18px;cursor:pointer;padding:0 4px;">✕</button>
+  `;
+  document.body.appendChild(banner);
+  
+  // Install button click
+  document.getElementById('pwa-install-btn').addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log('PWA install:', outcome);
+      deferredPrompt = null;
+      banner.remove();
+    }
+  });
+  
+  // Dismiss button click
+  document.getElementById('pwa-dismiss-btn').addEventListener('click', () => {
+    banner.remove();
+    localStorage.setItem('pwa-install-dismissed', 'true');
+  });
+}
+
+// Detect PWA mode
+if (window.matchMedia('(display-mode: standalone)').matches) {
+  document.body.classList.add('pwa-mode');
+}
 
 
 /* ============================================
@@ -25,35 +101,25 @@
 ============================================ */
 (function() {
   'use strict';
-  
   const SOUND_KEY = 'site-sound';
-  const AUDIO_FILE_PATH = 'assets/audio/jai-shri-ram.mp3';
+  const AUDIO_FILE_PATH = '/hanuman/assets/audio/jai-shri-ram.mp3';
   const SPEAK_TEXT = 'जय श्री राम';
   const SPOKE_DELAY = 700;
-  
   let lastSpokenTime = 0;
   let audioCache = null;
   let useAudioFile = false;
   let hindiVoice = null;
   
-  // Try to load audio file (optional)
   function initAudioFile() {
     try {
       audioCache = new Audio(AUDIO_FILE_PATH);
       audioCache.preload = 'auto';
       audioCache.volume = 0.7;
-      audioCache.addEventListener('canplaythrough', () => {
-        useAudioFile = true;
-      }, { once: true });
-      audioCache.addEventListener('error', () => {
-        useAudioFile = false;
-      }, { once: true });
-    } catch(e) {
-      useAudioFile = false;
-    }
+      audioCache.addEventListener('canplaythrough', () => { useAudioFile = true; }, { once: true });
+      audioCache.addEventListener('error', () => { useAudioFile = false; }, { once: true });
+    } catch(e) { useAudioFile = false; }
   }
   
-  // Load Hindi voice
   function loadVoices() {
     if (!('speechSynthesis' in window)) return;
     const voices = window.speechSynthesis.getVoices();
@@ -65,7 +131,6 @@
     }
   }
   
-  // Speak using TTS
   function speakTTS(text) {
     if (!('speechSynthesis' in window)) return;
     try {
@@ -80,17 +145,12 @@
     } catch(e) {}
   }
   
-  // Main speak function
   function speakJaiShriRam(text) {
     if (localStorage.getItem(SOUND_KEY) === 'off') return;
-    
     const now = Date.now();
     if (now - lastSpokenTime < SPOKE_DELAY) return;
     lastSpokenTime = now;
-    
     const t = text || SPEAK_TEXT;
-    
-    // Try audio file first
     if (useAudioFile && audioCache) {
       try {
         audioCache.currentTime = 0;
@@ -99,52 +159,38 @@
         return;
       } catch(e) {}
     }
-    
-    // Fallback to TTS
     speakTTS(t);
   }
   
-  // Attach to all interactive clicks
   function handleClick(e) {
     const target = e.target.closest(
-      'a, button, .hub-card, .cat-chip, .qa-btn, .nav-link, ' +
-      '.card, [onclick], .floating-hanuman, .back-top'
+      'a, button, .hub-card, .cat-chip, .qa-btn, .nav-link, .card, [onclick], .floating-hanuman, .back-top'
     );
-    
-    // Skip toggle buttons themselves
     if (target && (
       target.id === 'soundToggle' ||
       target.id === 'darkToggle' ||
       target.id === 'menuBtn' ||
       target.classList.contains('modal-close')
     )) return;
-    
     if (target) {
       const customVoice = target.dataset.voice || document.body.dataset.voice;
       speakJaiShriRam(customVoice);
     }
   }
   
-  // Initialize
   if ('speechSynthesis' in window) {
-    if (window.speechSynthesis.getVoices().length > 0) {
-      loadVoices();
-    } else {
-      window.speechSynthesis.onvoiceschanged = loadVoices;
-    }
+    if (window.speechSynthesis.getVoices().length > 0) loadVoices();
+    else window.speechSynthesis.onvoiceschanged = loadVoices;
   }
-  
   initAudioFile();
   document.addEventListener('click', handleClick, true);
   
-  // Expose functions globally
   window.toggleSiteSound = function() {
     const current = localStorage.getItem(SOUND_KEY);
     const newState = current === 'off' ? 'on' : 'off';
     localStorage.setItem(SOUND_KEY, newState);
     return newState;
   };
-  
   window.isSoundOff = function() {
     return localStorage.getItem(SOUND_KEY) === 'off';
   };
@@ -163,7 +209,6 @@ function toggleSoundIcon() {
   showToast(newState === 'off' ? '🔇 आवाज़ बंद' : '🔊 आवाज़ चालू');
 }
 
-// Initialize sound icon
 document.addEventListener('DOMContentLoaded', () => {
   const icon = document.getElementById('soundIcon');
   if (icon && localStorage.getItem('site-sound') === 'off') {
@@ -183,9 +228,7 @@ if (darkToggle) {
   darkToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark');
     const isDark = document.body.classList.contains('dark');
-    darkToggle.innerHTML = isDark
-      ? '<i class="fa-solid fa-sun"></i>'
-      : '<i class="fa-solid fa-moon"></i>';
+    darkToggle.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
     localStorage.setItem(DARK_KEY, isDark);
   });
 }
@@ -330,7 +373,7 @@ if (quoteEl) {
 }
 
 
-/* ===== SMOOTH SCROLL FOR CAT-CHIPS ===== */
+/* ===== SMOOTH SCROLL ===== */
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
