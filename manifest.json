@@ -1,0 +1,48 @@
+{
+  "name": "हनुमान जी — संपूर्ण ज्ञान",
+  "short_name": "Hanuman Ji",
+  "description": "हनुमान जी का संपूर्ण ज्ञान — चालीसा, बजरंग बाण, 108 नाम, मंत्र, कथा।",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#7A2E2E",
+  "theme_color": "#7A2E2E",
+  "lang": "hi",
+  "dir": "ltr",
+  "categories": ["lifestyle", "education", "spirituality"],
+  "icons": [
+    {
+      "src": "/hanuman/assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/hanuman/assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "चालीसा पढ़ें",
+      "short_name": "चालीसा",
+      "url": "/hanuman/10-chalisa.html",
+      "icons": [{ "src": "/hanuman/assets/images/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "जप माला",
+      "short_name": "माला",
+      "url": "/hanuman/21-mala.html",
+      "icons": [{ "src": "/hanuman/assets/images/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "बजरंग बाण",
+      "short_name": "बजरंग बाण",
+      "url": "/hanuman/11-bajrang-baan.html",
+      "icons": [{ "src": "/hanuman/assets/images/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
