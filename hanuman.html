@@ -2,25 +2,42 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<title>हनुमान जी — संपूर्ण ज्ञान | 108 नाम, चालीसा, बजरंग बाण</title>
+<meta name="description" content="हनुमान जी का संपूर्ण ज्ञान — चालीसा, बजरंग बाण, अष्टक, बाहुक, 108 नाम, मंत्र, कथा, चोला विधि, पूजा विधि, मंदिर, त्योहार, भजन। एक ही स्थान पर सब कुछ।" />
+<meta name="keywords" content="हनुमान जी, हनुमान चालीसा, बजरंग बाण, हनुमान 108 नाम, हनुमान मंत्र, चोला विधि, संकट मोचन" />
+<meta name="author" content="Sanatan Gyan Kosh" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://hanumanjii.vercel.app/hanuman.html" />
 
-<!-- ✅ YE SECTION PASTE KAREIN -->
-<title>...</title>
-<meta name="description" content="..." />
-<link rel="canonical" href="..." />
+<!-- ===== OPEN GRAPH ===== -->
+<meta property="og:title" content="हनुमान जी — संपूर्ण ज्ञान" />
+<meta property="og:description" content="चालीसा, बजरंग बाण, 108 नाम, मंत्र, कथा — सब एक जगह।" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hanumanjii.vercel.app/hanuman.html" />
+<meta property="og:site_name" content="Sanatan Gyan Kosh" />
+<meta property="og:locale" content="hi_IN" />
 
-<!-- Baaki existing tags -->
-...
-</head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>हनुमान जी — संपूर्ण ज्ञान | Sanatan Gyan Kosh</title>
-<meta name="description" content="हनुमान जी का संपूर्ण ज्ञान — परिचय, चालीसा, बजरंग बाण, अष्टक, बाहुक, 108 नाम, मंत्र, कथा, चोला विधि, पूजा विधि, मंदिर, त्योहार, भजन, और जीवन-ज्ञान।" />
+<!-- ===== TWITTER ===== -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="हनुमान जी — संपूर्ण ज्ञान" />
+<meta name="twitter:description" content="चालीसा, बजरंग बाण, 108 नाम, मंत्र, कथा।" />
+
+<!-- ===== PWA ===== -->
+<link rel="manifest" href="/manifest.json" />
 <meta name="theme-color" content="#7A2E2E" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="Hanuman Ji" />
+<link rel="apple-touch-icon" href="/hanuman/assets/images/icon-192.png" />
+<link rel="icon" type="image/png" href="/hanuman/assets/images/icon-192.png" />
+
+<!-- ===== FONTS ===== -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
 <style>
 /* ============================================
    ROOT & RESET
@@ -72,6 +89,9 @@ button{font-family:inherit;cursor:pointer}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 
+/* ============================================
+   PROGRESS BAR
+============================================ */
 .progress-bar{
   position:fixed;top:0;left:0;height:3px;
   background:linear-gradient(90deg,var(--gold),var(--saffron),var(--gold-light));
@@ -80,6 +100,9 @@ img{max-width:100%;display:block}
   box-shadow:0 0 12px var(--gold);
 }
 
+/* ============================================
+   HEADER
+============================================ */
 .app-header{
   position:sticky;top:0;z-index:500;
   background:linear-gradient(135deg,#7A2E2E,#3B0A0A);
@@ -88,6 +111,7 @@ img{max-width:100%;display:block}
   display:flex;align-items:center;gap:10px;
   box-shadow:0 4px 24px rgba(0,0,0,.35);
   border-bottom:2px solid var(--gold);
+  padding-top:max(10px, env(safe-area-inset-top));
 }
 .icon-btn{
   width:42px;height:42px;border-radius:50%;
@@ -107,6 +131,9 @@ img{max-width:100%;display:block}
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
 
+/* ============================================
+   SEARCH
+============================================ */
 .search-wrap{
   position:sticky;top:62px;z-index:490;
   background:var(--bg);
@@ -130,6 +157,9 @@ img{max-width:100%;display:block}
 }
 .search-bar input::placeholder{color:var(--ink-light)}
 
+/* ============================================
+   DIYA ROW
+============================================ */
 .diya-row{
   display:flex;justify-content:center;gap:10px;
   padding:10px 8px 6px;
@@ -154,6 +184,9 @@ img{max-width:100%;display:block}
 
 main{max-width:720px;margin:0 auto;padding:0 14px}
 
+/* ============================================
+   HERO
+============================================ */
 .devta-hero{
   position:relative;
   text-align:center;
@@ -181,7 +214,7 @@ main{max-width:720px;margin:0 auto;padding:0 14px}
 }
 .hero-glow-ring{
   position:absolute;top:50%;left:50%;
-  width:220px;height:220px;
+  width:240px;height:240px;
   transform:translate(-50%,-50%);
   border-radius:50%;
   border:2px dashed rgba(212,175,55,.35);
@@ -189,13 +222,20 @@ main{max-width:720px;margin:0 auto;padding:0 14px}
   pointer-events:none;
 }
 @keyframes spinSlow{to{transform:translate(-50%,-50%) rotate(360deg)}}
-.hanuman-icon{
-  font-size:110px;
+
+/* Real Hanuman Ji Image */
+.hanuman-icon-img{
+  width:180px;
+  height:180px;
+  object-fit:cover;
   display:inline-block;
   position:relative;
   z-index:2;
-  filter:drop-shadow(0 0 28px rgba(212,175,55,.9));
+  filter:drop-shadow(0 0 32px rgba(212,175,55,.95));
   animation:floatIcon 3.5s ease-in-out infinite;
+  border-radius:50%;
+  border:3px solid var(--gold);
+  box-shadow:0 0 40px rgba(212,175,55,.5);
 }
 @keyframes floatIcon{
   0%,100%{transform:translateY(0) rotate(-3deg) scale(1)}
@@ -204,7 +244,7 @@ main{max-width:720px;margin:0 auto;padding:0 14px}
 .devta-hero .name{
   font-family:'Tiro Devanagari Hindi',serif;
   font-size:38px;color:var(--maroon);
-  margin-top:6px;position:relative;z-index:2;
+  margin-top:12px;position:relative;z-index:2;
   text-shadow:0 2px 20px rgba(212,175,55,.5);
 }
 body.dark .devta-hero .name{color:var(--gold-light)}
@@ -238,6 +278,9 @@ body.dark .devta-hero .tagline{color:var(--gold-light)}
   font-family:'Hind',sans-serif;font-weight:400;
 }
 
+/* ============================================
+   INFO PILLS
+============================================ */
 .quick-info-strip{
   display:flex;gap:8px;overflow-x:auto;
   padding:4px 0 14px;
@@ -258,6 +301,9 @@ body.dark .devta-hero .tagline{color:var(--gold-light)}
 body.dark .info-pill{color:var(--gold-light)}
 .info-pill i{margin-right:5px;color:var(--gold)}
 
+/* ============================================
+   QUICK ACTIONS
+============================================ */
 .quick-actions{
   display:grid;grid-template-columns:repeat(4,1fr);gap:8px;
   margin-bottom:16px;
@@ -279,6 +325,9 @@ body.dark .info-pill{color:var(--gold-light)}
 body.dark .qa-btn i{color:var(--gold-light)}
 .qa-btn span{font-size:10.5px;font-weight:600;line-height:1.15;display:block}
 
+/* ============================================
+   EMERGENCY
+============================================ */
 .emergency-btn{
   width:100%;padding:18px;
   background:linear-gradient(135deg,#FF6B35,#7A2E2E);
@@ -293,6 +342,9 @@ body.dark .qa-btn i{color:var(--gold-light)}
 .emergency-btn:hover{transform:translateY(-2px)}
 .emergency-btn:active{transform:scale(.97)}
 
+/* ============================================
+   CATEGORY NAV
+============================================ */
 .cat-nav{
   display:flex;gap:8px;overflow-x:auto;
   padding:4px 0 14px;
@@ -322,6 +374,9 @@ body.dark .cat-chip{color:var(--gold-light)}
 }
 .cat-chip i{font-size:14px}
 
+/* ============================================
+   HUB GRID
+============================================ */
 .hub-grid{
   display:grid;grid-template-columns:1fr;gap:10px;
   margin-bottom:24px;
@@ -374,6 +429,9 @@ body.dark .card-body h3{color:var(--gold-light)}
   color:var(--gold);margin-top:4px;font-weight:600;
 }
 
+/* ============================================
+   SECTIONS
+============================================ */
 .devta-section{
   background:var(--card-bg);
   border-radius:var(--radius);
@@ -397,14 +455,6 @@ body.dark .card-body h3{color:var(--gold-light)}
 }
 body.dark .devta-section h2{color:var(--gold-light)}
 .devta-section h2 .sec-icon{font-size:24px;flex-shrink:0}
-.devta-section h3{
-  font-family:'Tiro Devanagari Hindi',serif;
-  font-size:17px;color:var(--maroon);
-  margin:18px 0 10px;
-  padding-left:10px;
-  border-left:3px solid var(--gold);
-}
-body.dark .devta-section h3{color:var(--gold-light)}
 .devta-section p{
   font-size:14.5px;line-height:1.9;color:var(--ink-soft);
   margin-bottom:12px;
@@ -412,6 +462,9 @@ body.dark .devta-section h3{color:var(--gold-light)}
 .devta-section p strong{color:var(--maroon);font-weight:600}
 body.dark .devta-section p strong{color:var(--gold-light)}
 
+/* ============================================
+   INFO GRID
+============================================ */
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
 .info-item{
   background:var(--bg-alt);padding:12px 14px;border-radius:12px;
@@ -427,6 +480,9 @@ body.dark .devta-section p strong{color:var(--gold-light)}
 }
 body.dark .info-item .val{color:var(--gold-light)}
 
+/* ============================================
+   QUOTE CARD
+============================================ */
 .quote-card{
   background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(255,107,53,.1));
   border-radius:16px;padding:24px 20px;
@@ -445,6 +501,9 @@ body.dark .quote-text{color:var(--gold-light)}
   margin-top:12px;font-weight:500;
 }
 
+/* ============================================
+   READ MORE
+============================================ */
 .read-more-btn{
   display:inline-flex;align-items:center;gap:8px;
   margin-top:14px;padding:10px 20px;
@@ -453,6 +512,9 @@ body.dark .quote-text{color:var(--gold-light)}
   font-size:13px;font-weight:600;
 }
 
+/* ============================================
+   WEBSITES SECTION
+============================================ */
 .websites-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -540,6 +602,9 @@ body.dark .site-tag { color: var(--gold-light); }
   transform: translate(2px, -2px);
 }
 
+/* ============================================
+   SHARE
+============================================ */
 .share-btn{
   margin-top:12px;width:100%;padding:15px;
   background:linear-gradient(135deg,var(--maroon),var(--saffron));
@@ -548,6 +613,9 @@ body.dark .site-tag { color: var(--gold-light); }
   display:flex;align-items:center;justify-content:center;gap:8px;
 }
 
+/* ============================================
+   FOOTER
+============================================ */
 .footer{
   text-align:center;padding:28px 16px;
   color:var(--ink-light);font-size:12.5px;
@@ -555,6 +623,9 @@ body.dark .site-tag { color: var(--gold-light); }
 .footer p{margin-bottom:5px}
 .footer-small{font-size:11px;opacity:.7;margin-top:8px}
 
+/* ============================================
+   BACK TOP
+============================================ */
 .back-top{
   position:fixed;bottom:100px;right:16px;
   width:48px;height:48px;border-radius:50%;
@@ -569,18 +640,28 @@ body.dark .site-tag { color: var(--gold-light); }
 .back-top:hover{transform:translateY(-3px) scale(1.05);background:var(--saffron)}
 .back-top:active{transform:scale(.9)}
 
+/* ============================================
+   FLOATING HANUMAN — Real Image
+============================================ */
 .floating-hanuman{
   position:fixed;bottom:100px;left:16px;
   width:60px;height:60px;border-radius:50%;
   background:linear-gradient(135deg,var(--gold),var(--saffron));
   color:#fff;border:2px solid #fff;
-  font-size:28px;
   display:flex;align-items:center;justify-content:center;
   cursor:pointer;
   box-shadow:0 8px 24px rgba(212,175,55,.65);
   z-index:90;
   animation:floatIcon 3.5s ease-in-out infinite;
   transition:var(--transition);
+  overflow:hidden;
+  padding:0;
+}
+.floating-hanuman img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
 }
 .floating-hanuman:hover{transform:scale(1.1)}
 .floating-hanuman:active{transform:scale(.9)}
@@ -588,12 +669,16 @@ body.dark .site-tag { color: var(--gold-light); }
   content:'';position:absolute;inset:-6px;border-radius:50%;
   border:2px solid rgba(212,175,55,.4);
   animation:pulseRing 2s infinite;
+  pointer-events:none;
 }
 @keyframes pulseRing{
   0%{transform:scale(1);opacity:1}
   100%{transform:scale(1.4);opacity:0}
 }
 
+/* ============================================
+   BOTTOM NAV
+============================================ */
 .bottom-nav{
   position:fixed;bottom:0;left:0;right:0;z-index:100;
   background:var(--card-bg);
@@ -613,6 +698,9 @@ body.dark .site-tag { color: var(--gold-light); }
 .nav-link.active{color:var(--maroon)}
 body.dark .nav-link.active{color:var(--gold-light)}
 
+/* ============================================
+   MODAL
+============================================ */
 .modal-overlay{
   position:fixed;inset:0;
   background:rgba(0,0,0,.75);
@@ -646,6 +734,9 @@ body.dark .modal-box h3{color:var(--gold-light)}
 }
 body.dark .modal-close{color:var(--gold-light)}
 
+/* ============================================
+   MANTRA BOX
+============================================ */
 .mantra-box{
   background:linear-gradient(135deg,rgba(212,175,55,.14),rgba(122,46,46,.06));
   border-left:4px solid var(--gold);
@@ -663,6 +754,9 @@ body.dark .mantra-box{color:var(--gold-light)}
   font-weight:400;margin-top:10px;font-style:italic;
 }
 
+/* ============================================
+   TOAST
+============================================ */
 .toast{
   position:fixed;bottom:110px;left:50%;
   transform:translateX(-50%) translateY(120px);
@@ -676,12 +770,31 @@ body.dark .mantra-box{color:var(--gold-light)}
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
+/* ============================================
+   PWA MODE
+============================================ */
+body.pwa-mode .bottom-nav {
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+body.pwa-mode .app-header {
+  padding-top: max(10px, env(safe-area-inset-top));
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(100px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
 @media(max-width:420px){
-  .hanuman-icon{font-size:88px}
+  .hanuman-icon-img{width:150px;height:150px}
   .devta-hero .name{font-size:28px}
   .devta-section h2{font-size:18px}
   .mantra-box{font-size:15.5px;padding:16px 12px}
   .info-grid{grid-template-columns:1fr}
+  .floating-hanuman{width:52px;height:52px}
 }
 @media(max-width:340px){
   .quick-actions{grid-template-columns:repeat(2,1fr)}
@@ -692,7 +805,9 @@ body.dark .mantra-box{color:var(--gold-light)}
 
 <div class="progress-bar" id="progressBar"></div>
 
-<!-- Header (Back button works) -->
+<!-- ============================================
+     HEADER
+============================================ -->
 <header class="app-header">
   <a href="index.html" class="icon-btn"><i class="fa-solid fa-om"></i></a>
   <div class="header-title">
@@ -702,6 +817,9 @@ body.dark .mantra-box{color:var(--gold-light)}
   <button class="icon-btn" id="darkToggle"><i class="fa-solid fa-moon"></i></button>
 </header>
 
+<!-- ============================================
+     SEARCH
+============================================ -->
 <div class="search-wrap">
   <div class="search-bar">
     <i class="fa-solid fa-magnifying-glass"></i>
@@ -715,9 +833,12 @@ body.dark .mantra-box{color:var(--gold-light)}
 
 <main>
 
+<!-- ============================================
+     HERO — Real Hanuman Ji Image
+============================================ -->
 <div class="devta-hero">
   <div class="hero-glow-ring"></div>
-  <div class="hanuman-icon">🐒</div>
+  <img src="/hanuman/assets/images/hanuman-hero.png" alt="हनुमान जी" class="hanuman-icon-img" />
   <div class="name">हनुमान जी</div>
   <div class="subtitle">बजरंगबली · संकट मोचन · राम भक्त</div>
   <div class="tagline">"जय हनुमान ज्ञान गुन सागर"</div>
@@ -727,6 +848,9 @@ body.dark .mantra-box{color:var(--gold-light)}
   </button>
 </div>
 
+<!-- ============================================
+     QUICK INFO PILLS
+============================================ -->
 <div class="quick-info-strip">
   <div class="info-pill"><i class="fa-solid fa-cake-candles"></i> चैत्र पूर्णिमा</div>
   <div class="info-pill"><i class="fa-solid fa-om"></i> ॐ श्री हनुमते नमः</div>
@@ -735,6 +859,9 @@ body.dark .mantra-box{color:var(--gold-light)}
   <div class="info-pill"><i class="fa-solid fa-fire"></i> सिंदूर प्रिय</div>
 </div>
 
+<!-- ============================================
+     QUICK ACTIONS
+============================================ -->
 <div class="quick-actions">
   <a href="hanuman/21-mala.html" class="qa-btn"><i class="fa-solid fa-om"></i><span>जप माला</span></a>
   <a href="hanuman/10-chalisa.html" class="qa-btn"><i class="fa-solid fa-book-open"></i><span>चालीसा</span></a>
@@ -742,10 +869,16 @@ body.dark .mantra-box{color:var(--gold-light)}
   <a href="hanuman/40-chola-vidhi.html" class="qa-btn"><i class="fa-solid fa-scroll"></i><span>चोला विधि</span></a>
 </div>
 
+<!-- ============================================
+     EMERGENCY
+============================================ -->
 <button class="emergency-btn" onclick="openSankatModal()">
   <i class="fa-solid fa-triangle-exclamation"></i> संकट मोचन — तुरंत सहायता
 </button>
 
+<!-- ============================================
+     CATEGORY NAV
+============================================ -->
 <div class="cat-nav">
   <button class="cat-chip active" data-cat="all"><i class="fa-solid fa-border-all"></i> सभी</button>
   <button class="cat-chip" data-cat="parichay"><i class="fa-solid fa-book"></i> परिचय</button>
@@ -759,6 +892,9 @@ body.dark .mantra-box{color:var(--gold-light)}
   <button class="cat-chip" data-cat="gyan"><i class="fa-solid fa-lightbulb"></i> ज्ञान</button>
 </div>
 
+<!-- ============================================
+     HUB GRID — 33 Cards
+============================================ -->
 <div class="hub-grid" id="hubGrid">
 
   <a href="hanuman/01-parichay.html" class="hub-card" data-cat="parichay">
@@ -1033,6 +1169,9 @@ body.dark .mantra-box{color:var(--gold-light)}
 
 </div>
 
+<!-- ============================================
+     AAJ KA VICHAR
+============================================ -->
 <div class="devta-section">
   <h2><span class="sec-icon">🌅</span> आज का विचार</h2>
   <div class="quote-card">
@@ -1044,6 +1183,9 @@ body.dark .mantra-box{color:var(--gold-light)}
   </div>
 </div>
 
+<!-- ============================================
+     QUICK PARICHAY
+============================================ -->
 <div class="devta-section">
   <h2><span class="sec-icon">📋</span> एक नज़र में</h2>
   <div class="info-grid">
@@ -1061,6 +1203,9 @@ body.dark .mantra-box{color:var(--gold-light)}
   </a>
 </div>
 
+<!-- ============================================
+     MY OTHER WEBSITES
+============================================ -->
 <div class="devta-section">
   <h2><span class="sec-icon">🌐</span> मेरी अन्य वेबसाइट्स</h2>
   <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:14px;">
@@ -1097,6 +1242,9 @@ body.dark .mantra-box{color:var(--gold-light)}
   </p>
 </div>
 
+<!-- ============================================
+     SHARE
+============================================ -->
 <button class="share-btn" onclick="sharePage()">
   <i class="fa-solid fa-share-nodes"></i> यह पेज शेयर करें
 </button>
@@ -1113,9 +1261,16 @@ body.dark .mantra-box{color:var(--gold-light)}
   <i class="fa-solid fa-arrow-up"></i>
 </button>
 
-<div class="floating-hanuman" onclick="openSankatModal()">🐒</div>
+<!-- ============================================
+     FLOATING HANUMAN — Real Image
+============================================ -->
+<div class="floating-hanuman" onclick="openSankatModal()">
+  <img src="/hanuman/assets/images/hanuman-icon.png" alt="हनुमान जी" />
+</div>
 
-<!-- BOTTOM NAV — WITH "होम" -->
+<!-- ============================================
+     BOTTOM NAV — WITH "होम"
+============================================ -->
 <nav class="bottom-nav">
   <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i><p>होम</p></a>
   <a href="hanuman.html" class="nav-link active"><i class="fa-solid fa-om"></i><p>हनुमान</p></a>
@@ -1124,6 +1279,9 @@ body.dark .mantra-box{color:var(--gold-light)}
   <a href="hanuman/84-faq.html" class="nav-link"><i class="fa-solid fa-circle-question"></i><p>FAQ</p></a>
 </nav>
 
+<!-- ============================================
+     SANKAT MODAL
+============================================ -->
 <div class="modal-overlay" id="sankatModal">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal('sankatModal')">✕</button>
@@ -1141,8 +1299,16 @@ body.dark .mantra-box{color:var(--gold-light)}
 
 <div class="toast" id="toast">मंत्र कॉपी हो गया 🙏</div>
 
+<!-- ============================================
+     SCRIPTS
+============================================ -->
 <script src="hanuman/common.js"></script>
 <script>
+/* ============================================
+   HUB PAGE SPECIFIC SCRIPTS
+============================================ */
+
+/* ===== CATEGORY FILTER ===== */
 document.querySelectorAll('.cat-chip').forEach(chip => {
   chip.addEventListener('click', () => {
     document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
@@ -1158,17 +1324,14 @@ document.querySelectorAll('.cat-chip').forEach(chip => {
   });
 });
 
+/* ===== SEARCH ===== */
 const searchInput = document.getElementById('hubSearch');
 if (searchInput) {
   searchInput.addEventListener('input', (e) => {
     const q = e.target.value.toLowerCase().trim();
     document.querySelectorAll('.hub-card').forEach(card => {
       const text = card.textContent.toLowerCase();
-      if (!q || text.includes(q)) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
+      card.style.display = (!q || text.includes(q)) ? 'flex' : 'none';
     });
   });
 }
